@@ -1,7 +1,15 @@
 import type { NextPage } from 'next'
+import { useRecoilState } from 'recoil'
+import { pageNameState } from 'states'
 
 const Home: NextPage = () => {
-  return <div>hello world</div>
+  const [pageName, setPageName] = useRecoilState(pageNameState)
+
+  return (
+    <div>
+      <span>pageName 상태: {pageName}</span>
+    </div>
+  )
 }
 
 export default Home
