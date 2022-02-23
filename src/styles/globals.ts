@@ -3,11 +3,11 @@ import { css } from '@emotion/react'
 export const globalStyles = css`
   html,
   body {
-    padding: 3rem 1rem;
+    padding: 0;
     margin: 0;
-    background: papayawhip;
-    min-height: 100%;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 24px;
+  }
+  .container {
+    margin: 0 auto;
+    width: 100px;
   }
 `
