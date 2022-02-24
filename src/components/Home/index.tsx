@@ -34,10 +34,12 @@ const Home = (props: Props) => {
   }
   return (
     <>
-      <PageMenu>
-        <button onClick={handlePrev}>{'<'}</button>
-        <button onClick={handleNext}>{'>'}</button>
-      </PageMenu>
+      <PageMenuWrapper className="container">
+        <PageMenu className="container">
+          <div onClick={handlePrev}>{'∧'}</div>
+          <div onClick={handleNext}>{'∨'}</div>
+        </PageMenu>
+      </PageMenuWrapper>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
@@ -47,8 +49,18 @@ const Home = (props: Props) => {
   )
 }
 
+const PageMenuWrapper = styled.div`
+  position: relative;
+  overflow-y: visible;
+`
+
 const PageMenu = styled.div`
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 150px;
+  transform: translate(100%, -50%);
 `
 
 export default Home

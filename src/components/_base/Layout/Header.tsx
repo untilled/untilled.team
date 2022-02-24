@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Link from 'next/link'
 import React from 'react'
 
 type Props = {}
@@ -6,13 +7,19 @@ type Props = {}
 const Header = ({}: Props) => {
   return (
     <Wrapper className="">
-      <Container className="container ">
-        <Left>untilled</Left>
+      <Container className="container">
+        <Left>
+          <Link href="/">
+            <a>
+              <div>Untilled</div>
+            </a>
+          </Link>
+        </Left>
         <Right>
-          <div>About</div>
-          <div>Members</div>
-          <div>Projects</div>
-          <div>Contact</div>
+          <Link href="/">About</Link>
+          <Link href="/members">Members</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/contact">Contact</Link>
         </Right>
       </Container>
     </Wrapper>
@@ -35,9 +42,13 @@ const Container = styled.div`
 const Left = styled.div`
   padding: 5px 10px;
   background-color: white;
-  color: black;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 1.5rem;
+  cursor: pointer;
+  div {
+    color: black !important;
+    border-top: 5px solid black;
+  }
 `
 
 const Right = styled.div`

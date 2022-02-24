@@ -1,12 +1,20 @@
 import { css } from '@emotion/react'
 
 export const globalStyles = css`
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
   html,
   body {
+    font-family: 'Noto Sans KR', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-color: black;
+    color: white;
+  }
+  *:link {
+    text-decoration: none;
+  }
+  a {
     color: white;
   }
   .container {
