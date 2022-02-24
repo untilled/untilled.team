@@ -10,7 +10,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <Wrapper>
-      {/* <Header /> */}
+      <Header />
       <Main>{children}</Main>
       {/* <Footer /> */}
     </Wrapper>

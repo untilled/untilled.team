@@ -6,9 +6,11 @@ export const globalStyles = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: black;
+    color: white;
   }
   .container {
-    max-width: 1200px;
+    max-width: 1024px;
     margin: 0 auto;
     padding: 0px 5px;
   }

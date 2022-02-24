@@ -28,17 +28,17 @@
 $ yarn
 
 # serve with hot reload at localhost:3000
-$ yarn run dev
+$ yarn dev
 
 # build for production and launch server
-$ yarn run build
-$ yarn run start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ yarn run generate
+$ yarn generate
 
 # deploy this project
-$ firebase deploy --only hosting:untilled
+$ yarn deploy
 ```
 
 ## Note
