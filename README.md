@@ -4,7 +4,8 @@
 
 ## Features
 
-- database using notion api
+- About Page slide
+- Database using notion api
   - untilled team notion 페이지에 있는 data를 notion api를 통해 불러와 표시하고 있습니다.
 
 ## Tech and libraries

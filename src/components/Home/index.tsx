@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
 import Footer from './Footer'
 import PageOne from './Page'
@@ -23,6 +23,26 @@ const pages = [
 
 const Home = (props: Props) => {
   const [page, setPage] = useState(0)
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  const handleResize = () => {
+    if (pageRef.current && typeof window === 'object') {
+      let right = 0
+      if (window.innerWidth > 1024) right = (window.innerWidth - 1024) / 2
+      pageRef.current.style.right = `${right + 10}px`
+      pageRef.current.style.display = `flex`
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  useEffect(() => {
+    handleResize()
+  }, [pageRef])
 
   const handleNext = () => {
     if (page === pages.length - 1) return
@@ -32,35 +52,33 @@ const Home = (props: Props) => {
     if (page === 0) return
     else setPage(page - 1)
   }
+
   return (
-    <>
-      <PageMenuWrapper className="container">
-        <PageMenu className="container">
-          <div onClick={handlePrev}>{'∧'}</div>
-          <div onClick={handleNext}>{'∨'}</div>
-        </PageMenu>
-      </PageMenuWrapper>
+    <Wrapper>
+      <PageMenu ref={pageRef}>
+        <div onClick={handlePrev}>{'∧'}</div>
+        <div onClick={handleNext}>{'∨'}</div>
+      </PageMenu>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
         ))}
       </FullPage>
-    </>
+    </Wrapper>
   )
 }
 
-const PageMenuWrapper = styled.div`
-  position: relative;
-  overflow-y: visible;
+const Wrapper = styled.div`
+  overflow-x: hidden;
 `
 
 const PageMenu = styled.div`
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
-  right: 0;
-  top: 150px;
-  transform: translate(100%, -50%);
+  cursor: pointer;
+  top: 50%;
+  transform: translate(0, -100%);
 `
 
 export default Home

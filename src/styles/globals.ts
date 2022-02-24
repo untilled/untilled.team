@@ -7,9 +7,12 @@ export const globalStyles = css`
     font-family: 'Noto Sans KR', sans-serif;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+
     background-color: black;
     color: white;
+  }
+  * {
+    box-sizing: border-box;
   }
   *:link {
     text-decoration: none;

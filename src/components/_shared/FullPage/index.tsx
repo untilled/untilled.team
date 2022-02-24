@@ -20,10 +20,16 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     [page, heightList, onNext, onPrev]
   )
 
+  const handleTouch = (e: any) => {
+    console.log(e)
+  }
+
   useEffect(() => {
     document.addEventListener('mousewheel', handleScroll)
+    document.addEventListener('touchmove', handleTouch)
     return () => {
       document.removeEventListener('mousewheel', handleScroll)
+      document.removeEventListener('touchmove', handleTouch)
     }
   }, [page, handleScroll])
 
