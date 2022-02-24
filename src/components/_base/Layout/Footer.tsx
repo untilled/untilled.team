@@ -3,10 +3,12 @@ import React from 'react'
 
 type Props = {}
 
-export default function Footer({}: Props) {
+const Footer = ({}: Props) => {
   return <Wrapper>Footer</Wrapper>
 }
 
 const Wrapper = styled.div`
   background-color: aliceblue;
 `
+
+export default Footer

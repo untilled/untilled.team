@@ -3,16 +3,32 @@ import React from 'react'
 
 type Props = {}
 
-export default function Header({}: Props) {
+const Header = ({}: Props) => {
   return (
-    <Wrapper>
-      <div className="container">
-        <div>Untilled</div>
-      </div>
+    <Wrapper className="borderLine">
+      <Container className="container ">
+        <div>untilled</div>
+        <div>
+          <div>About</div>
+          <div>Members</div>
+          <div>Projects</div>
+          <div>Contact</div>
+        </div>
+      </Container>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  background-color: aliceblue;
+  position: fixed;
+  width: 100%;
+  height: 50px;
 `
+const Container = styled.div`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export default Header

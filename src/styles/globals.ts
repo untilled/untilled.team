@@ -5,9 +5,15 @@ export const globalStyles = css`
   body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
   .container {
+    max-width: 1200px;
     margin: 0 auto;
-    width: 100px;
+    padding: 0px 5px;
+  }
+
+  .borderLine {
+    border: 1px solid black;
   }
 `
