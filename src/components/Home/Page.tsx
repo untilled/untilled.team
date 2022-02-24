@@ -4,7 +4,7 @@ import React from 'react'
 type Props = {}
 
 const Page = (props: Props) => {
-  return <Wrapper className="borderLine">Page</Wrapper>
+  return <Wrapper className="borderLine">PagePagePagePagePagePage</Wrapper>
 }
 
 const Wrapper = styled.div`

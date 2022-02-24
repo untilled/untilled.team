@@ -25,15 +25,20 @@ const Home = (props: Props) => {
   const [page, setPage] = useState(0)
 
   const handleNext = () => {
-    if (page === pages.length - 1) setPage(0)
+    if (page === pages.length - 1) return
     else setPage(page + 1)
+  }
+  const handlePrev = () => {
+    if (page === 0) return
+    else setPage(page - 1)
   }
   return (
     <>
       <PageMenu>
-        <button onClick={handleNext}>plus</button>
+        <button onClick={handlePrev}>{'<'}</button>
+        <button onClick={handleNext}>{'>'}</button>
       </PageMenu>
-      <FullPage page={page}>
+      <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
         ))}

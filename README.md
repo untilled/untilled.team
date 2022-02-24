@@ -36,6 +36,9 @@ $ yarn run start
 
 # generate static project
 $ yarn run generate
+
+# deploy this project
+$ firebase deploy --only hosting:untilled
 ```
 
 ## Note

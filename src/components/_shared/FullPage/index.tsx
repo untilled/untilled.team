@@ -1,29 +1,54 @@
 import styled from '@emotion/styled'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 type Props = {
   page: number
-  onNext?: Function
-  onPrev?: Function
+  onNext: Function
+  onPrev: Function
   children: React.ReactNode[]
 }
 
-const FullPage = ({ page, children }: Props) => {
+const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const [heightList, setHeightList]: [number[], Function] = useState([])
   const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const handleScroll = useCallback(
+    (e: any) => {
+      if (wrapperRef.current?.scrollTop !== heightList[page]) return
+      e.deltaY > 0 ? onNext() : onPrev()
+    },
+    [page, heightList, onNext, onPrev]
+  )
+
+  useEffect(() => {
+    document.addEventListener('mousewheel', handleScroll)
+    return () => {
+      document.removeEventListener('mousewheel', handleScroll)
+    }
+  }, [page, handleScroll])
 
   useEffect(() => {
     if (wrapperRef.current) {
       const nodes = wrapperRef.current.childNodes
       const nodeHeights: number[] = Array.from(nodes).map(
-        (node: any) => node.getBoundingClientRect().y
+        (node: any, idx: number) => {
+          if (nodes.length - 1 === idx) {
+            const prevNode: any = nodes[idx - 1]
+            return prevNode.getBoundingClientRect().y + node.offsetHeight
+          }
+          const nodeHeight = node.getBoundingClientRect().y
+          return nodeHeight
+        }
       )
       setHeightList(nodeHeights)
     }
   }, [wrapperRef])
 
   useEffect(() => {
-    wrapperRef.current?.scrollTo(0, heightList[page])
+    if (wrapperRef.current) {
+      const parentNode = wrapperRef.current
+      parentNode.scrollTo(0, heightList[page])
+    }
   }, [page, heightList])
 
   return <Wrapper ref={wrapperRef}>{children}</Wrapper>
