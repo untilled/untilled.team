@@ -26,10 +26,10 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   useEffect(() => {
     document.addEventListener('mousewheel', handleScroll)
-    document.addEventListener('touchmove', handleTouch)
+    // document.addEventListener('touchmove', handleTouch)
     return () => {
       document.removeEventListener('mousewheel', handleScroll)
-      document.removeEventListener('touchmove', handleTouch)
+      // document.removeEventListener('touchmove', handleTouch)
     }
   }, [page, handleScroll])
 
