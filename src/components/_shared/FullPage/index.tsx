@@ -61,7 +61,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   }, [page])
 
   useEffect(() => {
-    // window.addEventListener('mousewheel', handleScroll)
+    window.addEventListener('mousewheel', handleScroll)
     return () => {
       window.removeEventListener('mousewheel', handleScroll)
     }
