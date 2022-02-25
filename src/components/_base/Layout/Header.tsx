@@ -49,6 +49,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
+          <Button>JOIN</Button>
         </Right>
       </Container>
     </Wrapper>
@@ -84,6 +85,12 @@ const Left = styled.div`
 const Right = styled.div`
   display: flex;
   gap: 10px;
+`
+
+const Button = styled.button`
+  border-radius: 13px;
+  padding: 3px 12px;
+  font-weight: 600;
 `
 
 type MenuProps = {

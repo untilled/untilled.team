@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import Members from 'components/Home/Members'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
+import About from './About'
 import Footer from './Footer'
 import PageOne from './Page'
 
@@ -14,6 +15,10 @@ const pages = [
   },
   {
     name: 'About',
+    component: About,
+  },
+  {
+    name: 'Projects',
     component: PageOne,
   },
   {
@@ -21,15 +26,11 @@ const pages = [
     component: PageOne,
   },
   {
-    name: 'Projects',
-    component: PageOne,
-  },
-  {
     name: 'Members',
     component: Members,
   },
   {
-    name: 'Contact',
+    name: 'Contact & Join',
     component: PageOne,
   },
 
@@ -126,6 +127,7 @@ const Menu = styled.div<MenuProps>`
 
 const MenuHeader = styled.div`
   position: absolute;
+  white-space: nowrap;
   top: 0;
   width: 10px;
   transform: translate(-20%, -150%) rotate(-90deg); ;

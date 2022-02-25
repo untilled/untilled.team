@@ -20,6 +20,13 @@ export const globalStyles = css`
   a {
     color: white;
   }
+
+  button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    cursor: pointer;
+  }
   .container {
     max-width: 1024px;
     margin: 0 auto;
