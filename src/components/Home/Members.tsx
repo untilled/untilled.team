@@ -40,38 +40,43 @@ const members = [
     id: 4,
     name: 'jade',
   },
+  {
+    id: 4,
+    name: 'jade',
+  },
 ]
 
 const Members = (props: Props) => {
   return (
     <Wrapper>
-      <SlideController />
-      {members.map((member) => (
-        <Member key={member.id}>{member.name}</Member>
-      ))}
+      <MemberList>
+        {members.map((member) => (
+          <Member key={member.id}>{member.name}</Member>
+        ))}
+      </MemberList>
     </Wrapper>
   )
 }
 const Wrapper = styled.div`
-  width: 645px;
-  column-width: 300px;
-  column-gap: 15px;
-  column-count: 2;
+  width: 100vw;
+  height: 100vh;
+`
 
-  transform: rotate(90deg);
-  margin: 0 auto;
+const MemberList = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  gap: 45px;
   overflow: hidden;
 `
 
 const Member = styled.div`
   border: 1px solid white;
   width: 300px;
-  height: 300px;
-  margin-bottom: 15px;
-  transform: rotate(-90deg);
-`
-const SlideController = styled.div`
-  height: 0px;
+  flex-shrink: 0;
+  height: 450px;
 `
 
 export default Members

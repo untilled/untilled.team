@@ -56,6 +56,7 @@ const Header = ({}: Props) => {
 }
 
 const Wrapper = styled.div`
+  z-index: 20;
   position: fixed;
   width: 100%;
   height: 100px;

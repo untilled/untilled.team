@@ -21,8 +21,6 @@ const Wrapper = styled.div`
   grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100vh;
 `
-const Main = styled.div`
-  /* margin-top: 50px; */
-`
+const Main = styled.div``
 
 export default Layout

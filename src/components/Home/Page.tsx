@@ -19,7 +19,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
-  div {
+  & > div {
+    height: 50vh;
+    /* background-color: #8d8d8d; */
     width: 100%;
   }
 `
