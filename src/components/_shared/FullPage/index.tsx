@@ -45,13 +45,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     const hightList = initHeightList()
     if (wrapperRef.current) {
       const parentNode = wrapperRef.current
-      console.log(hightList, page)
-
       parentNode.scrollTo(0, hightList[page])
     }
   }
-
-  useEffect(() => {}, [page])
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -65,7 +61,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   }, [page])
 
   useEffect(() => {
-    window.addEventListener('mousewheel', handleScroll)
+    // window.addEventListener('mousewheel', handleScroll)
     return () => {
       window.removeEventListener('mousewheel', handleScroll)
     }

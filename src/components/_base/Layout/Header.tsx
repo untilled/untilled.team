@@ -1,25 +1,54 @@
+import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router'
 
 type Props = {}
 
+const menus = [
+  {
+    id: 1,
+    name: 'About',
+    href: '/',
+  },
+  {
+    id: 2,
+    name: 'Projects',
+    href: '/projects',
+  },
+  {
+    id: 3,
+    name: 'Members',
+    href: '/members',
+  },
+  {
+    id: 4,
+    name: 'Contact',
+    href: '/contact',
+  },
+]
+
 const Header = ({}: Props) => {
+  const router = useRouter()
+
   return (
     <Wrapper className="">
       <Container className="container">
         <Left>
           <Link href="/">
             <a>
-              <div>Untilled</div>
+              <div>Untilled.</div>
             </a>
           </Link>
         </Left>
         <Right>
-          <Link href="/">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/members">Members</Link>
-          <Link href="/contact">Contact</Link>
+          {menus.map((menu) => (
+            <Link key={menu.id} href={menu.href}>
+              <a>
+                <Menu selected={menu.href === router.asPath}>{menu.name}</Menu>
+              </a>
+            </Link>
+          ))}
         </Right>
       </Container>
     </Wrapper>
@@ -54,6 +83,19 @@ const Left = styled.div`
 const Right = styled.div`
   display: flex;
   gap: 10px;
+`
+
+type MenuProps = {
+  selected: boolean
+}
+
+const Menu = styled.div<MenuProps>`
+  padding: 0px 3px;
+  font-weight: ${(props) => (props.selected ? '600' : '400')};
+  border-bottom: ${(props) => (props.selected ? '2px solid white' : 'none')};
+
+  &:hover {
+  }
 `
 
 export default Header

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Members from 'components/Home/Members'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
 import Footer from './Footer'
@@ -8,15 +9,32 @@ type Props = {}
 
 const pages = [
   {
+    name: '',
     component: PageOne,
   },
   {
+    name: 'About',
     component: PageOne,
   },
   {
+    name: 'Achievement',
     component: PageOne,
   },
   {
+    name: 'Projects',
+    component: PageOne,
+  },
+  {
+    name: 'Members',
+    component: Members,
+  },
+  {
+    name: 'Contact',
+    component: PageOne,
+  },
+
+  {
+    name: '',
     component: Footer,
   },
 ]
@@ -56,8 +74,16 @@ const Home = (props: Props) => {
   return (
     <Wrapper>
       <PageMenu ref={pageRef}>
-        <div onClick={handlePrev}>{'∧'}</div>
-        <div onClick={handleNext}>{'∨'}</div>
+        <MenuHeader>{pages[page].name}</MenuHeader>
+        {/* <div onClick={handlePrev}>{'∧'}</div> */}
+        {pages.map((_, idx) => (
+          <Menu
+            selected={page === idx}
+            key={idx}
+            onClick={() => setPage(idx)}
+          />
+        ))}
+        {/* <div onClick={handleNext}>{'∨'}</div> */}
       </PageMenu>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
@@ -73,12 +99,36 @@ const Wrapper = styled.div`
 `
 
 const PageMenu = styled.div`
+  z-index: 10;
+  position: relative;
   display: none;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
   position: absolute;
   cursor: pointer;
   top: 50%;
-  transform: translate(0, -100%);
+  transform: translate(0, -50%);
+  font-size: 0.7rem;
+`
+
+type MenuProps = {
+  selected: boolean
+}
+
+const Menu = styled.div<MenuProps>`
+  background-color: #494949;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: ${(props) => (props.selected ? 'white' : '#494949')};
+`
+
+const MenuHeader = styled.div`
+  position: absolute;
+  top: 0;
+  width: 10px;
+  transform: translate(-20%, -150%) rotate(-90deg); ;
 `
 
 export default Home
