@@ -21,27 +21,27 @@ const members = [
     name: 'jade',
   },
   {
-    id: 4,
+    id: 5,
     name: 'jade',
   },
   {
-    id: 4,
+    id: 6,
     name: 'jade',
   },
   {
-    id: 4,
+    id: 7,
     name: 'jade',
   },
   {
-    id: 4,
+    id: 8,
     name: 'jade',
   },
   {
-    id: 4,
+    id: 9,
     name: 'jade',
   },
   {
-    id: 4,
+    id: 10,
     name: 'jade',
   },
 ]
@@ -49,6 +49,7 @@ const members = [
 const Members = (props: Props) => {
   return (
     <Wrapper>
+      <h1 className="container">Untilled Members</h1>
       <MemberList>
         {members.map((member) => (
           <Member key={member.id}>{member.name}</Member>
@@ -60,6 +61,13 @@ const Members = (props: Props) => {
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & > h1 {
+    width: 100%;
+  }
 `
 
 const MemberList = styled.div`

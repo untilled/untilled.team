@@ -1,17 +1,20 @@
 import styled from '@emotion/styled'
-import Members from 'components/Home/Members'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import About from './About'
-import Footer from './Footer'
-import PageOne from './Page'
+import Intro from './0.Intro'
+import About from './1.About'
+import Projects from './2.Projects'
+import Archivement from './3.Archivement'
+import Members from './4.Members'
+import Contact from './5.Contact'
+import Footer from 'components/_shared/Footer'
 
 type Props = {}
 
 const pages = [
   {
     name: '',
-    component: PageOne,
+    component: Intro,
   },
   {
     name: 'About',
@@ -19,21 +22,20 @@ const pages = [
   },
   {
     name: 'Projects',
-    component: PageOne,
+    component: Projects,
   },
   {
     name: 'Achievement',
-    component: PageOne,
+    component: Archivement,
   },
   {
     name: 'Members',
     component: Members,
   },
   {
-    name: 'Contact & Join',
-    component: PageOne,
+    name: 'Contact',
+    component: Contact,
   },
-
   {
     name: '',
     component: Footer,
@@ -76,15 +78,13 @@ const Home = (props: Props) => {
     <Wrapper>
       <PageMenu ref={pageRef}>
         <MenuHeader>{pages[page].name}</MenuHeader>
-        {/* <div onClick={handlePrev}>{'∧'}</div> */}
-        {pages.map((_, idx) => (
-          <Menu
-            selected={page === idx}
-            key={idx}
-            onClick={() => setPage(idx)}
-          />
+        {/* <Arrow onClick={handlePrev}>{'∧'}</Arrow> */}
+        {pages.map((menu, idx) => (
+          <Menu selected={page === idx} key={idx} onClick={() => setPage(idx)}>
+            <div>{menu.name}</div>
+          </Menu>
         ))}
-        {/* <div onClick={handleNext}>{'∨'}</div> */}
+        {/* <Arrow onClick={handleNext}>{'∨'}</Arrow> */}
       </PageMenu>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
@@ -110,7 +110,12 @@ const PageMenu = styled.div`
   cursor: pointer;
   top: 50%;
   transform: translate(0, -50%);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+`
+
+const Arrow = styled.div`
+  color: #494949;
+  font-weight: 600;
 `
 
 type MenuProps = {
@@ -118,11 +123,25 @@ type MenuProps = {
 }
 
 const Menu = styled.div<MenuProps>`
+  position: relative;
   background-color: #494949;
   border-radius: 50%;
   width: 10px;
   height: 10px;
   background-color: ${(props) => (props.selected ? 'white' : '#494949')};
+  & > div {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 100%;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  &:hover {
+    & > div {
+      display: block;
+    }
+  }
 `
 
 const MenuHeader = styled.div`

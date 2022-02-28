@@ -1,4 +1,6 @@
 import styled from '@emotion/styled'
+import Footer from 'components/_shared/Footer'
+import { useRouter } from 'next/router'
 import React from 'react'
 import Header from './Header'
 
@@ -7,10 +9,14 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
+  const router = useRouter()
+  console.log(router.route)
+
   return (
     <Wrapper>
       <Header />
       <Main>{children}</Main>
+      {router.route !== '/' && <Footer />}
     </Wrapper>
   )
 }

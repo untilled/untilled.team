@@ -3,11 +3,14 @@ import React from 'react'
 
 type Props = {}
 
-//언틸드는 다양한 개발 프로젝트를 전행하는
-//프로젝트를 혼자서 할 순 없잖아요?
-//
-const About = (props: Props) => {
-  return <Wrapper>About</Wrapper>
+const Page = (props: Props) => {
+  return (
+    <Wrapper className="">
+      <div className="container">
+        <h1>Projects</h1>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
@@ -21,4 +24,4 @@ const Wrapper = styled.div`
   }
 `
 
-export default About
+export default Page

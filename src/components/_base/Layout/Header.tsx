@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Logo from 'components/_shared/Logo'
 
 type Props = {}
 
@@ -34,13 +35,7 @@ const Header = ({}: Props) => {
   return (
     <Wrapper className="">
       <Container className="container">
-        <Left>
-          <Link href="/">
-            <a>
-              <div>Untilled.</div>
-            </a>
-          </Link>
-        </Left>
+        <Logo />
         <Right>
           {menus.map((menu) => (
             <Link key={menu.id} href={menu.href}>
@@ -49,7 +44,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
-          <Button>JOIN</Button>
+          <Button>JOIN TEAM</Button>
         </Right>
       </Container>
     </Wrapper>
@@ -70,25 +65,13 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-const Left = styled.div`
-  padding: 5px 10px;
-  background-color: white;
-  font-weight: 900;
-  font-size: 1.5rem;
-  cursor: pointer;
-  div {
-    color: black !important;
-    border-top: 5px solid black;
-  }
-`
-
 const Right = styled.div`
   display: flex;
   gap: 10px;
 `
 
 const Button = styled.button`
-  border-radius: 13px;
+  border-radius: 12px;
   padding: 3px 12px;
   font-weight: 600;
 `
