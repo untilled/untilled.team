@@ -8,7 +8,7 @@ const words = ['Developer🧑‍💻', 'Designer👨‍🎨', 'Product😻', 'Wo
 
 const Page = (props: Props) => {
   return (
-    <Wrapper className="">
+    <Wrapper>
       <Container className="container">
         <div>
           <br />
@@ -30,10 +30,9 @@ const Page = (props: Props) => {
 }
 
 const Wrapper = styled.div`
+  width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  background-color: #212529;
 `
 
 const Container = styled.div`
