@@ -2,138 +2,39 @@ import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 
 type Props = {}
-type member = {
+type members = {
   name: string
-}
+  role: string
+  src: string
+}[]
 
 //27
-const members = [
+const members: members = [
   {
-    name: 'members1',
+    name: 'morethanmin',
+    role: 'frontend',
+    src: '',
   },
   {
-    name: 'members2',
+    name: 'Sang Min Lee',
+    role: 'backend',
+    src: '',
   },
   {
-    name: 'members3',
-  },
-  {
-    name: 'members4',
-  },
-  {
-    name: 'members5',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members3',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
-  },
-  {
-    name: 'members',
+    name: 'jade',
+    role: 'designer',
+    src: '',
   },
 ]
 
 const Page = (props: Props) => {
-  const [resizedMembers, setResizedMembers] = useState<Array<Array<member>>>([])
-  const handleResize = () => {
-    const resizedMembers: Array<Array<member>> = new Array(6)
-    let memberIdx = 0
-    for (let i = 0; i < resizedMembers.length; i++) {
-      resizedMembers[i] = []
-    }
-
-    for (let i = 0; i < resizedMembers.length; i++) {
-      //홀수
-      const isOdd = (i + 1) % 2 === 1
-      if (isOdd)
-        for (let j = 0; j < 5; j++) {
-          resizedMembers[i].push(
-            members[memberIdx] ? members[memberIdx] : { name: '' }
-          )
-          memberIdx = memberIdx + 1
-        }
-      else
-        for (let j = 0; j < 4; j++) {
-          resizedMembers[i].push(
-            members[memberIdx] ? members[memberIdx] : { name: '' }
-          )
-          memberIdx = memberIdx + 1
-        }
-    }
-    setResizedMembers(resizedMembers)
-  }
-
-  useEffect(() => {
-    handleResize()
-  }, [])
-  console.log(resizedMembers)
-
   return (
     <Wrapper className="container">
-      {resizedMembers.map((memberList, idx) => (
-        <Row key={idx} isOdd={memberList.length % 2 === 1}>
-          {memberList.map((member, idx) => (
-            <Member key={idx}>{member.name}</Member>
-          ))}
-        </Row>
+      {members.map((member, idx) => (
+        <Member key={idx}>
+          <h3>{member.name}</h3>
+          <div>{member.role}</div>
+        </Member>
       ))}
     </Wrapper>
   )
@@ -142,8 +43,9 @@ const Page = (props: Props) => {
 const Wrapper = styled.div`
   height: 100vh;
   padding: 100px 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
 `
 
 type Row = { isOdd: boolean }
@@ -157,10 +59,9 @@ const Row = styled.div<Row>`
 `
 
 const Member = styled.div`
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: white;
+  width: 100%;
+  height: fit-content;
+  background-color: #4b4b4b;
 `
 
 export default Page
