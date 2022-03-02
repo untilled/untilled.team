@@ -1,26 +1,30 @@
 import styled from '@emotion/styled'
+import Image from 'next/image'
 import React, { useState } from 'react'
 
 type Props = {}
 
-const words = ['Developer🧑‍💻', 'Designer👨‍🎨', 'Product🤍', 'World🌏']
+const words = ['Developer🧑‍💻', 'Designer👨‍🎨', 'Product😻', 'World🌏']
 
 const Page = (props: Props) => {
-  const [count, setCount] = useState(0)
   return (
     <Wrapper className="">
-      <div className="container">
-        <div>We are Untilled.</div>
+      <Container className="container">
         <div>
-          We are <br />
-          developing <br />
+          <br />
+          Hi there, We{`'`}re Untilled👋
+          <br />
+          <br />
+        </div>
+        <Content>
+          <div>We{`'`}re developing</div>
           <WordList>
             {words.map((word, idx) => (
               <Word key={idx}>{word}</Word>
             ))}
           </WordList>
-        </div>
-      </div>
+        </Content>
+      </Container>
     </Wrapper>
   )
 }
@@ -30,22 +34,28 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  & > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 5rem;
-    font-weight: 600;
-    padding: 100px 0px;
-    width: 100%;
-  }
+`
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 100px 0px;
+  font-size: 55px;
+  font-weight: 600;
+  /* border-radius: 10px;
+  border: 1px; */
+`
+
+const Content = styled.div`
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 `
 
 const WordList = styled.div`
   display: flex;
   flex-direction: column;
-  height: 116px;
+  height: 80px;
   overflow: hidden;
   & > div:first-child {
     animation: show 5s linear infinite;
@@ -53,39 +63,40 @@ const WordList = styled.div`
 
   @keyframes show {
     0% {
-      margin-top: -348px;
+      margin-top: -240px;
     }
     24% {
-      margin-top: -348px;
+      margin-top: -240px;
     }
     25% {
-      margin-top: -232px;
+      margin-top: -160px;
     }
     49% {
-      margin-top: -232px;
+      margin-top: -160px;
     }
     50% {
-      margin-top: -116px;
+      margin-top: -80px;
     }
     74% {
-      margin-top: -116px;
+      margin-top: -80px;
     }
     75% {
-      margin-top: -116px;
+      margin-top: 0px;
     }
     99% {
-      margin-top: -116px;
+      margin-top: 0px;
     }
     100% {
-      margin-top: -348px;
+      margin-top: -240px;
     }
   }
 `
 
 const Word = styled.div`
-  display: inline-block;
-  /* background-color: white; */
-  /* color: black; */
+  width: fit-content;
+  height: 116px;
+  background-color: white;
+  color: black;
 `
 
 export default Page
