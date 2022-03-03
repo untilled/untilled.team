@@ -38,16 +38,6 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   const handleKeyPress = useCallback(
     (e: any) => {
-      //현재 스크룰 한 양. 없는 경우 0임.
-      console.log(
-        (wrapperRef.current?.scrollTop ? wrapperRef.current.scrollTop : 0) +
-          nodes[page].scrollHeight
-      )
-      //해당 페이지 스크룰 해야하는 양
-      // console.log(nodes[page].scrollHeight)
-
-      //
-      console.log(heightList[page + 1])
       if (wrapperRef.current?.scrollTop !== heightList[page]) return
       switch (e.key) {
         case 'ArrowUp':
