@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 type Props = {}
 
-const words = ['Developer🧑‍💻', 'Designer👨‍🎨', 'Product😻', 'World🌏']
+const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑‍💻']
 
 const Page = (props: Props) => {
   return (
@@ -57,7 +57,7 @@ const WordList = styled.div`
   height: 80px;
   overflow: hidden;
   & > div:first-child {
-    animation: show 5s linear infinite;
+    animation: show 10s linear infinite;
   }
 
   @keyframes show {

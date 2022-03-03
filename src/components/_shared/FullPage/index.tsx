@@ -10,18 +10,44 @@ type Props = {
 
 const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const [heightList, setHeightList]: [number[], Function] = useState([])
+  const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const handleScroll = useCallback(
     (e: any) => {
       if (wrapperRef.current?.scrollTop !== heightList[page]) return
-      e.deltaY > 0 ? onNext() : onPrev()
+      //아래로 이동
+      if (e.deltaY > 0) {
+        //스크룰 가장 아래까지 가지 않은 경우 리턴
+        if (
+          nodes[page].scrollHeight !==
+          nodes[page].scrollTop + nodes[page].offsetHeight
+        )
+          return
+        onNext()
+      }
+      //위로 이동
+      else {
+        //스크룰 가장 위까지 가지 않은 경우 리턴
+        if (nodes[page].scrollTop !== 0) return
+        onPrev()
+      }
     },
-    [page, heightList, onNext, onPrev]
+    [page, heightList, nodes, onNext, onPrev]
   )
 
   const handleKeyPress = useCallback(
     (e: any) => {
+      //현재 스크룰 한 양. 없는 경우 0임.
+      console.log(
+        (wrapperRef.current?.scrollTop ? wrapperRef.current.scrollTop : 0) +
+          nodes[page].scrollHeight
+      )
+      //해당 페이지 스크룰 해야하는 양
+      // console.log(nodes[page].scrollHeight)
+
+      //
+      console.log(heightList[page + 1])
       if (wrapperRef.current?.scrollTop !== heightList[page]) return
       switch (e.key) {
         case 'ArrowUp':
@@ -39,7 +65,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const initHeightList = (): number[] => {
     if (wrapperRef.current) {
       const nodes = wrapperRef.current.childNodes
-      const nodeHeights: number[] = Array.from(nodes).map(
+      const heights: number[] = Array.from(nodes).map(
         (node: any, idx: number) => {
           if (nodes.length - 1 === idx) {
             const prevNode: any = nodes[idx - 1]
@@ -49,8 +75,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
           return nodeHeight
         }
       )
-      setHeightList(nodeHeights)
-      return nodeHeights
+      setHeightList(heights)
+      setNodes(nodes)
+      return heights
     }
     return []
   }

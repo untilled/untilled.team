@@ -1,41 +1,89 @@
 import styled from '@emotion/styled'
+import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 type Props = {}
 type members = {
   name: string
   role: string
-  src: string
+  // src: string
 }[]
 
 //27
 const members: members = [
   {
-    name: 'morethanmin',
-    role: 'frontend',
-    src: '',
+    name: 'Morethanmin',
+    role: 'Developer',
+    // src: '/morethanmin.jfif',
   },
   {
     name: 'Sang Min Lee',
-    role: 'backend',
-    src: '',
+    role: 'Developer',
+    // src: '/morethanmin.jfif',
   },
   {
-    name: 'jade',
-    role: 'designer',
-    src: '',
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
   },
 ]
 
 const Page = (props: Props) => {
   return (
-    <Wrapper className="container">
-      {members.map((member, idx) => (
-        <Member key={idx}>
-          <h3>{member.name}</h3>
-          <div>{member.role}</div>
-        </Member>
-      ))}
+    <Wrapper>
+      <h1 className="container">팀 언틸드의 멤버를 만나보세요.</h1>
+      <MenuList>
+        <Menu selected>All</Menu>
+        <Menu>Developer</Menu>
+        <Menu>Designer</Menu>
+      </MenuList>
+      <Cols className="container">
+        {members.map((member, idx) => (
+          <Member key={idx}>
+            <div>
+              <Image width={100} height={100} src={'/'} alt="" />
+            </div>
+            <h3>{member.name}</h3>
+            <div>{member.role}</div>
+          </Member>
+        ))}
+      </Cols>
     </Wrapper>
   )
 }
@@ -43,25 +91,54 @@ const Page = (props: Props) => {
 const Wrapper = styled.div`
   height: 100vh;
   padding: 100px 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 `
 
-type Row = { isOdd: boolean }
-
-const Row = styled.div<Row>`
-  flex-grow: 1;
+const MenuList = styled.div`
+  margin: 45px auto;
+  border-radius: 15px;
+  background-color: #212529;
+  padding: 15px;
   display: flex;
-  padding: 0px ${({ isOdd }) => (isOdd ? '0px' : '120px')};
+  gap: 10px;
+`
+
+type MenuProps = {
+  selected?: boolean
+}
+
+const Menu = styled.div<MenuProps>`
+  width: 100px;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: ${({ selected }) => (selected ? `white` : `none`)};
+  color: ${({ selected }) => (selected ? `black` : `white`)};
+  border-radius: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+`
+
+const Cols = styled.div`
   width: 100%;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 45px;
 `
 
 const Member = styled.div`
   width: 100%;
-  height: fit-content;
-  background-color: #4b4b4b;
+  background-color: #212529;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 45px;
+  padding: 15px;
 `
 
 export default Page
