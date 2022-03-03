@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
   return (
     <Wrapper>
       <div className="container">
-        <Logo color="black" />
+        <Logo color="white" />
       </div>
     </Wrapper>
   )
@@ -16,8 +16,8 @@ const Footer = (props: Props) => {
 
 const Wrapper = styled.div`
   height: 200px;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #212529;
 `
 
 export default Footer

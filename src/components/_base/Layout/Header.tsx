@@ -44,7 +44,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
-          {/* <Button>JOIN TEAM</Button> */}
+          <Button>Join</Button>
         </Right>
       </Container>
     </Wrapper>

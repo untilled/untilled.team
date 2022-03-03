@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
+import Button from 'components/_shared/Button'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 type Props = {}
@@ -14,7 +15,7 @@ type members = {
 const members: members = [
   {
     name: 'Morethanmin',
-    role: 'Developer',
+    role: 'Operator',
     // src: '/morethanmin.jfif',
   },
   {
@@ -42,32 +43,16 @@ const members: members = [
     role: 'Designer',
     // src: '/morethanmin.jfif',
   },
-  {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
-  },
-  {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
-  },
-  {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
-  },
-  {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
-  },
 ]
 
 const Page = (props: Props) => {
+  const router = useRouter()
+  const handleClick = (e: any) => {
+    router.push('/members')
+  }
   return (
     <Wrapper>
-      <h1 className="container">팀 언틸드의 멤버를 만나보세요.</h1>
+      <h1 className="container">팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
       <MenuList>
         <Menu selected>All</Menu>
         <Menu>Developer</Menu>
@@ -76,14 +61,15 @@ const Page = (props: Props) => {
       <Cols className="container">
         {members.map((member, idx) => (
           <Member key={idx}>
-            <div>
-              <Image width={100} height={100} src={'/'} alt="" />
-            </div>
+            <img src="" alt="" />
             <h3>{member.name}</h3>
             <div>{member.role}</div>
           </Member>
         ))}
       </Cols>
+      <Button className="container" onClick={handleClick}>
+        More
+      </Button>
     </Wrapper>
   )
 }
@@ -139,6 +125,10 @@ const Member = styled.div`
   align-items: center;
   margin-bottom: 45px;
   padding: 15px;
+  img {
+    width: 100%;
+    height: 200px;
+  }
 `
 
 export default Page

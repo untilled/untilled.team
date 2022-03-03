@@ -24,10 +24,10 @@ const pages = [
     name: 'Projects',
     component: Projects,
   },
-  {
-    name: 'Achievement',
-    component: Archivement,
-  },
+  // {
+  //   name: 'Achievement',
+  //   component: Archivement,
+  // },
   {
     name: 'Members',
     component: Members,
