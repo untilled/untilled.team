@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
+import Button from 'components/_shared/Button'
 
 type Props = {}
 
@@ -44,7 +45,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
-          <Button>Join</Button>
+          <Button>지원하기</Button>
         </Right>
       </Container>
     </Wrapper>
@@ -67,13 +68,8 @@ const Container = styled.div`
 
 const Right = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
-`
-
-const Button = styled.button`
-  border-radius: 12px;
-  padding: 3px 12px;
-  font-weight: 600;
 `
 
 type MenuProps = {
@@ -81,9 +77,9 @@ type MenuProps = {
 }
 
 const Menu = styled.div<MenuProps>`
-  padding: 0px 3px;
-  font-weight: ${(props) => (props.selected ? '600' : '400')};
-  border-bottom: ${(props) => (props.selected ? '2px solid white' : 'none')};
+  /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
+  border-bottom: ${(props) =>
+    props.selected ? '2px solid white' : '2px solid none'};
 
   &:hover {
   }

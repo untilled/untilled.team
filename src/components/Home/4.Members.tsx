@@ -43,6 +43,21 @@ const members: members = [
     role: 'Designer',
     // src: '/morethanmin.jfif',
   },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+    role: 'Designer',
+    // src: '/morethanmin.jfif',
+  },
 ]
 
 const Page = (props: Props) => {

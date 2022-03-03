@@ -44,14 +44,21 @@ const pages = [
 
 const Home = (props: Props) => {
   const [page, setPage] = useState(0)
-  const pageRef = useRef<HTMLDivElement>(null)
+  const rightBarRef = useRef<HTMLDivElement>(null)
+  const leftBarRef = useRef<HTMLDivElement>(null)
 
   const handleResize = () => {
-    if (pageRef.current && typeof window === 'object') {
-      let right = 0
-      if (window.innerWidth > 1024) right = (window.innerWidth - 1024) / 2
-      pageRef.current.style.right = `${right + 10}px`
-      pageRef.current.style.display = `flex`
+    if (
+      rightBarRef.current &&
+      leftBarRef.current &&
+      typeof window === 'object'
+    ) {
+      let distance = 0
+      if (window.innerWidth > 1024) distance = (window.innerWidth - 1024) / 2
+      rightBarRef.current.style.right = `${distance + 10}px`
+      rightBarRef.current.style.display = `flex`
+      leftBarRef.current.style.left = `${distance + 10}px`
+      leftBarRef.current.style.display = `flex`
     }
   }
   useEffect(() => {
@@ -63,7 +70,7 @@ const Home = (props: Props) => {
 
   useEffect(() => {
     handleResize()
-  }, [pageRef])
+  }, [rightBarRef])
 
   const handleNext = () => {
     if (page === pages.length - 1) return
@@ -76,16 +83,27 @@ const Home = (props: Props) => {
 
   return (
     <Wrapper>
-      <PageMenu ref={pageRef}>
-        <MenuHeader>{pages[page].name}</MenuHeader>
-        {/* <Arrow onClick={handlePrev}>{'∧'}</Arrow> */}
-        {pages.map((menu, idx) => (
-          <Menu selected={page === idx} key={idx} onClick={() => setPage(idx)}>
-            <div>{menu.name}</div>
-          </Menu>
-        ))}
-        {/* <Arrow onClick={handleNext}>{'∨'}</Arrow> */}
-      </PageMenu>
+      <ToolBar ref={leftBarRef}>
+        <div></div>
+        <div></div>
+        <IconList></IconList>
+      </ToolBar>
+      <ToolBar ref={rightBarRef}>
+        <div></div>
+        <PageMenu>
+          <MenuHeader>{pages[page].name}</MenuHeader>
+          {pages.map((menu, idx) => (
+            <Menu
+              selected={page === idx}
+              key={idx}
+              onClick={() => setPage(idx)}
+            >
+              <div>{menu.name}</div>
+            </Menu>
+          ))}
+        </PageMenu>
+        <div></div>
+      </ToolBar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
@@ -99,23 +117,34 @@ const Wrapper = styled.div`
   overflow-x: hidden;
 `
 
-const PageMenu = styled.div`
+const ToolBar = styled.div`
   z-index: 10;
-  position: relative;
+  top: 0;
+  bottom: 0;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  font-size: 0.8rem;
+`
+const PageMenu = styled.div`
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  position: absolute;
+  flex-shrink: 0;
   cursor: pointer;
-  top: 50%;
-  transform: translate(0, -50%);
   font-size: 0.8rem;
 `
 
-const Arrow = styled.div`
-  color: #494949;
-  font-weight: 600;
+const IconList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
 `
 
 type MenuProps = {

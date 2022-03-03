@@ -22,12 +22,14 @@ const Logo = ({ color = 'white', size = 'normal' }: Props) => {
 const Wrapper = styled.div`
   width: fit-content;
   padding: 5px 10px;
-  background-color: ${({ color }) => (color === 'white' ? 'white' : 'black')};
+  background-color: ${({ color }) =>
+    color === 'white' ? 'white' : color === 'black' ? 'black' : '#212529'};
   font-weight: 900;
   font-size: 1.5rem;
   cursor: pointer;
   div {
-    color: ${({ color }) => (color === 'white' ? 'black' : 'white')};
+    color: ${({ color }) =>
+      color === 'white' ? 'black' : color === 'black' ? 'white' : 'white'};
     border-top: 5px solid
       ${({ color }) => (color === 'white' ? 'black' : 'white')};
   }
