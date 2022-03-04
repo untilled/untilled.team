@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import WordSlide from 'components/_shared/WordSlide'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -18,14 +19,10 @@ const Page = (props: Props) => {
         </div>
         <Content>
           <div>We{`'`}re developing</div>
-          <WordList>
-            {words.map((word, idx) => (
-              <Word key={idx}>{word}</Word>
-            ))}
-          </WordList>
+          <WordSlide words={words} background height={80} />
         </Content>
       </TitleBox>
-      <Middle className="container">{/* <h1>About</h1> */}</Middle>
+      <Middle className="container"></Middle>
     </Wrapper>
   )
 }
@@ -53,59 +50,12 @@ const Content = styled.div`
   flex-wrap: wrap;
 `
 
-const WordList = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 80px;
-  overflow: hidden;
-  & > div:first-child {
-    animation: show 10s linear infinite;
-  }
-
-  @keyframes show {
-    0% {
-      margin-top: -240px;
-    }
-    24% {
-      margin-top: -240px;
-    }
-    25% {
-      margin-top: -160px;
-    }
-    49% {
-      margin-top: -160px;
-    }
-    50% {
-      margin-top: -80px;
-    }
-    74% {
-      margin-top: -80px;
-    }
-    75% {
-      margin-top: 0px;
-    }
-    99% {
-      margin-top: 0px;
-    }
-    100% {
-      margin-top: -240px;
-    }
-  }
-`
-
-const Word = styled.div`
-  width: fit-content;
-  height: 116px;
-  background-color: #212529;
-  color: white;
-`
-
 const Middle = styled.div`
   flex-grow: 1;
   width: 100%;
   background-color: #212529;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   padding-top: 50px;
 `
 
