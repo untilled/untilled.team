@@ -58,9 +58,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100px;
   padding: 10px;
-  ${mobile} {
-    display: none;
-  }
 `
 const Container = styled.div`
   display: flex;
