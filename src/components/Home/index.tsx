@@ -22,10 +22,10 @@ const pages = [
     name: 'About',
     component: About,
   },
-  // {
-  //   name: 'Achievement',
-  //   component: Archivement,
-  // },
+  {
+    name: 'Achievement',
+    component: Archivement,
+  },
   {
     name: 'Projects',
     component: Projects,
@@ -89,9 +89,9 @@ const Home = (props: Props) => {
         <div></div>
         <div></div>
         <IconList>
-          <div>
+          <a href="https://github.com/untilled">
             <AiFillGithub />
-          </div>
+          </a>
           <div>
             <IoMdSettings />
           </div>
@@ -167,7 +167,7 @@ const IconList = styled.div`
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
-  & > div {
+  & > * {
     border-radius: 50%;
     background-color: #494949;
     width: 40px;

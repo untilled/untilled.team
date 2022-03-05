@@ -21,8 +21,7 @@ const Contact = (props: Props) => {
       </Content>
       <h3>
         성장에 대한 관심과 열정이 있는 분은 남녀노소 국적, 나이불문 누구나
-        참여할 수 있어요! <br />
-        (고양이 키우시는 분 우대)
+        참여할 수 있어요!
       </h3>
       <Button>지원하기</Button>
     </Wrapper>
@@ -30,8 +29,12 @@ const Contact = (props: Props) => {
 }
 
 const Wrapper = styled.div`
+  &::-webkit-scrollbar {
+    display: none;
+  }
   height: 100vh;
   padding-top: 100px;
+  overflow: scroll;
   h1 {
     margin: 0;
   }

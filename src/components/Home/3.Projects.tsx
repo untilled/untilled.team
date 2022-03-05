@@ -62,6 +62,10 @@ const Projects = (props: Props) => {
   )
 }
 const Wrapper = styled.div`
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   width: 100vw;
   height: 100vh;
   padding-top: 100px;

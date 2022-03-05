@@ -22,14 +22,24 @@ const Page = (props: Props) => {
           <WordSlide words={words} background height={80} />
         </Content>
       </TitleBox>
-      <Middle className="container"></Middle>
+      <Line />
+      <Middle>
+        <div className="container">
+          <h1>About</h1>
+        </div>
+      </Middle>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100vh;
   /* background-color: #212529; */
@@ -50,13 +60,22 @@ const Content = styled.div`
   flex-wrap: wrap;
 `
 
-const Middle = styled.div`
-  flex-grow: 1;
+const Line = styled.div`
   width: 100%;
+  /* border-top: 3px solid white; */
+`
+
+const Middle = styled.div`
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
   background-color: #212529;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  padding-top: 50px;
+  padding-top: 30px;
+  h1 {
+    border-bottom: 5px solid white;
+  }
 `
 
 export default Page

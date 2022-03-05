@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import Button from 'components/_shared/Button'
-
+import { mobile } from 'styles/media'
 type Props = {}
 
 const menus = [
@@ -45,7 +45,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
-          <Button>recruit</Button>
+          <Button color="white">recruit</Button>
         </Right>
       </Container>
     </Wrapper>
@@ -58,6 +58,9 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100px;
   padding: 10px;
+  ${mobile} {
+    display: none;
+  }
 `
 const Container = styled.div`
   display: flex;

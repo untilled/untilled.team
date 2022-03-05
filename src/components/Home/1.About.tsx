@@ -11,24 +11,44 @@ type Props = {}
 const About = (props: Props) => {
   return (
     <Wrapper>
-      <div className="container">
-        <h1>IT 플랫폼 개발팀 언틸드입니다</h1>
-        <h1>발전적인 플랫폼을 만들며 발전하고자 합니다.</h1>
-        {/* <h1>Developing Developers</h1> */}
-      </div>
+      <Middle>
+        <div className="container">
+          <div>
+            <h1>IT 플랫폼 개발 모임 언틸드입니다</h1>
+            <h1>발전적인 플랫폼을 만들며 발전하고자 합니다.</h1>
+            {/* <h1>Developing Developers</h1> */}
+          </div>
+          <h1>Archivement</h1>
+        </div>
+      </Middle>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   height: 100vh;
-  padding-bottom: 100px;
+`
+
+const Middle = styled.div`
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #212529;
+  padding-top: 100px;
+  height: 100%;
+  height: 100vh;
   & > div {
-    padding-top: 100px;
+    display: flex;
     height: 100%;
-    background-color: #212529;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    & > h1 {
+      border-bottom: 5px solid white;
+    }
   }
 `
 
