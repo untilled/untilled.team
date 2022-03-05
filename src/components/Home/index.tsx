@@ -3,12 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
 import Intro from './0.Intro'
 import About from './1.About'
-import Projects from './2.Projects'
-import Archivement from './3.Archivement'
+import Projects from './3.Projects'
+import Archivement from './2.Archivement'
 import Members from './4.Members'
 import Contact from './5.Contact'
 import Footer from 'components/_shared/Footer'
-
+import { AiFillGithub } from 'react-icons/ai'
+import { IoMdSettings } from 'react-icons/io'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 type Props = {}
 
 const pages = [
@@ -20,14 +22,14 @@ const pages = [
     name: 'About',
     component: About,
   },
-  {
-    name: 'Projects',
-    component: Projects,
-  },
   // {
   //   name: 'Achievement',
   //   component: Archivement,
   // },
+  {
+    name: 'Projects',
+    component: Projects,
+  },
   {
     name: 'Members',
     component: Members,
@@ -83,12 +85,19 @@ const Home = (props: Props) => {
 
   return (
     <Wrapper>
-      <ToolBar ref={leftBarRef}>
+      <ToolBar direction="left" ref={leftBarRef}>
         <div></div>
         <div></div>
-        <IconList></IconList>
+        <IconList>
+          <div>
+            <AiFillGithub />
+          </div>
+          <div>
+            <IoMdSettings />
+          </div>
+        </IconList>
       </ToolBar>
-      <ToolBar ref={rightBarRef}>
+      <ToolBar direction="right" ref={rightBarRef}>
         <div></div>
         <PageMenu>
           <MenuHeader>{pages[page].name}</MenuHeader>
@@ -102,7 +111,16 @@ const Home = (props: Props) => {
             </Menu>
           ))}
         </PageMenu>
-        <div></div>
+        <ArrowList>
+          {/* <div>
+            <MdKeyboardArrowUp />
+          </div> */}
+          {page !== pages.length - 1 && (
+            <div onClick={handleNext}>
+              <MdKeyboardArrowDown />
+            </div>
+          )}
+        </ArrowList>
       </ToolBar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
@@ -116,15 +134,19 @@ const Home = (props: Props) => {
 const Wrapper = styled.div`
   overflow-x: hidden;
 `
+type ToolBar = {
+  direction: string
+}
 
-const ToolBar = styled.div`
+const ToolBar = styled.div<ToolBar>`
   z-index: 10;
   top: 0;
   bottom: 0;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: ${({ direction }) =>
+    direction === 'left' ? 'flex-start' : 'flex-end'};
   position: absolute;
   font-size: 0.8rem;
 `
@@ -145,6 +167,42 @@ const IconList = styled.div`
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
+  & > div {
+    border-radius: 50%;
+    background-color: #494949;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    cursor: pointer;
+  }
+`
+
+const ArrowList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  & > div {
+    border-radius: 50%;
+    background-color: #494949;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+    cursor: pointer;
+  }
 `
 
 type MenuProps = {

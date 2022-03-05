@@ -7,23 +7,14 @@ const Page = (props: Props) => {
   return (
     <Wrapper className="">
       <div className="container">
-        <h1>We are Untilled</h1>
-        <h1>We are Untilled</h1>
-        <h1>We are Untilled</h1>
+        <h1>언틸드는 끊임없이 성장하고 있어요</h1>
       </div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
   height: 100vh;
-  & > div {
-    height: 50vh;
-    /* background-color: #8d8d8d; */
-    width: 100%;
-  }
 `
 
 export default Page

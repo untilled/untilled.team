@@ -49,10 +49,13 @@ const projects = [
 const Projects = (props: Props) => {
   return (
     <Wrapper>
-      <h1 className="container">Untilled Projects</h1>
+      <Content>
+        <h1 className="container">지금까지 우리가 만들어온 것들😺</h1>
+        <h3 className="container">놀랍게도 아무것도 없어요!</h3>
+      </Content>
       <List>
         {projects.map((project) => (
-          <Project key={project.id}>{project.name}</Project>
+          <Project key={project.id}></Project>
         ))}
       </List>
     </Wrapper>
@@ -62,26 +65,27 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  & > h1 {
+  & > * {
     width: 100%;
   }
 `
 
+const Content = styled.div`
+  margin-bottom: 45px;
+`
+
 const List = styled.div`
   width: 100%;
-  height: 100%;
+  padding: 45px 0;
   display: flex;
   align-items: center;
-  top: 50%;
   gap: 45px;
   overflow: hidden;
+  background-color: #212529;
 `
 
 const Project = styled.div`
-  border: 1px solid white;
+  background-color: #212529;
   width: 300px;
   flex-shrink: 0;
   height: 450px;

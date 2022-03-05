@@ -2,10 +2,16 @@
 
 > untilled repository
 
+## Contributors
+
+- [Lee Sang Min](https://github.com/morethanmin) (Operator)
+- [Jade](https://github.com/morethanmin) (Developer)
+- [morethanmin](https://github.com/morethanmin) (Designer)
+
 ## Features
 
-- About Page slide
-- Database using notion api
+- Full Page slide
+- Database using notion
   - untilled team notion 페이지에 있는 data를 notion api를 통해 불러와 표시하고 있습니다.
 
 ## Tech and libraries

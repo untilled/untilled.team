@@ -45,7 +45,7 @@ const Header = ({}: Props) => {
               </a>
             </Link>
           ))}
-          <Button>지원하기</Button>
+          <Button>recruit</Button>
         </Right>
       </Container>
     </Wrapper>

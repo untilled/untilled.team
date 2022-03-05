@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 type Props = {}
 type members = {
   name: string
+  desc: string
   role: string
   // src: string
 }[]
@@ -15,48 +16,57 @@ type members = {
 const members: members = [
   {
     name: 'Morethanmin',
+    desc: '생각하는 걸 조와함',
     role: 'Operator',
     // src: '/morethanmin.jfif',
   },
   {
     name: 'Sang Min Lee',
+    desc: 'Javascript Magician🧙🏼‍♂️',
     role: 'Developer',
     // src: '/morethanmin.jfif',
   },
   {
     name: 'Jade',
+    desc: 'figma 장인',
     role: 'Designer',
     // src: '/morethanmin.jfif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
   {
-    name: 'Jade',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+    name: 'Undefined...',
+    desc: '',
+    role: '',
+    // src: '/morethanmin.fif',
   },
 ]
 
@@ -68,6 +78,9 @@ const Page = (props: Props) => {
   return (
     <Wrapper>
       <h1 className="container">팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
+      <h3 className="container">
+        지상 최고의 실력을 갖추고 싶은 개발자와 디자이너로 구성되어 있어요.
+      </h3>
       <MenuList>
         <Menu selected>All</Menu>
         <Menu>Developer</Menu>
