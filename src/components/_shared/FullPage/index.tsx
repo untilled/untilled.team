@@ -20,7 +20,8 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   })
 
   const handleScroll = useCallback(
-    (e: any) => {
+    (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) < 30) return
       if (wrapperRef.current?.scrollTop !== heightList[page]) return
       //아래로 이동
       if (e.deltaY > 0) {
@@ -104,14 +105,14 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   useEffect(() => {
     if (isMobile) {
-      window.removeEventListener('mousewheel', handleScroll)
+      window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
       return
     }
     window.addEventListener('wheel', handleScroll)
     window.addEventListener('keydown', handleKeyPress)
     return () => {
-      window.removeEventListener('mousewheel', handleScroll)
+      window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
     }
   }, [page, handleScroll, handleKeyPress, isMobile])
