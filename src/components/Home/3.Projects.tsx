@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import { mobile } from 'styles/media'
 
 type Props = {}
 
@@ -71,6 +72,9 @@ const Wrapper = styled.div`
   padding-top: 100px;
   & > * {
     width: 100%;
+  }
+  ${mobile} {
+    height: fit-content;
   }
 `
 

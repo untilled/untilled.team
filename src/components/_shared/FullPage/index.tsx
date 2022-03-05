@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
+import { mobile } from 'styles/media'
 
 type Props = {
   page: number
@@ -12,6 +14,10 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const [heightList, setHeightList]: [number[], Function] = useState([])
   const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const isMobile = useMediaQuery({
+    query: '(max-width: 1024px)',
+  })
 
   const handleScroll = useCallback(
     (e: any) => {
@@ -72,7 +78,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     return []
   }
 
-  //페이지 높이값 변경시 높이 값 다시 받아온 뒤, 해당 페이지 높이값으로 이동
+  //페이지 높이값 변경시 높이 값 다시 받아온 뒤, 해당 페이지 위치로 이동
   const handleResize = useCallback(() => {
     const hightList = initHeightList()
     if (wrapperRef.current) {
@@ -82,6 +88,10 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   }, [page])
 
   useEffect(() => {
+    if (isMobile) {
+      window.removeEventListener('resize', handleResize)
+      return
+    }
     window.addEventListener('resize', handleResize)
     if (wrapperRef.current) {
       const parentNode = wrapperRef.current
@@ -90,16 +100,21 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [page, heightList, handleResize])
+  }, [page, heightList, handleResize, isMobile])
 
   useEffect(() => {
-    window.addEventListener('mousewheel', handleScroll)
+    if (isMobile) {
+      window.removeEventListener('mousewheel', handleScroll)
+      window.removeEventListener('keydown', handleKeyPress)
+      return
+    }
+    window.addEventListener('wheel', handleScroll)
     window.addEventListener('keydown', handleKeyPress)
     return () => {
       window.removeEventListener('mousewheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
     }
-  }, [page, handleScroll, handleKeyPress])
+  }, [page, handleScroll, handleKeyPress, isMobile])
 
   useEffect(() => {
     initHeightList()
@@ -112,6 +127,12 @@ const Wrapper = styled.div`
   max-height: 100vh;
   overflow-y: hidden;
   scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  ${mobile} {
+    overflow-y: scroll;
+  }
 `
 
 export default FullPage

@@ -3,6 +3,7 @@ import Button from 'components/_shared/Button'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { mobile } from 'styles/media'
 
 type Props = {}
 type members = {
@@ -86,7 +87,7 @@ const Page = (props: Props) => {
         <Menu>Developer</Menu>
         <Menu>Designer</Menu>
       </MenuList>
-      <Cols className="container">
+      <MemberList className="container">
         {members.map((member, idx) => (
           <Member key={idx}>
             <img src="" alt="" />
@@ -94,7 +95,7 @@ const Page = (props: Props) => {
             <div>{member.role}</div>
           </Member>
         ))}
-      </Cols>
+      </MemberList>
       <Button className="container" onClick={handleClick}>
         More
       </Button>
@@ -111,6 +112,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
+
+  ${mobile} {
+    height: fit-content;
+  }
 `
 
 const MenuList = styled.div`
@@ -127,7 +132,7 @@ type MenuProps = {
 }
 
 const Menu = styled.div<MenuProps>`
-  width: 100px;
+  width: 100%;
   text-align: center;
   font-size: 0.8rem;
   background-color: ${({ selected }) => (selected ? `white` : `none`)};
@@ -137,11 +142,15 @@ const Menu = styled.div<MenuProps>`
   cursor: pointer;
 `
 
-const Cols = styled.div`
+const MemberList = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 45px;
+
+  ${mobile} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `
 
 const Member = styled.div`

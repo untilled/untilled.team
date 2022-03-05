@@ -11,6 +11,7 @@ import Footer from 'components/_shared/Footer'
 import { AiFillGithub } from 'react-icons/ai'
 import { IoMdSettings } from 'react-icons/io'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+import { mobile } from 'styles/media'
 type Props = {}
 
 const pages = [
@@ -48,7 +49,6 @@ const Home = (props: Props) => {
   const [page, setPage] = useState(0)
   const rightBarRef = useRef<HTMLDivElement>(null)
   const leftBarRef = useRef<HTMLDivElement>(null)
-
   const handleResize = () => {
     if (
       rightBarRef.current &&
@@ -111,10 +111,16 @@ const Home = (props: Props) => {
             </Menu>
           ))}
         </PageMenu>
+
         <ArrowList>
           {/* <div>
             <MdKeyboardArrowUp />
           </div> */}
+          {page !== 0 && (
+            <div onClick={handlePrev}>
+              <MdKeyboardArrowUp />
+            </div>
+          )}
           {page !== pages.length - 1 && (
             <div onClick={handleNext}>
               <MdKeyboardArrowDown />
@@ -149,6 +155,10 @@ const ToolBar = styled.div<ToolBar>`
     direction === 'left' ? 'flex-start' : 'flex-end'};
   position: absolute;
   font-size: 0.8rem;
+
+  ${mobile} {
+    display: none !important;
+  }
 `
 const PageMenu = styled.div`
   position: relative;

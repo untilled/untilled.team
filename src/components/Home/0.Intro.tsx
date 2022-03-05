@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import WordSlide from 'components/_shared/WordSlide'
-import Image from 'next/image'
-import React, { useState } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
+import { MdOutlineMaximize } from 'react-icons/md'
+import { VscChromeMaximize } from 'react-icons/vsc'
+import { mobile } from 'styles/media'
 
 type Props = {}
 
@@ -22,12 +24,22 @@ const Page = (props: Props) => {
           <WordSlide words={words} background height={80} />
         </Content>
       </TitleBox>
-      <Line />
-      <Middle>
+      <BrowserBox>
+        <Header>
+          <Title>Untilled</Title>
+          <Buttons>
+            <div>
+              <VscChromeMaximize />
+            </div>
+            <div>
+              <AiOutlineClose />
+            </div>
+          </Buttons>
+        </Header>
         <div className="container">
-          <h1>About</h1>
+          <h2>About</h2>
         </div>
-      </Middle>
+      </BrowserBox>
     </Wrapper>
   )
 }
@@ -42,7 +54,10 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100vh;
-  /* background-color: #212529; */
+
+  ${mobile} {
+    height: fit-content;
+  }
 `
 
 const TitleBox = styled.div`
@@ -50,8 +65,11 @@ const TitleBox = styled.div`
   padding: 100px 0px;
   font-size: 55px;
   font-weight: 600;
-  /* border-radius: 10px;
-  border: 1px; */
+
+  ${mobile} {
+    font-size: 40px;
+    padding: 50px 0;
+  }
 `
 
 const Content = styled.div`
@@ -60,21 +78,52 @@ const Content = styled.div`
   flex-wrap: wrap;
 `
 
-const Line = styled.div`
-  width: 100%;
-  /* border-top: 3px solid white; */
-`
-
-const Middle = styled.div`
+const BrowserBox = styled.div`
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+  height: fit-content;
   background-color: #212529;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  padding-top: 30px;
-  h1 {
+  h2 {
     border-bottom: 5px solid white;
+  }
+`
+
+const Header = styled.div`
+  background-color: #343a41;
+  width: 100%;
+  height: 40px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Title = styled.div`
+  margin-left: 15px;
+`
+
+const Buttons = styled.div`
+  border-top-right-radius: 25px;
+  display: flex;
+  height: 100%;
+  z-index: 15;
+  & > div {
+    padding: 10px;
+    height: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: #414952;
+    }
+  }
+  & > div:last-child {
+    border-top-right-radius: 25px;
+    &:hover {
+      background-color: red;
+    }
   }
 `
 

@@ -5,6 +5,9 @@ import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import Button from 'components/_shared/Button'
 import { mobile } from 'styles/media'
+import { useMediaQuery } from 'react-responsive'
+import { AiOutlineMenu } from 'react-icons/ai'
+
 type Props = {}
 
 const menus = [
@@ -32,21 +35,33 @@ const menus = [
 
 const Header = ({}: Props) => {
   const router = useRouter()
-
+  const isMobile = useMediaQuery({
+    query: '(max-width: 1024px)',
+  })
   return (
     <Wrapper className="">
       <Container className="container">
-        <Logo />
-        <Right>
-          {menus.map((menu) => (
-            <Link key={menu.id} href={menu.href}>
-              <a>
-                <Menu selected={menu.href === router.asPath}>{menu.name}</Menu>
-              </a>
-            </Link>
-          ))}
-          <Button color="white">recruit</Button>
-        </Right>
+        <Mobile>
+          <div>
+            <AiOutlineMenu />
+          </div>
+          <Logo />
+        </Mobile>
+        <Desktop>
+          <Logo />
+          <Right>
+            {menus.map((menu) => (
+              <Link key={menu.id} href={menu.href}>
+                <a>
+                  <Menu selected={menu.href === router.asPath}>
+                    {menu.name}
+                  </Menu>
+                </a>
+              </Link>
+            ))}
+            {/* <Button color="white">recruit</Button> */}
+          </Right>
+        </Desktop>
       </Container>
     </Wrapper>
   )
@@ -60,10 +75,31 @@ const Wrapper = styled.div`
   padding: 10px;
 `
 const Container = styled.div`
+  & > div {
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+`
+
+const Mobile = styled.div`
+  display: none;
+  & > div {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  ${mobile} {
+    display: flex;
+  }
+`
+
+const Desktop = styled.div`
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
+  ${mobile} {
+    display: none;
+  }
 `
 
 const Right = styled.div`
