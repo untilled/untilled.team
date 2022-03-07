@@ -4,7 +4,7 @@ import FullPage from '../_shared/FullPage'
 import Intro from './0.Intro'
 import About from './1.About'
 import Projects from './3.Projects'
-import Archivement from './2.Archivement'
+import Achievement from './2.Achievement'
 import Members from './4.Members'
 import Contact from './5.Contact'
 import Footer from 'components/_shared/Footer'
@@ -12,6 +12,8 @@ import { AiFillGithub } from 'react-icons/ai'
 import { IoMdSettings } from 'react-icons/io'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { mobile } from 'styles/media'
+
+//q&a페이지도 하나 만들어서 메시지 형태로 만들어보는건 어떨까?
 type Props = {}
 
 const pages = [
@@ -25,7 +27,7 @@ const pages = [
   },
   {
     name: 'Achievement',
-    component: Archivement,
+    component: Achievement,
   },
   {
     name: 'Projects',

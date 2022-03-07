@@ -33,42 +33,6 @@ const members: members = [
     role: 'Designer',
     // src: '/morethanmin.jfif',
   },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
-  {
-    name: 'Undefined...',
-    desc: '',
-    role: '',
-    // src: '/morethanmin.fif',
-  },
 ]
 
 const Page = (props: Props) => {

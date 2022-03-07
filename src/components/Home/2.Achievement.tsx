@@ -8,7 +8,7 @@ const Page = (props: Props) => {
     <Wrapper className="">
       <Middle>
         <div className="container">
-          <h1>언틸드는 끊임없이 성장하고 있어요</h1>
+          <h2>언틸드는 끊임없이 성장하고 있어요</h2>
         </div>
       </Middle>
     </Wrapper>

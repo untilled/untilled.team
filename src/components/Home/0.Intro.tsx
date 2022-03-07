@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
+import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlide'
 import { AiOutlineClose } from 'react-icons/ai'
-import { MdOutlineMaximize } from 'react-icons/md'
-import { VscChromeMaximize } from 'react-icons/vsc'
+import { VscChromeMaximize, VscChromeMinimize } from 'react-icons/vsc'
 import { mobile } from 'styles/media'
 
 type Props = {}
@@ -25,17 +25,7 @@ const Page = (props: Props) => {
         </Content>
       </TitleBox>
       <BrowserBox>
-        <Header>
-          <Title>Untilled</Title>
-          <Buttons>
-            <div>
-              <VscChromeMaximize />
-            </div>
-            <div>
-              <AiOutlineClose />
-            </div>
-          </Buttons>
-        </Header>
+        <Header title="Untilled" height={40} />
         <div className="container">
           <h2>About</h2>
         </div>
@@ -88,42 +78,6 @@ const BrowserBox = styled.div`
   border-top-right-radius: 25px;
   h2 {
     border-bottom: 5px solid white;
-  }
-`
-
-const Header = styled.div`
-  background-color: #343a41;
-  width: 100%;
-  height: 40px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
-const Title = styled.div`
-  margin-left: 15px;
-`
-
-const Buttons = styled.div`
-  border-top-right-radius: 25px;
-  display: flex;
-  height: 100%;
-  z-index: 15;
-  & > div {
-    padding: 10px;
-    height: 100%;
-    cursor: pointer;
-    &:hover {
-      background-color: #414952;
-    }
-  }
-  & > div:last-child {
-    border-top-right-radius: 25px;
-    &:hover {
-      background-color: red;
-    }
   }
 `
 
