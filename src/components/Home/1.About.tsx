@@ -22,18 +22,12 @@ const About = (props: Props) => {
               IT 플랫폼 개발 모임 언틸드입니다.
               <br />
               발전적인 서비스를 만들며 성장하고자 합니다.
-              {/* <br />
-              단순한 토이프로젝트를 만드는 게 아닌 기획부터 실제 서비스까지
-              진행합니다. */}
             </h2>
             <div>
               단순한 토이프로젝트가 아닌 기획부터 설계, 그리고 실제 운영까지
               진행합니다.
             </div>
-            <div>
-              다양한 개발 활동을 진행하며, 성장을 위해 끊임없이 노력하고
-              있습니다.
-            </div>
+            <div>다양한 개발 활동과 환경을 제공해요.</div>
             <br />
             {/* <h1>Developing Developers</h1> */}
           </div>
@@ -66,7 +60,7 @@ const About = (props: Props) => {
               <ContentBox>업계 최대 유연 근무제 도입</ContentBox>
             </Card>
           </CardList>
-          <h1>Archivement</h1>
+          <h2>Archivement</h2>
         </div>
       </Middle>
     </Wrapper>
@@ -97,7 +91,7 @@ const Middle = styled.div`
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
-    & > h1 {
+    & > h2 {
       border-bottom: 5px solid white;
     }
     & > div {
