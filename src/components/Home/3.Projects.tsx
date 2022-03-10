@@ -50,12 +50,13 @@ const projects = [
 const Projects = (props: Props) => {
   return (
     <Wrapper>
-      <h1 className="container">지금까지 우리가 만들어온 것들😺</h1>
-      <div className="container">
-        {/* 발전적인 서비스를 만들며 성장하고자 합니다. */}
-        개발하는 사람부터 서비스를 이용하는 사람까지 모두가 발전할 수 있는
-        서비스를 개발하고 제공하고자 해요.
-      </div>
+      <Title>
+        <h1>지금까지 우리가 만들어온 것들😺</h1>
+        <h3>
+          개발하는 사람부터 서비스를 이용하는 사람까지 모두가 발전할 수 있는
+          서비스를 개발하고 제공하고자 해요.
+        </h3>
+      </Title>
       <List>
         {projects.map((project) => (
           <Project key={project.id}></Project>
@@ -80,10 +81,17 @@ const Wrapper = styled.div`
   }
 `
 
-const Content = styled.div`
-  margin-bottom: 45px;
-  & > * {
-    width: 100%;
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  h3 {
+    color: #ced4da;
   }
 `
 
