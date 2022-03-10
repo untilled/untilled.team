@@ -9,21 +9,21 @@ const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙�
 
 const Contact = (props: Props) => {
   return (
-    <Wrapper className="container">
-      <h1>
+    <Wrapper>
+      <h1 className="container">
         프로젝트 혼자 할 순 없잖아요? <br />
       </h1>
-      <Content>
+      <Content className="container">
         <h1>언틸드와 함께 프로젝트를 시작해보세요</h1>
         <h1>
           <WordSlide words={words} height={80} />
         </h1>
       </Content>
-      <h3>
+      <h3 className="container">
         성장에 대한 관심과 열정이 있는 분은 남녀노소 국적, 나이불문 누구나
         참여할 수 있어요!
       </h3>
-      <Button>지원하기</Button>
+      {/* <Button>지원하기</Button> */}
     </Wrapper>
   )
 }
@@ -34,9 +34,11 @@ const Wrapper = styled.div`
   }
   height: 100vh;
   padding-top: 100px;
+  display: flex;
+  flex-direction: column;
   overflow: scroll;
   h1 {
-    margin: 0;
+    margin: 0 auto;
   }
 `
 

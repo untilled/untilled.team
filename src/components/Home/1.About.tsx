@@ -5,35 +5,25 @@ import { mobile } from 'styles/media'
 import imageLoader from 'libs/loader'
 import Header from 'components/_shared/Header'
 type Props = {}
-// 발전적인 서비스를 만들며 발전하고자 합니다.
-// 단순한 토이 프로젝트를 만드는 팀이 아닙니다.
 
-// 각각
-// 업계 최대 크기의 사옥 gather 타운 창처럼
-// 업계 최대 유연 근무제 slack 메신저처럼
-// 업계 최소 급여 지원 (0~0원)
+// 기획자 개발자 디자이너 한줄씩 토스ref
+
+// 만드는 사람을 위한, 사용하는 사람을 위한 프로젝트 개발
 const About = (props: Props) => {
   return (
     <Wrapper>
       <Middle>
         <div className="container">
-          <div>
-            <h2>
-              IT 플랫폼 개발 모임 언틸드입니다.
-              <br />
-              발전적인 서비스를 만들며 성장하고자 합니다.
-            </h2>
-            <div>
-              단순한 토이프로젝트가 아닌 기획부터 설계, 그리고 실제 운영까지
-              진행합니다.
-            </div>
-            <div>다양한 개발 활동과 환경을 제공해요.</div>
+          <Title>
+            <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
+            <h3>팀 언틸드는 다양한 프로젝트를 만들고 개발해요.</h3>
+            <h3>기획부터 개발 그리고 서비스까지의 모든 과정을 함께해요.</h3>
             <br />
             {/* <h1>Developing Developers</h1> */}
-          </div>
+          </Title>
           <CardList>
-            <Card>
-              <Header title="😺Cathub" height={40} />
+            {/* <Card>
+              <Header title="🐽pigma" height={40} />
               <ImgBox></ImgBox>
               <ContentBox>다양한 개발 프로젝트 진행</ContentBox>
             </Card>
@@ -47,7 +37,7 @@ const About = (props: Props) => {
                   alt=""
                 />
               </ImgBox>
-              <ContentBox>팀원과 함께하는 최대 규모의 오피스 제공</ContentBox>
+              <ContentBox>최대 규모의 오피스에서 함께하는 개발</ContentBox>
             </Card>
             <Card>
               <Header title="Sleck" height={40} color="#350d36" />
@@ -58,9 +48,8 @@ const About = (props: Props) => {
                 <MsgBox>....</MsgBox>
               </MsgList>
               <ContentBox>업계 최대 유연 근무제 도입</ContentBox>
-            </Card>
+            </Card> */}
           </CardList>
-          <h2>Archivement</h2>
         </div>
       </Middle>
     </Wrapper>
@@ -68,6 +57,7 @@ const About = (props: Props) => {
 }
 
 const Wrapper = styled.div`
+  color: black;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -83,20 +73,33 @@ const Middle = styled.div`
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  background-color: #212529;
-  padding-top: 100px;
+  background-color: #e9ecef;
+  /* background-color: #212529; */
+  padding-top: 80px;
   height: 100%;
   & > div {
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: space-between;
-    & > h2 {
-      border-bottom: 5px solid white;
-    }
+    gap: 60px;
     & > div {
       font-size: 0.9rem;
     }
+  }
+`
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 40px;
+  }
+
+  h3 {
+    color: #495057;
   }
 `
 
@@ -110,7 +113,7 @@ const CardList = styled.div`
 `
 
 const Card = styled.div`
-  background-color: white;
+  background-color: #dee2e6;
   height: fit-content;
   border-radius: 15px;
   border-top-left-radius: 30px;

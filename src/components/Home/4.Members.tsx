@@ -44,7 +44,7 @@ const Page = (props: Props) => {
     <Wrapper>
       <h1 className="container">팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
       <h3 className="container">
-        지상 최고의 실력을 갖춘 개발자와 디자이너로 구성되어 있어요.
+        지상 최고의 실력을 갖춘 팀원으로 구성되어 있어요.
       </h3>
       <MenuList>
         <Menu selected>All</Menu>

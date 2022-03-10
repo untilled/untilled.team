@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { mobile } from './media'
 
 export const globalStyles = css`
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -12,6 +13,8 @@ export const globalStyles = css`
     color: white;
   }
   * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
   }
   *:link {
@@ -35,5 +38,20 @@ export const globalStyles = css`
 
   .borderLine {
     border: 1px solid black;
+  }
+
+  .title_1 {
+    font-size: 55px;
+    font-weight: 600;
+    ${mobile} {
+      font-size: 40px;
+    }
+  }
+  .title_1 {
+    font-size: 55px;
+    font-weight: 600;
+    ${mobile} {
+      font-size: 40px;
+    }
   }
 `

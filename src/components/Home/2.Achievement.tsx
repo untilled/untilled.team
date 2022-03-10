@@ -9,7 +9,12 @@ const Page = (props: Props) => {
     <Wrapper className="">
       <Middle>
         <div className="container">
-          <h2>언틸드는 끊임없이 성장하고 있어요</h2>
+          <Title>
+            <h1>언틸드는 끊임없이 성장하고 있어요</h1>
+            <h3>팀 언틸드에서는 다양한 프로젝트를 만들고, 개발해요.</h3>
+            <br />
+            {/* <h1>Developing Developers</h1> */}
+          </Title>
           <BoxList>
             <Box></Box>
             <Box></Box>
@@ -23,6 +28,7 @@ const Page = (props: Props) => {
 }
 
 const Wrapper = styled.div`
+  color: black;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -37,8 +43,9 @@ const Middle = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-color: #212529;
-  padding-top: 100px;
+  /* background-color: #212529; */
+  background-color: #e9ecef;
+  padding-top: 80px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   & > div {
@@ -46,6 +53,20 @@ const Middle = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 40px;
+    gap: 60px;
+  }
+`
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  h3 {
+    color: #495057;
   }
 `
 

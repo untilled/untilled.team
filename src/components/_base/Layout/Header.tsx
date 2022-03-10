@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   z-index: 20;
   position: fixed;
   width: 100%;
-  height: 100px;
+  /* height: 100px; */
   padding: 10px;
 `
 const Container = styled.div`

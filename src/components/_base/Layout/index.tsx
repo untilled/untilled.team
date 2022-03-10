@@ -10,11 +10,9 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const router = useRouter()
-  console.log(router.route)
-
   return (
     <Wrapper>
-      <Header />
+      {/* <Header /> */}
       <Main>{children}</Main>
       {router.route !== '/' && <Footer />}
     </Wrapper>
