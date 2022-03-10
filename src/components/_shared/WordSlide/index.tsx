@@ -27,6 +27,7 @@ type Wrapper = {
 const Wrapper = styled.div<Wrapper>`
   display: flex;
   flex-direction: column;
+  width: fit-content;
   height: ${({ height }) => height}px;
   overflow: hidden;
   & > div:first-child {

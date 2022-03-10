@@ -42,10 +42,12 @@ const Page = (props: Props) => {
   }
   return (
     <Wrapper>
-      <h1 className="container">팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
-      <h3 className="container">
-        지상 최고의 실력을 갖춘 팀원으로 구성되어 있어요.
-      </h3>
+      <Title>
+        <h1>팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
+        <h3>지상 최고의 실력을 갖춘 팀원으로 구성되어 있어요.</h3>
+        <br />
+        {/* <h1>Developing Developers</h1> */}
+      </Title>
       <MenuList>
         <Menu selected>All</Menu>
         <Menu>Developer</Menu>
@@ -79,6 +81,20 @@ const Wrapper = styled.div`
 
   ${mobile} {
     height: fit-content;
+  }
+`
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 40px;
+  }
+  h3 {
+    color: #ced4da;
   }
 `
 
