@@ -39,7 +39,7 @@ const About = (props: Props) => {
           </div>
           <CardList>
             <Card>
-              <Header title="" height={40} />
+              <Header title="😺Cathub" height={40} />
               <ImgBox></ImgBox>
               <ContentBox>다양한 개발 프로젝트 진행</ContentBox>
             </Card>

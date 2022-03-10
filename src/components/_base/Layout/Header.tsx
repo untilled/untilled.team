@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import { mobile } from 'styles/media'
-import { useMediaQuery } from 'react-responsive'
 import { AiOutlineMenu } from 'react-icons/ai'
 
 type Props = {}
@@ -34,9 +33,6 @@ const menus = [
 
 const Header = ({}: Props) => {
   const router = useRouter()
-  const isMobile = useMediaQuery({
-    query: '(max-width: 1024px)',
-  })
   return (
     <Wrapper className="">
       <Container className="container">
