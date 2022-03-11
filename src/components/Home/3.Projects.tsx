@@ -50,11 +50,12 @@ const projects = [
 const Projects = (props: Props) => {
   return (
     <Wrapper>
-      <Title>
-        <h1>지금까지 우리가 만들어온 것들😺</h1>
+      <Title className="container">
+        <h1>지금까지 우리가 만들어온 것들</h1>
+        <h3>발전적인 사람으로부터 발전적인 서비스가 나온다고 믿고 있어요.</h3>
         <h3>
-          개발하는 사람부터 서비스를 이용하는 사람까지 모두가 발전할 수 있는
-          서비스를 개발하고 제공하고자 해요.
+          개발하는 사람부터 서비스를 이용하는 사람까지 모두가 성장하는 서비스를
+          제공하고자 해요.
         </h3>
       </Title>
       <List>
@@ -82,9 +83,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
@@ -92,6 +91,7 @@ const Title = styled.div`
   }
   h3 {
     color: #ced4da;
+    font-weight: 500;
   }
 `
 

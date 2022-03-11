@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlide'
-import { AiOutlineClose } from 'react-icons/ai'
-import { VscChromeMaximize, VscChromeMinimize } from 'react-icons/vsc'
 import { mobile } from 'styles/media'
 
 type Props = {}
@@ -51,7 +49,7 @@ const Wrapper = styled.div`
 const TitleBox = styled.div`
   width: 100%;
   padding: 100px 0px;
-  font-weight: 600;
+  font-weight: 900;
 
   ${mobile} {
     padding: 50px 0;
@@ -69,7 +67,6 @@ const BrowserBox = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 80px;
-  /* height: fit-content; */
   background-color: #e9ecef;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;

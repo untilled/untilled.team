@@ -12,17 +12,18 @@ type Props = {}
 const About = (props: Props) => {
   return (
     <Wrapper>
-      <Middle>
+      <Browser>
         <div className="container">
           <Title>
             <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
-            <h3>팀 언틸드는 다양한 프로젝트를 만들고 개발해요.</h3>
-            <h3>기획부터 개발 그리고 서비스까지의 모든 과정을 함께해요.</h3>
-            <br />
-            {/* <h1>Developing Developers</h1> */}
+            <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
+            <h3>팀 언틸드는 모든 이들의 성장을 돕고 있어요.</h3>
+            {/* <h3>팀 언틸드는 다양한 프로젝트를 만들고 개발해요.</h3> */}
+            {/* <h3>기획부터 개발 그리고 서비스까지의 모든 과정을 함께해요.</h3> */}
           </Title>
-          <CardList>
-            {/* <Card>
+
+          {/* <CardList>
+            <Card>
               <Header title="🐽pigma" height={40} />
               <ImgBox></ImgBox>
               <ContentBox>다양한 개발 프로젝트 진행</ContentBox>
@@ -48,10 +49,10 @@ const About = (props: Props) => {
                 <MsgBox>....</MsgBox>
               </MsgList>
               <ContentBox>업계 최대 유연 근무제 도입</ContentBox>
-            </Card> */}
-          </CardList>
+            </Card>
+          </CardList> */}
         </div>
-      </Middle>
+      </Browser>
     </Wrapper>
   )
 }
@@ -69,12 +70,11 @@ const Wrapper = styled.div`
   }
 `
 
-const Middle = styled.div`
+const Browser = styled.div`
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   background-color: #e9ecef;
-  /* background-color: #212529; */
   padding-top: 80px;
   height: 100%;
   & > div {
@@ -100,6 +100,7 @@ const Title = styled.div`
 
   h3 {
     color: #495057;
+    font-weight: 500;
   }
 `
 

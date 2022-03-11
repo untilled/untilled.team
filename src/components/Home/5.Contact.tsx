@@ -17,11 +17,13 @@ const Contact = (props: Props) => {
           <h1>
             <WordSlide words={words} height={80} />
           </h1>
-          <h3 className="container">
-            성장에 대한 관심과 열정이 있는 분은 남녀노소 국적, 나이불문 누구나
-            참여할 수 있어요!
-          </h3>
         </Content>
+        <h3 className="container">
+          성장에 대한 관심만 있다면 누구든지 참여할 수 있어요.
+        </h3>
+        <h3 className="container">
+          저희가 그 안에서 열정과 즐거움을 찾아드릴게요.
+        </h3>
         <br />
         {/* <h1>Developing Developers</h1> */}
       </Title>
@@ -60,6 +62,7 @@ const Title = styled.div`
   }
   h3 {
     color: #ced4da;
+    font-weight: 500;
   }
 `
 

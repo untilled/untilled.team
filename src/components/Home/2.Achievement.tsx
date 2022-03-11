@@ -7,13 +7,11 @@ type Props = {}
 const Page = (props: Props) => {
   return (
     <Wrapper className="">
-      <Middle>
+      <Browser>
         <div className="container">
           <Title>
-            <h1>언틸드는 끊임없이 성장하고 있어요</h1>
+            <h1>언틸드도 함께 성장하고 있어요</h1>
             <h3>팀 언틸드에서는 다양한 프로젝트를 만들고, 개발해요.</h3>
-            <br />
-            {/* <h1>Developing Developers</h1> */}
           </Title>
           <BoxList>
             <Box></Box>
@@ -22,7 +20,7 @@ const Page = (props: Props) => {
             <Box></Box>
           </BoxList>
         </div>
-      </Middle>
+      </Browser>
     </Wrapper>
   )
 }
@@ -38,7 +36,7 @@ const Wrapper = styled.div`
     height: fit-content;
   }
 `
-const Middle = styled.div`
+const Browser = styled.div`
   max-width: 1280px;
   width: 100%;
   height: 100%;
@@ -67,6 +65,7 @@ const Title = styled.div`
   }
   h3 {
     color: #495057;
+    font-weight: 500;
   }
 `
 

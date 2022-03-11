@@ -42,11 +42,11 @@ const Page = (props: Props) => {
   }
   return (
     <Wrapper>
-      <Title>
-        <h1>팀 언틸드의 멤버를 만나보세요. 👨‍👨‍👧‍👦</h1>
-        <h3>지상 최고의 실력을 갖춘 팀원으로 구성되어 있어요.</h3>
-        <br />
-        {/* <h1>Developing Developers</h1> */}
+      <Title className="container">
+        <h1>팀 언틸드의 멤버를 만나보세요</h1>
+        <h3>
+          다양한 배경 속에서 참가했지만, 모두들 성장의 즐거움을 느끼고 있어요.
+        </h3>
       </Title>
       <MenuList>
         <Menu selected>All</Menu>
@@ -85,9 +85,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
@@ -95,6 +93,7 @@ const Title = styled.div`
   }
   h3 {
     color: #ced4da;
+    font-weight: 500;
   }
 `
 
