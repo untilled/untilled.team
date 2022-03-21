@@ -9,6 +9,13 @@ type Props = {}
 // 기획자 개발자 디자이너 한줄씩 토스ref
 
 // 만드는 사람을 위한, 사용하는 사람을 위한 프로젝트 개발
+
+// 함께 프로젝트를 구상하고, 진행해요.
+
+// 몰두하며 성장을 즐겨보세요.
+
+//
+
 const About = (props: Props) => {
   return (
     <Wrapper>
@@ -21,7 +28,7 @@ const About = (props: Props) => {
             {/* <h3>팀 언틸드는 다양한 프로젝트를 만들고 개발해요.</h3> */}
             {/* <h3>기획부터 개발 그리고 서비스까지의 모든 과정을 함께해요.</h3> */}
           </Title>
-
+          <Card>test</Card>
           {/* <CardList>
             <Card>
               <Header title="🐽pigma" height={40} />
