@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
   const router = useRouter()
   return (
     <Wrapper>
-      {/* <Header /> */}
+      <Header />
       <Main>{children}</Main>
       {router.route !== '/' && <Footer />}
     </Wrapper>

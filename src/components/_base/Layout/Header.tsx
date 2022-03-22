@@ -5,6 +5,9 @@ import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import { mobile } from 'styles/media'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { useRecoilState } from 'recoil'
+import { home } from 'states'
+import { css } from '@emotion/react'
 
 type Props = {}
 
@@ -32,6 +35,7 @@ const menus = [
 ]
 
 const Header = ({}: Props) => {
+  const [page, setPage] = useRecoilState(home)
   const router = useRouter()
   return (
     <Wrapper className="">
@@ -43,12 +47,12 @@ const Header = ({}: Props) => {
           <Logo />
         </Mobile>
         <Desktop>
-          <Logo />
+          <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />
           <Right>
             {menus.map((menu) => (
               <Link key={menu.id} href={menu.href}>
                 <a>
-                  <Menu selected={menu.href === router.asPath}>
+                  <Menu page={page} selected={menu.href === router.asPath}>
                     {menu.name}
                   </Menu>
                 </a>
@@ -105,13 +109,16 @@ const Right = styled.div`
 
 type MenuProps = {
   selected: boolean
+  page: number
 }
-
+/* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
+/* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
 const Menu = styled.div<MenuProps>`
-  /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
-  border-bottom: ${(props) =>
-    props.selected ? '2px solid white' : '2px solid none'};
-
+  ${({ page }) =>
+    (page === 1 || page === 2) &&
+    css`
+      color: black;
+    `};
   &:hover {
   }
 `

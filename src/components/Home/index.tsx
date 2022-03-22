@@ -12,6 +12,9 @@ import { AiFillGithub } from 'react-icons/ai'
 import { IoMdSettings } from 'react-icons/io'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { mobile } from 'styles/media'
+import { useRecoilState } from 'recoil'
+import { home } from 'states'
+import { css } from '@emotion/react'
 
 //q&a페이지도 하나 만들어서 메시지 형태로 만들어보는건 어떨까?
 type Props = {}
@@ -48,7 +51,8 @@ const pages = [
 ]
 
 const Home = (props: Props) => {
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useRecoilState(home)
+  // const [page, setPage] = useState(0)
   const rightBarRef = useRef<HTMLDivElement>(null)
   const leftBarRef = useRef<HTMLDivElement>(null)
   const handleResize = () => {
@@ -101,7 +105,7 @@ const Home = (props: Props) => {
       </ToolBar>
       <ToolBar direction="right" ref={rightBarRef}>
         <div></div>
-        <PageMenu>
+        <PageMenu page={page}>
           <MenuHeader>{pages[page].name}</MenuHeader>
           {pages.map((menu, idx) => (
             <Menu
@@ -162,15 +166,63 @@ const ToolBar = styled.div<ToolBar>`
     display: none !important;
   }
 `
-const PageMenu = styled.div`
+type PageMenu = {
+  page: number
+}
+
+const PageMenu = styled.div<PageMenu>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  padding: 5px;
   cursor: pointer;
   font-size: 0.8rem;
+  border-radius: 15px;
+  ${({ page }) =>
+    (page === 1 || page === 2) &&
+    css`
+      background-color: #404042;
+      & > div {
+        color: black;
+      }
+    `};
+`
+
+const MenuHeader = styled.div`
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  width: 10px;
+  transform: translate(-20%, -150%) rotate(-90deg); ;
+`
+
+type MenuProps = {
+  selected: boolean
+}
+
+const Menu = styled.div<MenuProps>`
+  position: relative;
+  background-color: #494949;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: ${(props) => (props.selected ? 'white' : '#495057')};
+  & > div {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 100%;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  &:hover {
+    & > div {
+      display: block;
+    }
+  }
 `
 
 const IconList = styled.div`
@@ -215,40 +267,6 @@ const ArrowList = styled.div`
     }
     cursor: pointer;
   }
-`
-
-type MenuProps = {
-  selected: boolean
-}
-
-const Menu = styled.div<MenuProps>`
-  position: relative;
-  background-color: #494949;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: ${(props) => (props.selected ? 'white' : '#494949')};
-  & > div {
-    display: none;
-    position: absolute;
-    top: -5px;
-    right: 100%;
-    margin-right: 10px;
-    white-space: nowrap;
-  }
-  &:hover {
-    & > div {
-      display: block;
-    }
-  }
-`
-
-const MenuHeader = styled.div`
-  position: absolute;
-  white-space: nowrap;
-  top: 0;
-  width: 10px;
-  transform: translate(-20%, -150%) rotate(-90deg); ;
 `
 
 export default Home
