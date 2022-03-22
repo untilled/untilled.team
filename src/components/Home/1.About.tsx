@@ -2,19 +2,16 @@ import styled from '@emotion/styled'
 import Image from 'next/image'
 import React from 'react'
 import { mobile } from 'styles/media'
-import imageLoader from 'libs/loader'
-import Header from 'components/_shared/Header'
 type Props = {}
 
-// 기획자 개발자 디자이너 한줄씩 토스ref
+// 팀원과 함께 협업하며 프로젝트 진행
+// 다양한 배경의 팀원들과~
 
-// 만드는 사람을 위한, 사용하는 사람을 위한 프로젝트 개발
+// 다양한 개발 활동. (온라인 모임 지향)
+// 모든 업무가 온라인으로 진행되는 시대에서, 온라인에서의 커뮤니티는 중요해요.
 
-// 함께 프로젝트를 구상하고, 진행해요.
-
-// 몰두하며 성장을 즐겨보세요.
-
-//
+// 지역, 시간에 상관없이.
+// 지역, 시간에 제약받지 않고 활동이 가능해요.
 
 const About = (props: Props) => {
   return (
@@ -24,9 +21,7 @@ const About = (props: Props) => {
           <Title>
             <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
             <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
-            <h3>팀 언틸드는 모든 이들의 성장을 돕고 있어요.</h3>
-            {/* <h3>팀 언틸드는 다양한 프로젝트를 만들고 개발해요.</h3> */}
-            {/* <h3>기획부터 개발 그리고 서비스까지의 모든 과정을 함께해요.</h3> */}
+            <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
           </Title>
           <Card>test</Card>
           {/* <CardList>

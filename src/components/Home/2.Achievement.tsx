@@ -10,8 +10,8 @@ const Page = (props: Props) => {
       <Browser>
         <div className="container">
           <Title>
-            <h1>언틸드도 함께 성장하고 있어요</h1>
-            <h3>팀 언틸드에서는 다양한 프로젝트를 만들고, 개발해요.</h3>
+            <h1>팀원과 함께 성장하는 언틸드</h1>
+            <h3>매년 더 나은 팀이 되고자 끊임없이 노력하고 있어요.</h3>
           </Title>
           <BoxList>
             <Box></Box>

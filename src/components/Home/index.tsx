@@ -73,6 +73,7 @@ const Home = (props: Props) => {
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
+      setPage(0)
     }
   }, [])
 
@@ -122,16 +123,12 @@ const Home = (props: Props) => {
           {/* <div>
             <MdKeyboardArrowUp />
           </div> */}
-          {page !== 0 && (
-            <div onClick={handlePrev}>
-              <MdKeyboardArrowUp />
-            </div>
-          )}
-          {page !== pages.length - 1 && (
-            <div onClick={handleNext}>
-              <MdKeyboardArrowDown />
-            </div>
-          )}
+          <Arrow activated={page !== 0} onClick={handlePrev}>
+            <MdKeyboardArrowUp />
+          </Arrow>
+          <Arrow activated={page !== pages.length - 1} onClick={handleNext}>
+            <MdKeyboardArrowDown />
+          </Arrow>
         </ArrowList>
       </ToolBar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
@@ -184,7 +181,7 @@ const PageMenu = styled.div<PageMenu>`
   ${({ page }) =>
     (page === 1 || page === 2) &&
     css`
-      background-color: #404042;
+      background-color: #343a40;
       & > div {
         color: black;
       }
@@ -205,11 +202,10 @@ type MenuProps = {
 
 const Menu = styled.div<MenuProps>`
   position: relative;
-  background-color: #494949;
   border-radius: 50%;
   width: 8px;
   height: 8px;
-  background-color: ${(props) => (props.selected ? 'white' : '#495057')};
+  background-color: ${(props) => (props.selected ? 'white' : '#797979')};
   & > div {
     display: none;
     position: absolute;
@@ -253,20 +249,25 @@ const ArrowList = styled.div`
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
-  & > div {
-    border-radius: 50%;
-    background-color: #494949;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg {
-      width: 30px;
-      height: 30px;
-    }
-    cursor: pointer;
+`
+type ArrowProps = {
+  activated: boolean
+}
+
+const Arrow = styled.div<ArrowProps>`
+  border-radius: 50%;
+  background-color: #494949;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 30px;
+    height: 30px;
   }
+  cursor: pointer;
+  visibility: ${(props) => (props.activated ? 'visible' : 'hidden')};
 `
 
 export default Home
