@@ -114,6 +114,7 @@ type MenuProps = {
 /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
 /* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
 const Menu = styled.div<MenuProps>`
+  transition: all ease-in-out 0.5s 0s;
   ${({ page }) =>
     (page === 1 || page === 2) &&
     css`
