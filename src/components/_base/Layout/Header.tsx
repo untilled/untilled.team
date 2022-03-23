@@ -41,10 +41,10 @@ const Header = ({}: Props) => {
     <Wrapper className="">
       <Container className="container">
         <Mobile>
+          <Logo />
           <div>
             <AiOutlineMenu />
           </div>
-          <Logo />
         </Mobile>
         <Desktop>
           <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />

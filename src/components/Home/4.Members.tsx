@@ -8,8 +8,8 @@ import { mobile } from 'styles/media'
 type Props = {}
 type members = {
   name: string
-  desc: string
-  role: string
+  //desc: string
+  //role: string
   // src: string
 }[]
 
@@ -17,23 +17,58 @@ type members = {
 const members: members = [
   {
     name: 'Morethanmin',
-    desc: '생각하는 걸 조와함',
-    role: 'Operator',
-    // src: '/morethanmin.jfif',
   },
   {
     name: 'Sang Min Lee',
-    desc: 'Javascript Magician🧙🏼‍♂️',
-    role: 'Developer',
-    // src: '/morethanmin.jfif',
   },
   {
     name: 'Jade',
-    desc: 'figma 장인',
-    role: 'Designer',
-    // src: '/morethanmin.jfif',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
+  },
+  {
+    name: 'Jade',
   },
 ]
+
+// 아이콘 형태
 
 const Page = (props: Props) => {
   const router = useRouter()
@@ -48,22 +83,25 @@ const Page = (props: Props) => {
           다양한 배경 속에서 참가했지만, 모두들 성장의 즐거움을 느끼고 있어요.
         </h3>
       </Title>
-      <MenuList>
-        <Menu selected>All</Menu>
-        <Menu>Developer</Menu>
-        <Menu>Designer</Menu>
-      </MenuList>
-      <MemberList className="container">
-        {members.map((member, idx) => (
-          <Member key={idx}>
-            <img src="" alt="" />
-            <h3>{member.name}</h3>
-            <div>{member.role}</div>
-          </Member>
-        ))}
-      </MemberList>
+      <div>
+        <MemberList>
+          {members.map((member, idx) => (
+            <Member key={idx}>{/* <img src="" alt="" /> */}</Member>
+          ))}
+        </MemberList>
+        <MemberList>
+          {members.map((member, idx) => (
+            <Member key={idx}>{/* <img src="" alt="" /> */}</Member>
+          ))}
+        </MemberList>
+        <MemberList>
+          {members.map((member, idx) => (
+            <Member key={idx}>{/* <img src="" alt="" /> */}</Member>
+          ))}
+        </MemberList>
+      </div>
       <Button className="container" onClick={handleClick}>
-        More
+        more
       </Button>
     </Wrapper>
   )
@@ -74,10 +112,15 @@ const Wrapper = styled.div`
     display: none;
   }
   height: 100vh;
-  padding: 100px 0;
+  padding-top: 100px;
+  gap: 45px;
   display: flex;
   flex-direction: column;
   overflow: scroll;
+
+  & > *:last-child {
+    margin-bottom: 45px;
+  }
 
   ${mobile} {
     height: fit-content;
@@ -98,51 +141,24 @@ const Title = styled.div`
     text-align: center;
   }
 `
-
-const MenuList = styled.div`
-  margin: 45px auto;
-  border-radius: 15px;
-  background-color: #212529;
-  padding: 15px;
+const MemberList = styled.div`
+  width: 100vw;
+  overflow: visible;
+  margin-bottom: 10px;
   display: flex;
   gap: 10px;
-`
-
-type MenuProps = {
-  selected?: boolean
-}
-
-const Menu = styled.div<MenuProps>`
-  width: 100%;
-  text-align: center;
-  font-size: 0.8rem;
-  background-color: ${({ selected }) => (selected ? `white` : `none`)};
-  color: ${({ selected }) => (selected ? `black` : `white`)};
-  border-radius: 10px;
-  padding: 5px 15px;
-  cursor: pointer;
-`
-
-const MemberList = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 45px;
-
-  ${mobile} {
-    grid-template-columns: repeat(1, 1fr);
+  &:first-child,
+  &:last-child {
+    transform: translate(-80px, 0px);
   }
 `
 
 const Member = styled.div`
-  width: 100%;
+  width: 150px;
+  height: 150px;
   background-color: #212529;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 45px;
-  padding: 15px;
+  border-radius: 50%;
+  flex-shrink: 0;
   img {
     width: 100%;
     height: 200px;

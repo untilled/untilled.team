@@ -52,7 +52,6 @@ const pages = [
 
 const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(home)
-  // const [page, setPage] = useState(0)
   const rightBarRef = useRef<HTMLDivElement>(null)
   const leftBarRef = useRef<HTMLDivElement>(null)
   const handleResize = () => {

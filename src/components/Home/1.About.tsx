@@ -112,6 +112,9 @@ const Browser = styled.div`
       font-size: 0.9rem;
     }
   }
+  ${mobile} {
+    padding-top: 0px;
+  }
 `
 
 const Title = styled.div`
