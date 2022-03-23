@@ -90,10 +90,12 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
+    text-align: center;
   }
   h3 {
     color: #ced4da;
     font-weight: 500;
+    text-align: center;
   }
 `
 

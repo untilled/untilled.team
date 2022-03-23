@@ -4,13 +4,13 @@ import React from 'react'
 import { mobile } from 'styles/media'
 type Props = {}
 
-// 팀원과 함께 협업하며 프로젝트 진행
+// 팀원과 함께 협업하며 프로젝트 진행합니다.
 // 다양한 배경의 팀원들과~
 
-// 다양한 개발 활동. (온라인 모임 지향)
+// 온라인으로 진행하는 다양한 개발 활동
 // 모든 업무가 온라인으로 진행되는 시대에서, 온라인에서의 커뮤니티는 중요해요.
 
-// 지역, 시간에 상관없이.
+// 지역, 시간에 상관없이 언제, 어디서나, 누구든지
 // 지역, 시간에 제약받지 않고 활동이 가능해요.
 
 const About = (props: Props) => {
@@ -23,9 +23,34 @@ const About = (props: Props) => {
             <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
             <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
           </Title>
-          <Card>test</Card>
-          {/* <CardList>
+          <CardList>
             <Card>
+              <Paint></Paint>
+              <Content>
+                <h2>팀원과 함께 협업하며 프로젝트 진행합니다.</h2>
+                <div>다양한 배경의 팀원들과~</div>
+              </Content>
+            </Card>
+            <Card>
+              <Content>
+                <h2>온라인으로 진행하는 다양한 개발 활동</h2>
+                <div>
+                  모든 업무가 온라인으로 진행되는 시대에서, 온라인에서의
+                  커뮤니케이션은 중요해요.
+                </div>
+              </Content>
+              <Paint></Paint>
+            </Card>
+            <Card>
+              <Paint></Paint>
+              <Content>
+                <h2>지역, 시간에 상관없이 언제, 어디서나, 누구든지</h2>
+                <div>지역, 시간에 제약받지 않고 활동이 가능해요.</div>
+              </Content>
+            </Card>
+          </CardList>
+
+          {/* <Card>
               <Header title="🐽pigma" height={40} />
               <ImgBox></ImgBox>
               <ContentBox>다양한 개발 프로젝트 진행</ContentBox>
@@ -51,8 +76,7 @@ const About = (props: Props) => {
                 <MsgBox>....</MsgBox>
               </MsgList>
               <ContentBox>업계 최대 유연 근무제 도입</ContentBox>
-            </Card>
-          </CardList> */}
+            </Card> */}
         </div>
       </Browser>
     </Wrapper>
@@ -107,53 +131,34 @@ const Title = styled.div`
 `
 
 const CardList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  ${mobile} {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 `
 
 const Card = styled.div`
   background-color: #dee2e6;
-  height: fit-content;
+  height: 100%;
   border-radius: 15px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 15px;
+  display: grid;
+  margin-bottom: 15px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  & > div {
+    padding: 15px;
+    border-radius: 15px;
+  }
 `
-const ImgBox = styled.div`
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 250px;
+
+const Paint = styled.div`
   background-color: #cecece;
 `
 
-const MsgList = styled.div`
-  width: 100%;
+const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px;
   gap: 10px;
-  height: 250px;
-`
-const MsgBox = styled.div`
-  width: 100%;
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  border-bottom-right-radius: 0px;
-  padding: 10px;
-`
-
-const ContentBox = styled.div`
-  font-size: 0.9rem;
-  padding-top: 10px;
+  margin: 15px 0px;
 `
 
 export default About
