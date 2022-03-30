@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-export const home = atom({
-  key: 'page',
-  default: 0,
+export const pageNameState = atom({
+  key: 'pageNameState',
+  default: 'fff',
 })
