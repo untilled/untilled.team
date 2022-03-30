@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
+import Footer from 'components/_shared/Footer'
+import { useRouter } from 'next/router'
 import React from 'react'
-import Footer from './Footer'
 import Header from './Header'
 
 type Props = {
@@ -8,11 +9,12 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
+  const router = useRouter()
   return (
     <Wrapper>
-      {/* <Header /> */}
+      <Header />
       <Main>{children}</Main>
-      {/* <Footer /> */}
+      {router.route !== '/' && <Footer />}
     </Wrapper>
   )
 }
@@ -23,8 +25,6 @@ const Wrapper = styled.div`
   grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100vh;
 `
-const Main = styled.div`
-  /* margin-top: 50px; */
-`
+const Main = styled.div``
 
 export default Layout

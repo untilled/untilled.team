@@ -2,10 +2,18 @@
 
 > untilled repository
 
+## Contributors
+
+- [Lee Sang Min](https://github.com/morethanmin) (Operator)
+- [Jade](https://github.com/morethanmin) (Developer)
+- [morethanmin](https://github.com/morethanmin) (Designer)
+
 ## Features
 
-- database using notion api
+- Full Page slide
+- Database using notion
   - untilled team notion 페이지에 있는 data를 notion api를 통해 불러와 표시하고 있습니다.
+- Deploy using static site generation
 
 ## Tech and libraries
 
@@ -28,17 +36,17 @@
 $ yarn
 
 # serve with hot reload at localhost:3000
-$ yarn run dev
+$ yarn dev
 
 # build for production and launch server
-$ yarn run build
-$ yarn run start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ yarn run generate
+$ yarn generate
 
 # deploy this project
-$ firebase deploy --only hosting:untilled
+$ yarn deploy
 ```
 
 ## Note
