@@ -42,6 +42,7 @@ const Header = ({}: Props) => {
       <Container className="container">
         <Mobile>
           <Logo />
+          {/* 페이지 미구현 */}
           <div>
             <AiOutlineMenu />
           </div>
@@ -49,6 +50,7 @@ const Header = ({}: Props) => {
         <Desktop>
           <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />
           <Right>
+            {/* 페이지 미구현 */}
             {menus.map((menu) => (
               <Link key={menu.id} href={menu.href}>
                 <a>

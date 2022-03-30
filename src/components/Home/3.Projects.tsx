@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Button from 'components/_shared/Button'
 import React from 'react'
 import { mobile } from 'styles/media'
 
@@ -63,6 +64,7 @@ const Projects = (props: Props) => {
           <Project key={project.id}></Project>
         ))}
       </List>
+      <Button className="container">더 알아보기</Button>
     </Wrapper>
   )
 }

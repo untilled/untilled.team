@@ -49,34 +49,6 @@ const About = (props: Props) => {
               </Content>
             </Card>
           </CardList>
-
-          {/* <Card>
-              <Header title="🐽pigma" height={40} />
-              <ImgBox></ImgBox>
-              <ContentBox>다양한 개발 프로젝트 진행</ContentBox>
-            </Card>
-            <Card>
-              <Header title="🍇Together" height={40} color="#333a64" />
-              <ImgBox>
-                <Image
-                  layout="fill"
-                  src="About/gather.jpg"
-                  loader={imageLoader}
-                  alt=""
-                />
-              </ImgBox>
-              <ContentBox>최대 규모의 오피스에서 함께하는 개발</ContentBox>
-            </Card>
-            <Card>
-              <Header title="Sleck" height={40} color="#350d36" />
-              <MsgList>
-                <MsgBox>저 오늘 코딩 안하겠습니다.</MsgBox>
-                <MsgBox>아무도 없나요?</MsgBox>
-                <MsgBox>저기요?</MsgBox>
-                <MsgBox>....</MsgBox>
-              </MsgList>
-              <ContentBox>업계 최대 유연 근무제 도입</ContentBox>
-            </Card> */}
         </div>
       </Browser>
     </Wrapper>
@@ -102,12 +74,14 @@ const Browser = styled.div`
   margin: 0 auto;
   background-color: #e9ecef;
   padding-top: 80px;
-  height: 100%;
+  height: fit-content;
+  min-height: 100%;
   & > div {
     display: flex;
     height: 100%;
     flex-direction: column;
     gap: 60px;
+
     & > div {
       font-size: 0.9rem;
     }

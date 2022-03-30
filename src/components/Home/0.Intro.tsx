@@ -23,7 +23,7 @@ const Page = (props: Props) => {
         </Content>
       </TitleBox>
       <BrowserBox>
-        <Header title="Untilled" height={40} />
+        <Header title="" height={40} />
         <div className="container">{/* <h2>About</h2> */}</div>
       </BrowserBox>
     </Wrapper>

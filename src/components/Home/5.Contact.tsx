@@ -22,7 +22,7 @@ const Contact = (props: Props) => {
           성장에 대한 관심만 있다면 누구든지 참여할 수 있어요.
         </h3>
         <h3 className="container">
-          저희가 그 안에서 열정과 즐거움을 찾아드릴게요.
+          저희가 그 안에서 열정과 즐거움을 찾아드릴게요!
         </h3>
         <br />
         {/* <h1>Developing Developers</h1> */}

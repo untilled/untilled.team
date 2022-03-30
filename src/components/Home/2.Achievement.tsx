@@ -39,7 +39,8 @@ const Wrapper = styled.div`
 const Browser = styled.div`
   max-width: 1280px;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  min-height: 100%;
   margin: 0 auto;
   /* background-color: #212529; */
   background-color: #e9ecef;
