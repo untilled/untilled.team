@@ -17,13 +17,13 @@ const About = (props: Props) => {
   return (
     <Wrapper>
       <Browser>
-        <div className="container">
-          <Title>
-            <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
-            <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
-            <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
-          </Title>
-          <CardList>
+        <Title className="container">
+          <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
+          <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
+          <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
+        </Title>
+        <CardListWrapper>
+          <div className="container">
             <Card>
               <Paint></Paint>
               <Content>
@@ -48,8 +48,8 @@ const About = (props: Props) => {
                 <div>지역, 시간에 제약받지 않고 활동이 가능해요.</div>
               </Content>
             </Card>
-          </CardList>
-        </div>
+          </div>
+        </CardListWrapper>
       </Browser>
     </Wrapper>
   )
@@ -74,17 +74,14 @@ const Browser = styled.div`
   margin: 0 auto;
   background-color: #e9ecef;
   padding-top: 80px;
-  height: fit-content;
-  min-height: 100%;
+  height: 100%;
+  //container
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  height: 100%;
   & > div {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    gap: 60px;
-
-    & > div {
-      font-size: 0.9rem;
-    }
+    font-size: 0.9rem;
   }
   ${mobile} {
     padding-top: 0px;
@@ -107,10 +104,15 @@ const Title = styled.div`
   }
 `
 
-const CardList = styled.div`
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+const CardListWrapper = styled.div`
+  flex-grow: 1;
+  background-color: #e9ecef;
+  height: fit-content;
+  & > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Card = styled.div`

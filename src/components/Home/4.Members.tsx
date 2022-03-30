@@ -139,7 +139,8 @@ const Title = styled.div`
 `
 const MemberListWrapper = styled.div`
   overflow: hidden;
-  height: auto;
+  /* height: auto; */
+  flex-shrink: 0;
 `
 const MemberList = styled.div`
   width: 100vw;

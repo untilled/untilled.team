@@ -57,7 +57,7 @@ const Members = (props: Props) => {
 
 const Wrapper = styled.div`
   overflow-x: hidden;
-  min-height: 100vh;
+  height: 100%;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
