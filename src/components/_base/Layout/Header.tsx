@@ -48,24 +48,22 @@ const Header = ({}: Props) => {
           </div>
         </Mobile>
         {/* 메인페이지에 대한 header표시 유무 */}
-        {page !== 0 && (
-          <Desktop>
-            <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />
-            <Right>
-              {/* 페이지 미구현 */}
-              {menus.map((menu) => (
-                <Link key={menu.id} href={menu.href}>
-                  <a>
-                    <Menu page={page} selected={menu.href === router.asPath}>
-                      {menu.name}
-                    </Menu>
-                  </a>
-                </Link>
-              ))}
-              {/* <Button color="white">recruit</Button> */}
-            </Right>
-          </Desktop>
-        )}
+        <Desktop>
+          <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />
+          <Right>
+            {/* 페이지 미구현 */}
+            {menus.map((menu) => (
+              <Link key={menu.id} href={menu.href}>
+                <a>
+                  <Menu page={page} selected={menu.href === router.asPath}>
+                    {menu.name}
+                  </Menu>
+                </a>
+              </Link>
+            ))}
+            {/* <Button color="white">recruit</Button> */}
+          </Right>
+        </Desktop>
       </Container>
     </Wrapper>
   )
@@ -130,7 +128,3 @@ const Menu = styled.div<MenuProps>`
 `
 
 export default Header
-
-setInterval(() => {
-  document.querySelector('.Button__ButtonContainer-sc-1ymjayw-0').click()
-}, 500)
