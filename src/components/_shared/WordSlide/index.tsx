@@ -30,7 +30,7 @@ const Wrapper = styled.div<Wrapper>`
   width: fit-content;
   height: ${({ height }) => height}px;
   overflow: hidden;
-  & > div:first-child {
+  & > div:first-of-type {
     animation: show 10s linear infinite;
   }
 

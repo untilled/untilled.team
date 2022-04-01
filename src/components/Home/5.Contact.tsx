@@ -1,11 +1,25 @@
 import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
+import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlide'
 import React from 'react'
 
 type Props = {}
 
 const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙🏼‍♂️']
+
+const questions = [
+  {
+    id: 0,
+    question: 'What is your github nickname?',
+    answer: '',
+  },
+  {
+    id: 1,
+    question: 'What is your email?',
+    answer: '',
+  },
+]
 
 const Contact = (props: Props) => {
   return (
@@ -27,17 +41,11 @@ const Contact = (props: Props) => {
         <br />
         {/* <h1>Developing Developers</h1> */}
       </Title>
-      {/* <h1 className="container">
-        프로젝트 혼자 할 순 없잖아요? <br />
-      </h1>
-      <Content className="container">
-        <h1>언틸드와 함께 프로젝트를 시작해보세요</h1>
-        <h1>
-          <WordSlide words={words} height={80} />
-        </h1>
-      </Content> */}
-
-      {/* <Button>지원하기</Button> */}
+      <div></div>
+      <ConsoleWrapper className="container">
+        <Header title="" height={40} />
+        <div className="container"></div>
+      </ConsoleWrapper>
     </Wrapper>
   )
 }
@@ -72,6 +80,16 @@ const Content = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   width: fit-content;
+`
+
+const ConsoleWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  padding: 0px;
+  border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 30px;
 `
 
 export default Contact

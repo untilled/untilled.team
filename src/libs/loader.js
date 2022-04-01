@@ -1,5 +1,5 @@
 function imageLoader({ src }) {
-  return `/images/${src}` // REPLACE WITH YOUR IMAGE DIRECTORY
+  return `/images/${src}`
 }
 
 export default imageLoader

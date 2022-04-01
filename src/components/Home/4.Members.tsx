@@ -74,7 +74,7 @@ const Page = (props: Props) => {
   return (
     <Wrapper>
       <Title className="container">
-        <h1>팀 언틸드의 멤버를 만나보세요</h1>
+        <h1>팀 언틸드의 멤버를 만나보세요.</h1>
         <h3>
           다양한 배경 속에서 참가했지만, 모두들 성장의 즐거움을 느끼고 있어요.
         </h3>
@@ -148,7 +148,7 @@ const MemberList = styled.div`
   margin-bottom: 10px;
   display: flex;
   gap: 10px;
-  &:first-child,
+  &:first-of-type,
   &:last-child {
     transform: translate(-80px, 0px);
   }

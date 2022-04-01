@@ -72,7 +72,7 @@ const Home = (props: Props) => {
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
-      setPage(0)
+      // setPage(null)
     }
   }, [])
 
@@ -147,7 +147,7 @@ type ToolBar = {
 }
 
 const ToolBar = styled.div<ToolBar>`
-  z-index: 10;
+  z-index: 20;
   top: 0;
   bottom: 0;
   display: none;

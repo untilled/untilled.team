@@ -10,7 +10,7 @@ const Page = (props: Props) => {
       <Browser>
         <div className="container">
           <Title>
-            <h1>성장하는 언틸드</h1>
+            <h1>함께 성장해온 언틸드</h1>
             <h3>팀원들과 함께 끊임없이 성장해 나가고 있어요.</h3>
           </Title>
           <BoxList>
@@ -42,7 +42,6 @@ const Browser = styled.div`
   height: fit-content;
   min-height: 100%;
   margin: 0 auto;
-  /* background-color: #212529; */
   background-color: #e9ecef;
   padding-top: 80px;
   border-bottom-left-radius: 25px;
