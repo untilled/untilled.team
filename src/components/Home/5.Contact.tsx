@@ -85,7 +85,7 @@ const Content = styled.div`
 const ConsoleWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #212529;
+  background-color: #e9ecef;
   padding: 0px;
   border-radius: 30px;
   border-radius: 30px;
