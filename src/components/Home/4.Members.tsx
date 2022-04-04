@@ -12,6 +12,7 @@ type members = {
   //name: string
   //desc: string
   //role: string
+  id: number
   images: string[]
 }[]
 
@@ -19,51 +20,67 @@ type members = {
 
 const members: members = [
   {
+    id: 1,
     images: ['/images/members/1.png', '/images/members/1-hover.png'],
   },
   {
+    id: 2,
     images: ['/images/members/2.png', '/images/members/2-hover.png'],
   },
   {
+    id: 0,
     images: ['/images/members/0.png', '/images/members/0-hover.png'],
   },
   {
+    id: 3,
     images: ['/images/members/3.png', '/images/members/3-hover.png'],
   },
   {
+    id: 4,
     images: ['/images/members/4.png', '/images/members/4-hover.png'],
   },
   {
+    id: 5,
     images: ['/images/members/5.png', '/images/members/5-hover.png'],
   },
   {
+    id: 6,
     images: ['/images/members/6.png', '/images/members/6-hover.png'],
   },
   {
+    id: 7,
     images: ['/images/members/7.png', '/images/members/7.png'],
   },
   {
+    id: 8,
     images: ['/images/members/8.png', '/images/members/8-hover.png'],
   },
   {
+    id: 9,
     images: ['/images/members/9.png', '/images/members/9-hover.png'],
   },
   {
+    id: 10,
     images: ['/images/members/10.png', '/images/members/10.png'],
   },
   {
+    id: 11,
     images: ['/images/members/11.png', '/images/members/11-hover.png'],
   },
   {
+    id: 12,
     images: ['/images/members/1.png', '/images/members/1-hover.png'],
   },
   {
+    id: 13,
     images: ['/images/members/2.png', '/images/members/2-hover.png'],
   },
   {
+    id: 14,
     images: ['/images/members/3.png', '/images/members/3-hover.png'],
   },
   {
+    id: 15,
     images: ['/images/members/4.png', '/images/members/4-hover.png'],
   },
 ]
@@ -85,24 +102,46 @@ const Page = (props: Props) => {
       </Title>
       <MemberListWrapper>
         <MemberList>
-          {members.map((member, idx) => (
-            <Member images={member.images} key={idx}></Member>
+          {members.map((member) => (
+            <Member images={member.images} key={member.id}></Member>
           ))}
         </MemberList>
         <MemberList>
-          {members.reverse().map((member, idx) => (
-            <Member images={member.images} key={idx}></Member>
+          {members.map((member) => (
+            <Member images={member.images} key={member.id}></Member>
           ))}
         </MemberList>
         <MemberList>
-          {members.map((member, idx) => (
-            <Member images={member.images} key={idx}></Member>
+          {members.map((member) => (
+            <Member images={member.images} key={member.id}></Member>
           ))}
         </MemberList>
       </MemberListWrapper>
       <Button className="container" onClick={handleClick}>
         더 알아보기
       </Button>
+
+      {/* 이미지를 미리 로드하기 위함 */}
+      <PreloadImg>
+        {members.map((member) => (
+          <div key={member.id}>
+            <Image
+              src={member.images[0]}
+              loader={imageLoader}
+              alt=""
+              width={1}
+              height={1}
+            />
+            <Image
+              src={member.images[1]}
+              loader={imageLoader}
+              alt=""
+              width={1}
+              height={1}
+            />
+          </div>
+        ))}
+      </PreloadImg>
     </Wrapper>
   )
 }
@@ -180,6 +219,15 @@ const Member = styled.div<Member>`
   &:hover {
     background-image: url(${({ images }) => images[1]});
   }
+`
+
+const PreloadImg = styled.div`
+  position: absolute;
+  overflow: hidden;
+  left: -9999px;
+  top: -9999px;
+  height: 1px;
+  width: 1px;
 `
 
 export default Page
