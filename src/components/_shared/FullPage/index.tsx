@@ -21,16 +21,23 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   const handleScroll = useCallback(
     (e: WheelEvent) => {
+      // 스크룰 강도가 30보다 작은 경우 리턴
       if (Math.abs(e.deltaY) < 30) return
-      if (wrapperRef.current?.scrollTop !== heightList[page]) return
+      // 현재 스크룰 양과 높이값이 다른 경우 리턴
+      if (
+        (wrapperRef.current?.scrollTop &&
+          Math.ceil(wrapperRef.current?.scrollTop)) !== heightList[page]
+      )
+        return
       //아래로 이동
       if (e.deltaY > 0) {
         //스크룰 가장 아래까지 가지 않은 경우 리턴
         if (
           nodes[page].scrollHeight !==
-          nodes[page].scrollTop + nodes[page].offsetHeight
+          Math.floor(nodes[page].scrollTop + nodes[page].offsetHeight)
         )
           return
+
         onNext()
       }
       //위로 이동
@@ -58,7 +65,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     [page, heightList, onNext, onPrev]
   )
 
-  //페이지 변경시 스크룰 이동해야하는 y값 정의
+  // 페이지 변경시 스크룰 이동해야하는 y값 정의
   const initHeightList = (): number[] => {
     if (wrapperRef.current) {
       const nodes = wrapperRef.current.childNodes
@@ -79,7 +86,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     return []
   }
 
-  //페이지 높이값 변경시 높이 값 다시 받아온 뒤, 해당 페이지 위치로 이동
+  // 페이지 높이값 변경시 높이 값 다시 받아온 뒤, 해당 페이지 위치로 이동
   const handleResize = useCallback(() => {
     const hightList = initHeightList()
     if (wrapperRef.current) {
@@ -88,6 +95,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     }
   }, [page])
 
+  // 페이지 크기 변경시 이벤트 등록
   useEffect(() => {
     if (isMobile) {
       window.removeEventListener('resize', handleResize)
@@ -103,6 +111,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     }
   }, [page, heightList, handleResize, isMobile])
 
+  // 페이지 이동 이벤트 등록
   useEffect(() => {
     if (isMobile) {
       window.removeEventListener('wheel', handleScroll)
@@ -117,6 +126,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
     }
   }, [page, handleScroll, handleKeyPress, isMobile])
 
+  // 해당 컴포넌트 생성시 높이 초기화
   useEffect(() => {
     initHeightList()
   }, [wrapperRef])

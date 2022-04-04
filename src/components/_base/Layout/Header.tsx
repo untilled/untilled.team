@@ -130,7 +130,3 @@ const Menu = styled.div<MenuProps>`
 `
 
 export default Header
-
-setInterval(() => {
-  document.querySelector('.Button__ButtonContainer-sc-1ymjayw-0').click()
-}, 500)
