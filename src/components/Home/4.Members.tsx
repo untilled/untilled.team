@@ -16,12 +16,16 @@ type members = {
 }[]
 
 //27
+
 const members: members = [
   {
     images: ['/images/members/1.png', '/images/members/1-hover.png'],
   },
   {
     images: ['/images/members/2.png', '/images/members/2-hover.png'],
+  },
+  {
+    images: ['/images/members/0.png', '/images/members/0-hover.png'],
   },
   {
     images: ['/images/members/3.png', '/images/members/3-hover.png'],
