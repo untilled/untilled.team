@@ -22,7 +22,7 @@ const About = (props: Props) => {
           <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
           <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
         </Title>
-        <CardListWrapper>
+        {/* <CardListWrapper>
           <div className="container">
             <Card>
               <Paint></Paint>
@@ -49,7 +49,7 @@ const About = (props: Props) => {
               </Content>
             </Card>
           </div>
-        </CardListWrapper>
+        </CardListWrapper> */}
       </Browser>
     </Wrapper>
   )

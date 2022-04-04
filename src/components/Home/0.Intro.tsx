@@ -12,7 +12,7 @@ const Page = (props: Props) => {
   return (
     <Wrapper>
       <TitleBox className="container title_1">
-        <div>
+        {/* <div>
           <br />
           Hi there, We{`'`}re Untilled.
           <br />
@@ -21,7 +21,7 @@ const Page = (props: Props) => {
         <Content>
           <div>We{`'`}re developing</div>
           <WordSlide words={words} background height={80} />
-        </Content>
+        </Content> */}
       </TitleBox>
       <BrowserBox>
         <Header title="" height={40} />
