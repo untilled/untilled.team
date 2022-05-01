@@ -112,7 +112,7 @@ const Right = styled.div`
 
 type MenuProps = {
   selected: boolean
-  page: number
+  page: number | null
 }
 /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
 /* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
