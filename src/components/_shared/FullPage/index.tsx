@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { mobile } from 'styles/media'
 
 type Props = {
-  page: number
+  page: number | null
   onNext: Function
   onPrev: Function
   children: React.ReactNode[]
@@ -21,6 +21,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   const handleScroll = useCallback(
     (e: WheelEvent) => {
+      //page null 예외처리
+      if (page === null) return
+
       // 스크룰 강도가 30보다 작은 경우 리턴
       if (Math.abs(e.deltaY) < 30) return
       // 현재 스크룰 양과 높이값이 다른 경우 리턴
@@ -52,6 +55,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   const handleKeyPress = useCallback(
     (e: any) => {
+      //page null 예외처리
+      if (page === null) return
+
       if (wrapperRef.current?.scrollTop !== heightList[page]) return
       switch (e.key) {
         case 'ArrowUp':
@@ -88,6 +94,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   // 페이지 높이값 변경시 높이 값 다시 받아온 뒤, 해당 페이지 위치로 이동
   const handleResize = useCallback(() => {
+    //page null 예외처리
+    if (page === null) return
+
     const hightList = initHeightList()
     if (wrapperRef.current) {
       const parentNode = wrapperRef.current
@@ -97,6 +106,9 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
 
   // 페이지 크기 변경시 이벤트 등록
   useEffect(() => {
+    //page null 예외처리
+    if (page === null) return
+
     if (isMobile) {
       window.removeEventListener('resize', handleResize)
       return

@@ -41,11 +41,10 @@ const Contact = (props: Props) => {
         <br />
         {/* <h1>Developing Developers</h1> */}
       </Title>
-      <div></div>
-      <ConsoleWrapper className="container">
+      {/* <ConsoleWrapper className="container">
         <Header title="" height={40} />
         <div className="container"></div>
-      </ConsoleWrapper>
+      </ConsoleWrapper> */}
     </Wrapper>
   )
 }

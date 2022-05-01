@@ -1,13 +1,6 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import Intro from './0.Intro'
-import About from './1.About'
-import Projects from './3.Projects'
-import Achievement from './2.Achievement'
-import Members from './4.Members'
-import Contact from './5.Contact'
-import Footer from 'components/_shared/Footer'
 import { AiFillGithub } from 'react-icons/ai'
 import { IoMdSettings } from 'react-icons/io'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
@@ -15,40 +8,12 @@ import { mobile } from 'styles/media'
 import { useRecoilState } from 'recoil'
 import { home } from 'states'
 import { css } from '@emotion/react'
+import Image from 'next/image'
+import { members, pages } from 'libs/data'
+import imageLoader from 'libs/loader'
 
 //q&a페이지도 하나 만들어서 메시지 형태로 만들어보는건 어떨까?
 type Props = {}
-
-const pages = [
-  {
-    name: '',
-    component: Intro,
-  },
-  {
-    name: 'About',
-    component: About,
-  },
-  {
-    name: 'Achievement',
-    component: Achievement,
-  },
-  {
-    name: 'Projects',
-    component: Projects,
-  },
-  {
-    name: 'Members',
-    component: Members,
-  },
-  {
-    name: 'Contact',
-    component: Contact,
-  },
-  {
-    name: '',
-    component: Footer,
-  },
-]
 
 const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(home)
@@ -69,10 +34,11 @@ const Home = (props: Props) => {
     }
   }
   useEffect(() => {
+    setPage(0)
     window.addEventListener('resize', handleResize)
     return () => {
+      setPage(null)
       window.removeEventListener('resize', handleResize)
-      // setPage(null)
     }
   }, [])
 
@@ -81,11 +47,11 @@ const Home = (props: Props) => {
   }, [rightBarRef])
 
   const handleNext = () => {
-    if (page === pages.length - 1) return
+    if (page === null || page === pages.length - 1) return
     else setPage(page + 1)
   }
   const handlePrev = () => {
-    if (page === 0) return
+    if (page === null || page === 0) return
     else setPage(page - 1)
   }
 
@@ -106,7 +72,7 @@ const Home = (props: Props) => {
       <ToolBar direction="right" ref={rightBarRef}>
         <div></div>
         <PageMenu page={page}>
-          <MenuHeader>{pages[page].name}</MenuHeader>
+          <MenuHeader>{page ? pages[page].name : ''}</MenuHeader>
           {pages.map((menu, idx) => (
             <Menu
               selected={page === idx}
@@ -135,6 +101,28 @@ const Home = (props: Props) => {
           <page.component key={idx} />
         ))}
       </FullPage>
+
+      {/* 이미지를 미리 로드하기 위함 */}
+      <PreloadImg>
+        {members.map((member) => (
+          <div key={member.id}>
+            <Image
+              src={member.images[0]}
+              loader={imageLoader}
+              alt=""
+              width={1}
+              height={1}
+            />
+            <Image
+              src={member.images[1]}
+              loader={imageLoader}
+              alt=""
+              width={1}
+              height={1}
+            />
+          </div>
+        ))}
+      </PreloadImg>
     </Wrapper>
   )
 }
@@ -163,7 +151,7 @@ const ToolBar = styled.div<ToolBar>`
   }
 `
 type PageMenu = {
-  page: number
+  page: number | null
 }
 
 const PageMenu = styled.div<PageMenu>`
@@ -267,6 +255,15 @@ const Arrow = styled.div<ArrowProps>`
   }
   cursor: pointer;
   visibility: ${(props) => (props.activated ? 'visible' : 'hidden')};
+`
+
+const PreloadImg = styled.div`
+  position: absolute;
+  overflow: hidden;
+  left: -9999px;
+  top: -9999px;
+  height: 1px;
+  width: 1px;
 `
 
 export default Home

@@ -8,7 +8,7 @@ type Props = {}
 
 const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑‍💻']
 
-const Page = (props: Props) => {
+const Intro = (props: Props) => {
   return (
     <Wrapper>
       <TitleBox className="container title_1">
@@ -77,4 +77,4 @@ const BrowserBox = styled.div`
   }
 `
 
-export default Page
+export default Intro

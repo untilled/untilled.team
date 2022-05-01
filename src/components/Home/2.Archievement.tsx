@@ -4,7 +4,7 @@ import { mobile } from 'styles/media'
 
 type Props = {}
 
-const Page = (props: Props) => {
+const Archivement = (props: Props) => {
   return (
     <Wrapper className="">
       <Browser>
@@ -83,4 +83,4 @@ const Box = styled.div`
   border-radius: 15px;
 `
 
-export default Page
+export default Archivement
