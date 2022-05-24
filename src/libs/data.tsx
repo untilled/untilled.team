@@ -1,9 +1,9 @@
-import Intro from 'components/Home/0.Intro'
-import About from 'components/Home/1.About'
-import Archivement from 'components/Home/2.Archievement'
-import Projects from 'components/Home/3.Projects'
-import Members from 'components/Home/4.Members'
-import Contact from 'components/Home/5.Contact'
+import Intro from 'components/Home/_pages/0.Intro'
+import About from 'components/Home/_pages/1.About'
+import Archivement from 'components/Home/_pages/2.Archievement'
+import Projects from 'components/Home/_pages/3.Projects'
+import Members from 'components/Home/_pages/4.Members'
+import Contact from 'components/Home/_pages/5.Contact'
 import Footer from 'components/_shared/Footer'
 
 export const pages = [

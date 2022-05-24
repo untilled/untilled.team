@@ -64,9 +64,9 @@ const Home = (props: Props) => {
           <a href="https://github.com/untilled">
             <AiFillGithub />
           </a>
-          <div>
+          {/* <div>
             <IoMdSettings />
-          </div>
+          </div> */}
         </IconList>
       </ToolBar>
       <ToolBar direction="right" ref={rightBarRef}>

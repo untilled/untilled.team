@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
 import Header from 'components/_shared/Header'
-import WordSlide from 'components/_shared/WordSlide'
+import WordSlide from 'components/_shared/WordSlider'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 type Props = {}
@@ -22,6 +23,12 @@ const questions = [
 ]
 
 const Contact = (props: Props) => {
+  const router = useRouter()
+
+  const handleClick: React.MouseEventHandler<Element> = () => {
+    router.push('/contact')
+  }
+
   return (
     <Wrapper>
       <Title>
@@ -41,10 +48,15 @@ const Contact = (props: Props) => {
         <br />
         {/* <h1>Developing Developers</h1> */}
       </Title>
-      {/* <ConsoleWrapper className="container">
-        <Header title="" height={40} />
-        <div className="container"></div>
-      </ConsoleWrapper> */}
+      <Buttons className='container'>
+      <ContactButton className="container" onClick={handleClick}>
+        지원하기
+      </ContactButton>
+      <ContactButton className="container" color='white' onClick={handleClick}>
+        문의하기
+      </ContactButton>
+      </Buttons>
+      
     </Wrapper>
   )
 }
@@ -57,7 +69,9 @@ const Wrapper = styled.div`
   padding-top: 100px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: scroll;
+  padding-bottom: 150px;
 `
 const Title = styled.div`
   display: flex;
@@ -81,14 +95,16 @@ const Content = styled.div`
   width: fit-content;
 `
 
-const ConsoleWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: #e9ecef;
-  padding: 0px;
-  border-radius: 30px;
-  border-radius: 30px;
-  margin-bottom: 30px;
+const Buttons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
 `
+const ContactButton = styled(Button)`
+  padding: 15px 90px;
+`
+
+
+
 
 export default Contact

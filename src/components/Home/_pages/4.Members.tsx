@@ -14,7 +14,8 @@ type Props = {}
 
 const Members = (props: Props) => {
   const router = useRouter()
-  const handleClick = (e: any) => {
+
+  const handleClick: React.MouseEventHandler<Element> = () => {
     router.push('/members')
   }
   return (

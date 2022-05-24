@@ -8,7 +8,7 @@ type Props = {
 }
 
 //words현재는 4개로 고정. 유동적으로 변경 가능하도록 수정 필요
-const WordSlide = ({ words, background = false, height = 80 }: Props) => {
+const WordSlider = ({ words, background = false, height = 80 }: Props) => {
   return (
     <Wrapper height={height}>
       {words.map((word, idx) => (
@@ -78,4 +78,4 @@ const Word = styled.div<Word>`
   color: white;
 `
 
-export default WordSlide
+export default WordSlider

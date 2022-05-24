@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Header from 'components/_shared/Header'
-import WordSlide from 'components/_shared/WordSlide'
+import WordSlide from 'components/_shared/WordSlider'
 import { useRouter } from 'next/router'
 import { mobile } from 'styles/media'
 
