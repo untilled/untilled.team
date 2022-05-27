@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 `
 const Browser = styled.div`
-  max-width: 1280px;
+  max-width: 1460px;
   width: 100%;
   height: fit-content;
   min-height: 100%;

@@ -31,7 +31,7 @@ export const globalStyles = css`
     cursor: pointer;
   }
   .container {
-    max-width: 1024px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0px 5px;
   }

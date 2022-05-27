@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlider'
+import imageLoader from 'libs/loader'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { mobile } from 'styles/media'
 
@@ -11,18 +13,24 @@ const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑
 const Intro = (props: Props) => {
   return (
     <Wrapper>
-      <TitleBox className="container title_1">
-        {/* <div>
+      <TitleWrapper className="container title_1">
+        <TitleBox>
           <br />
-          Hi there, We{`'`}re Untilled.
+          Hi there,
+          <br />
+          We{`'`}re Untilled.
           <br />
           <br />
-        </div>
-        <Content>
           <div>We{`'`}re developing</div>
           <WordSlide words={words} background height={80} />
-        </Content> */}
-      </TitleBox>
+        </TitleBox>
+        {/* <ImageBox>
+          <img
+            src="/images/about/conversation.svg"
+            // loader={imageLoader}
+          />
+        </ImageBox> */}
+      </TitleWrapper>
       <BrowserBox>
         <Header title="" height={40} />
         <div className="container">{/* <h2>About</h2> */}</div>
@@ -33,6 +41,8 @@ const Intro = (props: Props) => {
 
 const Wrapper = styled.div`
   /* font-family: 'Merriweather', serif; */
+  /* max-width: 1280px;
+  margin: 0 auto; */
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -48,26 +58,34 @@ const Wrapper = styled.div`
   }
 `
 
-const TitleBox = styled.div`
+const TitleWrapper = styled.div`
   width: 100%;
   padding: 100px 0px;
   font-weight: 900;
+  display: flex;
+  justify-content: space-between;
 
   ${mobile} {
     padding: 50px 0;
   }
 `
 
-const Content = styled.div`
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+const TitleBox = styled.div`
+  flex-shrink: 0;
+`
+
+const ImageBox = styled.div`
+  width: 100%;
+  img {
+    width: 100%;
+    padding: 100px;
+  }
 `
 
 const BrowserBox = styled.div`
-  max-width: 1280px;
-  width: 100%;
+  max-width: 1460px;
   margin: 0 auto;
+  width: 100%;
   height: 80px;
   background-color: #e9ecef;
   border-top-left-radius: 30px;

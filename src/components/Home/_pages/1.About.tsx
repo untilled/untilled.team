@@ -69,7 +69,7 @@ const Wrapper = styled.div`
 `
 
 const Browser = styled.div`
-  max-width: 1280px;
+  max-width: 1460px;
   width: 100%;
   margin: 0 auto;
   background-color: #e9ecef;

@@ -1,8 +1,7 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import { AiFillGithub } from 'react-icons/ai'
-import { IoMdSettings } from 'react-icons/io'
+import { AiOutlineInstagram, AiFillFacebook } from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { mobile } from 'styles/media'
 import { useRecoilState } from 'recoil'
@@ -12,7 +11,6 @@ import Image from 'next/image'
 import { members, pages } from 'libs/data'
 import imageLoader from 'libs/loader'
 
-//q&a페이지도 하나 만들어서 메시지 형태로 만들어보는건 어떨까?
 type Props = {}
 
 const Home = (props: Props) => {
@@ -26,7 +24,7 @@ const Home = (props: Props) => {
       typeof window === 'object'
     ) {
       let distance = 0
-      if (window.innerWidth > 1024) distance = (window.innerWidth - 1024) / 2
+      if (window.innerWidth > 1280) distance = (window.innerWidth - 1280) / 2
       rightBarRef.current.style.right = `${distance + 10}px`
       rightBarRef.current.style.display = `flex`
       leftBarRef.current.style.left = `${distance + 10}px`
@@ -61,11 +59,11 @@ const Home = (props: Props) => {
         <div></div>
         <div></div>
         <IconList>
-          <a href="https://github.com/untilled">
-            <AiFillGithub />
-          </a>
           {/* <div>
-            <IoMdSettings />
+            <AiOutlineInstagram />
+          </div>
+          <div>
+            <AiFillFacebook />
           </div> */}
         </IconList>
       </ToolBar>
@@ -225,6 +223,7 @@ const IconList = styled.div`
     svg {
       width: 30px;
       height: 30px;
+      border-radius: 50%;
     }
     cursor: pointer;
   }
