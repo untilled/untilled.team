@@ -6,52 +6,24 @@ type Props = {}
 
 const Archivement = (props: Props) => {
   return (
-    <Wrapper className="">
-      <Browser>
-        <div className="container">
-          <Title>
-            <h1>함께 성장해온 언틸드</h1>
-            <h3>팀원들과 함께 끊임없이 성장해 나가고 있어요.</h3>
-          </Title>
-          <BoxList>
-            <Box></Box>
-            <Box></Box>
-            <Box></Box>
-            <Box></Box>
-          </BoxList>
-        </div>
-      </Browser>
+    <Wrapper>
+      <Title>
+        <h1>함께 성장해온 언틸드</h1>
+        <h3>팀원들과 함께 끊임없이 성장해 나가고 있어요.</h3>
+      </Title>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  color: black;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
   height: calc(100vh - 100px);
+  padding-top: 80px;
   ${mobile} {
     height: fit-content;
-  }
-`
-const Browser = styled.div`
-  max-width: 1460px;
-  width: 100%;
-  height: fit-content;
-  min-height: 100%;
-  margin: 0 auto;
-  background-color: #e9ecef;
-  padding-top: 80px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  & > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 40px;
-    gap: 60px;
   }
 `
 const Title = styled.div`
@@ -64,7 +36,7 @@ const Title = styled.div`
     font-size: 40px;
   }
   h3 {
-    color: #495057;
+    color: #ced4da;
     font-weight: 500;
   }
 `

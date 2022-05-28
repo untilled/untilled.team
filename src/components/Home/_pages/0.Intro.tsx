@@ -1,21 +1,25 @@
 import styled from '@emotion/styled'
-import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlider'
-import imageLoader from 'libs/loader'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { mobile } from 'styles/media'
 
 type Props = {}
 
 const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑‍💻']
 
+//https://vod-progressive.akamaized.net/exp=1653771351~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F947%2F7%2F179738682%2F586744340.mp4~hmac=5b96762895cd156c179eb36c422cfa1d3a001b49fd64dba1db6103eb01a7db00/vimeo-prod-skyfire-std-us/01/947/7/179738682/586744340.mp4?filename=Paperwork+-+4737.mp4
+//https://vod-progressive.akamaized.net/exp=1653771003~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3340%2F7%2F191704465%2F638270551.mp4~hmac=ddf4686fa91731523d922b6701dec46327fe5e2c750732e3702acd4efb2305c4/vimeo-prod-skyfire-std-us/01/3340/7/191704465/638270551.mp4?filename=Office+-+6389.mp4
 const Intro = (props: Props) => {
   return (
     <Wrapper>
-      <TitleWrapper className="container title_1">
-        <TitleBox>
-          <br />
+      <video
+        src="https://vod-progressive.akamaized.net/exp=1653771351~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F947%2F7%2F179738682%2F586744340.mp4~hmac=5b96762895cd156c179eb36c422cfa1d3a001b49fd64dba1db6103eb01a7db00/vimeo-prod-skyfire-std-us/01/947/7/179738682/586744340.mp4?filename=Paperwork+-+4737.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <TitleWrapper>
+        <Title className="title_1">
           Hi there,
           <br />
           We{`'`}re Untilled.
@@ -23,66 +27,66 @@ const Intro = (props: Props) => {
           <br />
           <div>We{`'`}re developing</div>
           <WordSlide words={words} background height={80} />
-        </TitleBox>
-        {/* <ImageBox>
-          <img
-            src="/images/about/conversation.svg"
-            // loader={imageLoader}
-          />
-        </ImageBox> */}
+        </Title>
       </TitleWrapper>
-      <BrowserBox>
+      {/* <BrowserBox>
         <Header title="" height={40} />
-        <div className="container">{/* <h2>About</h2> */}</div>
-      </BrowserBox>
+      </BrowserBox> */}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  /* font-family: 'Merriweather', serif; */
-  /* max-width: 1280px;
-  margin: 0 auto; */
+  position: relative;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* &::before {
+    content: '';
+    background-image: url('https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.1;
+  } */
+  video {
+    object-fit: cover; // Set the magic
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+  }
   &::-webkit-scrollbar {
     display: none;
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100vh;
 
   ${mobile} {
     height: fit-content;
   }
 `
-
 const TitleWrapper = styled.div`
-  width: 100%;
-  padding: 100px 0px;
-  font-weight: 900;
-  display: flex;
-  justify-content: space-between;
-
-  ${mobile} {
-    padding: 50px 0;
-  }
+  position: relative;
+  flex-grow: 1;
+  height: calc(100vh - 0px);
 `
 
-const TitleBox = styled.div`
+const Title = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
   flex-shrink: 0;
 `
 
-const ImageBox = styled.div`
-  width: 100%;
-  img {
-    width: 100%;
-    padding: 100px;
-  }
-`
-
 const BrowserBox = styled.div`
+  position: relative;
   max-width: 1460px;
   margin: 0 auto;
   width: 100%;

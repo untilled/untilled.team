@@ -16,13 +16,12 @@ type Props = {}
 const About = (props: Props) => {
   return (
     <Wrapper>
-      <Browser>
-        <Title className="container">
-          <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
-          <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
-          <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
-        </Title>
-        {/* <CardListWrapper>
+      <Title className="container">
+        <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
+        <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
+        <h3>팀 언틸드는 성장을 원하는 모든 이들을 돕고 있어요.</h3>
+      </Title>
+      {/* <CardListWrapper>
           <div className="container">
             <Card>
               <Paint></Paint>
@@ -50,18 +49,17 @@ const About = (props: Props) => {
             </Card>
           </div>
         </CardListWrapper> */}
-      </Browser>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  color: black;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
   height: 100vh;
+  padding-top: 80px;
 
   ${mobile} {
     height: fit-content;
@@ -72,8 +70,7 @@ const Browser = styled.div`
   max-width: 1460px;
   width: 100%;
   margin: 0 auto;
-  background-color: #e9ecef;
-  padding-top: 80px;
+  background-color: black;
   height: 100%;
   //container
   display: flex;
@@ -92,6 +89,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
@@ -99,7 +97,7 @@ const Title = styled.div`
   }
 
   h3 {
-    color: #495057;
+    color: #ced4da;
     font-weight: 500;
   }
 `

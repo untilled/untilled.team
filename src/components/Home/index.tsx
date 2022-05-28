@@ -69,7 +69,7 @@ const Home = (props: Props) => {
       </ToolBar>
       <ToolBar direction="right" ref={rightBarRef}>
         <div></div>
-        <PageMenu page={page}>
+        <PageMenu>
           <MenuHeader>{page ? pages[page].name : ''}</MenuHeader>
           {pages.map((menu, idx) => (
             <Menu
@@ -148,11 +148,8 @@ const ToolBar = styled.div<ToolBar>`
     display: none !important;
   }
 `
-type PageMenu = {
-  page: number | null
-}
 
-const PageMenu = styled.div<PageMenu>`
+const PageMenu = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -163,14 +160,6 @@ const PageMenu = styled.div<PageMenu>`
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: 15px;
-  ${({ page }) =>
-    (page === 1 || page === 2) &&
-    css`
-      background-color: #343a40;
-      & > div {
-        color: black;
-      }
-    `};
 `
 
 const MenuHeader = styled.div`

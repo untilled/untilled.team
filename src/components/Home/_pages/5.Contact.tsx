@@ -48,15 +48,9 @@ const Contact = (props: Props) => {
         <br />
         {/* <h1>Developing Developers</h1> */}
       </Title>
-      <Buttons className='container'>
-      <ContactButton className="container" onClick={handleClick}>
-        지원하기
-      </ContactButton>
-      <ContactButton className="container" color='white' onClick={handleClick}>
+      <ContactButton className="container" color="white" onClick={handleClick}>
         문의하기
       </ContactButton>
-      </Buttons>
-      
     </Wrapper>
   )
 }
@@ -103,8 +97,5 @@ const Buttons = styled.div`
 const ContactButton = styled(Button)`
   padding: 15px 90px;
 `
-
-
-
 
 export default Contact

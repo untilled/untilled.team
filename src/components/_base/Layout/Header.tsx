@@ -49,13 +49,13 @@ const Header = ({}: Props) => {
         </Mobile>
         {/* 메인페이지에 대한 header표시 유무 */}
         <Desktop>
-          <Logo color={page === 1 || page === 2 ? 'black' : 'white'} />
+          <Logo color="white" />
           <Right>
             {/* 페이지 미구현 */}
             {menus.map((menu) => (
               <Link key={menu.id} href={menu.href}>
                 <a>
-                  <Menu page={page} selected={menu.href === router.asPath}>
+                  <Menu selected={menu.href === router.asPath}>
                     {menu.name}
                   </Menu>
                 </a>
@@ -112,17 +112,11 @@ const Right = styled.div`
 
 type MenuProps = {
   selected: boolean
-  page: number | null
 }
 /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
 /* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
 const Menu = styled.div<MenuProps>`
   transition: all ease-in-out 0.5s 0s;
-  ${({ page }) =>
-    (page === 1 || page === 2) &&
-    css`
-      color: black;
-    `};
   &:hover {
   }
 `
