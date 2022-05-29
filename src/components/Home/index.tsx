@@ -56,6 +56,8 @@ const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(home)
   const rightBarRef = useRef<HTMLDivElement>(null)
   const leftBarRef = useRef<HTMLDivElement>(null)
+
+  //resize handler for toolbar
   const handleResize = () => {
     if (
       rightBarRef.current &&

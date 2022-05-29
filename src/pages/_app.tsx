@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil'
 import type { AppProps } from 'next/app'
 import Layout from 'components/_base/Layout'
 import Head from 'next/head'
+import Cursor from 'components/_shared/Cursor'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Cursor />
     </RecoilRoot>
   )
 }

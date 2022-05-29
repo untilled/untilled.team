@@ -22,6 +22,8 @@ const Footer = (props: Props) => {
           </Menus>
         </Left>
         <Right>
+          <div>Untilled. All rights reserved.</div>
+
           {/* <Select name="" id="">
             <option value="kr">한국어</option>
           </Select> */}
@@ -61,6 +63,7 @@ const Right = styled.div`
   align-items: center;
   gap: 50px;
   margin-right: 60px;
+  font-size: 0.9rem;
 `
 
 const Select = styled.select`

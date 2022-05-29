@@ -11,13 +11,7 @@ const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑
 const Intro = (props: Props) => {
   return (
     <Wrapper>
-      <video
-        src="https://vod-progressive.akamaized.net/exp=1653771351~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F947%2F7%2F179738682%2F586744340.mp4~hmac=5b96762895cd156c179eb36c422cfa1d3a001b49fd64dba1db6103eb01a7db00/vimeo-prod-skyfire-std-us/01/947/7/179738682/586744340.mp4?filename=Paperwork+-+4737.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <video src="/videos/intro.mp4" autoPlay loop muted playsInline />
       <TitleWrapper>
         <Title className="title_1">
           Hi there,
