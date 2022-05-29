@@ -47,11 +47,4 @@ export const globalStyles = css`
       font-size: 40px;
     }
   }
-  .title_1 {
-    font-size: 55px;
-    font-weight: 600;
-    ${mobile} {
-      font-size: 40px;
-    }
-  }
 `

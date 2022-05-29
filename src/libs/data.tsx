@@ -6,34 +6,26 @@ import Members from 'components/Home/_pages/4.Members'
 import Contact from 'components/Home/_pages/5.Contact'
 import Footer from 'components/_shared/Footer'
 
-export const pages = [
+export const menus = [
   {
-    name: '',
-    component: Intro,
-  },
-  {
+    id: 1,
     name: 'About',
-    component: About,
+    href: '/',
   },
   {
-    name: 'Archivement',
-    component: Archivement,
-  },
-  {
+    id: 2,
     name: 'Projects',
-    component: Projects,
+    href: '/projects',
   },
   {
+    id: 3,
     name: 'Members',
-    component: Members,
+    href: '/members',
   },
   {
+    id: 4,
     name: 'Contact',
-    component: Contact,
-  },
-  {
-    name: '',
-    component: Footer,
+    href: '/contact',
   },
 ]
 

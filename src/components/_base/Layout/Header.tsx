@@ -8,50 +8,25 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { useRecoilState } from 'recoil'
 import { home } from 'states'
 import { css } from '@emotion/react'
+import { menus } from 'libs/data'
 
 type Props = {}
-
-const menus = [
-  {
-    id: 1,
-    name: 'About',
-    href: '/',
-  },
-  {
-    id: 2,
-    name: 'Projects',
-    href: '/projects',
-  },
-  {
-    id: 3,
-    name: 'Members',
-    href: '/members',
-  },
-  {
-    id: 4,
-    name: 'Contact',
-    href: '/contact',
-  },
-]
 
 const Header = ({}: Props) => {
   const [page, setPage] = useRecoilState(home)
   const router = useRouter()
   return (
-    <Wrapper className="">
+    <Wrapper>
       <Container className="container">
         <Mobile>
           <Logo />
-          {/* 페이지 미구현 */}
           <div>
             <AiOutlineMenu />
           </div>
         </Mobile>
-        {/* 메인페이지에 대한 header표시 유무 */}
         <Desktop>
           <Logo color="white" />
           <Right>
-            {/* 페이지 미구현 */}
             {menus.map((menu) => (
               <Link key={menu.id} href={menu.href}>
                 <a>
@@ -73,12 +48,11 @@ const Wrapper = styled.div`
   z-index: 20;
   position: fixed;
   width: 100%;
-  /* height: 100px; */
   padding: 10px;
 `
 const Container = styled.div`
+  /* desktop, mobile 공통 적용 */
   & > div {
-    height: 100%;
     align-items: center;
     justify-content: space-between;
   }

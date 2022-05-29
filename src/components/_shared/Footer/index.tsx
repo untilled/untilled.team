@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
-import React from 'react'
+import { menus } from 'libs/data'
+import Link from 'next/link'
 import Logo from '../Logo'
 
 type Props = {}
@@ -8,26 +9,68 @@ const Footer = (props: Props) => {
   return (
     <Wrapper>
       <div className="container">
-        {/* <Logo color="gray" /> */}
-        <div></div>
-        <div>Untilled. All rights reserved.</div>
-        <div></div>
+        <Left>
+          <Logo color="gray" />
+          <Menus>
+            {menus.map((menu) => (
+              <Link key={menu.id} href={menu.href}>
+                <a>
+                  <div>{menu.name}</div>
+                </a>
+              </Link>
+            ))}
+          </Menus>
+        </Left>
+        <Right>
+          {/* <Select name="" id="">
+            <option value="kr">한국어</option>
+          </Select> */}
+        </Right>
       </div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  height: 40px;
+  height: fit-content;
   color: white;
+  padding: 50px 0px;
   background-color: #212529;
-  font-size: 0.8rem;
   & > div {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+`
+
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 70px;
+`
+
+const Menus = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 50px;
+`
+
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-right: 60px;
+`
+
+const Select = styled.select`
+  border: none;
+  background: none;
+  background-color: white;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-weight: 400;
+  font-family: 'Noto Sans KR', sans-serif;
 `
 
 export default Footer

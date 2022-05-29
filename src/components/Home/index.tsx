@@ -8,8 +8,47 @@ import { useRecoilState } from 'recoil'
 import { home } from 'states'
 import { css } from '@emotion/react'
 import Image from 'next/image'
-import { members, pages } from 'libs/data'
+import { members } from 'libs/data'
 import imageLoader from 'libs/loader'
+
+import Intro from 'components/Home/_pages/0.Intro'
+import About from 'components/Home/_pages/1.About'
+import Archivement from 'components/Home/_pages/2.Archievement'
+import Projects from 'components/Home/_pages/3.Projects'
+import Members from 'components/Home/_pages/4.Members'
+import Contact from 'components/Home/_pages/5.Contact'
+import Footer from 'components/_shared/Footer'
+
+const pages = [
+  {
+    name: '',
+    component: Intro,
+  },
+  {
+    name: 'About',
+    component: About,
+  },
+  {
+    name: 'Archivement',
+    component: Archivement,
+  },
+  {
+    name: 'Projects',
+    component: Projects,
+  },
+  {
+    name: 'Members',
+    component: Members,
+  },
+  {
+    name: 'Contact',
+    component: Contact,
+  },
+  {
+    name: '',
+    component: Footer,
+  },
+]
 
 type Props = {}
 
@@ -69,7 +108,7 @@ const Home = (props: Props) => {
       </ToolBar>
       <ToolBar direction="right" ref={rightBarRef}>
         <div></div>
-        <PageMenu>
+        <PageMenu page={page}>
           <MenuHeader>{page ? pages[page].name : ''}</MenuHeader>
           {pages.map((menu, idx) => (
             <Menu
@@ -149,7 +188,11 @@ const ToolBar = styled.div<ToolBar>`
   }
 `
 
-const PageMenu = styled.div`
+type PageMenu = {
+  page: number | null
+}
+
+const PageMenu = styled.div<PageMenu>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -160,6 +203,14 @@ const PageMenu = styled.div`
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: 15px;
+  ${({ page }) =>
+    (page === 9 || page === 9) &&
+    css`
+      background-color: #343a40;
+      & > div {
+        color: black;
+      }
+    `};
 `
 
 const MenuHeader = styled.div`
@@ -177,8 +228,8 @@ type MenuProps = {
 const Menu = styled.div<MenuProps>`
   position: relative;
   border-radius: 50%;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background-color: ${(props) => (props.selected ? 'white' : '#797979')};
   & > div {
     display: none;
