@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import { AiOutlineInstagram, AiFillFacebook } from 'react-icons/ai'
+import {
+  AiOutlineInstagram,
+  AiFillFacebook,
+  AiFillGithub,
+} from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { mobile } from 'styles/media'
 import { useRecoilState } from 'recoil'
@@ -101,11 +105,14 @@ const Home = (props: Props) => {
         <div></div>
         <IconList>
           {/* <div>
+            <AiFillGithub />
+          </div> */}
+          <div>
             <AiOutlineInstagram />
           </div>
           <div>
             <AiFillFacebook />
-          </div> */}
+          </div>
         </IconList>
       </ToolBar>
       <ToolBar direction="right" ref={rightBarRef}>
@@ -263,8 +270,8 @@ const IconList = styled.div`
     justify-content: center;
     align-items: center;
     svg {
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
     }
     cursor: pointer;
