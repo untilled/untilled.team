@@ -6,23 +6,12 @@ type Props = {}
 
 const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑‍💻']
 
-//글씨 왼쪽
-//원 오른쪽
 const Intro = (props: Props) => {
   return (
     <Wrapper>
       <video src="/videos/intro.mp4" autoPlay loop muted playsInline />
-      <TitleWrapper>
-        <Title className="title_1">
-          Hi there,
-          <br />
-          We{`'`}re Untilled.
-          <br />
-          <br />
-          <div>We{`'`}re developing</div>
-          <WordSlide words={words} background height={80} />
-        </Title>
-      </TitleWrapper>
+      <TitleLine />
+      <Title className="title_1">We{`'`}re Untilled.</Title>
     </Wrapper>
   )
 }
@@ -30,9 +19,8 @@ const Intro = (props: Props) => {
 const Wrapper = styled.div`
   position: relative;
   overflow: scroll;
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  height: 100vh;
   video {
     object-fit: cover;
     position: absolute;
@@ -47,15 +35,20 @@ const Wrapper = styled.div`
   }
 
   ${mobile} {
-    height: fit-content;
   }
 `
-const TitleWrapper = styled.div`
-  position: relative;
-  flex-grow: 1;
-  height: calc(100vh - 0px);
-`
 
+const TitleLine = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: calc(50% - 250px - 50px);
+  transform: translate(0%, -50%);
+  background-color: white;
+  height: 6px;
+  margin-right: 100px;
+  z-index: 0;
+`
 const Title = styled.div`
   /* font-family: 'Lato', 'Noto Sans KR', sans-serif; */
   position: absolute;
@@ -64,8 +57,9 @@ const Title = styled.div`
   transform: translate(-50%, -50%);
   font-weight: 900;
   flex-shrink: 0;
-  font-style: Italic;
-  /* font-size: 5rem; */
+  font-style: italic;
+  z-index: 1;
+  width: 500px;
 `
 
 export default Intro

@@ -1,16 +1,11 @@
 import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
 import { members } from 'libs/data'
-import imageLoader from 'libs/loader'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { mobile } from 'styles/media'
 
 type Props = {}
-
-// 아이콘 형태
 
 const Members = (props: Props) => {
   const router = useRouter()
