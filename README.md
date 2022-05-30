@@ -12,18 +12,17 @@
 
 - Full Page slide
 - Database using notion
-  - untilled team notion 페이지에 있는 data를 notion api를 통해 불러와 표시하고 있습니다.
-- Deploy using static site generation
+- Deploy using firebase (Static-Site-Generation)
 
 ## Tech and libraries
 
-- react (frontend library)
-- next.js (ssr)
+- react (frontend library/framework)
+- next.js (react framework)
 - recoil (state management)
 - typescript (javascript Superset)
 - emotion (css library)
 - Storybook (component develop tool)
-- jest (javascript testing)
+- jest (javascript testing framework)
 - prettier (code formatter)
 - eslint, husky (code linter)
 
