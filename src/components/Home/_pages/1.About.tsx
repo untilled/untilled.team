@@ -13,6 +13,7 @@ type Props = {}
 // 지역, 시간에 상관없이 언제, 어디서나, 누구든지
 // 지역, 시간에 제약받지 않고 활동이 가능해요.
 
+//row 세 줄
 const About = (props: Props) => {
   return (
     <Wrapper>
