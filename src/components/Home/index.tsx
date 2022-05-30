@@ -206,11 +206,11 @@ const PageMenu = styled.div<PageMenu>`
   font-size: 0.8rem;
   border-radius: 15px;
   ${({ page }) =>
-    (page === 9 || page === 9) &&
+    (page === 4 || page === 4) &&
     css`
       background-color: #343a40;
       & > div {
-        color: black;
+        /* color: black; */
       }
     `};
 `

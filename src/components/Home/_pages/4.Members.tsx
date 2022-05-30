@@ -43,9 +43,6 @@ const Members = (props: Props) => {
           ))}
         </MemberList>
       </MemberListWrapper>
-      <Button className="container" onClick={handleClick}>
-        더 알아보기
-      </Button>
     </Wrapper>
   )
 }

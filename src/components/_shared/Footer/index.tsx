@@ -9,25 +9,9 @@ const Footer = (props: Props) => {
   return (
     <Wrapper>
       <div className="container">
-        <Left>
-          <Logo color="gray" />
-          <Menus>
-            {menus.map((menu) => (
-              <Link key={menu.id} href={menu.href}>
-                <a>
-                  <div>{menu.name}</div>
-                </a>
-              </Link>
-            ))}
-          </Menus>
-        </Left>
-        <Right>
-          <div>Untilled. All rights reserved.</div>
-
-          {/* <Select name="" id="">
-            <option value="kr">한국어</option>
-          </Select> */}
-        </Right>
+        <Left></Left>
+        <div>Copyright ©2022 All rights reserved</div>
+        <Right></Right>
       </div>
     </Wrapper>
   )
@@ -36,8 +20,9 @@ const Footer = (props: Props) => {
 const Wrapper = styled.div`
   height: fit-content;
   color: white;
-  padding: 50px 0px;
+  padding: 10px 0px;
   background-color: #212529;
+  font-size: 0.8rem;
   & > div {
     height: 100%;
     display: flex;
@@ -62,7 +47,6 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
-  margin-right: 60px;
   font-size: 0.9rem;
 `
 

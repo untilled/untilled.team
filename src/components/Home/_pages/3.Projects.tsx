@@ -64,7 +64,6 @@ const Projects = (props: Props) => {
           <Project key={project.id}></Project>
         ))}
       </List>
-      <Button className="container">더 많은 프로젝트</Button>
     </Wrapper>
   )
 }
