@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import { AiOutlineInstagram, AiFillFacebook } from 'react-icons/ai'
+import {
+  AiOutlineInstagram,
+  AiFillFacebook,
+  AiFillGithub,
+} from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState } from 'recoil'
 import { home } from 'states'
@@ -15,8 +19,8 @@ import Projects from 'components/home/_pages/3.Projects'
 import Members from 'components/home/_pages/4.Members'
 import Contact from 'components/home/_pages/5.Contact'
 import Footer from 'components/_shared/Footer'
-import Toolbar from './Toolbar'
-import PreloadImg from './PreloadImg'
+import Toolbar from 'components/_shared/Toolbar'
+import PreloadImg from 'components/_shared/PreloadImg'
 
 const pages = [
   {
@@ -59,7 +63,7 @@ const Home = (props: Props) => {
     return () => {
       setPage(null)
     }
-  }, [])
+  }, [setPage])
 
   const handleNext = () => {
     if (page === null || page === pages.length - 1) return
@@ -136,6 +140,7 @@ type PageMenu = {
 }
 
 const PageMenu = styled.div<PageMenu>`
+  font-family: 'Prompt', sans-serif;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -204,8 +209,8 @@ const IconList = styled.div`
     justify-content: center;
     align-items: center;
     svg {
-      width: 25px;
-      height: 25px;
+      width: 23px;
+      height: 23px;
       border-radius: 50%;
     }
     cursor: pointer;

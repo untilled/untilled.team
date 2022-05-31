@@ -90,6 +90,7 @@ type MenuProps = {
 /* font-weight: ${(props) => (props.selected ? '600' : '400')}; */
 /* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
 const Menu = styled.div<MenuProps>`
+  font-family: 'Prompt', sans-serif;
   transition: all ease-in-out 0.5s 0s;
   font-weight: 200;
   &:hover {
