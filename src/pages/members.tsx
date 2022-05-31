@@ -1,4 +1,4 @@
-import Members from 'components/Members'
+import Members from 'components/members'
 import React from 'react'
 
 type Props = {}

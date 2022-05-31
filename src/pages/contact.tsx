@@ -1,6 +1,6 @@
 import React from 'react'
 import type { NextPage } from 'next'
-import Contact from 'components/Contact'
+import Contact from 'components/contact'
 
 type Props = {}
 

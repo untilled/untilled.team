@@ -2,16 +2,16 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 type Props = {
-  words: string[]
+  data: string[]
   background?: boolean
   height?: number
 }
 
 //words현재는 4개로 고정. 유동적으로 변경 가능하도록 수정 필요
-const WordSlider = ({ words, background = false, height = 80 }: Props) => {
+const WordSlider = ({ data, background = false, height = 80 }: Props) => {
   return (
     <Wrapper height={height}>
-      {words.map((word, idx) => (
+      {data.map((word, idx) => (
         <Word background={background} height={height} key={idx}>
           {word}
         </Word>

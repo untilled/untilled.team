@@ -36,7 +36,7 @@ const Contact = (props: Props) => {
         <Content className="container">
           <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
           <h1>
-            <WordSlide words={words} height={80} />
+            <WordSlide data={words} height={80} />
           </h1>
         </Content>
         <h3 className="container">

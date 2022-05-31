@@ -11,10 +11,9 @@ type Props = {
 }
 
 const FullPage = ({ page, children, onNext, onPrev }: Props) => {
-  const [heightList, setHeightList]: [number[], Function] = useState([])
+  const [heightList, setHeightList] = useState<number[]>([])
   const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
-
   const isMobile = useMediaQuery({
     query: '(max-width: 1024px)',
   })

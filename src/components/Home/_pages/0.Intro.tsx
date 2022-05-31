@@ -1,17 +1,21 @@
 import styled from '@emotion/styled'
+import WordSlider from 'components/_shared/WordSlider'
 import WordSlide from 'components/_shared/WordSlider'
 import { mobile } from 'styles/media'
 
 type Props = {}
 
-const words = ['World🌏', 'Product😻', 'Designer👨‍🎨', 'Developer🧑‍💻']
+const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
 
 const Intro = (props: Props) => {
   return (
     <Wrapper>
       <video src="/videos/intro.mp4" autoPlay loop muted playsInline />
-      <TitleLine />
-      <Title className="title_1">We{`'`}re Untilled.</Title>
+      <Title className=" container">
+        We are developing <br />
+        <Span>Developers🧑‍💻</Span> by <br />
+        making products
+      </Title>
     </Wrapper>
   )
 }
@@ -21,6 +25,8 @@ const Wrapper = styled.div`
   overflow: scroll;
   width: 100%;
   height: 100vh;
+  display: flex;
+  align-items: center;
   video {
     object-fit: cover;
     position: absolute;
@@ -29,6 +35,7 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     opacity: 0.3;
+    z-index: 0;
   }
   &::-webkit-scrollbar {
     display: none;
@@ -38,28 +45,18 @@ const Wrapper = styled.div`
   }
 `
 
-const TitleLine = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: calc(50% - 250px - 50px);
-  transform: translate(0%, -50%);
-  background-color: white;
-  height: 6px;
-  margin-right: 100px;
-  z-index: 0;
-`
 const Title = styled.div`
-  /* font-family: 'Lato', 'Noto Sans KR', sans-serif; */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 900;
-  flex-shrink: 0;
+  font-family: 'Prompt', sans-serif;
   font-style: italic;
+  font-weight: 500;
+  flex-shrink: 0;
+  font-size: 6rem;
+  width: 100%;
   z-index: 1;
-  width: 500px;
+`
+
+const Span = styled.span`
+  background-color: #212529;
 `
 
 export default Intro

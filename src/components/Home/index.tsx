@@ -1,27 +1,22 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
 import FullPage from '../_shared/FullPage'
-import {
-  AiOutlineInstagram,
-  AiFillFacebook,
-  AiFillGithub,
-} from 'react-icons/ai'
+import { AiOutlineInstagram, AiFillFacebook } from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
-import { mobile } from 'styles/media'
 import { useRecoilState } from 'recoil'
 import { home } from 'states'
 import { css } from '@emotion/react'
-import Image from 'next/image'
 import { members } from 'libs/data'
-import imageLoader from 'libs/loader'
 
-import Intro from 'components/Home/_pages/0.Intro'
-import About from 'components/Home/_pages/1.About'
-import Archivement from 'components/Home/_pages/2.Archievement'
-import Projects from 'components/Home/_pages/3.Projects'
-import Members from 'components/Home/_pages/4.Members'
-import Contact from 'components/Home/_pages/5.Contact'
+import Intro from 'components/home/_pages/0.Intro'
+import About from 'components/home/_pages/1.About'
+import Archivement from 'components/home/_pages/2.Archievement'
+import Projects from 'components/home/_pages/3.Projects'
+import Members from 'components/home/_pages/4.Members'
+import Contact from 'components/home/_pages/5.Contact'
 import Footer from 'components/_shared/Footer'
+import Toolbar from './Toolbar'
+import PreloadImg from './PreloadImg'
 
 const pages = [
   {
@@ -58,55 +53,35 @@ type Props = {}
 
 const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(home)
-  const rightBarRef = useRef<HTMLDivElement>(null)
-  const leftBarRef = useRef<HTMLDivElement>(null)
 
-  //resize handler for toolbar
-  const handleResize = () => {
-    if (
-      rightBarRef.current &&
-      leftBarRef.current &&
-      typeof window === 'object'
-    ) {
-      let distance = 0
-      if (window.innerWidth > 1280) distance = (window.innerWidth - 1280) / 2
-      rightBarRef.current.style.right = `${distance + 10}px`
-      rightBarRef.current.style.display = `flex`
-      leftBarRef.current.style.left = `${distance + 10}px`
-      leftBarRef.current.style.display = `flex`
-    }
-  }
   useEffect(() => {
     setPage(0)
-    window.addEventListener('resize', handleResize)
     return () => {
       setPage(null)
-      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  useEffect(() => {
-    handleResize()
-  }, [rightBarRef])
-
   const handleNext = () => {
     if (page === null || page === pages.length - 1) return
-    else setPage(page + 1)
+    setPage(page + 1)
   }
   const handlePrev = () => {
     if (page === null || page === 0) return
-    else setPage(page - 1)
+    setPage(page - 1)
   }
 
+  const preloadMembersData = members.reduce(
+    (prevVal: string[], currVal): string[] => {
+      return [...prevVal, ...currVal.images]
+    },
+    []
+  )
   return (
     <Wrapper>
-      <ToolBar direction="left" ref={leftBarRef}>
+      <Toolbar direction="left">
         <div></div>
         <div></div>
         <IconList>
-          {/* <div>
-            <AiFillGithub />
-          </div> */}
           <div>
             <AiOutlineInstagram />
           </div>
@@ -114,8 +89,8 @@ const Home = (props: Props) => {
             <AiFillFacebook />
           </div>
         </IconList>
-      </ToolBar>
-      <ToolBar direction="right" ref={rightBarRef}>
+      </Toolbar>
+      <Toolbar direction="right">
         <div></div>
         <PageMenu page={page}>
           <MenuHeader>{page ? pages[page].name : ''}</MenuHeader>
@@ -131,70 +106,29 @@ const Home = (props: Props) => {
         </PageMenu>
 
         <ArrowList>
-          {/* <div>
-            <MdKeyboardArrowUp />
-          </div> */}
           <Arrow activated={page !== 0} onClick={handlePrev}>
             <MdKeyboardArrowUp />
           </Arrow>
-          <Arrow activated={page !== pages.length - 1} onClick={handleNext}>
+          <Arrow
+            activated={page !== 0 && page !== pages.length - 1}
+            onClick={handleNext}
+          >
             <MdKeyboardArrowDown />
           </Arrow>
         </ArrowList>
-      </ToolBar>
+      </Toolbar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
         ))}
       </FullPage>
-
-      {/* 이미지를 미리 로드하기 위함 */}
-      <PreloadImg>
-        {members.map((member) => (
-          <div key={member.id}>
-            <Image
-              src={member.images[0]}
-              loader={imageLoader}
-              alt=""
-              width={1}
-              height={1}
-            />
-            <Image
-              src={member.images[1]}
-              loader={imageLoader}
-              alt=""
-              width={1}
-              height={1}
-            />
-          </div>
-        ))}
-      </PreloadImg>
+      <PreloadImg data={preloadMembersData} />
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   overflow-x: hidden;
-`
-type ToolBar = {
-  direction: string
-}
-
-const ToolBar = styled.div<ToolBar>`
-  z-index: 20;
-  top: 0;
-  bottom: 0;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: ${({ direction }) =>
-    direction === 'left' ? 'flex-start' : 'flex-end'};
-  position: absolute;
-  font-size: 0.8rem;
-
-  ${mobile} {
-    display: none !important;
-  }
 `
 
 type PageMenu = {
@@ -303,15 +237,6 @@ const Arrow = styled.div<ArrowProps>`
   }
   cursor: pointer;
   visibility: ${(props) => (props.activated ? 'visible' : 'hidden')};
-`
-
-const PreloadImg = styled.div`
-  position: absolute;
-  overflow: hidden;
-  left: -9999px;
-  top: -9999px;
-  height: 1px;
-  width: 1px;
 `
 
 export default Home

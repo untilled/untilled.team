@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import Header from './_shared/Header'
+import Header from '../_shared/Header'
 
 type Props = {}
 

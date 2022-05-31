@@ -91,6 +91,7 @@ type MenuProps = {
 /* border-bottom: ${(props) => props.selected ? '2px solid white' : '2px solid none'}; */
 const Menu = styled.div<MenuProps>`
   transition: all ease-in-out 0.5s 0s;
+  font-weight: 200;
   &:hover {
   }
 `
