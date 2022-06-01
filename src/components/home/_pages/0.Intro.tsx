@@ -1,9 +1,13 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import TextCircle from 'components/_shared/TextCircle'
 import WordSlider from 'components/_shared/WordSlider'
+import imageLoader from 'libs/loader'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
+import { AiOutlineArrowDown } from 'react-icons/ai'
 import { mobile } from 'styles/media'
-
+import HalfArrow from '/svgs/half-arrow-buttom.svg'
 type Props = {}
 
 const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
@@ -62,13 +66,22 @@ const Intro = (props: Props) => {
         </Title>
       </Middle>
       <Bottom className=" container">
-        <TextCircle data="scroll down scroll down scroll down " />
+        <TextCircle
+          style={TextCircleCss}
+          data="scroll down scroll down scroll down "
+        ></TextCircle>
       </Bottom>
     </Wrapper>
   )
 }
 
+const TextCircleCss = css`
+  right: 200px;
+  bottom: 100px;
+`
+
 const Wrapper = styled.div`
+  user-select: none;
   &::-webkit-scrollbar {
     display: none;
   }

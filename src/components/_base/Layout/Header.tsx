@@ -45,6 +45,7 @@ const Header = ({}: Props) => {
 }
 
 const Wrapper = styled.div`
+  user-select: none;
   z-index: 20;
   position: fixed;
   width: 100%;

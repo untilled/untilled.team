@@ -4,6 +4,7 @@ import FullPage from '../_shared/FullPage'
 import {
   AiOutlineInstagram,
   AiFillFacebook,
+  AiFillLinkedin,
   AiFillGithub,
 } from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
@@ -87,17 +88,17 @@ const Home = (props: Props) => {
         <div></div>
         <IconList>
           <div>
-            <AiOutlineInstagram />
+            <AiFillGithub />
           </div>
           <div>
-            <AiFillFacebook />
+            <AiFillLinkedin />
           </div>
         </IconList>
       </Toolbar>
       <Toolbar direction="right">
         <div></div>
         <PageMenu page={page}>
-          <MenuHeader>{page ? pages[page].name : ''}</MenuHeader>
+          <MenuHeader>{page !== null ? pages[page].name : ''}</MenuHeader>
           {pages.map((menu, idx) => (
             <Menu
               selected={page === idx}
@@ -108,15 +109,11 @@ const Home = (props: Props) => {
             </Menu>
           ))}
         </PageMenu>
-
-        <ArrowList>
+        <ArrowList page={page}>
           <Arrow activated={page !== 0} onClick={handlePrev}>
             <MdKeyboardArrowUp />
           </Arrow>
-          <Arrow
-            activated={page !== 0 && page !== pages.length - 1}
-            onClick={handleNext}
-          >
+          <Arrow activated={page !== pages.length - 1} onClick={handleNext}>
             <MdKeyboardArrowDown />
           </Arrow>
         </ArrowList>
@@ -202,12 +199,13 @@ const IconList = styled.div`
   padding-bottom: 20px;
   & > * {
     border-radius: 50%;
-    background-color: #494949;
+    background-color: #212529;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
     svg {
       width: 23px;
       height: 23px;
@@ -217,12 +215,19 @@ const IconList = styled.div`
   }
 `
 
-const ArrowList = styled.div`
+type ArrowList = {
+  page: number | null
+}
+
+const ArrowList = styled.div<ArrowList>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
+  /* transform: translate(${({ page }) =>
+    page === 0 ? '0, 100px' : '0, 0px'});
+  transition: transform ease-out 0.3s; */
 `
 type ArrowProps = {
   activated: boolean
@@ -230,12 +235,14 @@ type ArrowProps = {
 
 const Arrow = styled.div<ArrowProps>`
   border-radius: 50%;
-  background-color: #494949;
+  background-color: #212529;
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+
   svg {
     width: 30px;
     height: 30px;

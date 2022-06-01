@@ -10,7 +10,7 @@ const Archivement = (props: Props) => {
     <Wrapper>
       <Title>
         <h1>함께 성장해온 언틸드</h1>
-        <h3>팀원들과 함께 끊임없이 성장해 나가고 있어요.</h3>
+        <h3>지금도 팀원과 함께 끊임없이 성장해 나가고 있어요.</h3>
       </Title>
     </Wrapper>
   )

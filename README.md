@@ -1,4 +1,4 @@
-# [untilled](https://untilled.web.app/)
+# [Untilled](https://untilled.web.app/)
 
 > untilled repository
 
