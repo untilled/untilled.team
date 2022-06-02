@@ -69,7 +69,11 @@ const Intro = (props: Props) => {
         <TextCircle
           style={TextCircleCss}
           data="scroll down scroll down scroll down "
-        ></TextCircle>
+        >
+          {/* <CircleInner>
+            <AiOutlineArrowDown />
+          </CircleInner> */}
+        </TextCircle>
       </Bottom>
     </Wrapper>
   )
@@ -78,6 +82,18 @@ const Intro = (props: Props) => {
 const TextCircleCss = css`
   right: 200px;
   bottom: 100px;
+`
+
+const CircleInner = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 30px;
+    height: 100px;
+  }
 `
 
 const Wrapper = styled.div`
@@ -117,7 +133,7 @@ const Middle = styled.div`
 `
 
 const Title = styled.div`
-  font-weight: 500;
+  font-weight: 600;
   flex-shrink: 0;
   font-size: 5.5rem;
 `

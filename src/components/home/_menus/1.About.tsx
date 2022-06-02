@@ -15,6 +15,12 @@ type Props = {}
 // 플렛폼에는 국경이 없다고 믿고있습니다.
 //row 세 줄
 
+// our mission 팀 언틸드는 발전하는 사람들이 모여 발전하는 서비스를 만들고 발전하는 세상을 만들기 위해 노력하고 있어요.
+
+// Global Team
+// Global Service
+// Developing Delvelopers / Designers / Worlds / Products
+
 const About = (props: Props) => {
   return (
     <Wrapper>
@@ -37,25 +43,6 @@ const Wrapper = styled.div`
 
   ${mobile} {
     height: fit-content;
-  }
-`
-
-const Browser = styled.div`
-  max-width: 1460px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: black;
-  height: 100%;
-  //container
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  height: 100%;
-  & > div {
-    font-size: 0.9rem;
-  }
-  ${mobile} {
-    padding-top: 0px;
   }
 `
 

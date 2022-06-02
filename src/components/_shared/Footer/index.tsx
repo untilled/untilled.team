@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
     <Wrapper>
       <div className="container">
         <Left></Left>
-        <div>Copyright ©2022 All rights reserved</div>
+        <div>Copyright ©2022 All rights reserved.</div>
         <Right></Right>
       </div>
     </Wrapper>
@@ -18,11 +18,13 @@ const Footer = (props: Props) => {
 }
 
 const Wrapper = styled.div`
+  font-family: 'Prompt', sans-serif;
   height: fit-content;
   color: white;
   padding: 10px 0px;
   background-color: #212529;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 200;
   & > div {
     height: 100%;
     display: flex;

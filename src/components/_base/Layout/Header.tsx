@@ -28,7 +28,8 @@ const Header = ({}: Props) => {
           <Logo color="white" />
           <Right>
             {menus.map((menu) => (
-              <Link key={menu.id} href={menu.href}>
+              // <Link key={menu.id} href={menu.href}>
+              <Link key={menu.id} href={'/'}>
                 <a>
                   <Menu selected={menu.href === router.asPath}>
                     {menu.name}

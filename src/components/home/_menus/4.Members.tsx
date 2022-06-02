@@ -18,7 +18,7 @@ const Members = (props: Props) => {
       <Title className="container">
         <h1>팀 언틸드의 멤버를 만나보세요.</h1>
         <h3>
-          다양한 배경 속에서 참가했지만, 모두들 성장의 즐거움을 느끼고 있어요.
+          다양한 배경 속에서 참가했지만, 모두 성장을 위해 참여하고 있어요.
         </h3>
       </Title>
       <MemberListWrapper>
@@ -38,9 +38,22 @@ const Members = (props: Props) => {
           ))}
         </MemberList>
       </MemberListWrapper>
+      <BtnBox>
+        <MoreButton>더 알아보기</MoreButton>
+      </BtnBox>
     </Wrapper>
   )
 }
+
+const BtnBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+const MoreButton = styled(Button)`
+  padding: 15px 90px;
+`
 
 const Wrapper = styled.div`
   &::-webkit-scrollbar {

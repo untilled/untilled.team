@@ -64,9 +64,23 @@ const Projects = (props: Props) => {
           <Project key={project.id}></Project>
         ))}
       </List>
+      <BtnBox>
+        <MoreButton>더 알아보기</MoreButton>
+      </BtnBox>
     </Wrapper>
   )
 }
+
+const BtnBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+const MoreButton = styled(Button)`
+  padding: 15px 90px;
+`
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -111,7 +125,7 @@ const Project = styled.div`
   background-color: #212529;
   width: 300px;
   flex-shrink: 0;
-  height: 450px;
+  height: 400px;
 `
 
 export default Projects

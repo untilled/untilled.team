@@ -26,7 +26,7 @@ const Contact = (props: Props) => {
   const router = useRouter()
 
   const handleClick: React.MouseEventHandler<Element> = () => {
-    router.push('/contact')
+    // router.push('/contact')
   }
 
   return (
@@ -46,7 +46,6 @@ const Contact = (props: Props) => {
           저희가 그 안에서 열정과 즐거움을 찾아드릴게요!
         </h3>
         <br />
-        {/* <h1>Developing Developers</h1> */}
       </Title>
       <ContactButton className="container" color="white" onClick={handleClick}>
         문의하기
