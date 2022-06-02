@@ -70,9 +70,15 @@ const Intro = (props: Props) => {
           style={TextCircleCss}
           data="scroll down scroll down scroll down "
         >
-          {/* <CircleInner>
-            <AiOutlineArrowDown />
-          </CircleInner> */}
+          <CircleInner>
+            {/* <Image
+              loader={imageLoader}
+              src="/svgs/arrow.svg"
+              alt=""
+              width={60}
+              height={60}
+            /> */}
+          </CircleInner>
         </TextCircle>
       </Bottom>
     </Wrapper>

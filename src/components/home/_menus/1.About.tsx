@@ -17,6 +17,7 @@ type Props = {}
 
 // our mission 팀 언틸드는 발전하는 사람들이 모여 발전하는 서비스를 만들고 발전하는 세상을 만들기 위해 노력하고 있어요.
 
+// 박스 6개
 // Global Team
 // Global Service
 // Developing Delvelopers / Designers / Worlds / Products

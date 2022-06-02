@@ -7,7 +7,6 @@ import { mobile } from 'styles/media'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useRecoilState } from 'recoil'
 import { home } from 'states'
-import { css } from '@emotion/react'
 import { menus } from 'libs/data'
 
 type Props = {}
