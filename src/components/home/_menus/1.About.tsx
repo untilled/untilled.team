@@ -1,21 +1,9 @@
 import styled from '@emotion/styled'
+import imageLoader from 'libs/loader'
 import Image from 'next/image'
 import React from 'react'
 import { mobile } from 'styles/media'
 type Props = {}
-
-// 팀원과 함께 협업하며 프로젝트 진행합니다.
-// 다양한 배경의 팀원들과~
-
-// 온라인으로 진행하는 다양한 개발 활동
-// 모든 업무가 온라인으로 진행되는 시대에서, 온라인에서의 커뮤니티는 중요해요.
-
-// 지역, 시간에 상관없이 언제, 어디서나, 누구든지
-// 지역, 시간에 제약받지 않고 활동이 가능해요.
-// 플렛폼에는 국경이 없다고 믿고있습니다.
-//row 세 줄
-
-// our mission 팀 언틸드는 발전하는 사람들이 모여 발전하는 서비스를 만들고 발전하는 세상을 만들기 위해 노력하고 있어요.
 
 // 박스 6개
 // Global Team
@@ -26,10 +14,17 @@ const About = (props: Props) => {
   return (
     <Wrapper>
       <Title className="container">
+        {/* <h1>About</h1> */}
         <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
         <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
         <h3>팀 언틸드는 성장을 원하는 모두를 돕고 있어요.</h3>
       </Title>
+      <CardWrapper className="container">
+        <div>Service</div>
+        <div>Team</div>
+        <div>Global</div>
+      </CardWrapper>
+      <LogoLine></LogoLine>
     </Wrapper>
   )
 }
@@ -39,8 +34,11 @@ const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  padding-top: 80px;
+  padding: 80px 0;
 
   ${mobile} {
     height: fit-content;
@@ -48,6 +46,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.div`
+  /* font-family: 'Prompt', sans-serif; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,6 +55,8 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
+    /* font-size: 4rem; */
+    /* font-style: italic; */
   }
 
   h3 {
@@ -64,40 +65,55 @@ const Title = styled.div`
   }
 `
 
-const CardListWrapper = styled.div`
-  flex-grow: 1;
-  background-color: #e9ecef;
-  height: fit-content;
-  & > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-`
-
-const Card = styled.div`
-  background-color: #dee2e6;
-  height: 100%;
-  border-radius: 15px;
-  color: black;
-  display: grid;
-  margin-bottom: 15px;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  & > div {
-    padding: 15px;
-    border-radius: 15px;
-  }
-`
-
-const Paint = styled.div`
-  background-color: #cecece;
-`
-
-const Content = styled.div`
+const CardWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 15px 0px;
+  gap: 40px;
+  flex-grow: 1;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+
+  & > div {
+    width: 100%;
+    background-color: #212529;
+    /* border-radius: 15px; */
+    height: 300px;
+    color: #212529;
+  }
+  ${mobile} {
+    flex-direction: column;
+    height: fit-content;
+  }
 `
+
+const LogoLine = styled.div`
+  /* background-color: #212529; */
+  color: #adb5bd;
+  padding: 10px 0;
+  font-family: 'Prompt', sans-serif;
+  height: 150px;
+  position: relative;
+  & > div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    font-size: 3rem;
+    font-weight: 600;
+
+    /* font-style: italic; */
+    animation: marquee 30s linear infinite;
+    @keyframes marquee {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+  }
+`
+
+
 
 export default About

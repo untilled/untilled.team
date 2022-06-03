@@ -4,7 +4,7 @@ import { mobile } from 'styles/media'
 
 type Props = {}
 
-//멤버수, 프로젝트수, 시작한지?
+//멤버수, 프로젝트수, 시작한지, 추천사?
 const Archivement = (props: Props) => {
   return (
     <Wrapper>

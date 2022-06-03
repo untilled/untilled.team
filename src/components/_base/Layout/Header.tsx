@@ -61,7 +61,9 @@ const Header = ({}: Props) => {
           {menus.map((menu) => (
             <Link key={menu.id} href={'/'}>
               <a>
-                <MobileMenu>{menu.name}</MobileMenu>
+                <MobileMenu selected={menu.href === router.asPath}>
+                  {menu.name}
+                </MobileMenu>
               </a>
             </Link>
           ))}
@@ -73,12 +75,14 @@ const Header = ({}: Props) => {
     </>
   )
 }
-const MobileMenu = styled.div`
+const MobileMenu = styled.div<MenuProps>`
   font-family: 'Prompt', sans-serif;
   transition: all ease-in-out 0.5s 0s;
   font-weight: 500;
   font-style: italic;
   font-size: 3rem;
+  color: ${(props) =>
+    props.selected ? `rgba(255, 255, 255, 1)` : `rgba(255, 255, 255, 0.5)`};
 `
 
 const MenuOpenBtn = styled.div`
@@ -91,6 +95,7 @@ const MenuCloseButton = styled.div`
   margin-top: 40px;
   svg {
     font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
   }
 `
 
