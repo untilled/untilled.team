@@ -19,6 +19,9 @@ export const globalStyles = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    ${mobile} {
+      cursor: default !important;
+    }
   }
   *:link {
     text-decoration: none;

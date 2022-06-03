@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import TextCircle from 'components/_shared/TextCircle'
 import WordSlider from 'components/_shared/WordSlider'
+import useMobile from 'hooks/useMobile'
 import imageLoader from 'libs/loader'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -23,6 +24,7 @@ const degree = Number(360 / circleTexts.length)
 const Intro = (props: Props) => {
   const [videoIdx, setvideoIdx] = useState(0)
   const circleTextRef = useRef<HTMLSpanElement[]>([])
+  const [isMobile] = useMobile()
 
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -32,7 +34,9 @@ const Intro = (props: Props) => {
     } else {
       setvideoIdx(videoIdx + 1)
     }
-    await videoRef.current?.play()
+    try {
+      await videoRef.current?.play()
+    } catch (e) {}
   }
 
   useEffect(() => {
@@ -69,6 +73,7 @@ const Intro = (props: Props) => {
         <TextCircle
           style={TextCircleCss}
           data="scroll down scroll down scroll down "
+          size={isMobile ? 80 : 100}
         >
           <CircleInner>
             {/* <Image
@@ -88,6 +93,10 @@ const Intro = (props: Props) => {
 const TextCircleCss = css`
   right: 200px;
   bottom: 100px;
+  ${mobile} {
+    right: 0px;
+    bottom: 50px;
+  }
 `
 
 const CircleInner = styled.div`
@@ -108,7 +117,7 @@ const Wrapper = styled.div`
     display: none;
   }
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -134,7 +143,7 @@ const Middle = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-style: italic;
 `
 
@@ -142,6 +151,9 @@ const Title = styled.div`
   font-weight: 600;
   flex-shrink: 0;
   font-size: 5.5rem;
+  ${mobile} {
+    font-size: 3rem;
+  }
 `
 
 const Subtitle = styled.div`
@@ -152,6 +164,9 @@ const Subtitle = styled.div`
     padding: 3px 0;
     border-bottom: 1px solid white;
   }
+  ${mobile} {
+    font-size: 0.5rem;
+  }
 `
 
 const Bottom = styled.div`
@@ -159,6 +174,10 @@ const Bottom = styled.div`
   height: 100px;
   position: relative;
   margin-bottom: 100px;
+  ${mobile} {
+    height: 50px;
+    margin-bottom: 50px;
+  }
 `
 
 const Span = styled.span`

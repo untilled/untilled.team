@@ -22,6 +22,7 @@ import Contact from 'components/home/_menus/5.Contact'
 import Footer from 'components/_shared/Footer'
 import Toolbar from 'components/_shared/Toolbar'
 import PreloadImg from 'components/_shared/PreloadImg'
+import { mobile } from 'styles/media'
 
 const pages = [
   {
@@ -156,6 +157,9 @@ const PageMenu = styled.div<PageMenu>`
         /* color: black; */
       }
     `};
+  ${mobile} {
+    display: none !important;
+  }
 `
 
 const MenuHeader = styled.div`
@@ -228,6 +232,9 @@ const ArrowList = styled.div<ArrowList>`
   /* transform: translate(${({ page }) =>
     page === 0 ? '0, 100px' : '0, 0px'});
   transition: transform ease-out 0.3s; */
+  ${mobile} {
+    display: none !important;
+  }
 `
 type ArrowProps = {
   activated: boolean

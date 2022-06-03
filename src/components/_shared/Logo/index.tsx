@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import { mobile } from 'styles/media'
 
 type Props = {
   color?: string
@@ -32,6 +33,9 @@ const Wrapper = styled.div`
       color === 'white' ? 'black' : color === 'black' ? 'white' : 'white'};
     border-top: 5px solid
       ${({ color }) => (color === 'white' ? 'black' : 'white')};
+  }
+  ${mobile} {
+    font-size: 1rem;
   }
 `
 

@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { useEffect, useRef } from 'react'
+import { mobile } from 'styles/media'
 
 type Props = {}
 
@@ -134,17 +135,26 @@ function Cursor({}: Props) {
 }
 
 const CursorDotOutline = styled.div`
+  display: block;
   width: 20px;
   height: 20px;
   background-color: rgba(224, 224, 224, 0.5);
   z-index: 99;
+
+  ${mobile} {
+    display: none;
+  }
 `
 
 const CursorDot = styled.div`
+  display: block;
   width: 12px;
   height: 12px;
   background-color: #d4d4d4;
   z-index: 99;
+  ${mobile} {
+    display: none;
+  }
 `
 
 export default Cursor

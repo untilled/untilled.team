@@ -50,10 +50,6 @@ const Wrapper = styled.div<Wrapper>`
     direction === 'left' ? 'flex-start' : 'flex-end'};
   position: absolute;
   font-size: 0.8rem;
-
-  ${mobile} {
-    display: none !important;
-  }
 `
 
 export default Toolbar
