@@ -90,7 +90,8 @@ const Wrapper = styled.div`
   }
   width: 100vw;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 
   ${mobile} {
     height: fit-content;

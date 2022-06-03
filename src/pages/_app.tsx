@@ -6,6 +6,7 @@ import Layout from 'components/_base/Layout'
 import Head from 'next/head'
 import Cursor from 'components/_shared/Cursor'
 import ChannelService from 'libs/channelService'
+import useMobile from 'hooks/useMobile'
 
 if (typeof window === 'object') {
   const channelService = new ChannelService()
@@ -15,6 +16,8 @@ if (typeof window === 'object') {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isMobile] = useMobile()
+
   return (
     <RecoilRoot>
       <Head>
@@ -25,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Cursor />
+      {!isMobile && <Cursor />}
     </RecoilRoot>
   )
 }

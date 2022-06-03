@@ -47,7 +47,7 @@ const Contact = (props: Props) => {
         </h3>
         <br />
       </Title>
-      <ContactButton className="container" color="white" onClick={handleClick}>
+      <ContactButton className="container" onClick={handleClick}>
         문의하기
       </ContactButton>
     </Wrapper>
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     display: none;
   }
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

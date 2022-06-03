@@ -230,9 +230,6 @@ const ArrowList = styled.div<ArrowList>`
   gap: 10px;
   padding-bottom: 20px;
 
-  /* transform: translate(${({ page }) =>
-    page === 0 ? '0, 100px' : '0, 0px'});
-  transition: transform ease-out 0.3s; */
   ${mobile} {
     display: none !important;
   }
