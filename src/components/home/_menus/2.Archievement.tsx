@@ -50,6 +50,7 @@ const Wrapper = styled.div`
   }
   display: flex;
   flex-direction: column;
+  padding-bottom: 40px;
   gap: 40px;
 `
 const Title = styled.div`

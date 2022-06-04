@@ -39,12 +39,12 @@ const About = (props: Props) => {
         </CardWrapper>
         <CommentBox className="container"></CommentBox>
       </ContentWrapper>
-      {/* <ImageSliderWrapper className="container">
-        {images.map((image, idx) => (
+      <ImageSliderWrapper>
+        {/* {images.map((image, idx) => (
           <img key={idx} src={image} alt="" />
-        ))}
-      </ImageSliderWrapper> */}
-      <LogoSliderWrapper></LogoSliderWrapper>
+        ))} */}
+      </ImageSliderWrapper>
+      {/* <LogoSliderWrapper></LogoSliderWrapper> */}
     </Wrapper>
   )
 }

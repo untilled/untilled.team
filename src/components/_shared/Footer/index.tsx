@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
 
 const Wrapper = styled.div`
   font-family: 'Prompt', sans-serif;
-  height: fit-content;
+  height: 250px;
   color: white;
   padding: 10px 0px;
   background-color: #212529;

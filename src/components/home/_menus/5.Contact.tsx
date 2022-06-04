@@ -32,13 +32,14 @@ const Contact = (props: Props) => {
   return (
     <Wrapper>
       <Title>
-        <h1>프로젝트 혼자 할 순 없잖아요?</h1>
-        <Content className="container">
+        {/* <Content className="container">
           <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
           <h1>
             <WordSlide data={words} height={80} />
           </h1>
-        </Content>
+        </Content> */}
+        <h1>프로젝트 혼자 할 순 없잖아요?</h1>
+        <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
         <h3 className="container">
           성장에 대한 관심만 있다면 누구든지 참여할 수 있어요.
         </h3>

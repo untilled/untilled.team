@@ -87,13 +87,35 @@ const Home = (props: Props) => {
       <Toolbar direction="left">
         <div></div>
         <div></div>
-        <IconList>
-          <div>
+        <IconList page={page}>
+          <a
+            href="https://github.com/morethanmin"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillGithub />
-          </div>
-          <div>
+          </a>
+          <a
+            href="https://github.com/morethanmin"
+            target="_blank"
+            rel="noreferrer"
+          >
             <AiFillLinkedin />
-          </div>
+          </a>
+          <a
+            href="https://github.com/morethanmin"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiOutlineInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/morethanmin/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillFacebook />
+          </a>
         </IconList>
       </Toolbar>
       <Toolbar direction="right">
@@ -152,7 +174,8 @@ const PageMenu = styled.div<PageMenu>`
   ${({ page }) =>
     (page === 4 || page === 4) &&
     css`
-      background-color: #343a40;
+      background-color: #212529;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
       & > div {
         /* color: black; */
       }
@@ -195,7 +218,7 @@ const Menu = styled.div<MenuProps>`
   }
 `
 
-const IconList = styled.div`
+const IconList = styled.div<PageMenu>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,14 +232,25 @@ const IconList = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
     svg {
       width: 23px;
       height: 23px;
       border-radius: 50%;
     }
     cursor: pointer;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
   }
+  transform: translate(0px, 110px);
+  transition: transform ease-in-out 0.3s;
+
+  ${(props) =>
+    props.page === 6 &&
+    css`
+      & > * {
+        box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      }
+      transform: translate(0px, 0px);
+    `}
 `
 
 type ArrowList = {
@@ -229,6 +263,12 @@ const ArrowList = styled.div<ArrowList>`
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
+  transition: transform ease-in-out 0.3s;
+  ${(props) =>
+    props.page === 6 &&
+    css`
+      transform: translate(0px, 50px);
+    `}
 
   ${mobile} {
     display: none !important;
