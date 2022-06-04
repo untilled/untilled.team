@@ -18,10 +18,10 @@ const Layout = ({ children }: Props) => {
         {children}
         {router.route !== '/' && <Footer />}
       </Wrapper>
-      <TempMobile>
+      {/* <TempMobile>
         Currently mobile is not supported.
         <Logo />
-      </TempMobile>
+      </TempMobile> */}
     </>
   )
 }
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100vh;
   ${mobile} {
-    display: none;
+    /* display: none; */
   }
 `
 

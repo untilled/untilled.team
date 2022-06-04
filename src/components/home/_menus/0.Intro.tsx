@@ -65,7 +65,7 @@ const Intro = (props: Props) => {
         </Subtitle>
         <Title>
           We are developing <br />
-          <Span>Worlds</Span> by <br />
+          the <Span>Worlds</Span> by <br />
           making products
         </Title>
       </Middle>

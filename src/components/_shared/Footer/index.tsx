@@ -5,8 +5,10 @@ import {
   AiFillFacebook,
   AiFillGithub,
   AiFillLinkedin,
+  AiFillMail,
   AiOutlineInstagram,
 } from 'react-icons/ai'
+import { SiGmail } from 'react-icons/si'
 import Logo from '../Logo'
 
 type Props = {}
@@ -28,18 +30,13 @@ const Footer = (props: Props) => {
                 <div>Members</div>
                 <div>Contacts</div>
               </nav>
-              <div>Copyright ©2022. Untilled All rights reserved.</div>
+              <div>
+                Untilled is the development team. We are developing the worlds
+                by making products.
+              </div>
             </Menus>
           </TopLeft>
           <TopRight>
-            <a
-              href="https://www.instagram.com/more_dev_min"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiOutlineInstagram />
-            </a>
-
             <a
               href="https://github.com/morethanmin"
               target="_blank"
@@ -47,9 +44,13 @@ const Footer = (props: Props) => {
             >
               <AiFillGithub />
             </a>
-            <div>
-              <AiFillFacebook />
-            </div>
+            <a
+              href="https://www.instagram.com/more_dev_min"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineInstagram />
+            </a>
             <a
               href="https://www.linkedin.com/in/morethanmin"
               target="_blank"
@@ -57,14 +58,14 @@ const Footer = (props: Props) => {
             >
               <AiFillLinkedin />
             </a>
+            <div>
+              <AiFillFacebook />
+            </div>
           </TopRight>
         </Top>
         <Mid></Mid>
         <Bottom>
-          <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-            perferendis deleniti blanditiis recusandae soluta ea.
-          </div>
+          <div> Copyright ©2022. Untilled All rights reserved.</div>
           <div>
             Powerd by{' '}
             <span>
@@ -76,6 +77,8 @@ const Footer = (props: Props) => {
                 morethanmin
               </a>
             </span>
+            {' | '}
+            <span>Korean</span>
           </div>
         </Bottom>
       </Content>
