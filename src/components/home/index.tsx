@@ -96,25 +96,11 @@ const Home = (props: Props) => {
             <AiFillGithub />
           </a>
           <a
-            href="https://github.com/morethanmin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <AiFillLinkedin />
-          </a>
-          <a
-            href="https://github.com/morethanmin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <AiOutlineInstagram />
-          </a>
-          <a
             href="https://www.linkedin.com/in/morethanmin/"
             target="_blank"
             rel="noreferrer"
           >
-            <AiFillFacebook />
+            <AiFillLinkedin />
           </a>
         </IconList>
       </Toolbar>
@@ -136,7 +122,8 @@ const Home = (props: Props) => {
           <Arrow activated={page !== 0} onClick={handlePrev}>
             <MdKeyboardArrowUp />
           </Arrow>
-          <Arrow activated={page !== pages.length - 1} onClick={handleNext}>
+          {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
+          <Arrow activated={true} onClick={handleNext}>
             <MdKeyboardArrowDown />
           </Arrow>
         </ArrowList>
@@ -240,16 +227,13 @@ const IconList = styled.div<PageMenu>`
     cursor: pointer;
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
   }
-  transform: translate(0px, 110px);
+  /* transform: translate(0px, 110px); */
   transition: transform ease-in-out 0.3s;
 
   ${(props) =>
     props.page === 6 &&
     css`
-      & > * {
-        box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0);
-      }
-      transform: translate(0px, 0px);
+      transform: translate(0px, 110px);
     `}
 `
 
@@ -267,7 +251,7 @@ const ArrowList = styled.div<ArrowList>`
   ${(props) =>
     props.page === 6 &&
     css`
-      transform: translate(0px, 50px);
+      transform: translate(0px, 110px);
     `}
 
   ${mobile} {

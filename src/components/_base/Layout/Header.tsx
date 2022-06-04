@@ -9,6 +9,7 @@ import { useRecoilState } from 'recoil'
 import { home } from 'states'
 import { menus } from 'libs/data'
 import useMobile from 'hooks/useMobile'
+import { css } from '@emotion/react'
 
 type Props = {}
 
@@ -30,7 +31,7 @@ const Header = ({}: Props) => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper page={page}>
         <Container className="container">
           <Mobile>
             <Logo />
@@ -99,12 +100,22 @@ const MenuCloseButton = styled.div`
   }
 `
 
-const Wrapper = styled.div`
+type Wrapper = {
+  page: number | null
+}
+
+const Wrapper = styled.div<Wrapper>`
   user-select: none;
   z-index: 20;
   position: fixed;
   width: 100%;
   padding: 10px;
+  transition: transform ease-in-out 0.3s;
+  ${(props) =>
+    props.page === 6 &&
+    css`
+      transform: translate(0px, -100px);
+    `};
 `
 const Container = styled.div`
   & > div {
