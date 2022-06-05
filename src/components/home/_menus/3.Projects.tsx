@@ -52,7 +52,7 @@ const Projects = (props: Props) => {
   return (
     <Wrapper>
       <Title className="container">
-        <h1>지금까지 우리가 만들어온 것들</h1>
+        <h1>지금까지 우리가 만들어온 것들🌆</h1>
         <h3>발전적인 사람으로부터 발전적인 서비스가 나온다고 믿고 있어요.</h3>
         <h3>
           개발하는 사람부터 서비스를 이용하는 사람까지 모두가 성장하는 서비스를

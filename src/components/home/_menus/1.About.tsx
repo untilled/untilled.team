@@ -27,7 +27,7 @@ const About = (props: Props) => {
     <Wrapper>
       <Title className="container">
         {/* <h1>About</h1> */}
-        <h1>모두의 발전을 위해서, 모두의 성장을 위해서</h1>
+        <h1>모두의 발전을 위해서, 모두의 성장을 위해서 🎉</h1>
         <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
         <h3>팀 언틸드는 성장을 원하는 모두를 돕고 있어요.</h3>
       </Title>
@@ -39,12 +39,7 @@ const About = (props: Props) => {
         </CardWrapper>
         <CommentBox className="container"></CommentBox>
       </ContentWrapper>
-      <ImageSliderWrapper>
-        {/* {images.map((image, idx) => (
-          <img key={idx} src={image} alt="" />
-        ))} */}
-      </ImageSliderWrapper>
-      {/* <LogoSliderWrapper></LogoSliderWrapper> */}
+      <ImageSliderWrapper></ImageSliderWrapper>
     </Wrapper>
   )
 }

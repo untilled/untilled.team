@@ -22,6 +22,8 @@ const questions = [
   },
 ]
 
+//email
+//location
 const Contact = (props: Props) => {
   const router = useRouter()
 
@@ -32,12 +34,6 @@ const Contact = (props: Props) => {
   return (
     <Wrapper>
       <Title>
-        {/* <Content className="container">
-          <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
-          <h1>
-            <WordSlide data={words} height={80} />
-          </h1>
-        </Content> */}
         <h1>프로젝트 혼자 할 순 없잖아요?</h1>
         <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
         <h3 className="container">
@@ -48,9 +44,7 @@ const Contact = (props: Props) => {
         </h3>
         <br />
       </Title>
-      <ContactButton className="container" onClick={handleClick}>
-        문의하기
-      </ContactButton>
+      <Content className="container"></Content>
     </Wrapper>
   )
 }
@@ -65,7 +59,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   overflow: scroll;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
 `
 const Title = styled.div`
   display: flex;
@@ -82,20 +76,15 @@ const Title = styled.div`
 `
 
 const Content = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  width: fit-content;
-`
-
-const Buttons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-`
-const ContactButton = styled(Button)`
-  padding: 15px 90px;
+  background-color: #212529;
+  border-radius: 15px;
+  & > div {
+    width: 100%;
+  }
+  padding: 30px 50px;
 `
 
 export default Contact
