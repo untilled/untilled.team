@@ -60,11 +60,11 @@ const Wrapper = styled.div`
     display: none;
   }
   height: 100vh;
+  overflow: scroll;
   padding-top: 80px;
   gap: 45px;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
   padding-bottom: 40px;
   & > *:last-child {
     margin-bottom: 45px;

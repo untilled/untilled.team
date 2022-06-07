@@ -39,7 +39,6 @@ const About = (props: Props) => {
         </CardWrapper>
         <CommentBox className="container"></CommentBox>
       </ContentWrapper>
-      <ImageSliderWrapper></ImageSliderWrapper>
     </Wrapper>
   )
 }
@@ -48,13 +47,9 @@ const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
-  padding-top: 80px;
+  padding: 80px 0px;
   overflow: scroll;
-  gap: 40px;
   ${mobile} {
     height: fit-content;
   }
@@ -66,6 +61,7 @@ const Title = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
+  padding-bottom: 80px;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
