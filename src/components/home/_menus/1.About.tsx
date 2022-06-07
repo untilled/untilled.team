@@ -5,9 +5,6 @@ import React, { useRef } from 'react'
 import { mobile } from 'styles/media'
 type Props = {}
 
-// 박스 6개
-// Global Team
-// Global Service
 // Developing Delvelopers / Designers / Worlds / Products
 
 const images = [

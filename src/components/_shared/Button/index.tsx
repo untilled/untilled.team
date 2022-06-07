@@ -4,7 +4,7 @@ import React, { MouseEventHandler } from 'react'
 type Props = {
   children?: string
   className?: string
-  color?: string
+  color?: 'gray' | 'white'
   onClick?: MouseEventHandler
 }
 

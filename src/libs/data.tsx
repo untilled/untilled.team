@@ -95,3 +95,16 @@ export const members: members = [
     images: ['/images/members/4.png', '/images/members/4-hover.png'],
   },
 ]
+
+const questions = [
+  {
+    id: 0,
+    question: 'What is your github nickname?',
+    answer: '',
+  },
+  {
+    id: 1,
+    question: 'What is your email?',
+    answer: '',
+  },
+]

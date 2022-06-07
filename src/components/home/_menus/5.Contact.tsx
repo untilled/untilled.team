@@ -9,19 +9,6 @@ type Props = {}
 
 const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙🏼‍♂️']
 
-const questions = [
-  {
-    id: 0,
-    question: 'What is your github nickname?',
-    answer: '',
-  },
-  {
-    id: 1,
-    question: 'What is your email?',
-    answer: '',
-  },
-]
-
 //email
 //location
 const Contact = (props: Props) => {
@@ -33,18 +20,16 @@ const Contact = (props: Props) => {
 
   return (
     <Wrapper>
-      <Title>
-        <h1>프로젝트 혼자 할 순 없잖아요?</h1>
-        <h1>언틸드와 함께 프로젝트를 진행해 보세요.</h1>
-        <h3 className="container">
-          성장에 대한 관심만 있다면 누구든지 참여할 수 있어요.
-        </h3>
-        <h3 className="container">
-          저희가 그 안에서 열정과 즐거움을 찾아드릴게요!
-        </h3>
-        <br />
-      </Title>
-      <Content className="container"></Content>
+      <Content className="container">
+        <Title>
+          <h1>프로젝트 혼자 할 순 없잖아요?</h1>
+          <h1>언틸드와 함께 프로젝트를 진행해 보세요. 🖐</h1>
+        </Title>
+        <ContentBottom>
+          <Button color="white">문의하기</Button>
+          <Button color="gray">공유하기</Button>
+        </ContentBottom>
+      </Content>
     </Wrapper>
   )
 }
@@ -53,6 +38,7 @@ const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  height: fit-content;
   height: 100vh;
   padding-top: 80px;
   display: flex;
@@ -79,12 +65,28 @@ const Content = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: #212529;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 15px;
+  gap: 40px;
   & > div {
     width: 100%;
   }
   padding: 30px 50px;
 `
+
+const ContentBottom = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  gap: 20px;
+  button {
+    width: 300px;
+    padding: 13px;
+  }
+`
+
+const StyledButton = styled(Button)``
 
 export default Contact
