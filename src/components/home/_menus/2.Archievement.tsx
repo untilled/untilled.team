@@ -17,8 +17,6 @@ const Archivement = (props: Props) => {
         <Card></Card>
         <Card></Card>
         <Card></Card>
-        <Card></Card>
-        <Card></Card>
       </CardWrapper>
     </Wrapper>
   )
@@ -26,9 +24,13 @@ const Archivement = (props: Props) => {
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
   width: 100%;
+
+  ${mobile} {
+    grid-template-columns: minmax(0, 1fr);
+  }
 `
 
 const Card = styled.div`
@@ -47,6 +49,7 @@ const Wrapper = styled.div`
   padding-top: 80px;
   ${mobile} {
     height: fit-content;
+    padding-bottom: 0;
   }
   display: flex;
   flex-direction: column;
@@ -61,10 +64,22 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
+    font-size: 2.5rem;
   }
+
   h3 {
     color: #ced4da;
     font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  ${mobile} {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `
 

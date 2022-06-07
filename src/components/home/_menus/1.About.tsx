@@ -49,6 +49,7 @@ const Wrapper = styled.div`
   overflow: scroll;
   ${mobile} {
     height: fit-content;
+    padding-bottom: 0;
   }
 `
 
@@ -63,11 +64,22 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
+    font-size: 2.5rem;
   }
 
   h3 {
     color: #ced4da;
     font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  ${mobile} {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `
 const ContentWrapper = styled.div`
@@ -94,6 +106,9 @@ const Card = styled.div`
   border-radius: 15px;
   height: 300px;
   color: #212529;
+  ${mobile} {
+    border-radius: 0;
+  }
 `
 
 const CommentBox = styled.div`
@@ -103,26 +118,9 @@ const CommentBox = styled.div`
   width: 100%;
   border-radius: 15px;
   padding-bottom: 50px;
-`
-
-const ImageSliderWrapper = styled.div`
-  padding: 10px 0;
-  height: 60px;
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  overflow: hidden;
-  justify-content: space-around;
-`
-
-const LogoSliderWrapper = styled.div`
-  padding: 10px 0;
-  height: 60px;
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  overflow: hidden;
-  justify-content: space-around;
+  ${mobile} {
+    border-radius: 0px;
+  }
 `
 
 export default About

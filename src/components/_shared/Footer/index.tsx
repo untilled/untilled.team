@@ -9,6 +9,7 @@ import {
   AiOutlineInstagram,
 } from 'react-icons/ai'
 import { SiGmail } from 'react-icons/si'
+import { mobile } from 'styles/media'
 import Logo from '../Logo'
 
 type Props = {}
@@ -98,6 +99,9 @@ const Bottom = styled.div`
   color: #868e96;
   display: flex;
   justify-content: space-between;
+  ${mobile} {
+    flex-direction: column;
+  }
 `
 
 const TopRight = styled.div`
@@ -106,6 +110,12 @@ const TopRight = styled.div`
   padding: 10px 10px;
   svg {
     font-size: 1.8rem;
+  }
+
+  ${mobile} {
+    svg {
+      font-size: 1.3em;
+    }
   }
 `
 
@@ -118,10 +128,12 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile} {
+  }
 `
 
 const Wrapper = styled.div`
-  height: 200px;
+  height: fit-content;
   background-color: #212529;
   display: flex;
   flex-direction: column;
@@ -146,6 +158,9 @@ const Menus = styled.div`
   & > div {
     font-size: 0.8rem;
     color: #868e96;
+  }
+  ${mobile} {
+    display: none;
   }
 `
 

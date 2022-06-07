@@ -81,12 +81,22 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
-    text-align: center;
+    font-size: 2.5rem;
   }
+
   h3 {
     color: #ced4da;
     font-weight: 500;
-    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  ${mobile} {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `
 const MemberListWrapper = styled.div`
@@ -127,6 +137,10 @@ const Member = styled.div<Member>`
   transition: all ease 0.2s 0s;
   &:hover {
     background-image: url(${({ images }) => images[1]});
+  }
+  ${mobile} {
+    width: 100px;
+    height: 100px;
   }
 `
 

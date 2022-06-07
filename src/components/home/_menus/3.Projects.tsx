@@ -95,6 +95,7 @@ const Wrapper = styled.div`
 
   ${mobile} {
     height: fit-content;
+    padding-bottom: 0;
   }
 `
 
@@ -104,10 +105,22 @@ const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 40px;
+    font-size: 2.5rem;
   }
+
   h3 {
     color: #ced4da;
     font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  ${mobile} {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `
 

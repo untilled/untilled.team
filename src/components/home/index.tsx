@@ -235,6 +235,10 @@ const IconList = styled.div<PageMenu>`
     css`
       transform: translate(0px, 110px);
     `}
+
+  ${mobile} {
+    display: none;
+  }
 `
 
 type ArrowList = {
