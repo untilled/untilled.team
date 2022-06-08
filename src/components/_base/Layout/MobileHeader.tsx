@@ -90,17 +90,18 @@ const Container = styled.div`
 `
 
 const MobileMenuWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  bottom: 0;
   background-color: black;
   z-index: 30;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `
 
 type MenuProps = {

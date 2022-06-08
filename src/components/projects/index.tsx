@@ -12,12 +12,10 @@ const Projects = (props: Props) => {
 }
 
 const Wrapper = styled.div`
-  /* overflow-x: hidden; */
   min-height: 100vh;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
-  
 `
 
 const Title = styled.h1`
