@@ -41,12 +41,6 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
         const currentHeight = Math.floor(
           nodes[page].scrollTop + nodes[page].offsetHeight
         )
-        console.log(currentHeight, nodes[page].scrollHeight)
-        console.log(
-          currentHeight - 1 > nodes[page].scrollHeight,
-          nodes[page].scrollHeight > currentHeight + 1
-        )
-
         if (
           currentHeight - 1 > nodes[page].scrollHeight ||
           nodes[page].scrollHeight > currentHeight + 1
