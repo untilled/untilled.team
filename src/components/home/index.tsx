@@ -141,7 +141,6 @@ const Home = (props: Props) => {
 
 const Wrapper = styled.div`
   position: relative;
-  overflow: hidden;
 `
 
 type PageMenu = {

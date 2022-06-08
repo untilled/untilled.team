@@ -160,7 +160,8 @@ const Wrapper = styled.div`
     display: none;
   }
   ${mobile} {
-    overflow-y: scroll;
+    max-height: fit-content;
+    /* overflow-y: scroll; */
   }
 `
 

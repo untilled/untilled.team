@@ -32,11 +32,15 @@ const Layout = ({ children }: Props) => {
 }
 
 const Wrapper = styled.div`
-  position: relative;
-  overflow: scroll;
-  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   &::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
   }
   ${mobile} {
     /* display: none; */
