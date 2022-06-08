@@ -164,7 +164,7 @@ const Subtitle = styled.div`
     border-bottom: 1px solid white;
   }
   ${mobile} {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 `
 

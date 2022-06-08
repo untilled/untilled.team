@@ -1,8 +1,12 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Cursor from 'components/_shared/Cursor'
 import Footer from 'components/_shared/Footer'
 import useMobile from 'hooks/useMobile'
 import { useRouter } from 'next/router'
+import { useEffect, useRef } from 'react'
+import { useRecoilValue } from 'recoil'
+import { pageState } from 'states'
 import { mobile } from 'styles/media'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
@@ -14,24 +18,33 @@ type Props = {
 const Layout = ({ children }: Props) => {
   const isMobile = useMobile()
   const router = useRouter()
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const isHome = useRecoilValue(pageState) !== null
+
+  useEffect(() => {
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTo(0, 0)
+    }
+  }, [router])
+
   return (
     <>
-      <Wrapper>
+      <Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
         {!isMobile && <Header />}
         {isMobile && <MobileHeader />}
         {children}
         {router.route !== '/' && <Footer />}
       </Wrapper>
       {!isMobile && <Cursor />}
-      {/* <TempMobile>
-        Currently mobile is not supported.
-        <Logo />
-      </TempMobile> */}
     </>
   )
 }
 
-const Wrapper = styled.div`
+type Wrapper = {
+  isScrollHidden: boolean
+}
+
+const Wrapper = styled.div<Wrapper>`
   overflow-x: hidden;
   overflow-y: scroll;
   position: absolute;
@@ -45,19 +58,11 @@ const Wrapper = styled.div`
   ${mobile} {
     /* display: none; */
   }
-`
 
-const TempMobile = styled.div`
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  font-weight: 200;
-  ${mobile} {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
+  ${(props) =>
+    props.isScrollHidden &&
+    css`
+      overflow-y: hidden;
+    `}
 `
 export default Layout

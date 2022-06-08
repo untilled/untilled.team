@@ -1,16 +1,34 @@
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
 import React, { MouseEventHandler } from 'react'
 
 type Props = {
   children?: string
   className?: string
   color?: 'gray' | 'white'
+  href?: string
   onClick?: MouseEventHandler
 }
 
-const Button = ({ children, className, color = 'gray', onClick }: Props) => {
+const Button = ({
+  children,
+  className,
+  color = 'gray',
+  href,
+  onClick,
+}: Props) => {
+  const router = useRouter()
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+    if (href) {
+      router.push(href)
+    }
+    if (onClick) {
+      onClick(e)
+    }
+  }
   return (
-    <Wrapper color={color} className={className} onClick={onClick}>
+    <Wrapper color={color} className={className} onClick={handleClick}>
       {children}
     </Wrapper>
   )

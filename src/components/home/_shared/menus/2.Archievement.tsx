@@ -40,6 +40,9 @@ const Card = styled.div`
   height: 300px;
   background-color: #212529;
   border-radius: 15px;
+  ${mobile} {
+    height: 120px;
+  }
 `
 
 const Wrapper = styled.div`

@@ -24,10 +24,11 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
+  font-family: 'Prompt', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
   width: 100%;
   margin-bottom: 10px;
-  font-weight: 900;
-  font-size: 40px;
   text-align: center;
 `
 

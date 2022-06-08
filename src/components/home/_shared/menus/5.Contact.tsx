@@ -4,6 +4,7 @@ import Header from 'components/_shared/Header'
 import WordSlide from 'components/_shared/WordSlider'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { mobile } from 'styles/media'
 
 type Props = {}
 
@@ -26,7 +27,9 @@ const Contact = (props: Props) => {
           <h1>언틸드와 함께 프로젝트를 진행해 보세요. 🖐</h1>
         </Title>
         <ContentBottom>
-          <Button color="white">문의하기</Button>
+          <Button color="white" href="contact">
+            문의하기
+          </Button>
           <Button color="gray">공유하기</Button>
         </ContentBottom>
       </Content>
@@ -59,6 +62,12 @@ const Title = styled.div`
     color: #ced4da;
     font-weight: 500;
   }
+
+  ${mobile} {
+    h1 {
+      font-weight: 700;
+    }
+  }
 `
 
 const Content = styled.div`
@@ -79,11 +88,14 @@ const ContentBottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   gap: 20px;
   button {
     width: 300px;
     padding: 13px;
+  }
+
+  ${mobile} {
+    flex-direction: column;
   }
 `
 

@@ -54,10 +54,7 @@ const Projects = (props: Props) => {
       <Title className="container">
         <h1>지금까지 우리가 만들어온 것들🌆</h1>
         <h3>발전적인 사람으로부터 발전적인 서비스가 나온다고 믿고 있어요.</h3>
-        <h3>
-          개발하는 사람부터 서비스를 이용하는 사람까지 모두가 성장하는 서비스를
-          제공하고자 해요.
-        </h3>
+        {/*   */}
       </Title>
       <List>
         {projects.map((project) => (
@@ -65,7 +62,7 @@ const Projects = (props: Props) => {
         ))}
       </List>
       <BtnBox>
-        <MoreButton>더 알아보기</MoreButton>
+        <MoreButton href="/projects">더 알아보기</MoreButton>
       </BtnBox>
     </Wrapper>
   )
@@ -140,6 +137,10 @@ const Project = styled.div`
   width: 300px;
   flex-shrink: 0;
   height: 400px;
+
+  ${mobile} {
+    height: 230px;
+  }
 `
 
 export default Projects

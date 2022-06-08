@@ -59,7 +59,7 @@ const Title = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
@@ -108,6 +108,7 @@ const Card = styled.div`
   color: #212529;
   ${mobile} {
     border-radius: 0;
+    height: 180px;
   }
 `
 
@@ -120,6 +121,7 @@ const CommentBox = styled.div`
   padding-bottom: 50px;
   ${mobile} {
     border-radius: 0px;
+    height: 120px;
   }
 `
 
