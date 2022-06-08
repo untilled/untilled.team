@@ -21,8 +21,8 @@ const Layout = ({ children }: Props) => {
         {isMobile && <MobileHeader />}
         {children}
         {router.route !== '/' && <Footer />}
-        {!isMobile && <Cursor />}
       </Wrapper>
+      {!isMobile && <Cursor />}
       {/* <TempMobile>
         Currently mobile is not supported.
         <Logo />
@@ -33,10 +33,11 @@ const Layout = ({ children }: Props) => {
 
 const Wrapper = styled.div`
   position: relative;
-  /* display: grid; */
-  /* grid-template-rows: minmax(0, 1fr) auto; */
-  overflow: hidden;
-  height: fit-content;
+  overflow: scroll;
+  height: 100vh;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${mobile} {
     /* display: none; */
   }

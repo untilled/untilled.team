@@ -12,7 +12,7 @@ export const globalStyles = css`
 
     background-color: black;
     color: white;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
   * {
     cursor: none !important;

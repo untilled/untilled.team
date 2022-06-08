@@ -5,9 +5,9 @@ export const pageState = atom<number | null>({
   default: 0,
 })
 
-export const isMobileState = atom({
+export const isMobileState = atom<boolean | null>({
   key: 'isMobileState',
-  default: false,
+  default: null,
 })
 
 export const isLayoutClosedState = selector({

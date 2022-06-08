@@ -23,7 +23,7 @@ function Cursor({}: Props) {
   const cursorEnlared = useRef(false)
 
   const endX = useRef(0)
-  const endY = useRef(0)
+const endY = useRef(0)
 
   const _x: React.MutableRefObject<number | null> = useRef(null)
   const _y: React.MutableRefObject<number | null> = useRef(null)

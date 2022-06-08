@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { isMobileState } from 'states'
 
-function useMobile(handleChange?: Function) {
+function useMobile() {
   const [isMobile, setIsMobile] = useRecoilState(isMobileState)
 
   const checkIsMobile = () => {
