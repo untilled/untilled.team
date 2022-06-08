@@ -7,7 +7,7 @@
     "start": "next start",
     "build": "next build",
     "generate": "next build && next export",
-    "deploy": "firebase deploy --only hosting:untilled",
+    "deploy": "firebase login --no-localhost && firebase deploy --only hosting:untilled",
     "lint": "next lint",
     "test": "jest --watch",
     "test:ci": "jest --ci"
@@ -34,6 +34,7 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
+    "firebase-tools": "^11.0.1",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "jest-dom": "^4.0.0",
