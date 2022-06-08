@@ -26,20 +26,30 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
       // 스크룰 강도가 30보다 작은 경우 리턴
       if (Math.abs(e.deltaY) < 30) return
       // 현재 스크룰된 값과 높이값이 다른 경우 리턴
-      const currentScroll = wrapperRef.current?.scrollTop
+      const currentScrollTop = wrapperRef.current?.scrollTop
         ? Math.floor(wrapperRef.current?.scrollTop)
         : 0
+
       if (
-        currentScroll - 1 > heightList[page] ||
-        heightList[page] > currentScroll + 1
+        currentScrollTop - 1 > heightList[page] ||
+        heightList[page] > currentScrollTop + 1
       )
         return
       //아래로 이동
       if (e.deltaY > 0) {
         //스크룰 가장 아래까지 가지 않은 경우 리턴
+        const currentHeight = Math.floor(
+          nodes[page].scrollTop + nodes[page].offsetHeight
+        )
+        console.log(currentHeight, nodes[page].scrollHeight)
+        console.log(
+          currentHeight - 1 > nodes[page].scrollHeight,
+          nodes[page].scrollHeight > currentHeight + 1
+        )
+
         if (
-          nodes[page].scrollHeight !==
-          Math.floor(nodes[page].scrollTop + nodes[page].offsetHeight)
+          currentHeight - 1 > nodes[page].scrollHeight ||
+          nodes[page].scrollHeight > currentHeight + 1
         )
           return
 
