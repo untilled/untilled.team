@@ -1,21 +1,17 @@
 export const menus = [
   {
-    id: 1,
     name: 'About',
     href: '/',
   },
   {
-    id: 2,
     name: 'Projects',
     href: '/projects',
   },
   {
-    id: 3,
     name: 'Members',
     href: '/members',
   },
   {
-    id: 4,
     name: 'Contact',
     href: '/contact',
   },

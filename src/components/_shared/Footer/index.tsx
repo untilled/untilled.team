@@ -26,10 +26,15 @@ const Footer = (props: Props) => {
             <Logo color="gray" />
             <Menus>
               <nav>
-                <div>About</div>
-                <div>Projects</div>
-                <div>Members</div>
-                <div>Contacts</div>
+              {menus.map((menu, idx) => (
+                <Link key={idx} href={menu.href}>
+                  <a>
+                    <div >
+                      {menu.name}
+                    </div>
+                  </a>
+                </Link>
+              ))}
               </nav>
               <div>
                 Untilled is the development team. We are developing the worlds
@@ -162,23 +167,6 @@ const Menus = styled.div`
   ${mobile} {
     display: none;
   }
-`
-
-const Right = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  font-size: 0.9rem;
-`
-
-const Select = styled.select`
-  border: none;
-  background: none;
-  background-color: white;
-  border-radius: 12px;
-  padding: 5px 15px;
-  font-weight: 400;
-  font-family: 'Noto Sans KR', sans-serif;
 `
 
 export default Footer

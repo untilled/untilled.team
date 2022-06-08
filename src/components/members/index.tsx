@@ -37,27 +37,27 @@ const Members = (props: Props) => {
   return (
     <Wrapper>
       <Title className="container">Members</Title>
-      <MenuList>
+      {/* <MenuList>
         <Menu selected>All</Menu>
         <Menu>Developer</Menu>
         <Menu>Designer</Menu>
-      </MenuList>
+      </MenuList> */}
       <MemberList className="container">
-        {members.map((member, idx) => (
+        {/* {members.map((member, idx) => (
           <Member key={idx}>
             <img src="" alt="" />
             <h3>{member.name}</h3>
             <div>{member.role}</div>
           </Member>
-        ))}
+        ))} */}
       </MemberList>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  overflow-x: hidden;
-  height: 100%;
+  /* overflow-x: hidden; */
+  height: 100vh;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@ const MemberList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 45px;
-
+  height: 300px;
   ${mobile} {
     grid-template-columns: repeat(1, 1fr);
   }

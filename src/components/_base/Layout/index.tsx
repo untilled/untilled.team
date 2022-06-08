@@ -1,22 +1,27 @@
 import styled from '@emotion/styled'
+import Cursor from 'components/_shared/Cursor'
 import Footer from 'components/_shared/Footer'
-import Logo from 'components/_shared/Logo'
+import useMobile from 'hooks/useMobile'
 import { useRouter } from 'next/router'
 import { mobile } from 'styles/media'
 import Header from './Header'
+import MobileHeader from './MobileHeader'
 
 type Props = {
   children: any
 }
 
 const Layout = ({ children }: Props) => {
+  const isMobile = useMobile()
   const router = useRouter()
   return (
     <>
       <Wrapper>
-        <Header />
+        {!isMobile && <Header />}
+        {isMobile && <MobileHeader />}
         {children}
         {router.route !== '/' && <Footer />}
+        {!isMobile && <Cursor />}
       </Wrapper>
       {/* <TempMobile>
         Currently mobile is not supported.
@@ -28,9 +33,10 @@ const Layout = ({ children }: Props) => {
 
 const Wrapper = styled.div`
   position: relative;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  min-height: 100vh;
+  /* display: grid; */
+  /* grid-template-rows: minmax(0, 1fr) auto; */
+  overflow: hidden;
+  height: fit-content;
   ${mobile} {
     /* display: none; */
   }

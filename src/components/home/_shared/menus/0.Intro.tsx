@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import TextCircle from 'components/_shared/TextCircle'
+import TextCircle from 'components/home/_shared/TextCircle'
 import WordSlider from 'components/_shared/WordSlider'
 import useMobile from 'hooks/useMobile'
 import imageLoader from 'libs/loader'
@@ -24,8 +24,7 @@ const degree = Number(360 / circleTexts.length)
 const Intro = (props: Props) => {
   const [videoIdx, setvideoIdx] = useState(0)
   const circleTextRef = useRef<HTMLSpanElement[]>([])
-  const [isMobile] = useMobile()
-
+  const isMobile = useMobile()
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handleEnded = async () => {

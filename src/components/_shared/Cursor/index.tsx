@@ -140,7 +140,6 @@ const CursorDotOutline = styled.div`
   height: 20px;
   background-color: rgba(224, 224, 224, 0.5);
   z-index: 99;
-
   ${mobile} {
     display: none;
   }

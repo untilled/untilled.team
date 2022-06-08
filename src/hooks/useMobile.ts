@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { isMobileState } from 'states'
 
-function useMobile() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null)
+function useMobile(handleChange?: Function) {
+  const [isMobile, setIsMobile] = useRecoilState(isMobileState)
+
   const checkIsMobile = () => {
     if (typeof window === 'object') {
       if (window.innerWidth <= 1024) {
@@ -11,16 +14,17 @@ function useMobile() {
       }
     }
   }
+  const checkIsMobileMemo = useCallback(checkIsMobile, [setIsMobile])
 
   useEffect(() => {
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
+    checkIsMobileMemo()
+    window.addEventListener('resize', checkIsMobileMemo)
     return () => {
-      window.removeEventListener('resize', checkIsMobile)
+      window.removeEventListener('resize', checkIsMobileMemo)
     }
-  }, [isMobile])
+  }, [isMobile, checkIsMobileMemo])
 
-  return [isMobile]
+  return isMobile
 }
 
 export default useMobile

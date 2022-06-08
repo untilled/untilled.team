@@ -8,16 +8,15 @@ const Contact = (props: Props) => {
   return (
     <Wrapper>
       <Title className="container">Contact</Title>
-      <ConsoleWrapper className="container">
+      {/* <ConsoleWrapper className="container">
         <Header title="" height={40} />
         <div className="container"></div>
-      </ConsoleWrapper>
+      </ConsoleWrapper> */}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  overflow-x: hidden;
   min-height: 100vh;
   padding: 100px 0;
   display: flex;

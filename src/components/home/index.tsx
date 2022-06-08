@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useRef, useState } from 'react'
-import FullPage from '../_shared/FullPage'
+import FullPage from './_shared/FullPage'
 import {
   AiOutlineInstagram,
   AiFillFacebook,
@@ -9,18 +9,18 @@ import {
 } from 'react-icons/ai'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState } from 'recoil'
-import { home } from 'states'
+import { pageState } from 'states'
 import { css } from '@emotion/react'
 import { members } from 'libs/data'
 
-import Intro from 'components/home/_menus/0.Intro'
-import About from 'components/home/_menus/1.About'
-import Archivement from 'components/home/_menus/2.Archievement'
-import Projects from 'components/home/_menus/3.Projects'
-import Members from 'components/home/_menus/4.Members'
-import Contact from 'components/home/_menus/5.Contact'
+import Intro from 'components/home/_shared/menus/0.Intro'
+import About from 'components/home/_shared/menus/1.About'
+import Archivement from 'components/home/_shared/menus/2.Archievement'
+import Projects from 'components/home/_shared/menus/3.Projects'
+import Members from 'components/home/_shared/menus/4.Members'
+import Contact from 'components/home/_shared/menus/5.Contact'
 import Footer from 'components/_shared/Footer'
-import Toolbar from 'components/_shared/Toolbar'
+import Toolbar from 'components/home/_shared/Toolbar'
 import PreloadImg from 'components/_shared/PreloadImg'
 import { mobile } from 'styles/media'
 
@@ -58,7 +58,7 @@ const pages = [
 type Props = {}
 
 const Home = (props: Props) => {
-  const [page, setPage] = useRecoilState(home)
+  const [page, setPage] = useRecoilState(pageState)
 
   useEffect(() => {
     setPage(0)
@@ -82,6 +82,7 @@ const Home = (props: Props) => {
     },
     []
   )
+
   return (
     <Wrapper>
       <Toolbar direction="left">
@@ -139,7 +140,8 @@ const Home = (props: Props) => {
 }
 
 const Wrapper = styled.div`
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
 `
 
 type PageMenu = {

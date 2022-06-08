@@ -17,6 +17,8 @@ const Archivement = (props: Props) => {
         <Card></Card>
         <Card></Card>
         <Card></Card>
+        <Card></Card>
+        <Card></Card>
       </CardWrapper>
     </Wrapper>
   )
@@ -24,7 +26,7 @@ const Archivement = (props: Props) => {
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 40px;
   width: 100%;
 
