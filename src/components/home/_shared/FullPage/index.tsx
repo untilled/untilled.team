@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import useMobile from 'hooks/useMobile'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
 import { mobile } from 'styles/media'
 
 type Props = {
