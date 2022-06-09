@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import useMouseHover from 'hooks/useMouseHover'
 import { useRouter } from 'next/router'
 import React, { MouseEventHandler } from 'react'
 
@@ -18,6 +19,7 @@ const Button = ({
   onClick,
 }: Props) => {
   const router = useRouter()
+  const [, handleMouseOver, handleMouseOut] = useMouseHover()
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     if (href) {
@@ -28,7 +30,13 @@ const Button = ({
     }
   }
   return (
-    <Wrapper color={color} className={className} onClick={handleClick}>
+    <Wrapper
+      color={color}
+      className={className}
+      onClick={handleClick}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
       {children}
     </Wrapper>
   )

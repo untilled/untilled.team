@@ -20,3 +20,8 @@ export const isLayoutClosedState = selector({
     return !isMobile && page === 6
   },
 })
+
+export const isMouseHoveredState = atom<boolean>({
+  key: 'isMouseHoveredState',
+  default: false,
+})

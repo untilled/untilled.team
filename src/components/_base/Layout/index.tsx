@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import { useEffect, useRef } from 'react'
 import { useRecoilValue } from 'recoil'
 import { pageState } from 'states'
-import { mobile } from 'styles/media'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
 
@@ -29,12 +28,12 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <styled.Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
-        {isMobile===false && <Header />}
-        {isMobile===true && <MobileHeader />}
+        {isMobile === false && <Header />}
+        {isMobile === true && <MobileHeader />}
         {children}
         {router.route !== '/' && <Footer />}
       </styled.Wrapper>
-      {isMobile===false && <Cursor />}
+      {isMobile === false && <Cursor />}
     </>
   )
 }

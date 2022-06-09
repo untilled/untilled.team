@@ -1,29 +1,20 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import useMouseHover from 'hooks/useMouseHover'
 import React, { useEffect, useRef } from 'react'
 import { mobile } from 'styles/media'
 
 type Props = {}
 
-const cursor = css`
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  border-radius: 50%;
-  transition: opacity 0.3s ease-in-out, transform 0.3 ease-in-out;
-`
-
 const delay = 4
 
 function Cursor({}: Props) {
+  const [isMouseHovered] = useMouseHover()
   const cursorVisible = useRef(false)
   const cursorEnlared = useRef(false)
 
   const endX = useRef(0)
-const endY = useRef(0)
+  const endY = useRef(0)
 
   const _x: React.MutableRefObject<number | null> = useRef(null)
   const _y: React.MutableRefObject<number | null> = useRef(null)
@@ -61,7 +52,7 @@ const endY = useRef(0)
   const toggleCursorSize = () => {
     if (dotOutline.current === null || dot.current === null) return
     if (cursorEnlared.current) {
-      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1.5)'
+      dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1.7)'
       dot.current.style.transform = 'translate(-50%, -50%) scale(0.75)'
     } else {
       dotOutline.current.style.transform = 'translate(-50%, -50%) scale(1)'
@@ -108,6 +99,23 @@ const endY = useRef(0)
     toggleCursorVisibility()
   }
 
+  const mouseOverEvent = () => {
+    cursorEnlared.current = true
+    toggleCursorSize()
+  }
+  const mouseOutEvent = () => {
+    cursorEnlared.current = false
+    toggleCursorSize()
+  }
+
+  useEffect(() => {
+    if (isMouseHovered) {
+      mouseOverEvent()
+    } else {
+      mouseOutEvent()
+    }
+  }, [isMouseHovered])
+
   useEffect(() => {
     toggleCursorVisibility()
     window.addEventListener('mousemove', handleMouseMove)
@@ -118,10 +126,10 @@ const endY = useRef(0)
     animateDotOutline()
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseover', handleMouseOver)
-      window.removeEventListener('mouseout', handleMouseOut)
-      window.removeEventListener('mouseEnter', handleMouseEnter)
-      window.removeEventListener('mouseLeave', handleMouseLeave)
+      // window.removeEventListener('mouseover', handleMouseOver)
+      // window.removeEventListener('mouseout', handleMouseOut)
+      // window.removeEventListener('mouseEnter', handleMouseEnter)
+      // window.removeEventListener('mouseLeave', handleMouseLeave)
       cancelAnimationFrame(requestRef.current)
     }
   }, [])
@@ -133,6 +141,17 @@ const endY = useRef(0)
     </>
   )
 }
+
+const cursor = css`
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+`
 
 const CursorDotOutline = styled.div`
   display: block;

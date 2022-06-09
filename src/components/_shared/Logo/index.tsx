@@ -2,15 +2,22 @@ import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 import { mobile } from 'styles/media'
+import useMouseHover from 'hooks/useMouseHover'
 
 type Props = {
   color?: string
   size?: string
 }
 
-const Logo = ({ color = 'white', size = 'normal' }: Props) => {
+const Logo = ({ color = 'white', size = 'normal', ...props }: Props) => {
+  const [, handleMouseOver, handleMouseOut] = useMouseHover()
+
   return (
-    <Wrapper color={color}>
+    <Wrapper
+      color={color}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
       <Link href="/">
         <a>
           <div>Untilled.</div>
