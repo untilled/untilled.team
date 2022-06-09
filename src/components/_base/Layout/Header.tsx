@@ -9,6 +9,7 @@ import useMouseHover from 'hooks/useMouseHover'
 
 type Props = {}
 
+// header 올라갔다 내려오도록
 const Header = ({}: Props) => {
   const [_, handleMouseOver, handleMouseOut] = useMouseHover()
   const isLayoutClosed = useRecoilValue(isLayoutClosedState)

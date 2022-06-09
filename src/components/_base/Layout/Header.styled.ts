@@ -39,13 +39,17 @@ export const Menu = styled.div<MenuProps>`
   font-family: 'Prompt', sans-serif;
   font-weight: 200;
   padding-bottom: 2px;
+
   ${(props) =>
-    props.selected &&
-    css`
-      font-weight: 400;
-      border-bottom: 2px solid white;
-      padding-bottom: 0px;
-    `}
-  &:hover {
-  }
+    props.selected
+      ? css`
+          font-weight: 400;
+          border-bottom: 2px solid white;
+          padding-bottom: 0px;
+        `
+      : css`
+          &:hover {
+            color: rgba(255, 255, 255, 0.7);
+          }
+        `}
 `
