@@ -90,17 +90,63 @@ export const members: members = [
     id: 15,
     images: ['/images/members/4.png', '/images/members/4-hover.png'],
   },
-]
-
-const questions = [
   {
-    id: 0,
-    question: 'What is your github nickname?',
-    answer: '',
+    id: 16,
+    images: ['/images/members/4.png', '/images/members/4-hover.png'],
   },
   {
+    id: 17,
+    images: ['/images/members/4.png', '/images/members/4-hover.png'],
+  },
+]
+
+export const projects = [
+  {
     id: 1,
-    question: 'What is your email?',
-    answer: '',
+    name: 'project',
+  },
+  {
+    id: 2,
+    name: 'project',
+  },
+  {
+    id: 3,
+    name: 'project',
+  },
+  {
+    id: 4,
+    name: 'project',
+  },
+  {
+    id: 5,
+    name: 'project',
+  },
+  {
+    id: 6,
+    name: 'project',
+  },
+  {
+    id: 7,
+    name: 'project',
+  },
+  {
+    id: 8,
+    name: 'project',
+  },
+  {
+    id: 9,
+    name: 'project',
+  },
+  {
+    id: 10,
+    name: 'project',
+  },
+  {
+    id: 11,
+    name: 'project',
+  },
+  {
+    id: 12,
+    name: 'project',
   },
 ]
