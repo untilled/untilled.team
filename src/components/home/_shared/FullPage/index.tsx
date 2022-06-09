@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import useMobile from 'hooks/useMobile'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { mobile } from 'styles/media'
@@ -14,9 +15,11 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const [heightList, setHeightList] = useState<number[]>([])
   const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const isMobile = useMediaQuery({
-    query: '(max-width: 1024px)',
-  })
+  const isMobile = useMobile()
+
+  // const isMobile = useMediaQuery({
+  //   query: '(max-width: 1024px)',
+  // })
 
   const handleScroll = useCallback(
     (e: WheelEvent) => {

@@ -53,16 +53,15 @@ const Wrapper = styled.div<Wrapper>`
   right: 0;
   bottom: 0;
   &::-webkit-scrollbar {
-    /* display: none; */
-  }
-  ${mobile} {
-    /* display: none; */
+    display: none;
   }
 
   ${(props) =>
     props.isScrollHidden &&
     css`
-      overflow-y: hidden;
+      overflow: hidden;
     `}
+  ${mobile} {
+  }
 `
 export default Layout
