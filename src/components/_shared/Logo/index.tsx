@@ -36,6 +36,10 @@ const Wrapper = styled.div`
   }
   ${mobile} {
     font-size: 1rem;
+    div {
+      border-top: 3px solid
+        ${({ color }) => (color === 'white' ? 'black' : 'white')};
+    }
   }
 `
 

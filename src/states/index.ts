@@ -2,7 +2,7 @@ import { atom, selector } from 'recoil'
 
 export const pageState = atom<number | null>({
   key: 'pageState',
-  default: 0,
+  default: null,
 })
 
 export const isMobileState = atom<boolean | null>({

@@ -26,12 +26,6 @@ const MobileHeader = ({}: Props) => {
     setMenuOpened(false)
   }, [router])
 
-  // useEffect(() => {
-  //   if (!isMobile) {
-  //     setMenuOpened(false)
-  //   }
-  // }, [isMobile])
-
   return (
     <>
       <Wrapper isColsed={isLayoutClosed}>
