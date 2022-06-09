@@ -1,4 +1,4 @@
-import * as styled from './styled'
+import * as styled from './index.styled'
 import { members } from 'libs/data'
 
 type Props = {}

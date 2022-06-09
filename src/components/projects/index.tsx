@@ -1,5 +1,5 @@
 import { projects } from 'libs/data'
-import * as styled from './styled'
+import * as styled from './index.styled'
 type Props = {}
 
 const Projects = (props: Props) => {

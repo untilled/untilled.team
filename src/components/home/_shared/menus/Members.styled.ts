@@ -1,61 +1,18 @@
 import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
-import { members } from 'libs/data'
-import { useRouter } from 'next/router'
-import React from 'react'
 import { mobile } from 'styles/media'
 
-type Props = {}
-
-const Members = (props: Props) => {
-  const router = useRouter()
-
-  const handleClick: React.MouseEventHandler<Element> = () => {
-    router.push('/members')
-  }
-  return (
-    <Wrapper>
-      <Title className="container">
-        <h1>언틸드의 멤버를 만나보세요. 🙋🏼‍♀️</h1>
-        <h3>
-          다양한 배경 속에서 참가했지만, 모두 성장을 위해 참여하고 있어요.
-        </h3>
-      </Title>
-      <MemberListWrapper>
-        <MemberList>
-          {members.map((member) => (
-            <Member images={member.images} key={member.id}></Member>
-          ))}
-        </MemberList>
-        <MemberList>
-          {members.map((member) => (
-            <Member images={member.images} key={member.id}></Member>
-          ))}
-        </MemberList>
-        <MemberList>
-          {members.map((member) => (
-            <Member images={member.images} key={member.id}></Member>
-          ))}
-        </MemberList>
-      </MemberListWrapper>
-      <BtnBox>
-        <MoreButton href="members">더 알아보기</MoreButton>
-      </BtnBox>
-    </Wrapper>
-  )
-}
-
-const BtnBox = styled.div`
+export const BtnBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
 `
 
-const MoreButton = styled(Button)`
+export const MoreButton = styled(Button)`
   padding: 15px 90px;
 `
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
@@ -75,7 +32,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Title = styled.div`
+export const Title = styled.div`
   width: 100%;
   h1 {
     margin-bottom: 10px;
@@ -99,12 +56,12 @@ const Title = styled.div`
     }
   }
 `
-const MemberListWrapper = styled.div`
+export const MemberListWrapper = styled.div`
   overflow: hidden;
   /* height: auto; */
   flex-shrink: 0;
 `
-const MemberList = styled.div`
+export const MemberList = styled.div`
   width: 100vw;
   overflow: visible;
   margin-bottom: 10px;
@@ -120,7 +77,7 @@ type Member = {
   images: string[]
 }
 
-const Member = styled.div<Member>`
+export const Member = styled.div<Member>`
   position: relative;
   width: 150px;
   height: 150px;
@@ -143,5 +100,3 @@ const Member = styled.div<Member>`
     height: 100px;
   }
 `
-
-export default Members
