@@ -30,12 +30,12 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
-        {!isMobile && <Header />}
-        {isMobile && <MobileHeader />}
+        {isMobile===false && <Header />}
+        {isMobile===true && <MobileHeader />}
         {children}
         {router.route !== '/' && <Footer />}
       </Wrapper>
-      {!isMobile && <Cursor />}
+      {isMobile===false && <Cursor />}
     </>
   )
 }
