@@ -33,7 +33,6 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.div`
-  width: 100%;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;

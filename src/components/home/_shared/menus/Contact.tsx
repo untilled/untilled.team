@@ -27,7 +27,7 @@ const Contact = (props: Props) => {
           <Button color="white" href="contact">
             문의하기
           </Button>
-          <Button color="gray">공유하기</Button>
+          <Button color="gray_2">공유하기</Button>
         </styled.ContentBottom>
       </styled.Content>
     </styled.Wrapper>

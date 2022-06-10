@@ -12,7 +12,6 @@ import useMobile from 'hooks/useMobile'
 type Props = {}
 
 const MobileHeader = ({}: Props) => {
-  const isMobile = useMobile()
   const [menuOpened, setMenuOpened] = useState(false)
   const isLayoutClosed = useRecoilValue(isLayoutClosedState)
   const router = useRouter()
@@ -29,12 +28,26 @@ const MobileHeader = ({}: Props) => {
     <>
       <styled.Wrapper isColsed={isLayoutClosed}>
         <styled.Container className="container">
-          <Logo />
-          <div>
-            <styled.MenuOpenBtn onClick={() => handleMenuOpened(true)}>
-              <AiOutlineMenu />
-            </styled.MenuOpenBtn>
-          </div>
+          {menuOpened === false && (
+            <>
+              <Logo />
+              <div>
+                <styled.MenuOpenBtn onClick={() => handleMenuOpened(true)}>
+                  <AiOutlineMenu />
+                </styled.MenuOpenBtn>
+              </div>
+            </>
+          )}
+          {menuOpened === true && (
+            <>
+              <div></div>
+              <div>
+                <styled.MenuOpenBtn onClick={() => handleMenuOpened(false)}>
+                  <AiOutlineClose />
+                </styled.MenuOpenBtn>
+              </div>
+            </>
+          )}
         </styled.Container>
       </styled.Wrapper>
       {menuOpened && (
@@ -48,9 +61,6 @@ const MobileHeader = ({}: Props) => {
               </a>
             </Link>
           ))}
-          <styled.MenuCloseButton onClick={() => handleMenuOpened(false)}>
-            <AiOutlineClose />
-          </styled.MenuCloseButton>
         </styled.MobileMenuWrapper>
       )}
     </>

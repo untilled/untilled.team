@@ -8,11 +8,11 @@ export const Wrapper = styled.div`
   height: fit-content;
   height: 100vh;
   padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow: scroll;
   padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 export const Title = styled.div`
   display: flex;
@@ -35,8 +35,6 @@ export const Title = styled.div`
 `
 
 export const Content = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +43,8 @@ export const Content = styled.div`
   & > div {
     width: 100%;
   }
-  padding: 30px 50px;
+  padding: 150px 150px;
+  background-color: #212529;
 `
 
 export const ContentBottom = styled.div`
