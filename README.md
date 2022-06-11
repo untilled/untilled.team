@@ -54,4 +54,4 @@ This project is ongoing.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/untilled/untilled/blob/main/LICENSE) for details
