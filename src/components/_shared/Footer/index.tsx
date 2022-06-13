@@ -25,21 +25,17 @@ const Footer = (props: Props) => {
           <TopLeft>
             <Logo color="gray" />
             <Menus>
-              <nav>
               {menus.map((menu, idx) => (
                 <Link key={idx} href={menu.href}>
                   <a>
-                    <div >
-                      {menu.name}
-                    </div>
+                    <div>{menu.name}</div>
                   </a>
                 </Link>
               ))}
-              </nav>
-              <div>
+              {/* <div>
                 Untilled is the development team. We are developing the worlds
                 by making products.
-              </div>
+              </div> */}
             </Menus>
           </TopLeft>
           <TopRight>
@@ -154,15 +150,12 @@ const Content = styled.div`
 
 const Menus = styled.div`
   font-family: 'Prompt', sans-serif;
-
-  nav {
-    font-size: 0.9rem;
-    display: flex;
-    gap: 15px;
-  }
-  & > div {
-    font-size: 0.8rem;
-    color: #868e96;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  & > a:hover {
+    color: rgba(255, 255, 255, 0.7);
   }
   ${mobile} {
     display: none;

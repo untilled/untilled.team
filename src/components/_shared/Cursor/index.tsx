@@ -2,6 +2,8 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import useMouseHover from 'hooks/useMouseHover'
 import React, { useEffect, useRef } from 'react'
+import { useRecoilState } from 'recoil'
+import { isMouseHoveredState } from 'states'
 import { mobile } from 'styles/media'
 
 type Props = {}
@@ -9,7 +11,8 @@ type Props = {}
 const delay = 4
 
 function Cursor({}: Props) {
-  const [isMouseHovered] = useMouseHover()
+  const [isMouseHovered, setIsMouseHovered] =
+    useRecoilState(isMouseHoveredState)
   const cursorVisible = useRef(false)
   const cursorEnlared = useRef(false)
 

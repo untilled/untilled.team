@@ -20,7 +20,7 @@ const Button = ({
   onClick,
 }: Props) => {
   const router = useRouter()
-  const [, handleMouseOver, handleMouseOut] = useMouseHover()
+  const hoverHandlers = useMouseHover()
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     if (href) {
@@ -35,8 +35,7 @@ const Button = ({
       color={color}
       className={className}
       onClick={handleClick}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      {...hoverHandlers}
     >
       {children}
     </Wrapper>

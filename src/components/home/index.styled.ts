@@ -41,7 +41,7 @@ export const MenuHeader = styled.div`
   white-space: nowrap;
   top: 0;
   width: 10px;
-  transform: translate(-20%, -150%) rotate(-90deg); ;
+  transform: translate(-20%, -150%) rotate(-90deg);
 `
 
 type MenuProps = {
@@ -56,52 +56,20 @@ export const Menu = styled.div<MenuProps>`
   background-color: ${(props) => (props.selected ? 'white' : '#797979')};
   & > div {
     display: none;
+    display: block;
     position: absolute;
     top: -5px;
     right: 100%;
     margin-right: 10px;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity ease-in-out 0.1s;
   }
   &:hover {
     & > div {
       display: block;
+      opacity: 1;
     }
-  }
-`
-
-export const IconList = styled.div<PageMenu>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 20px;
-  & > * {
-    border-radius: 50%;
-    background-color: #212529;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg {
-      width: 23px;
-      height: 23px;
-      border-radius: 50%;
-    }
-    cursor: pointer;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
-  }
-  /* transform: translate(0px, 110px); */
-  transition: transform ease-in-out 0.3s;
-
-  ${(props) =>
-    props.page === 6 &&
-    css`
-      transform: translate(0px, 110px);
-    `}
-
-  ${mobile} {
-    display: none;
   }
 `
 

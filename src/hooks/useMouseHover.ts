@@ -2,23 +2,22 @@ import { useCallback, useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import { isMouseHoveredState } from 'states'
 
-function useMouseHover(): [
-  boolean,
-  React.MouseEventHandler,
-  React.MouseEventHandler
-] {
+function useMouseHover(): {
+  onMouseOver: React.MouseEventHandler
+  onMouseOut: React.MouseEventHandler
+} {
   const [isMouseHovered, setIsMouseHovered] =
     useRecoilState(isMouseHoveredState)
 
-  const handleMouseOver: React.MouseEventHandler = () => {
+  const onMouseOver: React.MouseEventHandler = () => {
     setIsMouseHovered(true)
   }
 
-  const handleMouseOut: React.MouseEventHandler = () => {
+  const onMouseOut: React.MouseEventHandler = () => {
     setIsMouseHovered(false)
   }
 
-  return [isMouseHovered, handleMouseOver, handleMouseOut]
+  return { onMouseOver, onMouseOut }
 }
 
 export default useMouseHover

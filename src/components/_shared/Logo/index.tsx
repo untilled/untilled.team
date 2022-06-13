@@ -10,14 +10,10 @@ type Props = {
 }
 
 const Logo = ({ color = 'white', size = 'normal', ...props }: Props) => {
-  const [, handleMouseOver, handleMouseOut] = useMouseHover()
+  const hoverHandlers = useMouseHover()
 
   return (
-    <Wrapper
-      color={color}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
+    <Wrapper color={color} {...hoverHandlers}>
       <Link href="/">
         <a>
           <div>Untilled.</div>

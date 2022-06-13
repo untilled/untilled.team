@@ -8,6 +8,9 @@ import { useRecoilValue } from 'recoil'
 import { pageState } from 'states'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
+import Toolbar from 'components/_shared/Toolbar'
+import { BsFillMoonFill } from 'react-icons/bs'
+import useMouseHover from 'hooks/useMouseHover'
 
 type Props = {
   children: any
@@ -18,6 +21,7 @@ const Layout = ({ children }: Props) => {
   const router = useRouter()
   const wrapperRef = useRef<HTMLDivElement>(null)
   const isHome = useRecoilValue(pageState) !== null
+  const hoverHandlers = useMouseHover()
 
   useEffect(() => {
     if (wrapperRef.current) {
@@ -31,6 +35,22 @@ const Layout = ({ children }: Props) => {
         {isMobile === false && <Header />}
         {isMobile === true && <MobileHeader />}
         {children}
+        <Toolbar direction="left">
+          <div></div>
+          <div></div>
+          <styled.ShareBox>
+            <styled.ShareBtn {...hoverHandlers}>
+              <BsFillMoonFill />
+            </styled.ShareBtn>
+            <styled.ShareMessage
+              href="https://github.com/untilled/untilled"
+              target="_blank"
+              {...hoverHandlers}
+            >
+              Please visit and star this repository! 😎
+            </styled.ShareMessage>
+          </styled.ShareBox>
+        </Toolbar>
         {router.route !== '/' && <Footer />}
       </styled.Wrapper>
       {isMobile === false && <Cursor />}

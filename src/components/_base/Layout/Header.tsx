@@ -11,7 +11,7 @@ type Props = {}
 
 // header 올라갔다 내려오도록
 const Header = ({}: Props) => {
-  const [_, handleMouseOver, handleMouseOut] = useMouseHover()
+  const hoverHandlers = useMouseHover()
   const isLayoutClosed = useRecoilValue(isLayoutClosedState)
   const router = useRouter()
 
@@ -25,8 +25,7 @@ const Header = ({}: Props) => {
               <a>
                 <styled.Menu
                   selected={menu.href === router.asPath}
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
+                  {...hoverHandlers}
                 >
                   {menu.name}
                 </styled.Menu>

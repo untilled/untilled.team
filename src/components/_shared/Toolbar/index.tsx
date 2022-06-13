@@ -40,6 +40,7 @@ type Wrapper = {
 }
 
 const Wrapper = styled.div<Wrapper>`
+  position: fixed;
   z-index: 20;
   top: 0;
   bottom: 0;
@@ -48,7 +49,6 @@ const Wrapper = styled.div<Wrapper>`
   justify-content: space-between;
   align-items: ${({ direction }) =>
     direction === 'left' ? 'flex-start' : 'flex-end'};
-  position: absolute;
   font-size: 0.8rem;
 `
 

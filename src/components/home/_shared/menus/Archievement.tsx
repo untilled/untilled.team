@@ -2,6 +2,7 @@ import * as styled from './Archievement.styled'
 
 type Props = {}
 
+//모바일인 경우 슬라이드로 전환되도록 수정
 //멤버수, 프로젝트수, 시작한지
 const Archivement = (props: Props) => {
   return (

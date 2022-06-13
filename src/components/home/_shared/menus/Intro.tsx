@@ -7,8 +7,8 @@ type Props = {}
 const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
 const videos = [
   '/videos/intro0.mp4',
-  '/videos/intro1.mp4',
-  '/videos/intro2.mp4',
+  // '/videos/intro1.mp4',
+  // '/videos/intro2.mp4',
 ]
 
 const circleTexts = 'scroll down scroll down scroll down '

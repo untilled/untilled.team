@@ -2,6 +2,7 @@ import * as styled from './index.styled'
 import { useEffect } from 'react'
 import FullPage from './_shared/FullPage'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
+import { BsShareFill } from 'react-icons/bs'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState } from 'recoil'
 import { pageState } from 'states'
@@ -14,8 +15,9 @@ import Projects from 'components/home/_shared/menus/Projects'
 import Members from 'components/home/_shared/menus/Members'
 import Contact from 'components/home/_shared/menus/Contact'
 import Footer from 'components/_shared/Footer'
-import Toolbar from 'components/home/_shared/Toolbar'
+import Toolbar from 'components/_shared/Toolbar'
 import PreloadImg from 'components/_shared/PreloadImg'
+import useMouseHover from 'hooks/useMouseHover'
 
 const pages = [
   {
@@ -52,6 +54,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(pageState)
+  const hoverHandlers = useMouseHover()
 
   useEffect(() => {
     setPage(0)
@@ -78,26 +81,6 @@ const Home = (props: Props) => {
 
   return (
     <styled.Wrapper>
-      <Toolbar direction="left">
-        <div></div>
-        <div></div>
-        <styled.IconList page={page}>
-          <a
-            href="https://github.com/morethanmin"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <AiFillGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/morethanmin/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <AiFillLinkedin />
-          </a>
-        </styled.IconList>
-      </Toolbar>
       <Toolbar direction="right">
         <div></div>
         <styled.PageMenu page={page}>
@@ -109,17 +92,26 @@ const Home = (props: Props) => {
               selected={page === idx}
               key={idx}
               onClick={() => setPage(idx)}
+              {...hoverHandlers}
             >
               <div>{menu.name}</div>
             </styled.Menu>
           ))}
         </styled.PageMenu>
         <styled.ArrowList page={page}>
-          <styled.Arrow activated={page !== 0} onClick={handlePrev}>
+          <styled.Arrow
+            activated={page !== 0}
+            onClick={handlePrev}
+            {...hoverHandlers}
+          >
             <MdKeyboardArrowUp />
           </styled.Arrow>
           {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
-          <styled.Arrow activated={true} onClick={handleNext}>
+          <styled.Arrow
+            activated={true}
+            onClick={handleNext}
+            {...hoverHandlers}
+          >
             <MdKeyboardArrowDown />
           </styled.Arrow>
         </styled.ArrowList>
