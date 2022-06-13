@@ -7,9 +7,10 @@ const Projects = (props: Props) => {
     <styled.Wrapper>
       <styled.Title className="container">Projects</styled.Title>
       <styled.Cards className="container">
-        {projects.map((project) => (
+        {/* {projects.map((project) => (
           <styled.Card key={project.id}></styled.Card>
-        ))}
+        ))} */}
+        Empty!
       </styled.Cards>
     </styled.Wrapper>
   )

@@ -17,7 +17,7 @@ export const Wrapper = styled.div<Wrapper>`
   &::-webkit-scrollbar {
     display: none;
   }
-
+  transition: opacity ease-in-out 300ms;
   ${(props) =>
     props.isScrollHidden &&
     css`

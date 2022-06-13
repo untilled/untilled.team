@@ -23,6 +23,12 @@ export const Cards = styled.div`
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  min-height: 800px;
+  align-items: center;
+  border-radius: 15px;
+  color: #868e96;
+  background-color: #212529;
+  font-weight: 200;
 `
 export const Card = styled.div`
   width: 300px;
