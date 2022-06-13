@@ -3,7 +3,7 @@ import Cursor from 'components/_shared/Cursor'
 import Footer from 'components/_shared/Footer'
 import useMobile from 'hooks/useMobile'
 import { useRouter } from 'next/router'
-import { useEffect, useRef } from 'react'
+import { CSSProperties, useEffect, useRef } from 'react'
 import { useRecoilValue } from 'recoil'
 import { pageState } from 'states'
 import Header from './Header'
@@ -11,6 +11,46 @@ import MobileHeader from './MobileHeader'
 import Toolbar from 'components/_shared/Toolbar'
 import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
+import { Transition, TransitionGroup } from 'react-transition-group'
+import { css, Interpolation, Theme } from '@emotion/react'
+
+type getTransitionStyles = {
+  entering: Interpolation<Theme>
+  entered: Interpolation<Theme>
+  exiting: Interpolation<Theme>
+  exited: Interpolation<Theme>
+}
+
+const TIMEOUT = 300
+const getTransitionWrapperCss: getTransitionStyles = {
+  entering: css`
+    opacity: 0;
+  `,
+  entered: css`
+    opacity: 1;
+  `,
+  exiting: css`
+    opacity: 0;
+  `,
+  exited: css`
+    opacity: 0;
+  `,
+}
+
+const getTransitionHeaderCss: getTransitionStyles = {
+  entering: css`
+    opacity: 0;
+  `,
+  entered: css`
+    opacity: 0;
+  `,
+  exiting: css`
+    transform: translate(0px, 300px);
+  `,
+  exited: css`
+    opacity: 0;
+  `,
+}
 
 type Props = {
   children: any
@@ -31,6 +71,17 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
+      {/* <TransitionGroup>
+        <Transition
+          key={router.pathname}
+          timeout={{
+            enter: TIMEOUT,
+            exit: TIMEOUT,
+          }}
+        >
+          {(status: 'entering' | 'entered' | 'exiting' | 'exited') => <></>}
+        </Transition>
+      </TransitionGroup> */}
       <styled.Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
         {isMobile === false && <Header />}
         {isMobile === true && <MobileHeader />}
