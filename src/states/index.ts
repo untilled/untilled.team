@@ -10,15 +10,9 @@ export const isMobileState = atom<boolean | null>({
   default: null,
 })
 
-export const isLayoutClosedState = selector({
-  key: 'isLayoutClosedState',
-  get: ({ get }) => {
-    const page = get(pageState)
-    const isMobile = get(isMobileState)
-
-    //모바일이 아니면서 home page에서 footer인 경우
-    return !isMobile && page === 6
-  },
+export const isVisibleFooterState = atom<boolean>({
+  key: 'isVisibleFooterState',
+  default: false,
 })
 
 export const isMouseHoveredState = atom<boolean>({

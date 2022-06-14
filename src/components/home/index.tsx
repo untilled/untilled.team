@@ -98,7 +98,7 @@ const Home = (props: Props) => {
             </styled.Menu>
           ))}
         </styled.PageMenu>
-        <styled.ArrowList page={page}>
+        <styled.ArrowList visible={page !== 6}>
           <styled.Arrow
             activated={page !== 0}
             onClick={handlePrev}

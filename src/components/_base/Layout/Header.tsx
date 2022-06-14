@@ -3,20 +3,19 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import { useRecoilValue } from 'recoil'
-import { isLayoutClosedState } from 'states'
 import { menus } from 'libs/data'
 import useMouseHover from 'hooks/useMouseHover'
+import { isVisibleFooterState } from 'states'
 
 type Props = {}
 
 // header 올라갔다 내려오도록
 const Header = ({}: Props) => {
   const hoverHandlers = useMouseHover()
-  const isLayoutClosed = useRecoilValue(isLayoutClosedState)
   const router = useRouter()
 
   return (
-    <styled.Wrapper isColsed={isLayoutClosed}>
+    <styled.Wrapper>
       <styled.Container className="container">
         <Logo color="white" />
         <styled.Right>

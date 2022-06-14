@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 100px 0;
   display: flex;
   flex-direction: column;

@@ -74,7 +74,7 @@ export const Menu = styled.div<MenuProps>`
 `
 
 type ArrowList = {
-  page: number | null
+  visible: boolean
 }
 
 export const ArrowList = styled.div<ArrowList>`
@@ -85,7 +85,7 @@ export const ArrowList = styled.div<ArrowList>`
   padding-bottom: 20px;
   transition: transform ease-in-out 0.3s;
   ${(props) =>
-    props.page === 6 &&
+    props.visible === false &&
     css`
       transform: translate(0px, 110px);
     `}

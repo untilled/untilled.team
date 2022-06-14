@@ -5,7 +5,9 @@ import { mobile } from 'styles/media'
 type Wrapper = {
   isScrollHidden: boolean
 }
-
+type ShareBox = {
+  visible: boolean
+}
 export const Wrapper = styled.div<Wrapper>`
   overflow-x: hidden;
   overflow-y: scroll;
@@ -25,10 +27,9 @@ export const Wrapper = styled.div<Wrapper>`
     `}
 `
 
-export const ShareBox = styled.div`
+export const ShareBox = styled.div<ShareBox>`
   position: relative;
   margin-bottom: 20px;
-  transition: transform ease-in-out 0.3s;
   & > * {
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
     background-color: #212529;
@@ -36,6 +37,12 @@ export const ShareBox = styled.div`
   ${mobile} {
     display: none;
   }
+  transition: transform ease-in-out 0.3s;
+  ${(props) =>
+    props.visible === false &&
+    css`
+      transform: translate(0px, 110px);
+    `}
 `
 
 export const ShareBtn = styled.div`

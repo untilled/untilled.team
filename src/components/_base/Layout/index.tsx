@@ -5,7 +5,7 @@ import useMobile from 'hooks/useMobile'
 import { useRouter } from 'next/router'
 import { CSSProperties, useEffect, useRef } from 'react'
 import { useRecoilValue } from 'recoil'
-import { pageState } from 'states'
+import { isVisibleFooterState, pageState } from 'states'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
 import Toolbar from 'components/_shared/Toolbar'
@@ -13,6 +13,7 @@ import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
 import { Transition, TransitionGroup } from 'react-transition-group'
 import { css, Interpolation, Theme } from '@emotion/react'
+import useVisibleElement from 'hooks/useVisibleElement'
 
 type getTransitionStyles = {
   entering: Interpolation<Theme>
@@ -58,10 +59,15 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const isMobile = useMobile()
+  const isVisibleFooter = useRecoilValue(isVisibleFooterState)
   const router = useRouter()
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const isHome = useRecoilValue(pageState) !== null
+  const page = useRecoilValue(pageState)
   const hoverHandlers = useMouseHover()
+  const isHome = page !== null
+
+  const visible =
+    (page === null && !isVisibleFooter) || (page !== null && page !== 6)
 
   useEffect(() => {
     if (wrapperRef.current) {
@@ -89,7 +95,7 @@ const Layout = ({ children }: Props) => {
         <Toolbar direction="left">
           <div></div>
           <div></div>
-          <styled.ShareBox>
+          <styled.ShareBox visible={visible}>
             <styled.ShareBtn {...hoverHandlers}>
               <BsFillMoonFill />
             </styled.ShareBtn>
