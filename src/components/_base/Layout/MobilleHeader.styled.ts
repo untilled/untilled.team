@@ -1,22 +1,12 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-type Wrapper = {
-  isColsed: boolean
-}
-
-export const Wrapper = styled.div<Wrapper>`
+export const Wrapper = styled.div`
   user-select: none;
   z-index: 30;
   position: fixed;
   width: 100%;
   padding: 10px;
-  transition: transform ease-in-out 0.3s;
-  ${(props) =>
-    props.isColsed &&
-    css`
-      transform: translate(0px, -100px);
-    `};
 `
 export const Container = styled.div`
   display: flex;

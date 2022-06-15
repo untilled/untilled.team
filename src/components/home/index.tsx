@@ -81,8 +81,17 @@ const Home = (props: Props) => {
 
   return (
     <styled.Wrapper>
-      <Toolbar direction="right">
-        <div></div>
+      <Toolbar direction="left">
+        <styled.ShareMessage
+          href="https://github.com/untilled/untilled"
+          target="_blank"
+          visible={page === 0}
+          {...hoverHandlers}
+        >
+          Please visit and star this repository! 😎
+        </styled.ShareMessage>
+      </Toolbar>
+      <Toolbar direction="right" align="start">
         <styled.PageMenu page={page}>
           <styled.MenuHeader>
             {page !== null ? pages[page].name : ''}
@@ -98,7 +107,9 @@ const Home = (props: Props) => {
             </styled.Menu>
           ))}
         </styled.PageMenu>
-        <styled.ArrowList visible={page !== 6}>
+      </Toolbar>
+      <Toolbar direction="right">
+        <styled.ArrowList visible={page !== null && page !== 6}>
           <styled.Arrow
             activated={page !== 0}
             onClick={handlePrev}

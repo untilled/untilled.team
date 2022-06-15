@@ -25,7 +25,7 @@ function useMobile() {
     }
   }, [isMobile, checkIsMobileMemo])
 
-  return isMobile
+  return null
 }
 
 export default useMobile

@@ -9,15 +9,29 @@ import {
   AiOutlineInstagram,
 } from 'react-icons/ai'
 import Logo from '../Logo'
-import useHandleVisibleFooter from 'hooks/useHandleVisibleFooter'
+import { isVisibleFooterState } from 'states'
+import { useRecoilState } from 'recoil'
+import { useCallback, useRef } from 'react'
 
 type Props = {}
 const Footer = ({}: Props) => {
-  const elementRef = useHandleVisibleFooter()
+  const [isVisible, setIsVisible] = useRecoilState(isVisibleFooterState)
+  const observer = useRef<IntersectionObserver>()
 
-  {
-    /* <div>Copyright ©2022 All rights reserved.</div> */
-  }
+  const elementRef = useCallback(
+    (node) => {
+      // if (isFullyLoaded) return
+      if (observer.current) observer.current.disconnect()
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) setIsVisible(true)
+        else setIsVisible(false)
+      })
+
+      if (node) observer.current.observe(node)
+    },
+    [setIsVisible]
+  )
+
   return (
     <styled.Wrapper ref={elementRef}>
       <styled.Content className="container">
@@ -32,10 +46,6 @@ const Footer = ({}: Props) => {
                   </a>
                 </Link>
               ))}
-              {/* <div>
-                Untilled is the development team. We are developing the worlds
-                by making products.
-              </div> */}
             </styled.Menus>
           </styled.TopLeft>
           <styled.TopRight>

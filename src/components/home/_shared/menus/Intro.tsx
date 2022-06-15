@@ -1,7 +1,8 @@
 import * as styled from './Intro.styled'
 import TextCircle from 'components/home/_shared/TextCircle'
-import useMobile from 'hooks/useMobile'
 import { useEffect, useRef, useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { isMobileState } from 'states'
 type Props = {}
 
 const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
@@ -17,7 +18,7 @@ const degree = Number(360 / circleTexts.length)
 const Intro = (props: Props) => {
   const [videoIdx, setvideoIdx] = useState(0)
   const circleTextRef = useRef<HTMLSpanElement[]>([])
-  const isMobile = useMobile()
+  const isMobile = useRecoilValue(isMobileState)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handleEnded = async () => {

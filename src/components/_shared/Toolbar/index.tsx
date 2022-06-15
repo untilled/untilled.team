@@ -1,13 +1,15 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { ReactChildren, useEffect, useRef } from 'react'
 import { mobile } from 'styles/media'
 
 type Props = {
   direction: 'left' | 'right'
+  align?: 'start' | 'end'
   children: JSX.Element | JSX.Element[]
 }
 
-function Toolbar({ direction, children }: Props) {
+function Toolbar({ direction, align = 'end', children }: Props) {
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   //resize handler for toolbar
@@ -29,27 +31,39 @@ function Toolbar({ direction, children }: Props) {
   }, [])
 
   return (
-    <Wrapper ref={wrapperRef} direction={direction}>
+    <Wrapper ref={wrapperRef} direction={direction} align={align}>
       {children}
     </Wrapper>
   )
 }
 
 type Wrapper = {
-  direction: string
+  direction: 'left' | 'right'
+  align: 'start' | 'end'
 }
 
 const Wrapper = styled.div<Wrapper>`
   position: fixed;
   z-index: 20;
-  top: 0;
-  bottom: 0;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: ${({ direction }) =>
     direction === 'left' ? 'flex-start' : 'flex-end'};
   font-size: 0.8rem;
+  height: fit-content;
+
+  ${(props) =>
+    props.align === 'start' &&
+    css`
+      top: 50%;
+      transform: translate(0, -50%);
+    `}
+  ${(props) =>
+    props.align === 'end' &&
+    css`
+      bottom: 0;
+    `}
 `
 
 export default Toolbar

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
-import useMobile from 'hooks/useMobile'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { isMobileState } from 'states'
 import { mobile } from 'styles/media'
 
 type Props = {
@@ -14,7 +15,7 @@ const FullPage = ({ page, children, onNext, onPrev }: Props) => {
   const [heightList, setHeightList] = useState<number[]>([])
   const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const isMobile = useMobile()
+  const isMobile = useRecoilValue(isMobileState)
 
   // const isMobile = useMediaQuery({
   //   query: '(max-width: 1024px)',

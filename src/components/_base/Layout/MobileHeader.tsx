@@ -4,16 +4,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { useRecoilValue } from 'recoil'
-import { isLayoutClosedState } from 'states'
 import { menus } from 'libs/data'
-import useMobile from 'hooks/useMobile'
 
 type Props = {}
 
 const MobileHeader = ({}: Props) => {
   const [menuOpened, setMenuOpened] = useState(false)
-  const isLayoutClosed = useRecoilValue(isLayoutClosedState)
   const router = useRouter()
 
   const handleMenuOpened = (opened: boolean) => {
@@ -26,7 +22,7 @@ const MobileHeader = ({}: Props) => {
 
   return (
     <>
-      <styled.Wrapper isColsed={isLayoutClosed}>
+      <styled.Wrapper>
         <styled.Container className="container">
           {menuOpened === false && (
             <>
