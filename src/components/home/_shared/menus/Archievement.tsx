@@ -12,10 +12,10 @@ const Archivement = (props: Props) => {
         <h3>지금도 팀원과 함께 끊임없이 성장해 나가고 있어요.</h3>
       </styled.Title>
       <styled.CardWrapper className="container">
-        <styled.Card></styled.Card>
-        <styled.Card></styled.Card>
-        <styled.Card></styled.Card>
-        <styled.Card></styled.Card>
+        <styled.Card>0명의 멤버</styled.Card>
+        <styled.Card>0개의 프로젝트</styled.Card>
+        <styled.Card>0명의 유저</styled.Card>
+        <styled.Card>함께한지 0일</styled.Card>
         <styled.Card></styled.Card>
         <styled.Card></styled.Card>
       </styled.CardWrapper>

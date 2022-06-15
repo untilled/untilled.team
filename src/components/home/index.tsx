@@ -1,8 +1,6 @@
 import * as styled from './index.styled'
 import { useEffect } from 'react'
 import FullPage from './_shared/FullPage'
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
-import { BsShareFill } from 'react-icons/bs'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { isMobileState, pageState } from 'states'
@@ -89,16 +87,23 @@ const Home = (props: Props) => {
     <styled.Wrapper>
       <Toolbar direction="left">
         <styled.ShareMessage
-          href="https://github.com/untilled/untilled"
+          href={
+            page === 0
+              ? 'https://github.com/untilled/untilled'
+              : 'https://github.com/untilled/untilled'
+          }
           target="_blank"
-          visible={page === 0}
+          visible={page === 0 || page === 4 || page === 5}
           {...hoverHandlers}
         >
-          Please visit and star this repository! 😎
+          {(page === 0 || page === 1) &&
+            'Please visit and star this repository! 😎'}
+          {(page === 3 || page === 4 || page === 5 || page === 6) &&
+            'We are recruiting members! 🥰'}
         </styled.ShareMessage>
       </Toolbar>
       <Toolbar direction="right" align="start">
-        <styled.PageMenu page={page}>
+        <styled.PageMenu accented={page === 4}>
           <styled.MenuHeader>
             {page !== null ? pages[page].name : ''}
           </styled.MenuHeader>

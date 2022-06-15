@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `
 
 type PageMenu = {
-  page: number | null
+  accented: boolean
 }
 
 export const PageMenu = styled.div<PageMenu>`
@@ -22,8 +22,8 @@ export const PageMenu = styled.div<PageMenu>`
   cursor: pointer;
   font-size: 0.8rem;
   border-radius: 15px;
-  ${({ page }) =>
-    (page === 4 || page === 4) &&
+  ${({ accented }) =>
+    accented &&
     css`
       background-color: #212529;
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);

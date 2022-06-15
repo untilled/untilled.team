@@ -2,10 +2,8 @@ import * as styled from './Header.styled'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
-import { useRecoilValue } from 'recoil'
 import { menus } from 'libs/data'
 import useMouseHover from 'hooks/useMouseHover'
-import { isVisibleFooterState } from 'states'
 
 type Props = {}
 

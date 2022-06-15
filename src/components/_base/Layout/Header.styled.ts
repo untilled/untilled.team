@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const Right = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 `
 
 type MenuProps = {

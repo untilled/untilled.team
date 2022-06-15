@@ -1,66 +1,67 @@
-import styled from "@emotion/styled"
-import { mobile } from "styles/media"
+import styled from '@emotion/styled'
+import { mobile } from 'styles/media'
 
 export const CardWrapper = styled.div`
-display: grid;
-grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-gap: 40px;
-width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  width: 100%;
 
-${mobile} {
-  grid-template-columns: minmax(0, 1fr);
-}
+  ${mobile} {
+    grid-template-columns: minmax(0, 1fr);
+  }
 `
 
 export const Card = styled.div`
-width: 100%;
-height: 300px;
-background-color: #212529;
-border-radius: 15px;
-${mobile} {
-  height: 120px;
-}
+  width: 100%;
+  height: 300px;
+  background-color: #212529;
+  color: #212529;
+  border-radius: 15px;
+  ${mobile} {
+    height: 120px;
+  }
 `
 
 export const Wrapper = styled.div`
-overflow: scroll;
-&::-webkit-scrollbar {
-  display: none;
-}
-height: 100vh;
-padding-top: 80px;
-${mobile} {
-  height: fit-content;
-  padding-bottom: 0;
-}
-display: flex;
-flex-direction: column;
-padding-bottom: 40px;
-gap: 40px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  height: 100vh;
+  padding-top: 80px;
+  ${mobile} {
+    height: fit-content;
+    padding-bottom: 0;
+  }
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  gap: 40px;
 `
 export const Title = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-h1 {
-  margin-bottom: 10px;
-  font-weight: 900;
-  font-size: 40px;
-  font-size: 2.5rem;
-}
-
-h3 {
-  color: #ced4da;
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-
-${mobile} {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
-    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 40px;
+    font-size: 2.5rem;
   }
+
   h3 {
-    font-size: 1rem;
+    color: #ced4da;
+    font-weight: 500;
+    font-size: 1.2rem;
   }
-}
+
+  ${mobile} {
+    h1 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `

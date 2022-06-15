@@ -39,6 +39,7 @@ export const Menus = styled.div`
   align-items: center;
   & > a {
     color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
     &:hover {
       color: rgba(255, 255, 255, 1);
     }
