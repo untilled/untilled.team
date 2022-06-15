@@ -4,8 +4,8 @@ import FullPage from './_shared/FullPage'
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
 import { BsShareFill } from 'react-icons/bs'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
-import { useRecoilState } from 'recoil'
-import { pageState } from 'states'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { isMobileState, pageState } from 'states'
 import { members } from 'libs/data'
 
 import Intro from 'components/home/_shared/menus/Intro'
@@ -54,6 +54,7 @@ type Props = {}
 
 const Home = (props: Props) => {
   const [page, setPage] = useRecoilState(pageState)
+  const isMobile = useRecoilValue(isMobileState)
   const hoverHandlers = useMouseHover()
 
   useEffect(() => {
@@ -62,6 +63,11 @@ const Home = (props: Props) => {
       setPage(null)
     }
   }, [setPage])
+
+  useEffect(() => {
+    if (isMobile) setPage(null)
+    else setPage(0)
+  }, [isMobile, setPage])
 
   const handleNext = () => {
     if (page === null || page === pages.length - 1) return

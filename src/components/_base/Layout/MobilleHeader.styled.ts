@@ -23,7 +23,7 @@ export const MobileMenuWrapper = styled.div`
   right: 0;
   bottom: 0;
   background-color: black;
-  z-index: 20;
+  z-index: 25;
   display: flex;
   flex-direction: column;
   align-items: center;

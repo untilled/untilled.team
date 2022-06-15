@@ -35,7 +35,7 @@ export const ShareBox = styled.div<ShareBox>`
     background-color: #212529;
   }
   ${mobile} {
-    display: none;
+    /* display: none; */
   }
   transition: transform ease-in-out 0.3s;
   ${(props) =>

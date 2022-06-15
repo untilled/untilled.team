@@ -7,7 +7,7 @@ export const TextCircleCss = css`
   bottom: 100px;
   ${mobile} {
     right: 0px;
-    bottom: 50px;
+    bottom: 80px;
   }
 `
 

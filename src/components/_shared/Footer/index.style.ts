@@ -39,9 +39,9 @@ export const Menus = styled.div`
   align-items: center;
   & > a {
     color: rgba(255, 255, 255, 0.7);
-  }
-  & > a:hover {
-    color: rgba(255, 255, 255, 1);
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
   }
   ${mobile} {
     display: none;
@@ -55,6 +55,9 @@ export const TopRight = styled.div`
   svg {
     font-size: 1.8rem;
     color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
   }
 
   ${mobile} {

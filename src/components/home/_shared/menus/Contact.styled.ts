@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  height: fit-content;
   height: 100vh;
   padding-top: 80px;
   overflow: scroll;
@@ -13,6 +12,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${mobile} {
+    height: fit-content;
+  }
 `
 export const Title = styled.div`
   display: flex;

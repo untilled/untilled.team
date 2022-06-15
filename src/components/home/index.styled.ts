@@ -134,4 +134,8 @@ export const ShareMessage = styled.a<ShareMessage>`
     css`
       transform: translate(0px, 110px);
     `}
+
+  ${mobile} {
+    display: none !important;
+  }
 `
