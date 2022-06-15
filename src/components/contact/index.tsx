@@ -2,6 +2,8 @@ import * as styled from './index.styled'
 
 type Props = {}
 
+//email
+//location
 const Contact = (props: Props) => {
   return (
     <styled.Wrapper>

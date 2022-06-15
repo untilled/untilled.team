@@ -27,7 +27,7 @@ const About = (props: Props) => {
       </styled.Title>
       <styled.ContentWrapper>
         <styled.CardWrapper className="container">
-          <styled.Card>Service</styled.Card>
+          <styled.Card>Service 다양한 IT 서비스를 만들고 제공해요.</styled.Card>
           <styled.Card>Team</styled.Card>
           <styled.Card>Global 국경없는 플랫폼을 만들어요.</styled.Card>
         </styled.CardWrapper>

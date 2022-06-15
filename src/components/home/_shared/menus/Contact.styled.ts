@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 export const Wrapper = styled.div`
+  position: relative;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -16,12 +17,27 @@ export const Wrapper = styled.div`
     height: fit-content;
   }
 `
+export const Content = styled.div`
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 40px;
+  backdrop-filter: blur(30px);
+  & > div {
+    width: 100%;
+  }
+  padding: 80px 80px;
+  background-color: rgba(26, 30, 36, 0.5);
+`
+
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   h1 {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 40px;
   }
   h3 {
@@ -34,19 +50,6 @@ export const Title = styled.div`
       font-weight: 700;
     }
   }
-`
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 15px;
-  gap: 40px;
-  & > div {
-    width: 100%;
-  }
-  padding: 150px 150px;
-  background-color: #212529;
 `
 
 export const ContentBottom = styled.div`

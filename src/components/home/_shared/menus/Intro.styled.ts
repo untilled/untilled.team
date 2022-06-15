@@ -35,16 +35,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  video {
-    object-fit: cover;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
-    z-index: 0;
-  }
   ${mobile} {
   }
 `

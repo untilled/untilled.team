@@ -3,6 +3,7 @@ import TextCircle from 'components/home/_shared/TextCircle'
 import { useEffect, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
+import BackgroundVideos from '../BackgroundVideos'
 type Props = {}
 
 const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
@@ -16,21 +17,8 @@ const circleTexts = 'scroll down scroll down scroll down '
 const degree = Number(360 / circleTexts.length)
 
 const Intro = (props: Props) => {
-  const [videoIdx, setvideoIdx] = useState(0)
   const circleTextRef = useRef<HTMLSpanElement[]>([])
   const isMobile = useRecoilValue(isMobileState)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  const handleEnded = async () => {
-    if (videoIdx >= videos.length - 1) {
-      setvideoIdx(0)
-    } else {
-      setvideoIdx(videoIdx + 1)
-    }
-    try {
-      await videoRef.current?.play()
-    } catch (e) {}
-  }
 
   useEffect(() => {
     if (circleTextRef.current.length > 0) {
@@ -43,14 +31,7 @@ const Intro = (props: Props) => {
 
   return (
     <styled.Wrapper>
-      <video
-        ref={videoRef}
-        src={videos[videoIdx]}
-        autoPlay
-        muted
-        playsInline
-        onEnded={handleEnded}
-      />
+      <BackgroundVideos data={videos} />
       <div></div>
       <styled.Middle className=" container">
         <styled.Subtitle>

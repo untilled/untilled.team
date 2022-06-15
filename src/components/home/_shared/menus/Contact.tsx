@@ -2,29 +2,24 @@ import * as styled from './Contact.styled'
 import Button from 'components/_shared/Button'
 import { useRouter } from 'next/router'
 import React from 'react'
+import BackgroundVideos from '../BackgroundVideos'
 
 type Props = {}
+const videos = ['/videos/intro1.mp4', '/videos/intro2.mp4']
 
 const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙🏼‍♂️']
 
-//email
-//location
 const Contact = (props: Props) => {
-  const router = useRouter()
-
-  const handleClick: React.MouseEventHandler<Element> = () => {
-    // router.push('/contact')
-  }
-
   return (
     <styled.Wrapper>
+      <BackgroundVideos data={videos} />
       <styled.Content className="container">
         <styled.Title>
           <h1>프로젝트 혼자 할 순 없잖아요?</h1>
           <h1>언틸드와 함께 프로젝트를 진행해 보세요. 🖐</h1>
         </styled.Title>
         <styled.ContentBottom>
-          <Button color="white" href="contact">
+          <Button color="white" href="/contact">
             Contact
           </Button>
           <Button color="gray_2">Share</Button>
