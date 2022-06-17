@@ -53,7 +53,7 @@ export const Menu = styled.div<MenuProps>`
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  background-color: ${(props) => (props.selected ? 'white' : '#797979')};
+  background-color: #797979;
   & > div {
     display: none;
     display: block;
@@ -71,6 +71,11 @@ export const Menu = styled.div<MenuProps>`
       opacity: 1;
     }
   }
+  ${(props) =>
+    props.selected === true &&
+    css`
+      background-color: white;
+    `};
 `
 
 type ArrowList = {

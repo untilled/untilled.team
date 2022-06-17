@@ -84,4 +84,10 @@ export const Bottom = styled.div`
   ${mobile} {
     flex-direction: column;
   }
+  a {
+    color: #868e96;
+    &:hover {
+      color: white;
+    }
+  }
 `

@@ -29,7 +29,11 @@ export const Content = styled.div`
     width: 100%;
   }
   padding: 80px 80px;
-  background-color: rgba(26, 30, 36, 0.5);
+  background-color: rgba(26, 30, 36, 0.4);
+  ${mobile} {
+    padding: 30px;
+    margin: 30px;
+  }
 `
 
 export const Title = styled.div`
@@ -38,7 +42,7 @@ export const Title = styled.div`
   align-items: center;
   h1 {
     font-weight: 700;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   h3 {
     color: #ced4da;
@@ -47,7 +51,7 @@ export const Title = styled.div`
 
   ${mobile} {
     h1 {
-      font-weight: 700;
+      font-size: 1.7rem;
     }
   }
 `
@@ -64,5 +68,9 @@ export const ContentBottom = styled.div`
 
   ${mobile} {
     flex-direction: column;
+    button {
+      width: 100%;
+      padding: 13px;
+    }
   }
 `

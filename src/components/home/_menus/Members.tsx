@@ -2,15 +2,14 @@ import * as styled from './Members.styled'
 import { members } from 'libs/data'
 import { useRouter } from 'next/router'
 import { MouseEventHandler } from 'react'
+import Member from 'components/_shared/Member'
+import { useRecoilValue } from 'recoil'
+import { isMobileState } from 'states'
 
 type Props = {}
 
 const Members = (props: Props) => {
-  const router = useRouter()
-
-  const handleClick: MouseEventHandler<Element> = () => {
-    router.push('/members')
-  }
+  const isMobile = useRecoilValue(isMobileState)
   return (
     <styled.Wrapper>
       <styled.Title className="container">
@@ -22,26 +21,29 @@ const Members = (props: Props) => {
       <styled.MemberListWrapper>
         <styled.MemberList>
           {members.map((member) => (
-            <styled.Member
-              images={member.images}
+            <Member
               key={member.id}
-            ></styled.Member>
+              data={member.images}
+              size={isMobile ? 100 : 150}
+            />
           ))}
         </styled.MemberList>
         <styled.MemberList>
           {members.map((member) => (
-            <styled.Member
-              images={member.images}
+            <Member
               key={member.id}
-            ></styled.Member>
+              data={member.images}
+              size={isMobile ? 100 : 150}
+            />
           ))}
         </styled.MemberList>
         <styled.MemberList>
           {members.map((member) => (
-            <styled.Member
-              images={member.images}
+            <Member
               key={member.id}
-            ></styled.Member>
+              data={member.images}
+              size={isMobile ? 100 : 150}
+            />
           ))}
         </styled.MemberList>
       </styled.MemberListWrapper>

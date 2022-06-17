@@ -2,7 +2,7 @@ import * as styled from './Contact.styled'
 import Button from 'components/_shared/Button'
 import { useRouter } from 'next/router'
 import React from 'react'
-import BackgroundVideos from '../BackgroundVideos'
+import BackgroundVideos from '../_shared/BackgroundVideos'
 
 type Props = {}
 const videos = ['/videos/intro1.mp4', '/videos/intro2.mp4']

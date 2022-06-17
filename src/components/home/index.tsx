@@ -6,12 +6,12 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { isMobileState, pageState } from 'states'
 import { members } from 'libs/data'
 
-import Intro from 'components/home/_shared/menus/Intro'
-import About from 'components/home/_shared/menus/About'
-import Archivement from 'components/home/_shared/menus/Archievement'
-import Projects from 'components/home/_shared/menus/Projects'
-import Members from 'components/home/_shared/menus/Members'
-import Contact from 'components/home/_shared/menus/Contact'
+import Intro from 'components/home/_menus/Intro'
+import About from 'components/home/_menus/About'
+import Archivement from 'components/home/_menus/Archievement'
+import Projects from 'components/home/_menus/Projects'
+import Members from 'components/home/_menus/Members'
+import Contact from 'components/home/_menus/Contact'
 import Footer from 'components/_shared/Footer'
 import Toolbar from 'components/_shared/Toolbar'
 import PreloadImg from 'components/_shared/PreloadImg'
@@ -85,6 +85,7 @@ const Home = (props: Props) => {
 
   return (
     <styled.Wrapper>
+      {/* message toolbar */}
       <Toolbar direction="left">
         <styled.ShareMessage
           href={
@@ -102,6 +103,7 @@ const Home = (props: Props) => {
             'We are recruiting members! 🥰'}
         </styled.ShareMessage>
       </Toolbar>
+      {/* menu toolbar */}
       <Toolbar direction="right" align="start">
         <styled.PageMenu accented={page === 4}>
           <styled.MenuHeader>
@@ -112,13 +114,13 @@ const Home = (props: Props) => {
               selected={page === idx}
               key={idx}
               onClick={() => setPage(idx)}
-              {...hoverHandlers}
             >
               <div>{menu.name}</div>
             </styled.Menu>
           ))}
         </styled.PageMenu>
       </Toolbar>
+      {/* arrow toolbar */}
       <Toolbar direction="right">
         <styled.ArrowList visible={page !== null && page !== 6}>
           <styled.Arrow

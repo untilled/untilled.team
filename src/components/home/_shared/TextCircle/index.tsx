@@ -6,7 +6,7 @@ type Props = {
   data: string
   children?: JSX.Element | JSX.Element[] | string
   size?: number
-  style: any
+  style?: any
 }
 
 function TextCircle({ data, children, style, size = 100 }: Props) {

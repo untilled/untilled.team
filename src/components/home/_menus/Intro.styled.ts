@@ -49,12 +49,23 @@ export const Middle = styled.div`
   font-style: italic;
 `
 
-export const Title = styled.div`
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   font-weight: 600;
   flex-shrink: 0;
   font-size: 5.5rem;
   ${mobile} {
     font-size: 3rem;
+  }
+`
+
+export const Title = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  ${mobile} {
+    gap: 10px;
   }
 `
 

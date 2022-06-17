@@ -3,10 +3,13 @@ import TextCircle from 'components/home/_shared/TextCircle'
 import { useEffect, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
-import BackgroundVideos from '../BackgroundVideos'
+import BackgroundVideos from '../_shared/BackgroundVideos'
+import Image from 'next/image'
+import imageLoader from 'libs/loader'
+import WordSlider from 'components/_shared/WordSlider'
 type Props = {}
 
-const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
+const words = ['Worlds', 'Products', 'Designers', 'Developers']
 const videos = [
   '/videos/intro0.mp4',
   // '/videos/intro1.mp4',
@@ -16,18 +19,9 @@ const videos = [
 const circleTexts = 'scroll down scroll down scroll down '
 const degree = Number(360 / circleTexts.length)
 
+//133 72
 const Intro = (props: Props) => {
-  const circleTextRef = useRef<HTMLSpanElement[]>([])
   const isMobile = useRecoilValue(isMobileState)
-
-  useEffect(() => {
-    if (circleTextRef.current.length > 0) {
-      circleTextRef.current.forEach((node, idx) => {
-        if (node === null) return
-        node.style.transform = `rotate(${idx * degree}deg)`
-      })
-    }
-  }, [circleTextRef])
 
   return (
     <styled.Wrapper>
@@ -37,11 +31,15 @@ const Intro = (props: Props) => {
         <styled.Subtitle>
           <span>UNTILLED ARE A OPEN-SOURCE DEVELOP TEAM</span>
         </styled.Subtitle>
-        <styled.Title>
-          We are developing <br />
-          the <styled.Span>Worlds</styled.Span> by <br />
-          making products
-        </styled.Title>
+        <styled.TitleWrapper>
+          <div>We are developing</div>
+          <styled.Title>
+            the
+            {/* <styled.Span>Worlds</styled.Span> */}
+            <WordSlider data={words} background height={isMobile ? 72 : 133} />
+          </styled.Title>
+          <div>by making products</div>
+        </styled.TitleWrapper>
       </styled.Middle>
       <styled.Bottom className=" container">
         <TextCircle
