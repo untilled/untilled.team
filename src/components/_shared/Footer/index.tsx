@@ -11,7 +11,7 @@ import {
 import Logo from '../Logo'
 import { isVisibleFooterState } from 'states'
 import { useRecoilState } from 'recoil'
-import { useCallback, useRef } from 'react'
+import React, { useCallback, useRef } from 'react'
 
 type Props = {}
 const Footer = ({}: Props) => {

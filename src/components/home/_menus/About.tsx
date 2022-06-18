@@ -1,10 +1,8 @@
 import * as styled from './About.styled'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import Member from 'components/_shared/Member'
 import { members } from 'libs/data'
 type Props = {}
-
-// Developing Delvelopers / Designers / Worlds / Products
 
 const images = [
   '/images/about/logo.png',
@@ -32,6 +30,7 @@ const About = (props: Props) => {
         <styled.CardWrapper className="container">
           {/* service */}
           <styled.Card>
+            <styled.CardHeader>Service</styled.CardHeader>
             <styled.CardTitle>
               발전적인 서비스를 <br /> 만들고 운영해요
             </styled.CardTitle>
@@ -43,6 +42,7 @@ const About = (props: Props) => {
           {/* 단순한 토이 프로젝트가 아니라 실제로 여러 서비스를 만들고~~ */}
           <styled.Card>
             {/* Team */}
+            <styled.CardHeader>Team</styled.CardHeader>
             <styled.CardTitle>
               성장을 원하는 <br /> 팀원들과 함께해요
             </styled.CardTitle>
@@ -54,6 +54,7 @@ const About = (props: Props) => {
           </styled.Card>
           <styled.Card>
             {/* Global */}
+            <styled.CardHeader>Global</styled.CardHeader>
             <styled.CardTitle>
               플랫폼에는 국경이 <br /> 없다고 믿고 있어요
             </styled.CardTitle>

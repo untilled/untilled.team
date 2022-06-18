@@ -1,6 +1,6 @@
 import * as styled from './Intro.styled'
 import TextCircle from 'components/home/_shared/TextCircle'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
 import BackgroundVideos from '../_shared/BackgroundVideos'
@@ -10,11 +10,7 @@ import WordSlider from 'components/_shared/WordSlider'
 type Props = {}
 
 const words = ['Worlds', 'Products', 'Designers', 'Developers']
-const videos = [
-  '/videos/intro0.mp4',
-  // '/videos/intro1.mp4',
-  // '/videos/intro2.mp4',
-]
+const videos = ['/videos/intro0.mp4']
 
 const circleTexts = 'scroll down scroll down scroll down '
 const degree = Number(360 / circleTexts.length)

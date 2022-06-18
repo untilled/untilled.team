@@ -23,7 +23,8 @@
     "recoil": "^0.6.1"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/babel-plugin": "^11.9.2",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@testing-library/dom": "^8.11.3",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",

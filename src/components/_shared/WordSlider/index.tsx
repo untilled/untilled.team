@@ -62,7 +62,7 @@ const Wrapper = styled.div<Wrapper>`
   ${({ height }) => css`
     height: ${height}px;
     & > div:first-of-type {
-      animation: ${show(height)} 20s linear infinite;
+      animation: ${show(height)} 15s linear infinite;
     }
   `}
 `

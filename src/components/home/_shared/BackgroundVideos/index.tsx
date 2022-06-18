@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 type Props = {
   data: string[]

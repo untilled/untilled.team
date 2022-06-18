@@ -1,7 +1,7 @@
 import * as styled from './Members.styled'
 import { members } from 'libs/data'
 import { useRouter } from 'next/router'
-import { MouseEventHandler } from 'react'
+import React, { MouseEventHandler } from 'react'
 import Member from 'components/_shared/Member'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'

@@ -1,5 +1,5 @@
 import * as styled from './index.styled'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import FullPage from './_shared/FullPage'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState, useRecoilValue } from 'recoil'

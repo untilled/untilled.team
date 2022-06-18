@@ -1,6 +1,6 @@
 import * as styled from './index.styled'
 import { members } from 'libs/data'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 type Props = {}
 

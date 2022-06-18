@@ -59,6 +59,27 @@ export const CardWrapper = styled.div`
   }
 `
 
+export const CardHeader = styled.div`
+  font-size: 0.8rem;
+  color: #ced4da;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s;
+`
+
+export const CardTitle = styled.div`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  transition: font-size ease-in-out 0.3s;
+`
+
+export const CardContent = styled.div`
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s;
+`
+
 export const Card = styled.div`
   width: 100%;
   background-color: #212529;
@@ -69,16 +90,18 @@ export const Card = styled.div`
     border-radius: 0;
     height: 300px;
   }
-`
 
-export const CardTitle = styled.div`
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 40px;
-`
-
-export const CardContent = styled.div`
-  font-size: 1rem;
+  &:hover {
+    ${CardHeader} {
+      opacity: 1;
+    }
+    ${CardTitle} {
+      font-size: 1.5rem;
+    }
+    ${CardContent} {
+      opacity: 1;
+    }
+  }
 `
 
 export const CommentWrapper = styled.div`
