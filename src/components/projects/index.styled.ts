@@ -29,6 +29,10 @@ export const Cards = styled.div`
   color: #868e96;
   background-color: #212529;
   font-weight: 200;
+  max-width: 1024px;
+  ${mobile} {
+    border-radius: 0;
+  }
 `
 export const Card = styled.div`
   width: 300px;

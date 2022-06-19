@@ -1,6 +1,7 @@
 import * as styled from './index.styled'
 import { members } from 'libs/data'
 import React, { useState } from 'react'
+import TabMenu from 'components/_shared/TabMenu'
 
 type Props = {}
 
@@ -29,18 +30,7 @@ const Members = (props: Props) => {
   return (
     <styled.Wrapper>
       <styled.Title className="container">Members</styled.Title>
-      <styled.Tab>
-        {menus.map((menu) => (
-          <styled.Menu
-            key={menu.id}
-            selected={menu.id === selectedMenu}
-            onClick={() => handleClick(menu.id)}
-          >
-            {menu.name}
-          </styled.Menu>
-        ))}
-        <styled.Glider selectedMenu={selectedMenu} />
-      </styled.Tab>
+      <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
       <styled.MemberList className="container">
         {members.map((member, idx) => (
           <styled.Member key={idx}></styled.Member>

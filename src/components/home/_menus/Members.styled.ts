@@ -33,6 +33,9 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;

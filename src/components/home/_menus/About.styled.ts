@@ -44,6 +44,7 @@ export const Title = styled.div`
 `
 export const ContentWrapper = styled.div`
   height: fit-content;
+  padding: 10px;
 `
 
 export const CardWrapper = styled.div`
@@ -51,11 +52,12 @@ export const CardWrapper = styled.div`
   gap: 40px;
   height: fit-content;
   align-items: center;
-  padding: 0;
   margin-bottom: 40px;
+
   ${mobile} {
     flex-direction: column;
     height: fit-content;
+    gap: 20px;
   }
 `
 
@@ -72,6 +74,9 @@ export const CardTitle = styled.div`
   font-weight: 700;
   margin-bottom: 40px;
   transition: font-size ease-in-out 0.3s;
+  ${mobile} {
+    font-size: 1.7rem;
+  }
 `
 
 export const CardContent = styled.div`
@@ -87,7 +92,6 @@ export const Card = styled.div`
   height: 300px;
   padding: 30px;
   ${mobile} {
-    border-radius: 0;
     height: 300px;
   }
 
@@ -106,19 +110,22 @@ export const Card = styled.div`
 
 export const CommentWrapper = styled.div`
   background-color: #212529;
-  padding: 10px 20px;
-  height: fit-content;
+  padding: 20px;
   width: 100%;
   border-radius: 15px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  height: fit-content;
   ${mobile} {
     border-radius: 0px;
     padding: 10px 5px;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
 export const CommentProfile = styled.div`
+  position: relative;
   width: 160px;
   height: 160px;
   flex-shrink: 0;
@@ -127,4 +134,7 @@ export const CommentProfile = styled.div`
     height: 100px;
   }
 `
-export const CommentContent = styled.div``
+export const CommentContent = styled.div`
+  height: 100%;
+  padding: 20px;
+`

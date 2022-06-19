@@ -31,7 +31,9 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     margin-bottom: 10px;
     font-weight: 900;
@@ -57,13 +59,20 @@ export const Title = styled.div`
 
 export const List = styled.div`
   width: 100%;
+  height: 500px;
   margin: 45px 0;
   padding: 45px 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 45px;
   overflow: hidden;
   background-color: #212529;
+  ${mobile} {
+    height: 300px;
+  }
+  color: #868e96;
+  font-weight: 200;
 `
 
 export const Project = styled.div`

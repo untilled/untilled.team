@@ -1,28 +1,6 @@
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const CardWrapper = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: 40px;
-  width: 100%;
-
-  ${mobile} {
-    grid-template-columns: minmax(0, 1fr);
-  }
-`
-
-export const Card = styled.div`
-  width: 100%;
-  height: 300px;
-  background-color: #212529;
-  color: #212529;
-  border-radius: 15px;
-  ${mobile} {
-    height: 120px;
-  }
-`
-
 export const Wrapper = styled.div`
   overflow: scroll;
   &::-webkit-scrollbar {
@@ -63,5 +41,31 @@ export const Title = styled.div`
     h3 {
       font-size: 1rem;
     }
+  }
+`
+
+export const CardWrapper = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  width: 100%;
+  padding: 0 10px;
+  ${mobile} {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+  }
+`
+
+export const Card = styled.div`
+  width: 100%;
+  height: 300px;
+  background-color: #212529;
+  color: #212529;
+  border-radius: 15px;
+  ${mobile} {
+    width: calc(100vw - 50px);
+    height: 250px;
+    flex-shrink: 0;
   }
 `

@@ -38,7 +38,7 @@ type MenuProps = {
 export const MobileMenu = styled.div<MenuProps>`
   font-family: 'Prompt', sans-serif;
   transition: all ease-in-out 0.5s 0s;
-  font-weight: 500;
+  font-weight: 600;
   font-style: italic;
   font-size: 3rem;
   color: rgba(255, 255, 255, 0.5);

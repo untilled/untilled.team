@@ -9,6 +9,7 @@ import imageLoader from 'libs/loader'
 import WordSlider from 'components/_shared/WordSlider'
 type Props = {}
 
+// const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
 const words = ['Worlds', 'Products', 'Designers', 'Developers']
 const videos = ['/videos/intro0.mp4']
 

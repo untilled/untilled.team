@@ -13,9 +13,9 @@ const Members = (props: Props) => {
   return (
     <styled.Wrapper>
       <styled.Title className="container">
-        <h1>언틸드의 멤버를 만나보세요. 🙋🏼‍♀️</h1>
+        <h1>언틸드의 멤버를 {isMobile && <br />} 만나보세요.</h1>
         <h3>
-          다양한 배경 속에서 참가했지만, 모두 성장을 위해 참여하고 있어요.
+          다양한 배경 속에서{isMobile && <br />} 성장을 위해 참여하고 있어요.
         </h3>
       </styled.Title>
       <styled.MemberListWrapper>

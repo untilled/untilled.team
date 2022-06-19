@@ -2,6 +2,8 @@ import * as styled from './About.styled'
 import React, { useRef } from 'react'
 import Member from 'components/_shared/Member'
 import { members } from 'libs/data'
+import { useRecoilValue } from 'recoil'
+import { isMobileState } from 'states'
 type Props = {}
 
 const images = [
@@ -15,16 +17,15 @@ const images = [
 ]
 
 const About = (props: Props) => {
-  const sliderItems = useRef<HTMLDivElement[]>([])
+  const isMobile = useRecoilValue(isMobileState)
 
   //card는 현재는 열린형태임
   return (
     <styled.Wrapper>
       <styled.Title className="container">
         {/* <h1>About</h1> */}
-        <h1>모두의 발전을 위해서, 모두의 성장을 위해서 🎉</h1>
+        <h1>모두의 발전을 위해서, {isMobile && <br />} 모두의 성장을 위해서</h1>
         <h3>처음부터 잘하는 사람은 존재하지 않습니다.</h3>
-        <h3>팀 언틸드는 성장을 원하는 모두를 돕고 있어요.</h3>
       </styled.Title>
       <styled.ContentWrapper>
         <styled.CardWrapper className="container">
@@ -32,7 +33,7 @@ const About = (props: Props) => {
           <styled.Card>
             <styled.CardHeader>Service</styled.CardHeader>
             <styled.CardTitle>
-              발전적인 서비스를 <br /> 만들고 운영해요
+              발전적인 서비스를 <br /> 만들고 운영해요👽
             </styled.CardTitle>
             <styled.CardContent>
               단순한 토이 프로젝트가 아닌 실제 서비스를 만들고 운영하고 있어요.
@@ -44,7 +45,7 @@ const About = (props: Props) => {
             {/* Team */}
             <styled.CardHeader>Team</styled.CardHeader>
             <styled.CardTitle>
-              성장을 원하는 <br /> 팀원들과 함께해요
+              성장을 원하는 <br /> 팀원들과 함께해요🙋‍♂️
             </styled.CardTitle>
             <styled.CardContent>
               장소, 나이, 성별등에 제약 받지않고 다양한 사람이 함께하고 있어요.
@@ -56,7 +57,7 @@ const About = (props: Props) => {
             {/* Global */}
             <styled.CardHeader>Global</styled.CardHeader>
             <styled.CardTitle>
-              플랫폼에는 국경이 <br /> 없다고 믿고 있어요
+              플랫폼에는 국경이 <br /> 없다고 믿고 있어요🌏
             </styled.CardTitle>
             <styled.CardContent>
               이용하는 사람에게도 어떠한 제약도 없이 누구나 이용할 수 있는
