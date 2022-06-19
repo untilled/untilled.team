@@ -2,16 +2,6 @@ import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
 import { mobile } from 'styles/media'
 
-export const BtnBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`
-
-export const MoreButton = styled(Button)`
-  padding: 15px 90px;
-`
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -70,6 +60,7 @@ export const List = styled.div`
   background-color: #212529;
   ${mobile} {
     height: 300px;
+    margin: 25px 0;
   }
   color: #868e96;
   font-weight: 200;
@@ -83,5 +74,17 @@ export const Project = styled.div`
 
   ${mobile} {
     height: 230px;
+  }
+`
+
+export const BtnBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+export const MoreButton = styled(Button)`
+  padding: 15px 90px;
+  ${mobile} {
+    padding: 10px 90px;
   }
 `

@@ -33,7 +33,7 @@ const Projects = (props: Props) => {
         {/* {projects.map((project) => (
           <styled.Card key={project.id}></styled.Card>
         ))} */}
-        Empty!
+        아직 프로젝트가 없어요!
       </styled.Cards>
     </styled.Wrapper>
   )

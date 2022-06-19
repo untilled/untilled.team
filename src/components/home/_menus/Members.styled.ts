@@ -2,16 +2,6 @@ import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
 import { mobile } from 'styles/media'
 
-export const BtnBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`
-
-export const MoreButton = styled(Button)`
-  padding: 15px 90px;
-`
-
 export const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
@@ -73,6 +63,10 @@ export const MemberList = styled.div`
   &:last-child {
     transform: translate(-80px, 0px);
   }
+  & > * {
+    border-radius: 50%;
+    background-color: #212529;
+  }
 `
 
 type Member = {
@@ -100,5 +94,17 @@ export const Member = styled.div<Member>`
   ${mobile} {
     width: 100px;
     height: 100px;
+  }
+`
+export const BtnBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+export const MoreButton = styled(Button)`
+  padding: 15px 90px;
+  ${mobile} {
+    padding: 10px 90px;
   }
 `

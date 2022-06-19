@@ -8,11 +8,12 @@ type Wrapper = {
 }
 
 export const Wrapper = styled.div<Wrapper>`
+  z-index: 5;
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #212529;
-  border-radius: 50%;
+  /* background-color: #212529; */
+  /* border-radius: 50%; */
   flex-shrink: 0;
   display: flex;
   justify-content: center;

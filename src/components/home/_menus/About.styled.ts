@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Tag from 'components/_shared/Tag'
 import { mobile } from 'styles/media'
 
 export const Wrapper = styled.div`
@@ -44,7 +45,6 @@ export const Title = styled.div`
 `
 export const ContentWrapper = styled.div`
   height: fit-content;
-  padding: 10px;
 `
 
 export const CardWrapper = styled.div`
@@ -53,6 +53,7 @@ export const CardWrapper = styled.div`
   height: fit-content;
   align-items: center;
   margin-bottom: 40px;
+  padding: 20px;
 
   ${mobile} {
     flex-direction: column;
@@ -86,13 +87,19 @@ export const CardContent = styled.div`
 `
 
 export const Card = styled.div`
+  position: relative;
   width: 100%;
   background-color: #212529;
   border-radius: 15px;
   height: 300px;
+  max-height: 300px;
   padding: 30px;
-  ${mobile} {
-    height: 300px;
+  svg {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    opacity: 1;
+    transition: opacity ease-in-out 0.3s;
   }
 
   &:hover {
@@ -105,6 +112,11 @@ export const Card = styled.div`
     ${CardContent} {
       opacity: 1;
     }
+    svg {
+      opacity: 0;
+    }
+  }
+  ${mobile} {
   }
 `
 
@@ -129,12 +141,29 @@ export const CommentProfile = styled.div`
   width: 160px;
   height: 160px;
   flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #364fc7;
   ${mobile} {
     width: 100px;
     height: 100px;
   }
 `
+
+export const styledTag = styled(Tag)`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(-4deg);
+  z-index: 0;
+`
+
 export const CommentContent = styled.div`
   height: 100%;
   padding: 20px;
+  line-height: 28px;
+  color: #ced4da;
+  span {
+    color: #ced4da;
+    font-size: 0.8rem;
+  }
 `

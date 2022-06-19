@@ -65,6 +65,7 @@ export const Menu = styled.div<MenuProps>`
     opacity: 0;
     transition: opacity ease-in-out 0.1s;
   }
+  transition: background-color ease-in-out 0.5s;
   &:hover {
     & > div {
       display: block;
