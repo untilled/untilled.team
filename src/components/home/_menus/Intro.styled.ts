@@ -2,27 +2,6 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const TextCircleCss = css`
-  right: 200px;
-  bottom: 100px;
-  ${mobile} {
-    right: 0px;
-    bottom: 80px;
-  }
-`
-
-export const CircleInner = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  svg {
-    width: 30px;
-    height: 100px;
-  }
-`
-
 export const Wrapper = styled.div`
   user-select: none;
   &::-webkit-scrollbar {
@@ -95,4 +74,25 @@ export const Bottom = styled.div`
 
 export const Span = styled.span`
   background-color: #212529;
+`
+
+export const TextCircleCss = css`
+  right: 200px;
+  bottom: 100px;
+  ${mobile} {
+    right: 0px;
+    bottom: 80px;
+  }
+`
+
+export const CircleInner = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 30px;
+    height: 100px;
+  }
 `

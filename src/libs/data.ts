@@ -13,7 +13,7 @@ export const menus = [
   },
   {
     name: 'Contact',
-    href: '/contact',
+    href: 'mailto:morethanmin.dev@gmail.com',
   },
 ]
 

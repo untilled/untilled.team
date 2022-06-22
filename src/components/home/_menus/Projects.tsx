@@ -20,7 +20,7 @@ const Projects = (props: Props) => {
         아직 프로젝트가 없어요!
       </styled.List>
       <styled.BtnBox>
-        <styled.MoreButton href="/projects">더 알아보기</styled.MoreButton>
+        <styled.MoreButton href="/projects">더 많은 프로젝트</styled.MoreButton>
       </styled.BtnBox>
     </styled.Wrapper>
   )

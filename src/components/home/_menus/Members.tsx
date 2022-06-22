@@ -46,7 +46,7 @@ const Members = (props: Props) => {
         </styled.MemberList>
       </styled.MemberListWrapper>
       <styled.BtnBox>
-        <styled.MoreButton href="members">더 알아보기</styled.MoreButton>
+        <styled.MoreButton href="members">더보기</styled.MoreButton>
       </styled.BtnBox>
     </styled.Wrapper>
   )

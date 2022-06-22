@@ -56,6 +56,7 @@ export const CardWrapper = styled.div`
   align-items: center;
   margin-bottom: 40px;
   padding: 20px;
+  user-select: none;
 
   ${mobile} {
     flex-direction: column;
