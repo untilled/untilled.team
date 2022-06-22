@@ -29,9 +29,11 @@ export const Title = styled.div`
     font-weight: 900;
     font-size: 40px;
     font-size: 2.5rem;
+    text-align: center;
   }
 
   h3 {
+    text-align: center;
     color: #ced4da;
     font-weight: 500;
     font-size: 1.2rem;
@@ -59,7 +61,7 @@ export const List = styled.div`
   overflow: hidden;
   background-color: #212529;
   ${mobile} {
-    height: 300px;
+    height: 400px;
     margin: 25px 0;
   }
   color: #868e96;

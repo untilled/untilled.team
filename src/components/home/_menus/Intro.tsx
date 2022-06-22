@@ -32,8 +32,13 @@ const Intro = (props: Props) => {
           <div>We are developing</div>
           <styled.Title>
             the
-            {/* <styled.Span>Worlds</styled.Span> */}
-            <WordSlider data={words} background height={isMobile ? 72 : 133} />
+            {isMobile !== null && (
+              <WordSlider
+                data={words}
+                background
+                height={isMobile ? 72 : 133}
+              />
+            )}
           </styled.Title>
           <div>by making products</div>
         </styled.TitleWrapper>
@@ -43,17 +48,7 @@ const Intro = (props: Props) => {
           style={styled.TextCircleCss}
           data="scroll down scroll down scroll down "
           size={isMobile ? 80 : 100}
-        >
-          <styled.CircleInner>
-            {/* <Image
-              loader={imageLoader}
-              src="/svgs/arrow.svg"
-              alt=""
-              width={60}
-              height={60}
-            /> */}
-          </styled.CircleInner>
-        </TextCircle>
+        ></TextCircle>
       </styled.Bottom>
     </styled.Wrapper>
   )

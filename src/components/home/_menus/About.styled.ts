@@ -26,9 +26,11 @@ export const Title = styled.div`
     margin-bottom: 10px;
     font-weight: 900;
     font-size: 2.5rem;
+    text-align: center;
   }
 
   h3 {
+    text-align: center;
     color: #ced4da;
     font-weight: 500;
     font-size: 1.2rem;

@@ -31,10 +31,12 @@ export const Title = styled.div`
     font-weight: 900;
     font-size: 40px;
     font-size: 2.5rem;
+    text-align: center;
   }
 
   h3 {
     color: #ced4da;
+    text-align: center;
     font-weight: 500;
     font-size: 1.2rem;
   }
@@ -66,34 +68,6 @@ export const MemberList = styled.div`
   & > * {
     border-radius: 50%;
     background-color: #212529;
-  }
-`
-
-type Member = {
-  images: string[]
-}
-
-export const Member = styled.div<Member>`
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-color: #212529;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-image: url(${({ images }) => images[0]});
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: all ease 0.2s 0s;
-  &:hover {
-    background-image: url(${({ images }) => images[1]});
-  }
-  ${mobile} {
-    width: 100px;
-    height: 100px;
   }
 `
 export const BtnBox = styled.div`

@@ -82,7 +82,7 @@ const Footer = ({}: Props) => {
             Powerd by{' '}
             <span>
               <a
-                href="https://morethanmin.web.app/"
+                href="https://github.com/morethanmin"
                 target="_blank"
                 rel="noreferrer"
               >
