@@ -39,7 +39,8 @@ const About = (props: Props) => {
             </styled.CardTitle>
             <styled.CardContent>
               단순한 토이 프로젝트가 아닌 실제 서비스를 만들고 운영하고 있어요.
-              IT를 통해 발전적인 세상을 만들어 나가려고 노력하고 있어요.
+              저희의 목표는 발전하는 사람들이 모여 발전하는 서비스를 만드는
+              거에요.
             </styled.CardContent>
             <BsFillMouseFill />
           </styled.Card>
