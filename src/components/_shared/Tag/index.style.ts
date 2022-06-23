@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   width: fit-content;
   padding: 5px 10px;
   background-color: white;
@@ -14,3 +14,5 @@ export const Wrapper = styled.div`
     font-size: 0.8rem;
   }
 `
+
+export { Wrapper }

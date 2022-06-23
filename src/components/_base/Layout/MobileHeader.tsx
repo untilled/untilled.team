@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import * as styled from './MobilleHeader.styled'
+import {
+  Wrapper,
+  Container,
+  MobileMenuWrapper,
+  MobileMenu,
+  MenuOpenBtn,
+  MenuCloseButton,
+} from './MobilleHeader.style'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
@@ -22,15 +29,15 @@ const MobileHeader = ({}: Props) => {
 
   return (
     <>
-      <styled.Wrapper>
-        <styled.Container className="container">
+      <Wrapper>
+        <Container className="container">
           {menuOpened === false && (
             <>
               <Logo />
               <div>
-                <styled.MenuOpenBtn onClick={() => handleMenuOpened(true)}>
+                <MenuOpenBtn onClick={() => handleMenuOpened(true)}>
                   <AiOutlineMenu />
-                </styled.MenuOpenBtn>
+                </MenuOpenBtn>
               </div>
             </>
           )}
@@ -38,26 +45,26 @@ const MobileHeader = ({}: Props) => {
             <>
               <div></div>
               <div>
-                <styled.MenuOpenBtn onClick={() => handleMenuOpened(false)}>
+                <MenuOpenBtn onClick={() => handleMenuOpened(false)}>
                   <AiOutlineClose />
-                </styled.MenuOpenBtn>
+                </MenuOpenBtn>
               </div>
             </>
           )}
-        </styled.Container>
-      </styled.Wrapper>
+        </Container>
+      </Wrapper>
       {menuOpened && (
-        <styled.MobileMenuWrapper>
+        <MobileMenuWrapper>
           {menus.map((menu, idx) => (
             <Link key={idx} href={menu.href}>
               <a>
-                <styled.MobileMenu selected={menu.href === router.asPath}>
+                <MobileMenu selected={menu.href === router.asPath}>
                   {menu.name}
-                </styled.MobileMenu>
+                </MobileMenu>
               </a>
             </Link>
           ))}
-        </styled.MobileMenuWrapper>
+        </MobileMenuWrapper>
       )}
     </>
   )

@@ -1,5 +1,5 @@
-import React, { ReactChildren } from 'react'
-import * as styled from './index.styled'
+import React from 'react'
+import { Wrapper } from './index.style'
 type Props = {
   children: any
   className?: string
@@ -7,7 +7,7 @@ type Props = {
 }
 
 function Tag({ children, className }: Props) {
-  return <styled.Wrapper className={className}>{children}</styled.Wrapper>
+  return <Wrapper className={className}>{children}</Wrapper>
 }
 
 export default Tag

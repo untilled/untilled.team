@@ -2,12 +2,12 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-type Wrapper = {
+type WrapperProps = {
   size?: number
   data: string[]
 }
 
-export const Wrapper = styled.div<Wrapper>`
+const Wrapper = styled.div<WrapperProps>`
   z-index: 5;
   position: relative;
   width: 100%;
@@ -33,3 +33,5 @@ export const Wrapper = styled.div<Wrapper>`
       height: ${size}px;
     `}
 `
+
+export { Wrapper }

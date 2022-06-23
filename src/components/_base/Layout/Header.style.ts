@@ -1,9 +1,9 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-type Wrapper = {}
+type WrapperProps = {}
 
-export const Wrapper = styled.div<Wrapper>`
+const Wrapper = styled.div<WrapperProps>`
   user-select: none;
   z-index: 25;
   position: fixed;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div<Wrapper>`
   padding: 10px;
   transition: transform ease-in-out 0.3s;
 `
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 `
 
-export const Right = styled.div`
+const Right = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
@@ -28,7 +28,7 @@ export const Right = styled.div`
 type MenuProps = {
   selected: boolean
 }
-export const Menu = styled.div<MenuProps>`
+const Menu = styled.div<MenuProps>`
   font-family: 'Prompt', sans-serif;
   font-weight: 200;
   padding-bottom: 2px;
@@ -48,3 +48,5 @@ export const Menu = styled.div<MenuProps>`
           }
         `}
 `
+
+export { Wrapper, Container, Right, Menu }

@@ -1,4 +1,13 @@
-import * as styled from './index.style'
+import {
+  Wrapper,
+  Content,
+  Top,
+  TopLeft,
+  Menus,
+  TopRight,
+  Mid,
+  Bottom,
+} from './index.style'
 import { menus } from 'libs/data'
 import Link from 'next/link'
 import {
@@ -33,12 +42,12 @@ const Footer = ({}: Props) => {
   )
 
   return (
-    <styled.Wrapper ref={elementRef}>
-      <styled.Content className="container">
-        <styled.Top>
-          <styled.TopLeft>
+    <Wrapper ref={elementRef}>
+      <Content className="container">
+        <Top>
+          <TopLeft>
             <Logo color="gray" />
-            <styled.Menus>
+            <Menus>
               {menus.map((menu, idx) => (
                 <Link key={idx} href={menu.href}>
                   <a>
@@ -46,9 +55,9 @@ const Footer = ({}: Props) => {
                   </a>
                 </Link>
               ))}
-            </styled.Menus>
-          </styled.TopLeft>
-          <styled.TopRight>
+            </Menus>
+          </TopLeft>
+          <TopRight>
             <a
               href="https://github.com/morethanmin"
               target="_blank"
@@ -73,10 +82,10 @@ const Footer = ({}: Props) => {
             <div>
               <AiFillFacebook />
             </div>
-          </styled.TopRight>
-        </styled.Top>
-        <styled.Mid></styled.Mid>
-        <styled.Bottom>
+          </TopRight>
+        </Top>
+        <Mid></Mid>
+        <Bottom>
           <div> Copyright ©2022. Untilled All rights reserved.</div>
           <div>
             Powerd by{' '}
@@ -92,9 +101,9 @@ const Footer = ({}: Props) => {
             {' | '}
             <span>Korean</span>
           </div>
-        </styled.Bottom>
-      </styled.Content>
-    </styled.Wrapper>
+        </Bottom>
+      </Content>
+    </Wrapper>
   )
 }
 

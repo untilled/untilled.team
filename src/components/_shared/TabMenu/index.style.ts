@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   font-family: 'Prompt', sans-serif;
   margin: 0px auto;
   margin-bottom: 40px;
@@ -30,7 +30,7 @@ type MenuProps = {
   selected?: boolean
 }
 
-export const Menu = styled.div<MenuProps>`
+const Menu = styled.div<MenuProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,11 +49,11 @@ export const Menu = styled.div<MenuProps>`
     `};
 `
 
-type Glider = {
+type GliderProps = {
   selectedMenu: number
 }
 
-export const Glider = styled.span<Glider>`
+const Glider = styled.span<GliderProps>`
   position: absolute;
   background-color: white;
   border-radius: 99px;
@@ -61,3 +61,5 @@ export const Glider = styled.span<Glider>`
   transition: transform 0.25s ease-in-out;
   transform: translateX(${({ selectedMenu }) => selectedMenu * 100}%);
 `
+
+export { Wrapper, Menu, Glider }

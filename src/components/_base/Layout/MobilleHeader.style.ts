@@ -1,14 +1,14 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   user-select: none;
   z-index: 30;
   position: fixed;
   width: 100%;
   padding: 10px;
 `
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 `
 
-export const MobileMenuWrapper = styled.div`
+const MobileMenuWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@ type MenuProps = {
   selected: boolean
 }
 
-export const MobileMenu = styled.div<MenuProps>`
+const MobileMenu = styled.div<MenuProps>`
   font-family: 'Prompt', sans-serif;
   transition: all ease-in-out 0.5s 0s;
   font-weight: 600;
@@ -49,16 +49,25 @@ export const MobileMenu = styled.div<MenuProps>`
     `};
 `
 
-export const MenuOpenBtn = styled.div`
+const MenuOpenBtn = styled.div`
   svg {
     font-size: 1.5rem;
   }
 `
 
-export const MenuCloseButton = styled.div`
+const MenuCloseButton = styled.div`
   margin-top: 40px;
   svg {
     font-size: 3rem;
     color: rgba(255, 255, 255, 0.5);
   }
 `
+
+export {
+  Wrapper,
+  Container,
+  MobileMenuWrapper,
+  MobileMenu,
+  MenuOpenBtn,
+  MenuCloseButton,
+}

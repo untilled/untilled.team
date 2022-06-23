@@ -1,4 +1,4 @@
-import * as styled from './Header.styled'
+import { Wrapper, Container, Right, Menu } from './Header.style'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
@@ -13,25 +13,22 @@ const Header = ({}: Props) => {
   const router = useRouter()
 
   return (
-    <styled.Wrapper>
-      <styled.Container className="container">
+    <Wrapper>
+      <Container className="container">
         <Logo color="white" />
-        <styled.Right>
+        <Right>
           {menus.map((menu, idx) => (
             <Link key={idx} href={menu.href}>
               <a>
-                <styled.Menu
-                  selected={menu.href === router.asPath}
-                  {...hoverHandlers}
-                >
+                <Menu selected={menu.href === router.asPath} {...hoverHandlers}>
                   {menu.name}
-                </styled.Menu>
+                </Menu>
               </a>
             </Link>
           ))}
-        </styled.Right>
-      </styled.Container>
-    </styled.Wrapper>
+        </Right>
+      </Container>
+    </Wrapper>
   )
 }
 

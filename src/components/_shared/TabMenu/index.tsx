@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styled from './index.styled'
+import { Wrapper, Menu, Glider } from './index.style'
 type Props = {
   data: {
     id: number
@@ -11,18 +11,18 @@ type Props = {
 
 function TabMenu({ data: menus, selectedMenu, onClick: handleClick }: Props) {
   return (
-    <styled.Wrapper>
+    <Wrapper>
       {menus.map((menu) => (
-        <styled.Menu
+        <Menu
           key={menu.id}
           selected={menu.id === selectedMenu}
           onClick={() => handleClick(menu.id)}
         >
           {menu.name}
-        </styled.Menu>
+        </Menu>
       ))}
-      <styled.Glider selectedMenu={selectedMenu} />
-    </styled.Wrapper>
+      <Glider selectedMenu={selectedMenu} />
+    </Wrapper>
   )
 }
 
