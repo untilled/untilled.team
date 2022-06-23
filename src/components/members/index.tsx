@@ -1,4 +1,4 @@
-import * as styled from './index.styled'
+import { Wrapper, Title, MemberList, Member } from './index.style'
 import { members } from 'libs/data'
 import React, { useState } from 'react'
 import TabMenu from 'components/_shared/TabMenu'
@@ -28,15 +28,15 @@ const Members = (props: Props) => {
   }
 
   return (
-    <styled.Wrapper>
-      <styled.Title className="container">Members</styled.Title>
+    <Wrapper>
+      <Title className="container">Members</Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
-      <styled.MemberList className="container">
+      <MemberList className="container">
         {members.map((member, idx) => (
-          <styled.Member key={idx}></styled.Member>
+          <Member key={idx}></Member>
         ))}
-      </styled.MemberList>
-    </styled.Wrapper>
+      </MemberList>
+    </Wrapper>
   )
 }
 

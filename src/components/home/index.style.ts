@@ -2,15 +2,15 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   position: relative;
 `
 
-type PageMenu = {
+type PageMenuProps = {
   accented: boolean
 }
 
-export const PageMenu = styled.div<PageMenu>`
+const PageMenu = styled.div<PageMenuProps>`
   font-family: 'Prompt', sans-serif;
   position: relative;
   display: flex;
@@ -36,7 +36,7 @@ export const PageMenu = styled.div<PageMenu>`
   }
 `
 
-export const MenuHeader = styled.div`
+const MenuHeader = styled.div`
   position: absolute;
   white-space: nowrap;
   top: 0;
@@ -48,7 +48,7 @@ type MenuProps = {
   selected: boolean
 }
 
-export const Menu = styled.div<MenuProps>`
+const Menu = styled.div<MenuProps>`
   position: relative;
   border-radius: 50%;
   width: 10px;
@@ -79,11 +79,11 @@ export const Menu = styled.div<MenuProps>`
     `};
 `
 
-type ArrowList = {
+type ArrowListProps = {
   visible: boolean
 }
 
-export const ArrowList = styled.div<ArrowList>`
+const ArrowList = styled.div<ArrowListProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +104,7 @@ type ArrowProps = {
   activated: boolean
 }
 
-export const Arrow = styled.div<ArrowProps>`
+const Arrow = styled.div<ArrowProps>`
   border-radius: 50%;
   background-color: #212529;
   width: 40px;
@@ -122,11 +122,11 @@ export const Arrow = styled.div<ArrowProps>`
   visibility: ${(props) => (props.activated ? 'visible' : 'hidden')};
 `
 
-type ShareMessage = {
+type ShareMessageProps = {
   visible: boolean
 }
 
-export const ShareMessage = styled.a<ShareMessage>`
+const ShareMessage = styled.a<ShareMessageProps>`
   white-space: nowrap;
   padding: 5px 15px;
   border-radius: 30px;
@@ -145,3 +145,5 @@ export const ShareMessage = styled.a<ShareMessage>`
     display: none !important;
   }
 `
+
+export { Wrapper, PageMenu, MenuHeader, Menu, ArrowList, Arrow, ShareMessage }

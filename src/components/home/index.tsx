@@ -1,4 +1,12 @@
-import * as styled from './index.styled'
+import {
+  Wrapper,
+  PageMenu,
+  MenuHeader,
+  Menu,
+  ArrowList,
+  Arrow,
+  ShareMessage,
+} from './index.style'
 import React, { useEffect } from 'react'
 import FullPage from './_shared/FullPage'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
@@ -84,10 +92,10 @@ const Home = (props: Props) => {
   )
 
   return (
-    <styled.Wrapper>
+    <Wrapper>
       {/* message toolbar */}
       <Toolbar direction="left">
-        <styled.ShareMessage
+        <ShareMessage
           href={
             page === 0
               ? 'https://github.com/untilled/untilled'
@@ -101,44 +109,34 @@ const Home = (props: Props) => {
             'Please visit and star this repository! 😎'}
           {(page === 3 || page === 4 || page === 5 || page === 6) &&
             'We are recruiting members! 🥰'}
-        </styled.ShareMessage>
+        </ShareMessage>
       </Toolbar>
       {/* menu toolbar */}
       <Toolbar direction="right" align="start">
-        <styled.PageMenu accented={page === 4}>
-          <styled.MenuHeader>
-            {page !== null ? pages[page].name : ''}
-          </styled.MenuHeader>
+        <PageMenu accented={page === 4}>
+          <MenuHeader>{page !== null ? pages[page].name : ''}</MenuHeader>
           {pages.map((menu, idx) => (
-            <styled.Menu
+            <Menu
               selected={page === idx}
               key={idx}
               onClick={() => setPage(idx)}
             >
               <div>{menu.name}</div>
-            </styled.Menu>
+            </Menu>
           ))}
-        </styled.PageMenu>
+        </PageMenu>
       </Toolbar>
       {/* arrow toolbar */}
       <Toolbar direction="right">
-        <styled.ArrowList visible={page !== null && page !== 6}>
-          <styled.Arrow
-            activated={page !== 0}
-            onClick={handlePrev}
-            {...hoverHandlers}
-          >
+        <ArrowList visible={page !== null && page !== 6}>
+          <Arrow activated={page !== 0} onClick={handlePrev} {...hoverHandlers}>
             <MdKeyboardArrowUp />
-          </styled.Arrow>
+          </Arrow>
           {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
-          <styled.Arrow
-            activated={true}
-            onClick={handleNext}
-            {...hoverHandlers}
-          >
+          <Arrow activated={true} onClick={handleNext} {...hoverHandlers}>
             <MdKeyboardArrowDown />
-          </styled.Arrow>
-        </styled.ArrowList>
+          </Arrow>
+        </ArrowList>
       </Toolbar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
@@ -146,7 +144,7 @@ const Home = (props: Props) => {
         ))}
       </FullPage>
       <PreloadImg data={preloadMembersData} />
-    </styled.Wrapper>
+    </Wrapper>
   )
 }
 

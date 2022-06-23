@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Tag from 'components/_shared/Tag'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Title = styled.div`
+const Title = styled.div`
   /* font-family: 'Prompt', sans-serif; */
   display: flex;
   flex-direction: column;
@@ -45,11 +45,11 @@ export const Title = styled.div`
     }
   }
 `
-export const ContentWrapper = styled.div`
+const ContentWrapper = styled.div`
   height: fit-content;
 `
 
-export const CardWrapper = styled.div`
+const CardWrapper = styled.div`
   display: flex;
   gap: 40px;
   height: fit-content;
@@ -65,7 +65,7 @@ export const CardWrapper = styled.div`
   }
 `
 
-export const CardHeader = styled.div`
+const CardHeader = styled.div`
   font-size: 0.8rem;
   color: #ced4da;
   font-weight: 400;
@@ -73,7 +73,7 @@ export const CardHeader = styled.div`
   transition: opacity ease-in-out 0.3s;
 `
 
-export const CardTitle = styled.div`
+const CardTitle = styled.div`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 40px;
@@ -83,13 +83,13 @@ export const CardTitle = styled.div`
   }
 `
 
-export const CardContent = styled.div`
+const CardContent = styled.div`
   font-size: 1rem;
   opacity: 0;
   transition: opacity ease-in-out 0.3s;
 `
 
-export const Card = styled.div`
+const Card = styled.div`
   position: relative;
   width: 100%;
   background-color: #212529;
@@ -123,7 +123,7 @@ export const Card = styled.div`
   }
 `
 
-export const CommentWrapper = styled.div`
+const CommentWrapper = styled.div`
   background-color: #212529;
   padding: 20px;
   width: 100%;
@@ -139,7 +139,7 @@ export const CommentWrapper = styled.div`
   }
 `
 
-export const CommentProfile = styled.div`
+const CommentProfile = styled.div`
   position: relative;
   width: 160px;
   height: 160px;
@@ -152,7 +152,7 @@ export const CommentProfile = styled.div`
   }
 `
 
-export const styledTag = styled(Tag)`
+const StyledTag = styled(Tag)`
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -160,7 +160,7 @@ export const styledTag = styled(Tag)`
   z-index: 0;
 `
 
-export const CommentContent = styled.div`
+const CommentContent = styled.div`
   height: 100%;
   padding: 20px;
   line-height: 28px;
@@ -170,3 +170,18 @@ export const CommentContent = styled.div`
     font-size: 0.8rem;
   }
 `
+
+export {
+  Wrapper,
+  Title,
+  ContentWrapper,
+  CardWrapper,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  Card,
+  CommentWrapper,
+  CommentProfile,
+  StyledTag,
+  CommentContent,
+}

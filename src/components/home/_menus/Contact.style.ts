@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   position: relative;
   &::-webkit-scrollbar {
     display: none;
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     height: fit-content;
   }
 `
-export const Content = styled.div`
+const Content = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ export const Content = styled.div`
   }
 `
 
-export const Title = styled.div`
+const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +56,7 @@ export const Title = styled.div`
   }
 `
 
-export const ContentBottom = styled.div`
+const ContentBottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,3 +74,5 @@ export const ContentBottom = styled.div`
     }
   }
 `
+
+export { Wrapper, Content, Title, ContentBottom }

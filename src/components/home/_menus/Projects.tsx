@@ -1,4 +1,11 @@
-import * as styled from './Projects.styled'
+import {
+  Wrapper,
+  Title,
+  List,
+  Project,
+  BtnBox,
+  MoreButton,
+} from './Projects.style'
 import { projects } from 'libs/data'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
@@ -8,21 +15,21 @@ const Projects = (props: Props) => {
   const isMobile = useRecoilValue(isMobileState)
 
   return (
-    <styled.Wrapper>
-      <styled.Title className="container">
+    <Wrapper>
+      <Title className="container">
         <h1>우리가 만들어온 것들</h1>
         <h3>발전적인 사람으로부터 발전적인 서비스가 나온다고 믿고 있어요.</h3>
-      </styled.Title>
-      <styled.List>
+      </Title>
+      <List>
         {/* {projects.map((project) => (
-          <styled.Project key={project.id}></styled.Project>
+          <Project key={project.id}></Project>
         ))} */}
         아직 프로젝트가 없어요!
-      </styled.List>
-      <styled.BtnBox>
-        <styled.MoreButton href="/projects">더 많은 프로젝트</styled.MoreButton>
-      </styled.BtnBox>
-    </styled.Wrapper>
+      </List>
+      <BtnBox>
+        <MoreButton href="/projects">더 많은 프로젝트</MoreButton>
+      </BtnBox>
+    </Wrapper>
   )
 }
 

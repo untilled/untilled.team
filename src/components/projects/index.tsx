@@ -1,7 +1,7 @@
 import TabMenu from 'components/_shared/TabMenu'
 import { projects } from 'libs/data'
 import { useState } from 'react'
-import * as styled from './index.styled'
+import { Wrapper, Title, Cards, Card } from './index.style'
 type Props = {}
 const menus = [
   {
@@ -26,16 +26,16 @@ const Projects = (props: Props) => {
   }
 
   return (
-    <styled.Wrapper>
-      <styled.Title className="container">Projects</styled.Title>
+    <Wrapper>
+      <Title className="container">Projects</Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
-      <styled.Cards className="container">
+      <Cards className="container">
         {/* {projects.map((project) => (
-          <styled.Card key={project.id}></styled.Card>
+          <Card key={project.id}></Card>
         ))} */}
         아직 프로젝트가 없어요!
-      </styled.Cards>
-    </styled.Wrapper>
+      </Cards>
+    </Wrapper>
   )
 }
 

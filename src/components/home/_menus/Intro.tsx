@@ -1,4 +1,14 @@
-import * as styled from './Intro.styled'
+import {
+  Wrapper,
+  Middle,
+  TitleWrapper,
+  Title,
+  Subtitle,
+  Bottom,
+  Span,
+  TextCircleCss,
+  CircleInner,
+} from './Intro.style'
 import TextCircle from 'components/home/_shared/TextCircle'
 import React, { useEffect, useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
@@ -21,16 +31,16 @@ const Intro = (props: Props) => {
   const isMobile = useRecoilValue(isMobileState)
 
   return (
-    <styled.Wrapper>
+    <Wrapper>
       <BackgroundVideos data={videos} />
       <div></div>
-      <styled.Middle className=" container">
-        <styled.Subtitle>
+      <Middle className=" container">
+        <Subtitle>
           <span>UNTILLED ARE A OPEN-SOURCE DEVELOP TEAM</span>
-        </styled.Subtitle>
-        <styled.TitleWrapper>
+        </Subtitle>
+        <TitleWrapper>
           <div>We are developing</div>
-          <styled.Title>
+          <Title>
             the
             {isMobile !== null && (
               <WordSlider
@@ -39,18 +49,18 @@ const Intro = (props: Props) => {
                 height={isMobile ? 72 : 133}
               />
             )}
-          </styled.Title>
+          </Title>
           <div>by making products</div>
-        </styled.TitleWrapper>
-      </styled.Middle>
-      <styled.Bottom className=" container">
+        </TitleWrapper>
+      </Middle>
+      <Bottom className=" container">
         <TextCircle
-          style={styled.TextCircleCss}
+          style={TextCircleCss}
           data="scroll down scroll down scroll down "
           size={isMobile ? 80 : 100}
         ></TextCircle>
-      </styled.Bottom>
-    </styled.Wrapper>
+      </Bottom>
+    </Wrapper>
   )
 }
 

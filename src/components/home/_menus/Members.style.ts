@@ -2,25 +2,27 @@ import styled from '@emotion/styled'
 import Button from 'components/_shared/Button'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
+const Wrapper = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  width: 100vw;
   height: 100vh;
+  overflow: scroll;
   padding-top: 80px;
+  gap: 45px;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 40px;
+  & > *:last-child {
+    margin-bottom: 45px;
+  }
 
   ${mobile} {
     height: fit-content;
-    padding-bottom: 0;
   }
 `
 
-export const Title = styled.div`
+const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,8 +35,8 @@ export const Title = styled.div`
   }
 
   h3 {
-    text-align: center;
     color: #ced4da;
+    text-align: center;
     font-weight: 500;
     font-size: 1.2rem;
   }
@@ -48,45 +50,37 @@ export const Title = styled.div`
     }
   }
 `
-
-export const List = styled.div`
-  width: 100%;
-  height: 500px;
-  margin: 45px 0;
-  padding: 45px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 45px;
+const MemberListWrapper = styled.div`
   overflow: hidden;
-  background-color: #212529;
-  ${mobile} {
-    height: 400px;
-    margin: 25px 0;
-  }
-  color: #868e96;
-  font-weight: 200;
-`
-
-export const Project = styled.div`
-  background-color: #212529;
-  width: 300px;
+  /* height: auto; */
   flex-shrink: 0;
-  height: 400px;
-
-  ${mobile} {
-    height: 230px;
+`
+const MemberList = styled.div`
+  width: 100vw;
+  overflow: visible;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  &:first-of-type,
+  &:last-child {
+    transform: translate(-80px, 0px);
+  }
+  & > * {
+    border-radius: 50%;
+    background-color: #212529;
   }
 `
-
-export const BtnBox = styled.div`
+const BtnBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
 `
-export const MoreButton = styled(Button)`
+
+const MoreButton = styled(Button)`
   padding: 15px 90px;
   ${mobile} {
     padding: 10px 90px;
   }
 `
+
+export { Wrapper, Title, MemberListWrapper, MemberList, BtnBox, MoreButton }

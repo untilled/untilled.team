@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   padding-bottom: 40px;
   gap: 80px;
 `
-export const Title = styled.div`
+const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ export const Title = styled.div`
   }
 `
 
-export const CardWrapper = styled.div`
+const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 50px;
@@ -61,7 +61,7 @@ export const CardWrapper = styled.div`
   }
 `
 
-export const Card = styled.div`
+const Card = styled.div`
   width: 100%;
   height: 250px;
   background-color: #212529;
@@ -80,26 +80,38 @@ export const Card = styled.div`
     flex-shrink: 0;
   }
 `
-export const CardTop = styled.div``
+const CardTop = styled.div``
 
-export const CardTitle = styled.div`
+const CardTitle = styled.div`
   font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 20px;
 `
 
-export const CardSubTitle = styled.div`
+const CardSubTitle = styled.div`
   font-size: 2.3rem;
   font-weight: 700;
   color: #ced4da;
 `
 
-export const CardContent = styled.div`
+const CardContent = styled.div`
   color: #ced4da;
 `
-export const CardBottom = styled.div`
+const CardBottom = styled.div`
   align-self: flex-end;
   svg {
     font-size: 1.3rem;
   }
 `
+
+export {
+  Wrapper,
+  Title,
+  CardWrapper,
+  Card,
+  CardTop,
+  CardTitle,
+  CardSubTitle,
+  CardContent,
+  CardBottom,
+}

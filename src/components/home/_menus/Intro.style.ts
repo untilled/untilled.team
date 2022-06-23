@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   user-select: none;
   &::-webkit-scrollbar {
     display: none;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Middle = styled.div`
+const Middle = styled.div`
   font-family: 'Prompt', sans-serif;
   z-index: 1;
   width: 100%;
@@ -28,7 +28,7 @@ export const Middle = styled.div`
   font-style: italic;
 `
 
-export const TitleWrapper = styled.div`
+const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 600;
@@ -39,7 +39,7 @@ export const TitleWrapper = styled.div`
   }
 `
 
-export const Title = styled.div`
+const Title = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -48,7 +48,7 @@ export const Title = styled.div`
   }
 `
 
-export const Subtitle = styled.div`
+const Subtitle = styled.div`
   width: 100%;
   font-weight: 200;
   font-size: 0.9rem;
@@ -61,7 +61,7 @@ export const Subtitle = styled.div`
   }
 `
 
-export const Bottom = styled.div`
+const Bottom = styled.div`
   width: 100%;
   height: 100px;
   position: relative;
@@ -72,11 +72,11 @@ export const Bottom = styled.div`
   }
 `
 
-export const Span = styled.span`
+const Span = styled.span`
   background-color: #212529;
 `
 
-export const TextCircleCss = css`
+const TextCircleCss = css`
   right: 200px;
   bottom: 100px;
   ${mobile} {
@@ -85,7 +85,7 @@ export const TextCircleCss = css`
   }
 `
 
-export const CircleInner = styled.div`
+const CircleInner = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -96,3 +96,15 @@ export const CircleInner = styled.div`
     height: 100px;
   }
 `
+
+export {
+  Wrapper,
+  Middle,
+  TitleWrapper,
+  Title,
+  Subtitle,
+  Bottom,
+  Span,
+  TextCircleCss,
+  CircleInner,
+}
