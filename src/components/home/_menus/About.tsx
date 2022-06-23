@@ -14,11 +14,11 @@ import {
 } from './About.style'
 import React, { useRef } from 'react'
 import Member from 'components/_shared/Member'
-import { members } from 'libs/data'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
 import Tag from 'components/_shared/Tag'
 import { BsFillMouseFill } from 'react-icons/bs'
+import { members } from 'constants/members'
 type Props = {}
 
 const images = [
@@ -86,7 +86,7 @@ const About = (props: Props) => {
         </CardWrapper>
         <CommentWrapper className="container">
           <CommentProfile>
-            <Member data={members[0].images} />
+            <Member data={members[1].images} />
             <StyledTag>Developer</StyledTag>
           </CommentProfile>
           <CommentContent>

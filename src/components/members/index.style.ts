@@ -19,9 +19,12 @@ const Title = styled.h1`
 const MemberList = styled.div`
   display: flex;
   width: 100%;
-  justify-content: center;
+  max-width: 990px;
   gap: 40px;
   flex-wrap: wrap;
+  ${mobile} {
+    justify-content: center;
+  }
 `
 
 const Member = styled.div`

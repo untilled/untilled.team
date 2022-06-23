@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { menus } from 'libs/data'
+import { menus } from 'constants/menus'
 
 type Props = {}
 

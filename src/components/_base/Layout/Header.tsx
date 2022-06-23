@@ -2,8 +2,8 @@ import { Wrapper, Container, Right, Menu } from './Header.style'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from 'components/_shared/Logo'
-import { menus } from 'libs/data'
 import useMouseHover from 'hooks/useMouseHover'
+import { menus } from 'constants/menus'
 
 type Props = {}
 

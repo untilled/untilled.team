@@ -1,7 +1,7 @@
 import { Wrapper, Title, MemberList, Member } from './index.style'
-import { members } from 'libs/data'
 import React, { useState } from 'react'
 import TabMenu from 'components/_shared/TabMenu'
+import { members } from 'constants/members'
 
 type Props = {}
 
@@ -27,12 +27,16 @@ const Members = (props: Props) => {
     setSelectedMenu(id)
   }
 
+  const filteredMembers =
+    selectedMenu === 0
+      ? members
+      : members.filter((member) => member.role === selectedMenu)
   return (
     <Wrapper>
       <Title className="container">Members</Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
       <MemberList className="container">
-        {members.map((member, idx) => (
+        {filteredMembers.map((member, idx) => (
           <Member key={idx}></Member>
         ))}
       </MemberList>

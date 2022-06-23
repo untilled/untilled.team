@@ -8,7 +8,6 @@ import {
   Mid,
   Bottom,
 } from './index.style'
-import { menus } from 'libs/data'
 import Link from 'next/link'
 import {
   AiFillFacebook,
@@ -21,6 +20,7 @@ import Logo from '../Logo'
 import { isVisibleFooterState } from 'states'
 import { useRecoilState } from 'recoil'
 import React, { useCallback, useRef } from 'react'
+import { menus } from 'constants/menus'
 
 type Props = {}
 const Footer = ({}: Props) => {

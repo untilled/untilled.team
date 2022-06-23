@@ -2,7 +2,7 @@ import React from 'react'
 import { Wrapper, Menu, Glider } from './index.style'
 type Props = {
   data: {
-    id: number
+    id: any
     name: string
   }[]
   selectedMenu: number

@@ -20,11 +20,17 @@ export const Wrapper = styled.div<Wrapper>`
     display: none;
   }
   transition: opacity ease-in-out 300ms;
+  display: grid;
+  grid-template-rows: 1fr auto;
+
   ${(props) =>
     props.isScrollHidden &&
     css`
       overflow: hidden;
     `}
+  ${mobile} {
+    display: block;
+  }
 `
 
 export const ShareBox = styled.div<ShareBox>`

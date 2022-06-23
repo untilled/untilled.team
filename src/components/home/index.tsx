@@ -12,7 +12,6 @@ import FullPage from './_shared/FullPage'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { isMobileState, pageState } from 'states'
-import { members } from 'libs/data'
 
 import Intro from 'components/home/_menus/Intro'
 import About from 'components/home/_menus/About'
@@ -24,6 +23,7 @@ import Footer from 'components/_shared/Footer'
 import Toolbar from 'components/_shared/Toolbar'
 import PreloadImg from 'components/_shared/PreloadImg'
 import useMouseHover from 'hooks/useMouseHover'
+import { members } from 'constants/members'
 
 const pages = [
   {
