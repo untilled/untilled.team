@@ -65,9 +65,7 @@ const Archivement = (props: Props) => {
             <Card>
               <CardTop>
                 <CardTitle>Mobile Development</CardTitle>
-                <CardContent>
-                  모바일도 개발함. 근데 웹앱이나 리액트 네이티브임.
-                </CardContent>
+                <CardContent>모바일도 서비스도 개발 할 수 있어요.</CardContent>
               </CardTop>
               <CardBottom>
                 <AiOutlineArrowRight />
@@ -80,9 +78,7 @@ const Archivement = (props: Props) => {
             <Card>
               <CardTop>
                 <CardTitle>Develop Activity</CardTitle>
-                <CardContent>
-                  다양한 개발활동함. 내용은 팀 블로그에 있음.
-                </CardContent>
+                <CardContent>다양한 개발 활동을 진행해요.</CardContent>
               </CardTop>
               <CardBottom>
                 <AiOutlineArrowRight />

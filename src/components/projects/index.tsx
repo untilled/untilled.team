@@ -26,7 +26,7 @@ const Projects = (props: Props) => {
 
   return (
     <Wrapper>
-      <Title className="container">Projects</Title>
+      <Title className="container">Our Projects</Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
       <Cards className="container">아직 프로젝트가 없어요!</Cards>
     </Wrapper>

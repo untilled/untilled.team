@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-family: 'Prompt', sans-serif;
+  font-style: italic;
   font-weight: 600;
   font-size: 3rem;
   width: 100%;

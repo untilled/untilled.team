@@ -42,7 +42,7 @@ const Members = (props: Props) => {
       : members.filter((member) => member.role === selectedMenu)
   return (
     <Wrapper>
-      <Title className="container">Members</Title>
+      <Title className="container">Our Members</Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
       <MemberList className="container">
         {filteredMembers.map((member, idx) => (
