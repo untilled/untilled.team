@@ -1,7 +1,16 @@
-import { Wrapper, Title, MemberList, Member } from './index.style'
+import {
+  Wrapper,
+  Title,
+  MemberList,
+  MemberWrapper,
+  MemberImage,
+  MemberName,
+  MemberDesc,
+} from './index.style'
 import React, { useState } from 'react'
 import TabMenu from 'components/_shared/TabMenu'
 import { members } from 'constants/members'
+import Member from 'components/_shared/Member'
 
 type Props = {}
 
@@ -37,7 +46,13 @@ const Members = (props: Props) => {
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
       <MemberList className="container">
         {filteredMembers.map((member, idx) => (
-          <Member key={idx}></Member>
+          <MemberWrapper key={idx}>
+            <MemberImage>
+              <Member data={member.images} size={200} />
+            </MemberImage>
+            <MemberName>{member.name}</MemberName>
+            <MemberDesc>{member.desc}</MemberDesc>
+          </MemberWrapper>
         ))}
       </MemberList>
     </Wrapper>

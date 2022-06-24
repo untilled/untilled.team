@@ -86,7 +86,7 @@ const About = (props: Props) => {
         </CardWrapper>
         <CommentWrapper className="container">
           <CommentProfile>
-            <Member data={members[1].images} />
+            <Member data={members[0].images} />
             <StyledTag>Developer</StyledTag>
           </CommentProfile>
           <CommentContent>

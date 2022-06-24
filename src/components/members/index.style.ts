@@ -27,14 +27,50 @@ const MemberList = styled.div`
   }
 `
 
-const Member = styled.div`
+const MemberWrapper = styled.div`
   width: 300px;
-  height: 300px;
-  background-color: #212529;
-  border-radius: 15px;
+  height: 350px;
+  border: 2px solid #212529;
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   ${mobile} {
     width: 100%;
   }
 `
 
-export { Wrapper, Title, MemberList, Member }
+const MemberImage = styled.div`
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #212529; */
+`
+
+const MemberName = styled.div`
+  font-family: 'Prompt', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  font-style: italic;
+  padding-bottom: 20px;
+`
+const MemberDesc = styled.div`
+  font-family: 'Prompt', sans-serif;
+  font-style: italic;
+  color: #ced4da;
+`
+
+export {
+  Wrapper,
+  Title,
+  MemberList,
+  MemberWrapper,
+  MemberImage,
+  MemberName,
+  MemberDesc,
+}

@@ -1,45 +1,82 @@
 type members = {
-  images: string[];
-  name: string;
-  desc: string;
-  role: number;
-}[];
+  images: string[]
+  name: string
+  desc: string
+  role: number
+}[]
 
 export const members: members = [
   {
-    name: "Lee Sang Min",
+    name: 'Lee Sang Min',
     role: 1,
-    desc: "",
-    images: ["/images/members/0.png", "/images/members/0-hover.png"],
+    desc: 'frontend developer',
+    images: ['/images/members/1.png', '/images/members/1-hover.png'],
   },
   {
-    name: "Jade",
+    name: '',
     role: 1,
-    desc: "",
-    images: ["/images/members/1.png", "/images/members/1-hover.png"],
+    desc: '',
+    images: [],
   },
   {
-    name: "Jade",
+    name: '',
     role: 1,
-    desc: "",
-    images: ["/images/members/1.png", "/images/members/1-hover.png"],
+    desc: '',
+    images: [],
   },
   {
-    name: "morethanmin",
-    role: 2,
-    desc: "",
-    images: ["/images/members/2.png", "/images/members/2-hover.png"],
+    name: '',
+    role: 1,
+    desc: '',
+    images: [],
   },
   {
-    name: "mini4614",
-    role: 2,
-    desc: "",
-    images: ["/images/members/2.png", "/images/members/2-hover.png"],
+    name: '',
+    role: 1,
+    desc: '',
+    images: [],
   },
   {
-    name: "mini4614",
-    role: 2,
-    desc: "",
-    images: ["/images/members/2.png", "/images/members/2-hover.png"],
+    name: '',
+    role: 1,
+    desc: '',
+    images: [],
   },
-];
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+  {
+    name: '',
+    role: 2,
+    desc: '',
+    images: [],
+  },
+]
