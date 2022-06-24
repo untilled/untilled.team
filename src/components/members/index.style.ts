@@ -29,7 +29,7 @@ const MemberList = styled.div`
 
 const MemberWrapper = styled.div`
   width: 300px;
-  height: 350px;
+  height: 400px;
   border: 2px solid #212529;
   border-radius: 25px;
   padding: 20px;
