@@ -25,9 +25,11 @@ const Cards = styled.div`
   flex-wrap: wrap;
   min-height: 800px;
   align-items: center;
-  border-radius: 15px;
   color: #868e96;
-  background-color: #212529;
+  /* border-radius: 15px; */
+  /* background-color: #212529; */
+  border: 2px solid #212529;
+  border-radius: 25px;
   font-weight: 200;
   max-width: 1024px;
   ${mobile} {
