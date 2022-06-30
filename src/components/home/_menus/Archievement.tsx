@@ -51,7 +51,7 @@ const Archivement = (props: Props) => {
               <CardTop>
                 <CardTitle>Web Development</CardTitle>
                 <CardContent>
-                  최신 기술을 사용하여 다양한 웹 서비스를 개발해요.
+                  최신 기술을 사용하여 다양한 웹 서비스를 개발하고 있어요.
                 </CardContent>
               </CardTop>
               <CardBottom>
@@ -65,7 +65,7 @@ const Archivement = (props: Props) => {
             <Card>
               <CardTop>
                 <CardTitle>Mobile Development</CardTitle>
-                <CardContent>모바일도 서비스도 개발 할 수 있어요.</CardContent>
+                <CardContent>모바일 서비스도 개발하고 있어요.</CardContent>
               </CardTop>
               <CardBottom>
                 <AiOutlineArrowRight />
@@ -73,19 +73,24 @@ const Archivement = (props: Props) => {
             </Card>
           </a>
         </Link>
-        <Link href="/projects">
-          <a>
-            <Card>
-              <CardTop>
-                <CardTitle>Develop Activity</CardTitle>
-                <CardContent>다양한 개발 활동을 진행해요.</CardContent>
-              </CardTop>
-              <CardBottom>
-                <AiOutlineArrowRight />
-              </CardBottom>
-            </Card>
-          </a>
-        </Link>
+        <a
+          href="https://morethan-log.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Card>
+            <CardTop>
+              <CardTitle>Develop Activity</CardTitle>
+              <CardContent>
+                다양한 개발 활동을 진행하고 있어요. 자세한 내용은 블로그를
+                확인해보세요.
+              </CardContent>
+            </CardTop>
+            <CardBottom>
+              <AiOutlineArrowRight />
+            </CardBottom>
+          </Card>
+        </a>
       </CardWrapper>
     </Wrapper>
   )

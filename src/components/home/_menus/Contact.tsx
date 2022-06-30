@@ -1,4 +1,10 @@
-import { Wrapper, Content, Title, ContentBottom } from './Contact.style'
+import {
+  Wrapper,
+  Gradient,
+  Content,
+  Title,
+  ContentBottom,
+} from './Contact.style'
 import Button from 'components/_shared/Button'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -12,7 +18,8 @@ const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙�
 const Contact = (props: Props) => {
   return (
     <Wrapper>
-      <BackgroundVideos data={videos} />
+      {/* <BackgroundVideos data={videos} /> */}
+      <Gradient />
       <Content className="container">
         <Title>
           <h1>프로젝트 혼자 할 순 없잖아요?</h1>
