@@ -1,11 +1,18 @@
 import styled from '@emotion/styled'
+import Gradient from 'components/_shared/Gradient'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  position: relative;
+  /* min-height: 100vh; */
   padding: 100px 0;
   display: flex;
   flex-direction: column;
+`
+
+const StyledGradient = styled(Gradient)`
+  right: 0px;
+  bottom: 0px;
 `
 
 const Title = styled.h1`
@@ -33,7 +40,10 @@ const Cards = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 80px;
-  border: 2px solid #212529;
+  background-color: rgba(26, 30, 36, 0.4);
+  backdrop-filter: blur(30px);
+  z-index: 1;
+  /* border: 2px solid #212529; */
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -43,4 +53,4 @@ const Card = styled.div`
   }
 `
 
-export { Wrapper, Title, Cards, Card }
+export { Wrapper, StyledGradient, Title, Cards, Card }

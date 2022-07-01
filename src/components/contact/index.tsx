@@ -1,18 +1,18 @@
 import BackgroundVideos from 'components/home/_shared/BackgroundVideos'
-import { Wrapper, Title, Cards, Card } from './index.style'
+import Gradient from 'components/_shared/Gradient'
+import { Wrapper, StyledGradient, Title, Cards, Card } from './index.style'
 
 type Props = {}
 
 //email
 //location
-const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
-
 const videos = ['/videos/intro1.mp4', '/videos/intro2.mp4']
 
 const Contact = (props: Props) => {
   return (
     <Wrapper>
-      {/* <BackgroundVideos data={videos} /> */}
+      <BackgroundVideos data={videos} />
+      {/* <StyledGradient /> */}
       <Title className="container">Get In Touch</Title>
       <Cards>
         <Card>github</Card>

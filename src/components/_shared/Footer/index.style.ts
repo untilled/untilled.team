@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   background-color: #212529;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 `
 
 const Content = styled.div`
