@@ -1,11 +1,11 @@
 import React from 'react'
 import { Wrapper } from './index.style'
-type Props = {
+interface MemberProps {
   size?: number
   data: string[]
 }
 
-function Member(props: Props) {
+const Member: React.FC<MemberProps> = (props) => {
   return <Wrapper {...props} />
 }
 

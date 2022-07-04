@@ -5,10 +5,7 @@ import Logo from 'components/_shared/Logo'
 import useMouseHover from 'hooks/useMouseHover'
 import { menus } from 'constants/menus'
 
-type Props = {}
-
-// header 올라갔다 내려오도록
-const Header = ({}: Props) => {
+const Header: React.FC = () => {
   const hoverHandlers = useMouseHover()
   const router = useRouter()
 

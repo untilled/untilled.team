@@ -2,14 +2,18 @@ import { css, keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import React from 'react'
 
-type Props = {
+interface WordSliderProps {
   data: string[]
   background?: boolean
   height: number
 }
 
 //words현재는 4개로 고정. 유동적으로 변경 가능하도록 수정 필요
-const WordSlider = ({ data, background = false, height }: Props) => {
+const WordSlider: React.FC<WordSliderProps> = ({
+  data,
+  background = false,
+  height,
+}) => {
   return (
     <Wrapper height={height}>
       {data.map((word, idx) => (

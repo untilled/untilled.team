@@ -1,13 +1,17 @@
 import styled from '@emotion/styled'
 import React from 'react'
 
-type Props = {
+interface HeaderProps {
   height: number
   title: string
   color?: string
 }
 
-const Header = ({ title, height, color = '#343a41' }: Props) => {
+const Header: React.FC<HeaderProps> = ({
+  title,
+  height,
+  color = '#343a41',
+}) => {
   return (
     <Wrapper height={height} color={color}>
       <Left>{title}</Left>

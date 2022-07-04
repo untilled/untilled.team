@@ -8,11 +8,9 @@ import {
 } from './Projects.style'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
-type Props = {}
+import React from 'react'
 
-const Projects = (props: Props) => {
-  const isMobile = useRecoilValue(isMobileState)
-
+const Projects: React.FC = () => {
   return (
     <Wrapper>
       <Title className="container">

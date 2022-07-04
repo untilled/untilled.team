@@ -1,6 +1,6 @@
 import React from 'react'
 import { Wrapper, Menu, Glider } from './index.style'
-type Props = {
+interface TabMenuProps {
   data: {
     id: any
     name: string
@@ -9,7 +9,11 @@ type Props = {
   onClick: Function
 }
 
-function TabMenu({ data: menus, selectedMenu, onClick: handleClick }: Props) {
+const TabMenu: React.FC<TabMenuProps> = ({
+  data: menus,
+  selectedMenu,
+  onClick: handleClick,
+}) => {
   return (
     <Wrapper>
       {menus.map((menu) => (

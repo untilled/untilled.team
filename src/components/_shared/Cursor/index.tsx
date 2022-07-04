@@ -6,11 +6,9 @@ import { useRecoilState } from 'recoil'
 import { isMouseHoveredState } from 'states'
 import { mobile } from 'styles/media'
 
-type Props = {}
-
 const delay = 4
 
-function Cursor({}: Props) {
+const Cursor: React.FC = () => {
   const [isMouseHovered, setIsMouseHovered] =
     useRecoilState(isMouseHoveredState)
   const cursorVisible = useRef(false)

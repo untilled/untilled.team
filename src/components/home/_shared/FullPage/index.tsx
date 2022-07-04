@@ -4,14 +4,19 @@ import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
 import { mobile } from 'styles/media'
 
-type Props = {
+type FullPageProps = {
   page: number | null
   onNext: Function
   onPrev: Function
   children: React.ReactNode[]
 }
 
-const FullPage = ({ page, children, onNext, onPrev }: Props) => {
+const FullPage: React.FC<FullPageProps> = ({
+  page,
+  children,
+  onNext,
+  onPrev,
+}) => {
   const [heightList, setHeightList] = useState<number[]>([])
   const [nodes, setNodes] = useState<any>([])
   const wrapperRef = useRef<HTMLDivElement>(null)

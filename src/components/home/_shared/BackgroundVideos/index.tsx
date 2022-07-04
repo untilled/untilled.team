@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
 import React, { useRef, useState } from 'react'
 
-type Props = {
+type BackgroundVideosProps = {
   data: string[]
 }
 
-function BackgroundVideos({ data }: Props) {
+const BackgroundVideos: React.FC<BackgroundVideosProps> = ({ data }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoIdx, setvideoIdx] = useState(0)
 

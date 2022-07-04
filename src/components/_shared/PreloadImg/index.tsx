@@ -2,12 +2,12 @@ import styled from '@emotion/styled'
 import imageLoader from 'libs/loader'
 import Image from 'next/image'
 
-type Props = {
+interface PreloadImgProps {
   data: Array<string>
 }
 
 // 이미지를 미리 로드하기 위함
-function PreloadImg({ data }: Props) {
+const PreloadImg: React.FC<PreloadImgProps> = ({ data }) => {
   return (
     <Wrapper>
       {data.map((el, idx) => (

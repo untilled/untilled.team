@@ -1,9 +1,8 @@
 import Members from 'components/members'
+import { NextPage } from 'next'
 import React from 'react'
 
-type Props = {}
-
-const MembersPage = (props: Props) => {
+const MembersPage: NextPage = () => {
   return <Members />
 }
 

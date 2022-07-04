@@ -4,12 +4,16 @@ import Link from 'next/link'
 import { mobile } from 'styles/media'
 import useMouseHover from 'hooks/useMouseHover'
 
-type Props = {
+interface LogoProps {
   color?: string
   size?: string
 }
 
-const Logo = ({ color = 'white', size = 'normal', ...props }: Props) => {
+const Logo: React.FC<LogoProps> = ({
+  color = 'white',
+  size = 'normal',
+  ...props
+}) => {
   const hoverHandlers = useMouseHover()
 
   return (

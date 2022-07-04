@@ -2,9 +2,7 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Contact from 'components/contact'
 
-type Props = {}
-
-const ContactPage = (props: Props) => {
+const ContactPage: NextPage = () => {
   return <Contact />
 }
 

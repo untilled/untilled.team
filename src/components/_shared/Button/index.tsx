@@ -4,7 +4,7 @@ import useMouseHover from 'hooks/useMouseHover'
 import { useRouter } from 'next/router'
 import React, { MouseEventHandler } from 'react'
 
-type Props = {
+interface ButtonProps {
   children?: string
   className?: string
   color?: 'gray' | 'white' | 'gray_2'
@@ -12,13 +12,13 @@ type Props = {
   onClick?: MouseEventHandler
 }
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   children,
   className,
   color = 'gray',
   href,
   onClick,
-}: Props) => {
+}) => {
   const router = useRouter()
   const hoverHandlers = useMouseHover()
 

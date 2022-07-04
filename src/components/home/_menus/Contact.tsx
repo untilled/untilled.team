@@ -5,12 +5,11 @@ import React from 'react'
 import BackgroundVideos from '../_shared/BackgroundVideos'
 import Gradient from 'components/_shared/Gradient'
 
-type Props = {}
 const videos = ['/videos/intro1.mp4', '/videos/intro2.mp4']
 
 const words = ['🙋‍♂️', '🙋🏼‍♀️', '👨🏼‍💻', '🧙🏼‍♂️']
 
-const Contact = (props: Props) => {
+const Contact: React.FC = () => {
   return (
     <Wrapper>
       {/* <BackgroundVideos data={videos} /> */}

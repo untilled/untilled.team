@@ -13,7 +13,6 @@ import {
   AiFillFacebook,
   AiFillGithub,
   AiFillLinkedin,
-  AiFillMail,
   AiOutlineInstagram,
 } from 'react-icons/ai'
 import Logo from '../Logo'
@@ -22,8 +21,7 @@ import { useRecoilState } from 'recoil'
 import React, { useCallback, useRef } from 'react'
 import { menus } from 'constants/menus'
 
-type Props = {}
-const Footer = ({}: Props) => {
+const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useRecoilState(isVisibleFooterState)
   const observer = useRef<IntersectionObserver>()
 

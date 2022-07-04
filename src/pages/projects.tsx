@@ -1,9 +1,8 @@
 import Projects from 'components/projects'
+import { NextPage } from 'next'
 import React from 'react'
 
-type Props = {}
-
-const ProjectsPage = (props: Props) => {
+const ProjectsPage: NextPage = () => {
   return <Projects />
 }
 

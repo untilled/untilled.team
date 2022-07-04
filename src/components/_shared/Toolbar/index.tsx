@@ -3,13 +3,17 @@ import styled from '@emotion/styled'
 import React, { ReactChildren, useEffect, useRef } from 'react'
 import { mobile } from 'styles/media'
 
-type Props = {
+interface ToolbarProps {
   direction: 'left' | 'right'
   align?: 'start' | 'end'
   children: JSX.Element | JSX.Element[]
 }
 
-function Toolbar({ direction, align = 'end', children }: Props) {
+const Toolbar: React.FC<ToolbarProps> = ({
+  direction,
+  align = 'end',
+  children,
+}) => {
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   //resize handler for toolbar

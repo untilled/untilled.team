@@ -1,4 +1,4 @@
-import * as styled from './index.styled'
+import * as styled from './index.style'
 import Cursor from 'components/_shared/Cursor'
 import Footer from 'components/_shared/Footer'
 import useMobile from 'hooks/useMobile'
@@ -12,11 +12,11 @@ import Toolbar from 'components/_shared/Toolbar'
 import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
 
-type Props = {
+interface LayoutProps {
   children: any
 }
 
-const Layout = ({ children }: Props) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isVisibleFooter = useRecoilValue(isVisibleFooterState)
   const router = useRouter()
   const wrapperRef = useRef<HTMLDivElement>(null)

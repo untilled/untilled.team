@@ -2,13 +2,13 @@ import BackgroundVideos from 'components/home/_shared/BackgroundVideos'
 import Gradient from 'components/_shared/Gradient'
 import { Wrapper, StyledGradient, Title, Cards, Card } from './index.style'
 
-type Props = {}
+interface ContactProps {}
 
 //email
 //location
 const videos = ['/videos/intro1.mp4', '/videos/intro2.mp4']
 
-const Contact = (props: Props) => {
+const Contact: React.FC<ContactProps> = () => {
   return (
     <Wrapper>
       <BackgroundVideos data={videos} />

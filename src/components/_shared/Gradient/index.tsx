@@ -2,11 +2,11 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { mobile } from 'styles/media'
 
-type Props = {
+interface GradientProps {
   className?: string
 }
 
-function Gradient({ className }: Props) {
+const Gradient: React.FC<GradientProps> = ({ className }) => {
   return <Wrapper className={className}></Wrapper>
 }
 

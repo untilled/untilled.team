@@ -12,7 +12,7 @@ import TabMenu from 'components/_shared/TabMenu'
 import { members } from 'constants/members'
 import Member from 'components/_shared/Member'
 
-type Props = {}
+interface MembersProps {}
 
 const menus = [
   {
@@ -29,7 +29,7 @@ const menus = [
   },
 ]
 
-const Members = (props: Props) => {
+const Members: React.FC<MembersProps> = () => {
   const [selectedMenu, setSelectedMenu] = useState(0)
 
   const handleClick = (id: number) => {

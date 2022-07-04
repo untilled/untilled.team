@@ -56,9 +56,9 @@ const pages = [
   },
 ]
 
-type Props = {}
+interface HomeProps {}
 
-const Home = (props: Props) => {
+const Home: React.FC<HomeProps> = () => {
   const [page, setPage] = useRecoilState(pageState)
   const isMobile = useRecoilValue(isMobileState)
   const hoverHandlers = useMouseHover()

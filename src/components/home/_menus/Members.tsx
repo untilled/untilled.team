@@ -12,8 +12,6 @@ import Member from 'components/_shared/Member'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
 
-type Props = {}
-
 //지금은 멤버가 없어서 임시로 넣어둠
 const members = [
   ['/images/members/0.png', '/images/members/0-hover.png'],
@@ -30,7 +28,7 @@ const members = [
   ['/images/members/11.png', '/images/members/11-hover.png'],
 ]
 
-const Members = (props: Props) => {
+const Members: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
   return (
     <Wrapper>

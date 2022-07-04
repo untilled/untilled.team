@@ -1,7 +1,9 @@
 import TabMenu from 'components/_shared/TabMenu'
 import { useState } from 'react'
 import { Wrapper, Title, Cards, Card } from './index.style'
-type Props = {}
+
+interface ProjectsProps {}
+
 const menus = [
   {
     id: 0,
@@ -17,7 +19,7 @@ const menus = [
   },
 ]
 
-const Projects = (props: Props) => {
+const Projects: React.FC<ProjectsProps> = () => {
   const [selectedMenu, setSelectedMenu] = useState(0)
 
   const handleClick = (id: number) => {

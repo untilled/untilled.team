@@ -19,7 +19,6 @@ import { isMobileState } from 'states'
 import Tag from 'components/_shared/Tag'
 import { BsFillMouseFill } from 'react-icons/bs'
 import { members } from 'constants/members'
-type Props = {}
 
 const images = [
   '/images/about/logo.png',
@@ -31,7 +30,7 @@ const images = [
   '/images/about/logo6.png',
 ]
 
-const About = (props: Props) => {
+const About: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
 
   //card는 현재는 열린형태임

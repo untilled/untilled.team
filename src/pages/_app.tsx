@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import Layout from 'components/_base/Layout'
 import Head from 'next/head'
 import ChannelService from 'libs/channelService'
+import { NextPage } from 'next'
 
 if (typeof window === 'object') {
   const channelService = new ChannelService()

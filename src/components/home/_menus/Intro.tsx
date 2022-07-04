@@ -17,7 +17,6 @@ import BackgroundVideos from '../_shared/BackgroundVideos'
 import Image from 'next/image'
 import imageLoader from 'libs/loader'
 import WordSlider from 'components/_shared/WordSlider'
-type Props = {}
 
 // const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
 const words = ['Worlds', 'Products', 'Designers', 'Developers']
@@ -27,7 +26,7 @@ const circleTexts = 'scroll down scroll down scroll down '
 const degree = Number(360 / circleTexts.length)
 
 //133 72
-const Intro = (props: Props) => {
+const Intro: React.FC = () => {
   const isMobile = useRecoilValue(isMobileState)
 
   return (

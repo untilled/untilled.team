@@ -13,9 +13,7 @@ import Logo from 'components/_shared/Logo'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { menus } from 'constants/menus'
 
-type Props = {}
-
-const MobileHeader = ({}: Props) => {
+const MobileHeader: React.FC = () => {
   const [menuOpened, setMenuOpened] = useState(false)
   const router = useRouter()
 

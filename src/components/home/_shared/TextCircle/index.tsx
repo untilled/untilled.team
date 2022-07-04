@@ -2,14 +2,19 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { useEffect, useRef } from 'react'
 
-type Props = {
+interface TextCircleProps {
   data: string
   children?: JSX.Element | JSX.Element[] | string
   size?: number
   style?: any
 }
 
-function TextCircle({ data, children, style, size = 100 }: Props) {
+const TextCircle: React.FC<TextCircleProps> = ({
+  data,
+  children,
+  style,
+  size = 100,
+}) => {
   const circleTextRef = useRef<HTMLSpanElement[]>([])
   const degree = Number(360 / data.length)
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Wrapper } from './index.style'
-type Props = {
+interface TagProps {
   children: any
   className?: string
   color?: ''
 }
 
-function Tag({ children, className }: Props) {
+const Tag: React.FC<TagProps> = ({ children, className }) => {
   return <Wrapper className={className}>{children}</Wrapper>
 }
 
