@@ -2,55 +2,26 @@
 
 > untilled repository
 
+## Road Map
+
+Check out our roadmap [here](https://quasar-season-ed5.notion.site/73c06797618a44fe8263299c502706f0?v=85269dde0e454931ae60ab8085f19523)
+
+## Tech and libraries
+
+- React (frontend library/framework)
+- Next.js (react framework)
+- Recoil (state management)
+- Typescript (language)
+- Emotion (css library)
+- Storybook (component develop tool)
+- Prettier (code formatter)
+- Eslint, Husky (code linter)
+
 ## Contributors
 
 - [Lee Sang Min](https://github.com/morethanmin) (Operator)
 - [Jade](https://github.com/morethanmin) (Developer)
 - [morethanmin](https://github.com/morethanmin) (Designer)
-
-## Features
-
-- Full Page slide
-- Database using notion
-- Deploy using firebase (Static-Site-Generation)
-
-## Tech and libraries
-
-- react (frontend library/framework)
-- next.js (react framework)
-- recoil (state management)
-- typescript (javascript Superset)
-- emotion (css library)
-- Storybook (component develop tool)
-- jest (javascript testing framework)
-- prettier (code formatter)
-- eslint, husky (code linter)
-
-## Getting started
-
-### Install
-
-```bash
-# install dependencies
-$ yarn
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-
-# deploy this project
-$ yarn deploy
-```
-
-## Note
-
-This project is ongoing.
 
 ## License
 

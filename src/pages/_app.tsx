@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <Head>
-        <title>Untilled.</title>
+        <title>Team Untilled</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Global styles={globalStyles} />
