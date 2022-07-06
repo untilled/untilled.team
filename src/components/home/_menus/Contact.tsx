@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
       <Content className="container">
         <Title>
           <h1>프로젝트 혼자 할 순 없잖아요?</h1>
-          <h1>언틸드와 함께 프로젝트를 진행해 보세요. 🖐</h1>
+          <h1>언틸드와 함께 프로젝트를 진행해 보세요 🖐</h1>
         </Title>
         <ContentBottom>
           <Button color="white" href="mailto:morethanmin.dev@gmail.com">

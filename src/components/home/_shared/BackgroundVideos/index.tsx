@@ -39,7 +39,7 @@ const StyledVideo = styled.video`
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.5;
   z-index: 0;
 `
 
