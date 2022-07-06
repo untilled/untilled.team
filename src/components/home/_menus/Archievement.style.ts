@@ -99,6 +99,12 @@ const CardContent = styled.div`
 `
 const CardBottom = styled.div`
   align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  div {
+    font-size: 0.8rem;
+  }
   svg {
     font-size: 1.3rem;
   }

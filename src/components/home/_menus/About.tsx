@@ -51,11 +51,10 @@ const About: React.FC = () => {
             </CardTitle>
             <CardContent>
               단순한 토이 프로젝트가 아닌 실제 서비스를 만들고 운영하고 있어요.
-              발전하는 사람들이 모여 발전하는 서비스를 만들어요.
+              서비스 출시는 끝이 아닌 새로운 시작이라고 생각해요.
             </CardContent>
             <BsFillMouseFill />
           </Card>
-          {/* 단순한 토이 프로젝트가 아니라 실제로 여러 서비스를 만들고~~ */}
           <Card>
             {/* Team */}
             <CardHeader>Team</CardHeader>
@@ -64,8 +63,7 @@ const About: React.FC = () => {
             </CardTitle>
             <CardContent>
               장소, 나이, 성별등에 제약 받지않고 다양한 사람이 함께하고 있어요.
-              오로지 발전을 갈망하는 사람들이 모여 발전적인 서비스를
-              만들어나가고 있어요.
+              발전하는 사람들이 모여 발전하는 서비스를 만들어요.
             </CardContent>
             <BsFillMouseFill />
           </Card>
@@ -76,7 +74,7 @@ const About: React.FC = () => {
               플랫폼에는 국경이 <br /> 없다고 믿고 있어요🌏
             </CardTitle>
             <CardContent>
-              이용하는 사람에게도 어떠한 제약도 없이 누구나 이용할 수 있는
+              이용하는 사람에게도 어떠한 제약도 없이 누구든지 이용할 수 있는
               서비스를 만들기 위해 노력하고 있어요.
             </CardContent>
             <BsFillMouseFill />

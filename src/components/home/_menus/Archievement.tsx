@@ -49,11 +49,11 @@ const Archivement: React.FC = () => {
               <CardTop>
                 <CardTitle>Web Development</CardTitle>
                 <CardContent>
-                  최신 기술을 사용하여 다양한 웹 서비스를 개발하고 있어요.
+                  최신 기술을 사용해 웹 서비스를 개발해요.
                 </CardContent>
               </CardTop>
               <CardBottom>
-                <AiOutlineArrowRight />
+                <div>Web Services</div> <AiOutlineArrowRight />
               </CardBottom>
             </Card>
           </a>
@@ -63,10 +63,10 @@ const Archivement: React.FC = () => {
             <Card>
               <CardTop>
                 <CardTitle>Mobile Development</CardTitle>
-                <CardContent>모바일 서비스도 개발하고 있어요.</CardContent>
+                <CardContent>모바일 서비스도 개발하고 운영해요.</CardContent>
               </CardTop>
               <CardBottom>
-                <AiOutlineArrowRight />
+                <div>Mobile Services</div> <AiOutlineArrowRight />
               </CardBottom>
             </Card>
           </a>
@@ -85,7 +85,7 @@ const Archivement: React.FC = () => {
               </CardContent>
             </CardTop>
             <CardBottom>
-              <AiOutlineArrowRight />
+              <div>Dev Blog</div> <AiOutlineArrowRight />
             </CardBottom>
           </Card>
         </a>
