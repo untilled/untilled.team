@@ -11,9 +11,18 @@ import MobileHeader from './MobileHeader'
 import Toolbar from 'components/_shared/Toolbar'
 import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
+import { Transition, TransitionGroup } from 'react-transition-group'
+import { css } from '@emotion/react'
 
 interface LayoutProps {
   children: any
+}
+
+const transitionStyles: any = {
+  entering: { opacity: 1 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 1 },
+  exited: { opacity: 0 },
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
@@ -42,7 +51,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <styled.Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
         {isMobile === false && <Header />}
         {isMobile === true && <MobileHeader />}
-        {children}
+        <TransitionGroup>
+          <Transition key={router.pathname} timeout={200}>
+            {(state: any) => {
+              return (
+                <div
+                  css={css`
+                    transition: opacity 200ms ease-in-out;
+                  `}
+                  style={{
+                    ...transitionStyles[state],
+                  }}
+                >
+                  {children}
+                </div>
+              )
+            }}
+          </Transition>
+        </TransitionGroup>
         <Toolbar direction="left">
           <styled.ShareBox visible={visible}>
             <styled.ShareBtn {...hoverHandlers}>
