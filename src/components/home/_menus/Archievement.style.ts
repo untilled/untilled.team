@@ -102,6 +102,7 @@ const CardBottom = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+  color: #ced4da;
   div {
     font-size: 0.8rem;
   }
