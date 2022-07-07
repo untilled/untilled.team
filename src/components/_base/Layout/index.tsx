@@ -19,9 +19,9 @@ interface LayoutProps {
 }
 
 const transitionStyles: any = {
-  entering: { opacity: 1 },
+  entering: { opacity: 0 },
   entered: { opacity: 1 },
-  exiting: { opacity: 1 },
+  exiting: { opacity: 0 },
   exited: { opacity: 0 },
 }
 

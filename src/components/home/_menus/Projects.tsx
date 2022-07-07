@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
       </Title>
       <List>아직 프로젝트가 없어요!</List>
       <BtnBox>
-        <MoreButton href="/projects">더 많은 프로젝트</MoreButton>
+        <MoreButton href="/projects">더 보기</MoreButton>
       </BtnBox>
     </Wrapper>
   )

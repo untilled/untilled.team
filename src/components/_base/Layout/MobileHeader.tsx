@@ -51,19 +51,19 @@ const MobileHeader: React.FC = () => {
           )}
         </Container>
       </Wrapper>
-      {menuOpened && (
-        <MobileMenuWrapper>
-          {menus.map((menu, idx) => (
-            <Link key={idx} href={menu.href}>
-              <a>
-                <MobileMenu selected={menu.href === router.asPath}>
-                  {menu.name}
-                </MobileMenu>
-              </a>
-            </Link>
-          ))}
-        </MobileMenuWrapper>
-      )}
+      {/* {menuOpened && ( */}
+      <MobileMenuWrapper opened={menuOpened}>
+        {menus.map((menu, idx) => (
+          <Link key={idx} href={menu.href}>
+            <a>
+              <MobileMenu selected={menu.href === router.asPath}>
+                {menu.name}
+              </MobileMenu>
+            </a>
+          </Link>
+        ))}
+      </MobileMenuWrapper>
+      {/* )} */}
     </>
   )
 }

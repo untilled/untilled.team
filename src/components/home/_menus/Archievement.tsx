@@ -25,19 +25,19 @@ const Archivement: React.FC = () => {
       <CardWrapper className="container">
         <Card>
           <CardTop>
-            <CardTitle>시작한지 🏃</CardTitle>
+            <CardTitle>시작한지</CardTitle>
             <CardSubTitle>0 일째</CardSubTitle>
           </CardTop>
         </Card>
         <Card>
           <CardTop>
-            <CardTitle>운영중인 서비스 📖</CardTitle>
+            <CardTitle>운영중인 서비스</CardTitle>
             <CardSubTitle>0 개</CardSubTitle>
           </CardTop>
         </Card>
         <Card>
           <CardTop>
-            <CardTitle>참여중인 멤버 🧑‍🤝‍🧑</CardTitle>
+            <CardTitle>참여중인 멤버</CardTitle>
             <CardSubTitle>0 명</CardSubTitle>
           </CardTop>
         </Card>
@@ -53,7 +53,7 @@ const Archivement: React.FC = () => {
                 </CardContent>
               </CardTop>
               <CardBottom>
-                <div>Web Services</div> <AiOutlineArrowRight />
+                <div></div> <AiOutlineArrowRight />
               </CardBottom>
             </Card>
           </a>
@@ -68,7 +68,7 @@ const Archivement: React.FC = () => {
                 </CardContent>
               </CardTop>
               <CardBottom>
-                <div>Mobile Services</div> <AiOutlineArrowRight />
+                <div></div> <AiOutlineArrowRight />
               </CardBottom>
             </Card>
           </a>
@@ -87,7 +87,7 @@ const Archivement: React.FC = () => {
               </CardContent>
             </CardTop>
             <CardBottom>
-              <div>Dev Blog</div> <AiOutlineArrowRight />
+              <div></div> <AiOutlineArrowRight />
             </CardBottom>
           </Card>
         </a>

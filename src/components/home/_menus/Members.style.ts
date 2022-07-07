@@ -79,7 +79,7 @@ const BtnBox = styled.div`
 const MoreButton = styled(Button)`
   padding: 15px 90px;
   ${mobile} {
-    padding: 10px 90px;
+    padding: 10px 60px;
   }
 `
 

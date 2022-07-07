@@ -16,19 +16,32 @@ const Container = styled.div`
   }
 `
 
-const MobileMenuWrapper = styled.div`
+type MobileMenuWrapperProps = {
+  opened: boolean
+}
+
+const MobileMenuWrapper = styled.div<MobileMenuWrapperProps>`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  right: 100%;
+  bottom: 100%;
   background-color: black;
   z-index: 25;
   display: flex;
+  opacity: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: opacity 300ms ease-in-out;
+  ${({ opened }) =>
+    opened &&
+    css`
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+    `}
 `
 
 type MenuProps = {
