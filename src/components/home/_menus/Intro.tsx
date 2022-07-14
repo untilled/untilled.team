@@ -5,17 +5,13 @@ import {
   Title,
   Subtitle,
   Bottom,
-  Span,
   TextCircleCss,
-  CircleInner,
 } from './Intro.style'
 import TextCircle from 'components/home/_shared/TextCircle'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { isMobileState } from 'states'
 import BackgroundVideos from '../_shared/BackgroundVideos'
-import Image from 'next/image'
-import imageLoader from 'libs/loader'
 import WordSlider from 'components/_shared/WordSlider'
 
 // const words = ['Worlds🌏', 'Products😻', 'Designers👨‍🎨', 'Developers🧑‍💻']
