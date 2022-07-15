@@ -3,15 +3,24 @@ import Gradient from 'components/_shared/Gradient'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  .intro {
-    position: relative;
+  .box {
     height: 600px;
-    padding: 100px 0;
-    display: flex;
-    align-items: center;
+    &.grey {
+      background-color: #212529;
+    }
+    &.intro {
+      padding: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    &.channel {
+      padding: 20px;
+      text-align: center;
+    }
   }
-  .desc {
-    height: 100vh;
+  .channel {
+    height: 600px;
   }
 `
 
