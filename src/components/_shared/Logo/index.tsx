@@ -29,23 +29,19 @@ const Logo: React.FC<LogoProps> = ({
 
 const Wrapper = styled.div`
   width: fit-content;
-  padding: 5px 10px;
-  background-color: ${({ color }) =>
-    color === 'white' ? 'white' : color === 'black' ? 'black' : '#212529'};
+  padding: 2px 5px;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
+  font-style: italic;
   div {
-    color: ${({ color }) =>
-      color === 'white' ? 'black' : color === 'black' ? 'white' : 'white'};
-    border-top: 5px solid
-      ${({ color }) => (color === 'white' ? 'black' : 'white')};
+    color: ${({ color }) => color};
+    border-top: 5px solid ${({ color }) => color};
   }
   ${mobile} {
-    font-size: 1rem;
+    font-size: 1.2rem;
     div {
-      border-top: 3px solid
-        ${({ color }) => (color === 'white' ? 'black' : 'white')};
+      border-top: 3px solid ${({ color }) => color};
     }
   }
 `

@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
       <Content className="container">
         <Top>
           <TopLeft>
-            <Logo color="gray" />
+            <Logo color="white" />
             <Menus>
               {menus.map((menu, idx) => (
                 <Link key={idx} href={menu.href}>
