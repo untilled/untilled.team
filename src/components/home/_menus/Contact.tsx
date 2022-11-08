@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
           <h1>언틸드와 함께 프로젝트를 진행해 보세요</h1>
         </Title>
         <ContentBottom>
-          <Button color="white" href="mailto:morethanmin.dev@gmail.com">
+          <Button color="white" href="https://open.kakao.com/o/sv92htLe">
             Contact
           </Button>
           <Button color="gray_2">Share</Button>
