@@ -1,39 +1,39 @@
 import * as styled from './index.style'
 import Cursor from 'components/_shared/Cursor'
 import Footer from 'components/_shared/Footer'
-import useMobile from 'hooks/useMobile'
+import useMobileEffect from 'hooks/useMobileEffect'
 import { useRouter } from 'next/router'
-import React, { useEffect, useRef } from 'react'
-import { useRecoilValue } from 'recoil'
+import React, { useEffect, useRef, useState } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { isMobileState, isVisibleFooterState, pageState } from 'states'
 import Header from './Header'
 import MobileHeader from './MobileHeader'
 import Toolbar from 'components/_shared/Toolbar'
 import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
-import { Transition, TransitionGroup } from 'react-transition-group'
+import {
+  CSSTransition,
+  SwitchTransition,
+  Transition,
+  TransitionGroup,
+} from 'react-transition-group'
 import { css } from '@emotion/react'
 
 interface LayoutProps {
   children: any
 }
 
-const transitionStyles: any = {
-  entering: { opacity: 0 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 },
-}
-
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isVisibleFooter = useRecoilValue(isVisibleFooterState)
+  const isMobile = useRecoilValue(isMobileState)
+
   const router = useRouter()
   const wrapperRef = useRef<HTMLDivElement>(null)
+  const mainRef = useRef<HTMLDivElement>(null)
   const page = useRecoilValue(pageState)
   const hoverHandlers = useMouseHover()
   const isHome = page !== null
-  const isMobile = useRecoilValue(isMobileState)
-  useMobile()
+  useMobileEffect()
 
   //페이지를 사용하지 않으면서 footer 가 안보이거나, page를 사용하는 페이지 이면서 footer 페이지가 아니거나
   const visible =
@@ -54,18 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <TransitionGroup>
           <Transition key={router.pathname} timeout={200}>
             {(state: any) => {
-              return (
-                <div
-                  css={css`
-                    transition: opacity 200ms ease-in-out;
-                  `}
-                  style={{
-                    ...transitionStyles[state],
-                  }}
-                >
-                  {children}
-                </div>
-              )
+              return <div className={`main ${state}`}>{children}</div>
             }}
           </Transition>
         </TransitionGroup>

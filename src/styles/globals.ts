@@ -53,4 +53,20 @@ export const globalStyles = css`
       font-size: 40px;
     }
   }
+
+  .main {
+    transition: opacity 200ms ease-in-out;
+    &.entering {
+      opacity: 0;
+    }
+    &.entered {
+      opacity: 1;
+    }
+    &.exiting {
+      opacity: 0;
+    }
+    &.exited {
+      opacity: 0;
+    }
+  }
 `

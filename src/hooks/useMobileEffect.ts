@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil'
 import { isMobileState } from 'states'
 
 // 모바일 크기인지 확인하는 hook
-function useMobile() {
+function useMobileEffect() {
   const [isMobile, setIsMobile] = useRecoilState(isMobileState)
 
   const checkIsMobile = () => {
@@ -28,4 +28,4 @@ function useMobile() {
   return null
 }
 
-export default useMobile
+export default useMobileEffect
