@@ -1,6 +1,6 @@
-import TabMenu from 'components/_shared/TabMenu'
+import TabMenu from 'components/_common/TabMenu'
 import { useState } from 'react'
-import { Wrapper, Title, Cards, Card } from './index.style'
+import * as Styled from './index.styled'
 
 interface ProjectsProps {}
 
@@ -27,11 +27,11 @@ const Projects: React.FC<ProjectsProps> = () => {
   }
 
   return (
-    <Wrapper>
-      <Title className="container">Our Projects</Title>
+    <Styled.Wrapper>
+      <Styled.Title className="container">Our Projects</Styled.Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
-      <Cards className="container">아직 프로젝트가 없어요!</Cards>
-    </Wrapper>
+      <Styled.Cards className="container">아직 프로젝트가 없어요!</Styled.Cards>
+    </Styled.Wrapper>
   )
 }
 

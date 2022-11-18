@@ -1,16 +1,8 @@
-import {
-  Wrapper,
-  Title,
-  MemberList,
-  MemberWrapper,
-  MemberImage,
-  MemberName,
-  MemberDesc,
-} from './index.style'
+import * as Styled from './index.styled'
 import React, { useState } from 'react'
-import TabMenu from 'components/_shared/TabMenu'
+import TabMenu from 'components/_common/TabMenu'
 import { members } from 'constants/members'
-import Member from 'components/_shared/Member'
+import Member from 'components/_common/Member'
 
 interface MembersProps {}
 
@@ -41,21 +33,21 @@ const Members: React.FC<MembersProps> = () => {
       ? members
       : members.filter((member) => member.role === selectedMenu)
   return (
-    <Wrapper>
-      <Title className="container">Our Members</Title>
+    <Styled.Wrapper>
+      <Styled.Title className="container">Our Members</Styled.Title>
       <TabMenu data={menus} selectedMenu={selectedMenu} onClick={handleClick} />
-      <MemberList className="container">
+      <Styled.MemberList className="container">
         {filteredMembers.map((member, idx) => (
-          <MemberWrapper key={idx}>
-            <MemberImage>
+          <Styled.MemberWrapper key={idx}>
+            <Styled.MemberImage>
               <Member data={member.images} size={200} />
-            </MemberImage>
-            <MemberName>{member.name}</MemberName>
-            <MemberDesc>{member.desc}</MemberDesc>
-          </MemberWrapper>
+            </Styled.MemberImage>
+            <Styled.MemberName>{member.name}</Styled.MemberName>
+            <Styled.MemberDesc>{member.desc}</Styled.MemberDesc>
+          </Styled.MemberWrapper>
         ))}
-      </MemberList>
-    </Wrapper>
+      </Styled.MemberList>
+    </Styled.Wrapper>
   )
 }
 

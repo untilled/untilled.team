@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
-import { isMouseHoveredState } from 'states'
+import { isMouseHoveredState } from 'atoms'
 
-//
-function useHoverHandlers(): {
+function useMouseHover(): {
   onMouseOver: React.MouseEventHandler
   onMouseOut: React.MouseEventHandler
 } {
@@ -21,4 +20,4 @@ function useHoverHandlers(): {
   return { onMouseOver, onMouseOut }
 }
 
-export default useHoverHandlers
+export default useMouseHover

@@ -1,6 +1,6 @@
-import BackgroundVideos from 'components/home/_shared/BackgroundVideos'
-import Gradient from 'components/_shared/Gradient'
-import { Wrapper, StyledGradient, Title } from './index.style'
+import BackgroundVideos from 'components/home/_common/BackgroundVideos'
+import Gradient from 'components/_common/Gradient'
+import { Wrapper, StyledGradient, Title } from './index.styled'
 
 interface ContactProps {}
 

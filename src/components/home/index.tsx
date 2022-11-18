@@ -1,54 +1,43 @@
-import {
-  Wrapper,
-  PageMenu,
-  MenuHeader,
-  Menu,
-  ArrowList,
-  Arrow,
-  ShareMessage,
-} from './index.style'
+import * as Styled from './index.styled'
 import React, { useEffect } from 'react'
-import FullPage from './_shared/FullPage'
+import FullPage from './_common/FullPage'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { isMobileState, pageState } from 'states'
+import { useRecoilState } from 'recoil'
+import { pageState } from 'atoms'
 
-import Intro from 'components/home/_menus/Intro'
-import About from 'components/home/_menus/About'
-import Archivement from 'components/home/_menus/Archievement'
-import Projects from 'components/home/_menus/Projects'
-import Members from 'components/home/_menus/Members'
-import Contact from 'components/home/_menus/Contact'
-import Footer from 'components/_shared/Footer'
-import Toolbar from 'components/_shared/Toolbar'
-import PreloadImg from 'components/_shared/PreloadImg'
+import * as Menus from './_menus'
+import Footer from 'components/_common/Footer'
+import Toolbar from 'components/_common/Toolbar'
+import PreloadImg from 'components/_common/PreloadImg'
 import useMouseHover from 'hooks/useMouseHover'
 import { members } from 'constants/members'
+import useMediaQuery from 'hooks/useMediaQuery'
+import { breakpoints } from 'styles/media'
 
 const pages = [
   {
     name: '',
-    component: Intro,
+    component: Menus.Introduce,
   },
   {
     name: 'About',
-    component: About,
+    component: Menus.About,
   },
   {
     name: 'Archivement',
-    component: Archivement,
+    component: Menus.Archivement,
   },
   {
     name: 'Projects',
-    component: Projects,
+    component: Menus.Projects,
   },
   {
     name: 'Members',
-    component: Members,
+    component: Menus.Members,
   },
   {
     name: 'Contact',
-    component: Contact,
+    component: Menus.Contact,
   },
   {
     name: '',
@@ -60,7 +49,7 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
   const [page, setPage] = useRecoilState(pageState)
-  const isMobile = useRecoilValue(isMobileState)
+  const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
   const hoverHandlers = useMouseHover()
 
   useEffect(() => {
@@ -92,10 +81,10 @@ const Home: React.FC<HomeProps> = () => {
   )
 
   return (
-    <Wrapper>
+    <Styled.Wrapper>
       {/* message toolbar */}
       <Toolbar direction="left">
-        <ShareMessage
+        <Styled.ShareMessage
           href={
             page === 0
               ? 'https://github.com/untilled/untilled'
@@ -109,34 +98,44 @@ const Home: React.FC<HomeProps> = () => {
             'Please visit and star this repository! 😎'}
           {(page === 3 || page === 4 || page === 5 || page === 6) &&
             'We are recruiting members! 🥰'}
-        </ShareMessage>
+        </Styled.ShareMessage>
       </Toolbar>
       {/* menu toolbar */}
       <Toolbar direction="right" align="start">
-        <PageMenu accented={page === 4}>
-          <MenuHeader>{page !== null ? pages[page].name : ''}</MenuHeader>
+        <Styled.PageMenu accented={page === 4}>
+          <Styled.MenuHeader>
+            {page !== null ? pages[page].name : ''}
+          </Styled.MenuHeader>
           {pages.map((menu, idx) => (
-            <Menu
+            <Styled.Menu
               selected={page === idx}
               key={idx}
               onClick={() => setPage(idx)}
             >
               <div>{menu.name}</div>
-            </Menu>
+            </Styled.Menu>
           ))}
-        </PageMenu>
+        </Styled.PageMenu>
       </Toolbar>
       {/* arrow toolbar */}
       <Toolbar direction="right">
-        <ArrowList visible={page !== null && page !== 6}>
-          <Arrow activated={page !== 0} onClick={handlePrev} {...hoverHandlers}>
+        <Styled.ArrowList visible={page !== null && page !== 6}>
+          <Styled.Arrow
+            activated={page !== 0}
+            onClick={handlePrev}
+            {...hoverHandlers}
+          >
             <MdKeyboardArrowUp />
-          </Arrow>
+          </Styled.Arrow>
           {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
-          <Arrow activated={true} onClick={handleNext} {...hoverHandlers}>
+          <Styled.Arrow
+            activated={true}
+            onClick={handleNext}
+            {...hoverHandlers}
+          >
             <MdKeyboardArrowDown />
-          </Arrow>
-        </ArrowList>
+          </Styled.Arrow>
+        </Styled.ArrowList>
       </Toolbar>
       <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
         {pages.map((page, idx) => (
@@ -144,7 +143,7 @@ const Home: React.FC<HomeProps> = () => {
         ))}
       </FullPage>
       <PreloadImg data={preloadMembersData} />
-    </Wrapper>
+    </Styled.Wrapper>
   )
 }
 
