@@ -19,12 +19,10 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <StyledWrapper color={color} {...hoverHandlers}>
       <Link href="/">
-
         <div>Untilled.</div>
-
       </Link>
     </StyledWrapper>
-  );
+  )
 }
 
 const StyledWrapper = styled.div`
@@ -35,13 +33,13 @@ const StyledWrapper = styled.div`
   cursor: pointer;
   font-style: italic;
   div {
-    color: ${({ color }) => color};
-    border-top: 5px solid ${({ color }) => color};
+    color: ${({ color }: { color: any }) => color};
+    border-top: 5px solid ${({ color }: { color: any }) => color};
   }
   ${mobile} {
     font-size: 1.2rem;
     div {
-      border-top: 3px solid ${({ color }) => color};
+      border-top: 3px solid ${({ color }: { color: any }) => color};
     }
   }
 `

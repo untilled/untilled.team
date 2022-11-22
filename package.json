@@ -23,6 +23,7 @@
     "recoil": "^0.7.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.2",
     "@emotion/babel-plugin": "^11.9.2",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@testing-library/dom": "^8.11.3",
@@ -46,5 +47,6 @@
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
     "typescript": "4.5.5"
-  }
+  },
+  "packageManager": "yarn@3.3.0"
 }

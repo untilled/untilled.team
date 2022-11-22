@@ -4,6 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
@@ -26,6 +33,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -40,4 +48,3 @@ yarn-error.log*
 # firebase
 .firebase
 
-.env
