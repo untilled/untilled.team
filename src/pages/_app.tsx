@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Global } from '@emotion/react'
 
 import { globalStyles } from 'styles/globals'
-import Layout from 'containers/base'
+import Layout from 'components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
