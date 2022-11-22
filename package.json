@@ -8,7 +8,7 @@
     "build": "next build",
     "generate": "next build && next export",
     "deploy:dev": "firebase login --no-localhost && firebase deploy --only hosting:untilled",
-    "deploy:prod": "firebase deploy --only hosting:morethanmin --token $FIREBASE_TOKEN",
+    "deploy:prod": "firebase deploy --only hosting:untilled --token $FIREBASE_TOKEN",
     "lint": "next lint",
     "test": "jest --watch",
     "test:ci": "jest --ci"
