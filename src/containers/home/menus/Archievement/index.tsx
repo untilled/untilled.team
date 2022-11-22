@@ -34,34 +34,34 @@ const Archivement: React.FC = () => {
       </Styled.CardWrapper>
       <Styled.CardWrapper className="container">
         <Link href="/projects">
-          <a>
-            <Styled.Card>
-              <Styled.CardTop>
-                <Styled.CardTitle>Web Development</Styled.CardTitle>
-                <Styled.CardContent>
-                  최신 기술을 사용해 웹 서비스를 개발하고 운영합니다.
-                </Styled.CardContent>
-              </Styled.CardTop>
-              <Styled.CardBottom>
-                <div></div> <AiOutlineArrowRight />
-              </Styled.CardBottom>
-            </Styled.Card>
-          </a>
+
+          <Styled.Card>
+            <Styled.CardTop>
+              <Styled.CardTitle>Web Development</Styled.CardTitle>
+              <Styled.CardContent>
+                최신 기술을 사용해 웹 서비스를 개발하고 운영합니다.
+              </Styled.CardContent>
+            </Styled.CardTop>
+            <Styled.CardBottom>
+              <div></div> <AiOutlineArrowRight />
+            </Styled.CardBottom>
+          </Styled.Card>
+
         </Link>
         <Link href="/projects">
-          <a>
-            <Styled.Card>
-              <Styled.CardTop>
-                <Styled.CardTitle>Mobile Development</Styled.CardTitle>
-                <Styled.CardContent>
-                  모바일 서비스도 같이 개발하고 운영하고 있어요.
-                </Styled.CardContent>
-              </Styled.CardTop>
-              <Styled.CardBottom>
-                <div></div> <AiOutlineArrowRight />
-              </Styled.CardBottom>
-            </Styled.Card>
-          </a>
+
+          <Styled.Card>
+            <Styled.CardTop>
+              <Styled.CardTitle>Mobile Development</Styled.CardTitle>
+              <Styled.CardContent>
+                모바일 서비스도 같이 개발하고 운영하고 있어요.
+              </Styled.CardContent>
+            </Styled.CardTop>
+            <Styled.CardBottom>
+              <div></div> <AiOutlineArrowRight />
+            </Styled.CardBottom>
+          </Styled.Card>
+
         </Link>
         <a
           href="https://morethan-log.vercel.app/"
@@ -83,7 +83,7 @@ const Archivement: React.FC = () => {
         </a>
       </Styled.CardWrapper>
     </Styled.Wrapper>
-  )
+  );
 }
 
 export default Archivement

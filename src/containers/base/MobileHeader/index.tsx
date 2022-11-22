@@ -18,47 +18,45 @@ const MobileHeader: React.FC = () => {
     setMenuOpened(false)
   }, [router])
 
-  return (
-    <>
-      <Styled.Wrapper>
-        <Styled.Container className="container">
-          {menuOpened === false && (
-            <>
-              <Logo />
-              <div>
-                <Styled.MenuOpenBtn onClick={() => handleMenuOpened(true)}>
-                  <AiOutlineMenu />
-                </Styled.MenuOpenBtn>
-              </div>
-            </>
-          )}
-          {menuOpened === true && (
-            <>
-              <div></div>
-              <div>
-                <Styled.MenuOpenBtn onClick={() => handleMenuOpened(false)}>
-                  <AiOutlineClose />
-                </Styled.MenuOpenBtn>
-              </div>
-            </>
-          )}
-        </Styled.Container>
-      </Styled.Wrapper>
-      {/* {menuOpened && ( */}
-      <Styled.MobileMenuWrapper opened={menuOpened}>
-        {menus.map((menu, idx) => (
-          <Link key={idx} href={menu.href}>
-            <a>
-              <Styled.MobileMenu selected={menu.href === router.asPath}>
-                {menu.name}
-              </Styled.MobileMenu>
-            </a>
-          </Link>
-        ))}
-      </Styled.MobileMenuWrapper>
-      {/* )} */}
-    </>
-  )
+  return <>
+    <Styled.Wrapper>
+      <Styled.Container className="container">
+        {menuOpened === false && (
+          <>
+            <Logo />
+            <div>
+              <Styled.MenuOpenBtn onClick={() => handleMenuOpened(true)}>
+                <AiOutlineMenu />
+              </Styled.MenuOpenBtn>
+            </div>
+          </>
+        )}
+        {menuOpened === true && (
+          <>
+            <div></div>
+            <div>
+              <Styled.MenuOpenBtn onClick={() => handleMenuOpened(false)}>
+                <AiOutlineClose />
+              </Styled.MenuOpenBtn>
+            </div>
+          </>
+        )}
+      </Styled.Container>
+    </Styled.Wrapper>
+    {/* {menuOpened && ( */}
+    <Styled.MobileMenuWrapper opened={menuOpened}>
+      {menus.map((menu, idx) => (
+        (<Link key={idx} href={menu.href}>
+
+          <Styled.MobileMenu selected={menu.href === router.asPath}>
+            {menu.name}
+          </Styled.MobileMenu>
+
+        </Link>)
+      ))}
+    </Styled.MobileMenuWrapper>
+    {/* )} */}
+  </>;
 }
 
 export default MobileHeader

@@ -38,11 +38,11 @@ const Footer: React.FC = () => {
             <Logo color="white" />
             <Styled.Menus>
               {menus.map((menu, idx) => (
-                <Link key={idx} href={menu.href}>
-                  <a>
-                    <div>{menu.name}</div>
-                  </a>
-                </Link>
+                (<Link key={idx} href={menu.href}>
+
+                  <div>{menu.name}</div>
+
+                </Link>)
               ))}
             </Styled.Menus>
           </Styled.TopLeft>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
         </Styled.Bottom>
       </Styled.Content>
     </Styled.Wrapper>
-  )
+  );
 }
 
 export default Footer

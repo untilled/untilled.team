@@ -15,21 +15,21 @@ const Header: React.FC = () => {
         <Logo color="white" />
         <Styled.Right>
           {menus.map((menu, idx) => (
-            <Link key={idx} href={menu.href}>
-              <a>
-                <Styled.Menu
-                  selected={menu.href === router.asPath}
-                  {...hoverHandlers}
-                >
-                  {menu.name}
-                </Styled.Menu>
-              </a>
-            </Link>
+            (<Link key={idx} href={menu.href}>
+
+              <Styled.Menu
+                selected={menu.href === router.asPath}
+                {...hoverHandlers}
+              >
+                {menu.name}
+              </Styled.Menu>
+
+            </Link>)
           ))}
         </Styled.Right>
       </Styled.Container>
     </Styled.Wrapper>
-  )
+  );
 }
 
 export default Header

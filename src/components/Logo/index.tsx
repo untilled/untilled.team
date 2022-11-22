@@ -19,12 +19,12 @@ const Logo: React.FC<LogoProps> = ({
   return (
     <StyledWrapper color={color} {...hoverHandlers}>
       <Link href="/">
-        <a>
-          <div>Untilled.</div>
-        </a>
+
+        <div>Untilled.</div>
+
       </Link>
     </StyledWrapper>
-  )
+  );
 }
 
 const StyledWrapper = styled.div`
