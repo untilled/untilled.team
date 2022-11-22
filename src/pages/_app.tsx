@@ -1,9 +1,10 @@
-import { globalStyles } from 'styles/globals'
-import { Global } from '@emotion/react'
-import { RecoilRoot } from 'recoil'
 import type { AppProps } from 'next/app'
-import Layout from 'components/_base'
+import { RecoilRoot } from 'recoil'
 import Head from 'next/head'
+import { Global } from '@emotion/react'
+
+import { globalStyles } from 'styles/globals'
+import Layout from 'containers/base'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

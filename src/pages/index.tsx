@@ -1,4 +1,4 @@
-import Home from 'components/home'
+import Home from 'containers/home'
 import type { NextPage } from 'next'
 import React from 'react'
 

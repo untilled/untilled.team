@@ -1,4 +1,4 @@
-import Members from 'components/members'
+import Members from 'containers/members'
 import { NextPage } from 'next'
 import React from 'react'
 

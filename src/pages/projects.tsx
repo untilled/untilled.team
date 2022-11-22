@@ -1,4 +1,4 @@
-import Projects from 'components/projects'
+import Projects from 'containers/projects'
 import { NextPage } from 'next'
 import React from 'react'
 
