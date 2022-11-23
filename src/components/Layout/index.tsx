@@ -1,18 +1,21 @@
-import * as Styled from './index.styled'
-import Cursor from 'components/Cursor'
-import Footer from 'components/Footer'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef } from 'react'
 import { useRecoilValue } from 'recoil'
+import { Transition, TransitionGroup } from 'react-transition-group'
+
+import { BsFillMoonFill } from 'react-icons/bs'
+
+import * as Styled from './index.styled'
+import Cursor from 'components/Cursor'
+import Footer from 'components/Footer'
 import { isVisibleFooterState, pageState } from 'atoms'
 import MobileHeader from './MobileHeader'
 import Toolbar from 'components/Toolbar'
-import { BsFillMoonFill } from 'react-icons/bs'
 import useMouseHover from 'hooks/useMouseHover'
-import { Transition, TransitionGroup } from 'react-transition-group'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import Header from './Header'
+
 interface LayoutProps {
   children: any
 }
