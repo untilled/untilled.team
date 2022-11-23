@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     loader: 'custom',
   },
+  compiler: {
+    emotion: true,
+  },
 }
 
 module.exports = nextConfig
