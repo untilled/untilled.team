@@ -27,7 +27,7 @@ const FullPage: React.FC<FullPageProps> = ({
 
   const handleScroll = useCallback(
     (e: WheelEvent) => {
-      e.preventDefault()
+      if (!isMobile) e.preventDefault()
       //page null 예외처리
       if (page === null) return
 
@@ -45,9 +45,6 @@ const FullPage: React.FC<FullPageProps> = ({
       )
         return
 
-      const currentHeight = Math.floor(
-        nodes[page].scrollTop + nodes[page].offsetHeight
-      )
       //아래로 이동
       if (e.deltaY > 0) {
         onNext()
@@ -62,7 +59,8 @@ const FullPage: React.FC<FullPageProps> = ({
 
   const handleKeyPress = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault()
+      if (!isMobile && (e.key === 'ArrowUp' || e.key === 'ArrowDown'))
+        e.preventDefault()
       //page null 예외처리
       if (page === null) return
 
@@ -166,7 +164,6 @@ const Wrapper = styled.div`
     display: none;
   }
   ${mobile} {
-    max-height: fit-content;
     /* overflow-y: scroll; */
   }
 `
