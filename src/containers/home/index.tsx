@@ -10,10 +10,10 @@ import Footer from 'components/Footer'
 import Toolbar from 'components/Toolbar'
 import PreloadImg from 'components/PreloadImg'
 import useMouseHover from 'hooks/useMouseHover'
-import { members } from 'constants/members'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import { polyfill } from 'smoothscroll-polyfill'
+import { members } from './menus/Members'
 
 const pages = [
   {
@@ -74,9 +74,16 @@ const Home: React.FC<HomeProps> = () => {
     setPage(page - 1)
   }
 
+  // const preloadMembersData = members.reduce(
+  //   (prevVal: string[], currVal): string[] => {
+  //     return [...prevVal, ...currVal.images]
+  //   },
+  //   []
+  // )
+
   const preloadMembersData = members.reduce(
     (prevVal: string[], currVal): string[] => {
-      return [...prevVal, ...currVal.images]
+      return [...prevVal, ...currVal]
     },
     []
   )

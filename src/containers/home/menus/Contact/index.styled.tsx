@@ -6,8 +6,7 @@ const Wrapper = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding: 100px 0px 100px;
   display: flex;
   justify-content: center;
   align-items: center;

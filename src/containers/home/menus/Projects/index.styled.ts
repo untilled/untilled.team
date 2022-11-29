@@ -8,12 +8,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding: 80px 0px 40px;
 
   ${mobile} {
     height: fit-content;
-    padding-bottom: 0;
   }
 `
 

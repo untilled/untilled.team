@@ -5,10 +5,9 @@ import { mobile } from 'styles/media'
 const Wrapper = styled.div`
   height: 100vh;
   overflow: hidden;
-  padding: 80px 0px;
+  padding: 80px 0px 40px;
   ${mobile} {
     height: fit-content;
-    padding-bottom: 0;
   }
 `
 

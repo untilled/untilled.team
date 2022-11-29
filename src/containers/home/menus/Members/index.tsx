@@ -5,7 +5,7 @@ import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 
 //지금은 멤버가 없어서 임시로 넣어둠
-const members = [
+export const members = [
   ['/images/members/0.png', '/images/members/0-hover.png'],
   ['/images/members/1.png', '/images/members/1-hover.png'],
   ['/images/members/2.png', '/images/members/2-hover.png'],
