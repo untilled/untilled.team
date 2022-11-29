@@ -13,6 +13,7 @@ import useMouseHover from 'hooks/useMouseHover'
 import { members } from 'constants/members'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
+import { polyfill } from 'smoothscroll-polyfill'
 
 const pages = [
   {
@@ -79,6 +80,12 @@ const Home: React.FC<HomeProps> = () => {
     },
     []
   )
+
+  useEffect(() => {
+    if (window) {
+      polyfill()
+    }
+  }, [])
 
   return (
     <Styled.Wrapper>

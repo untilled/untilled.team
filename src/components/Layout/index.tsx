@@ -60,7 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </Styled.ShareBtn>
           </Styled.ShareBox>
         </Toolbar>
-        {router.route !== '/' && <Footer />}
+        {/* {router.route !== '/' && <Footer />} */}
       </Styled.Wrapper>
       {isMobile === false && <Cursor />}
     </>

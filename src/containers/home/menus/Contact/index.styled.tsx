@@ -3,13 +3,10 @@ import Gradient from 'components/Gradient'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  position: relative;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   height: 100vh;
+  overflow: hidden;
+  position: relative;
   padding-top: 80px;
-  overflow: scroll;
   padding-bottom: 100px;
   display: flex;
   justify-content: center;

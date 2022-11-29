@@ -3,9 +3,18 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  padding: 100px 0;
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .content {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Title = styled.h1`

@@ -3,12 +3,9 @@ import Tag from 'components/Tag'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  &::-webkit-scrollbar {
-    display: none;
-  }
   height: 100vh;
+  overflow: hidden;
   padding: 80px 0px;
-  overflow: scroll;
   ${mobile} {
     height: fit-content;
     padding-bottom: 0;

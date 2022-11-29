@@ -2,20 +2,17 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   height: 100vh;
+  overflow: hidden;
   padding-top: 80px;
-  ${mobile} {
-    height: fit-content;
-    padding-bottom: 0;
-  }
   display: flex;
   flex-direction: column;
   padding-bottom: 40px;
   gap: 80px;
+  ${mobile} {
+    height: fit-content;
+    padding-bottom: 0;
+  }
 `
 const Title = styled.div`
   display: flex;

@@ -3,14 +3,11 @@ import Button from 'components/Button'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   width: 100vw;
-  height: 100vh;
   padding-top: 80px;
   padding-bottom: 40px;
 
