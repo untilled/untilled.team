@@ -10,12 +10,6 @@ type ShareBox = {
 }
 export const Wrapper = styled.div<Wrapper>`
   overflow-x: hidden;
-  overflow-y: scroll;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -23,11 +17,7 @@ export const Wrapper = styled.div<Wrapper>`
   display: grid;
   grid-template-rows: 1fr auto;
 
-  ${(props) =>
-    props.isScrollHidden &&
-    css`
-      overflow: hidden;
-    `}
+  ${(props) => props.isScrollHidden && css``}
   ${mobile} {
     display: block;
   }

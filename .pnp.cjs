@@ -40,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.19"],\
             ["@types/react", "npm:18.0.25"],\
             ["@types/react-transition-group", "npm:4.4.5"],\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@yarnpkg/sdks", "npm:3.0.0-rc.31"],\
             ["babel-jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.5.1"],\
             ["eslint", "npm:8.9.0"],\
@@ -57,6 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:4.6.0"],\
             ["react-transition-group", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:4.4.5"],\
             ["recoil", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:0.7.6"],\
+            ["smoothscroll-polyfill", "npm:0.4.4"],\
             ["ts-jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.1.5"],\
             ["ts-loader", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:9.4.1"],\
             ["ts-node", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:10.9.1"],\
@@ -2587,6 +2589,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-semver-npm-7.3.13-56212b60da-00c0724d54.zip/node_modules/@types/semver/",\
           "packageDependencies": [\
             ["@types/semver", "npm:7.3.13"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/smoothscroll-polyfill", [\
+        ["npm:0.3.1", {\
+          "packageLocation": "./.yarn/cache/@types-smoothscroll-polyfill-npm-0.3.1-4930c615ad-871a5b556c.zip/node_modules/@types/smoothscroll-polyfill/",\
+          "packageDependencies": [\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12143,6 +12154,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["smoothscroll-polyfill", [\
+        ["npm:0.4.4", {\
+          "packageLocation": "./.yarn/cache/smoothscroll-polyfill-npm-0.4.4-69b5bb4bf7-b99ff7d916.zip/node_modules/smoothscroll-polyfill/",\
+          "packageDependencies": [\
+            ["smoothscroll-polyfill", "npm:0.4.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["socks", [\
         ["npm:2.7.1", {\
           "packageLocation": "./.yarn/cache/socks-npm-2.7.1-17f2b53052-259d9e3e8e.zip/node_modules/socks/",\
@@ -13320,6 +13340,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.19"],\
             ["@types/react", "npm:18.0.25"],\
             ["@types/react-transition-group", "npm:4.4.5"],\
+            ["@types/smoothscroll-polyfill", "npm:0.3.1"],\
             ["@yarnpkg/sdks", "npm:3.0.0-rc.31"],\
             ["babel-jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.5.1"],\
             ["eslint", "npm:8.9.0"],\
@@ -13337,6 +13358,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:4.6.0"],\
             ["react-transition-group", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:4.4.5"],\
             ["recoil", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:0.7.6"],\
+            ["smoothscroll-polyfill", "npm:0.4.4"],\
             ["ts-jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.1.5"],\
             ["ts-loader", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:9.4.1"],\
             ["ts-node", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:10.9.1"],\

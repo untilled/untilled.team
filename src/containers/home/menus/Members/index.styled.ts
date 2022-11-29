@@ -3,11 +3,8 @@ import Button from 'components/Button'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  &::-webkit-scrollbar {
-    display: none;
-  }
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   padding-top: 80px;
   gap: 45px;
   display: flex;

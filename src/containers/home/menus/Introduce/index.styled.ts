@@ -3,14 +3,10 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
-  user-select: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  position: relative;
-  overflow: hidden;
-  width: 100%;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

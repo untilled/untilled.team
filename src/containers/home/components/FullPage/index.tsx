@@ -27,39 +27,33 @@ const FullPage: React.FC<FullPageProps> = ({
 
   const handleScroll = useCallback(
     (e: WheelEvent) => {
+      e.preventDefault()
       //page null 예외처리
       if (page === null) return
 
       // 스크룰 강도가 30보다 작은 경우 리턴
       if (Math.abs(e.deltaY) < 30) return
+
       // 현재 스크룰된 값과 높이값이 다른 경우 리턴
       const currentScrollTop = wrapperRef.current?.scrollTop
         ? Math.floor(wrapperRef.current?.scrollTop)
         : 0
 
       if (
-        currentScrollTop - 1 > heightList[page] ||
-        heightList[page] > currentScrollTop + 1
+        currentScrollTop - 10 > heightList[page] ||
+        heightList[page] > currentScrollTop + 10
       )
         return
+
+      const currentHeight = Math.floor(
+        nodes[page].scrollTop + nodes[page].offsetHeight
+      )
       //아래로 이동
       if (e.deltaY > 0) {
-        //스크룰 가장 아래까지 가지 않은 경우 리턴
-        const currentHeight = Math.floor(
-          nodes[page].scrollTop + nodes[page].offsetHeight
-        )
-        if (
-          currentHeight - 1 > nodes[page].scrollHeight ||
-          nodes[page].scrollHeight > currentHeight + 1
-        )
-          return
-
         onNext()
       }
       //위로 이동
       else {
-        //스크룰 가장 위까지 가지 않은 경우 리턴
-        if (nodes[page].scrollTop !== 0) return
         onPrev()
       }
     },
@@ -67,7 +61,8 @@ const FullPage: React.FC<FullPageProps> = ({
   )
 
   const handleKeyPress = useCallback(
-    (e: any) => {
+    (e: KeyboardEvent) => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault()
       //page null 예외처리
       if (page === null) return
 
@@ -143,8 +138,8 @@ const FullPage: React.FC<FullPageProps> = ({
       window.removeEventListener('keydown', handleKeyPress)
       return
     }
-    window.addEventListener('wheel', handleScroll)
-    window.addEventListener('keydown', handleKeyPress)
+    window.addEventListener('wheel', handleScroll, { passive: false })
+    window.addEventListener('keydown', handleKeyPress, { passive: false })
     return () => {
       window.removeEventListener('wheel', handleScroll)
       window.removeEventListener('keydown', handleKeyPress)
@@ -160,9 +155,13 @@ const FullPage: React.FC<FullPageProps> = ({
 }
 
 const Wrapper = styled.div`
-  max-height: 100vh;
-  overflow-y: hidden;
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   &::-webkit-scrollbar {
     display: none;
   }
