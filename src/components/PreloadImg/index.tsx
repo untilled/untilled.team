@@ -18,6 +18,7 @@ const PreloadImg: React.FC<PreloadImgProps> = ({ data }) => {
           width={1}
           height={1}
           alt=""
+          priority
         />
       ))}
     </Wrapper>

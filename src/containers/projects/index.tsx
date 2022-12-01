@@ -16,7 +16,7 @@ const menus = [
   },
   {
     id: 2,
-    name: 'Mobile app',
+    name: 'Mobile',
   },
 ]
 

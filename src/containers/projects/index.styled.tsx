@@ -24,6 +24,9 @@ const Title = styled.h1`
   width: 100%;
   margin-bottom: 40px;
   text-align: center;
+  ${mobile} {
+    font-size: 2.6rem;
+  }
 `
 
 const Cards = styled.div`
@@ -42,7 +45,7 @@ const Cards = styled.div`
   font-weight: 200;
   max-width: 1024px;
   ${mobile} {
-    border-radius: 0;
+    border: none;
   }
 `
 const Card = styled.div`

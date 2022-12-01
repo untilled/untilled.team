@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <Styled.Card>
             <Styled.CardHeader>Service</Styled.CardHeader>
             <Styled.CardTitle>
-              발전적인 서비스를 <br /> 만들고 운영해요👽
+              발전적인 서비스를 <br /> 만들고 운영해요. 👽
             </Styled.CardTitle>
             <Styled.CardContent>
               단순한 토이 프로젝트가 아닌 실제 서비스를 만들고 운영하고 있어요.
@@ -35,7 +35,7 @@ const About: React.FC = () => {
             {/* Team */}
             <Styled.CardHeader>Team</Styled.CardHeader>
             <Styled.CardTitle>
-              성장을 원하는 <br /> 팀원들과 함께해요🙋‍♂️
+              성장을 원하는 <br /> 팀원들과 함께해요. 🙋‍♂️
             </Styled.CardTitle>
             <Styled.CardContent>
               장소, 나이, 성별등에 제약 받지않고 다양한 사람이 함께하고 있어요.
@@ -47,7 +47,7 @@ const About: React.FC = () => {
             {/* Global */}
             <Styled.CardHeader>Global</Styled.CardHeader>
             <Styled.CardTitle>
-              플랫폼에는 국경이 <br /> 없다고 믿고 있어요🌏
+              플랫폼에는 국경이 <br /> 없다고 믿고 있어요. 🌏
             </Styled.CardTitle>
             <Styled.CardContent>
               이용하는 사람에게도 어떠한 제약도 없이 누구든지 이용할 수 있는

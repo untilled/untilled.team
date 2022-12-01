@@ -25,6 +25,9 @@ const Title = styled.h1`
   width: 100%;
   margin-bottom: 40px;
   text-align: center;
+  ${mobile} {
+    font-size: 2.6rem;
+  }
 `
 const MemberList = styled.div`
   display: flex;
@@ -33,6 +36,7 @@ const MemberList = styled.div`
   gap: 40px;
   flex-wrap: wrap;
   ${mobile} {
+    padding: 0 15px;
     justify-content: center;
   }
 `

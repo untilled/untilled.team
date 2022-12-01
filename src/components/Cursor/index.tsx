@@ -151,7 +151,7 @@ const cursor = css`
   transform: translate(-50%, -50%);
   opacity: 0;
   border-radius: 50%;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 `
 
 const CursorDotOutline = styled.div`

@@ -14,11 +14,11 @@ const menus = [
   },
   {
     id: 1,
-    name: 'Developers',
+    name: 'Developer',
   },
   {
     id: 2,
-    name: 'Designers',
+    name: 'Designer',
   },
 ]
 

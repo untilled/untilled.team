@@ -34,10 +34,9 @@ const Archivement: React.FC = () => {
       </Styled.CardWrapper>
       <Styled.CardWrapper className="container">
         <Link href="/projects">
-
           <Styled.Card>
             <Styled.CardTop>
-              <Styled.CardTitle>Web Development</Styled.CardTitle>
+              <Styled.CardTitle>Web Development 🌏</Styled.CardTitle>
               <Styled.CardContent>
                 최신 기술을 사용해 웹 서비스를 개발하고 운영합니다.
               </Styled.CardContent>
@@ -46,13 +45,11 @@ const Archivement: React.FC = () => {
               <div></div> <AiOutlineArrowRight />
             </Styled.CardBottom>
           </Styled.Card>
-
         </Link>
         <Link href="/projects">
-
           <Styled.Card>
             <Styled.CardTop>
-              <Styled.CardTitle>Mobile Development</Styled.CardTitle>
+              <Styled.CardTitle>Mobile Development 📱</Styled.CardTitle>
               <Styled.CardContent>
                 모바일 서비스도 같이 개발하고 운영하고 있어요.
               </Styled.CardContent>
@@ -61,7 +58,6 @@ const Archivement: React.FC = () => {
               <div></div> <AiOutlineArrowRight />
             </Styled.CardBottom>
           </Styled.Card>
-
         </Link>
         <a
           href="https://morethan-log.vercel.app/"
@@ -70,7 +66,7 @@ const Archivement: React.FC = () => {
         >
           <Styled.Card>
             <Styled.CardTop>
-              <Styled.CardTitle>Develop Activity</Styled.CardTitle>
+              <Styled.CardTitle>Develop Activity 📝</Styled.CardTitle>
               <Styled.CardContent>
                 다양한 개발 활동을 진행하고 있어요. 자세한 내용은 블로그를
                 확인해보세요.
@@ -83,7 +79,7 @@ const Archivement: React.FC = () => {
         </a>
       </Styled.CardWrapper>
     </Styled.Wrapper>
-  );
+  )
 }
 
 export default Archivement
