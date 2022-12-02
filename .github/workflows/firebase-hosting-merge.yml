@@ -11,8 +11,8 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn install
+      # - name: Install dependencies
+      #   run: yarn install
 
       - name: Generate
         run: yarn generate
