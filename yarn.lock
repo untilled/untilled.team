@@ -1223,10 +1223,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/swc-linux-x64-gnu@npm:^11.1.2":
+  version: 11.1.4
+  resolution: "@next/swc-linux-x64-gnu@npm:11.1.4"
+  checksum: fbe748fa5c6c5abd601a6c1edc323b2617e7e68973bfd5fded5b7cf216dbc7c04db229b08f5b60c00d462c473801f664164182e59f46ea29ce1eeb548e6793b5
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@next/swc-linux-x64-musl@npm:13.0.4":
   version: 13.0.4
   resolution: "@next/swc-linux-x64-musl@npm:13.0.4"
   conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@next/swc-linux-x64-musl@npm:^11.1.3-canary.104":
+  version: 11.1.3-canary.104
+  resolution: "@next/swc-linux-x64-musl@npm:11.1.3-canary.104"
+  checksum: 0301971f49459cf4e3f7859fa3d3d4b59d8898fe5385e653ea0314c1281b165d225dcaddee07ca1c25e9eb92496a0c63ad1ba96e663d7a959d1a812456e65435
+  conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
@@ -11222,6 +11238,8 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.2.0
     "@emotion/react": ^11.8.1
     "@emotion/styled": ^11.8.1
+    "@next/swc-linux-x64-gnu": ^11.1.2
+    "@next/swc-linux-x64-musl": ^11.1.3-canary.104
     "@testing-library/dom": ^8.11.3
     "@testing-library/jest-dom": ^5.16.2
     "@testing-library/react": ^12.1.3

@@ -33,6 +33,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.0"],\
             ["@emotion/react", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.5"],\
             ["@emotion/styled", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.5"],\
+            ["@next/swc-linux-x64-gnu", "npm:11.1.4"],\
+            ["@next/swc-linux-x64-musl", "npm:11.1.3-canary.104"],\
             ["@testing-library/dom", "npm:8.19.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:12.1.5"],\
@@ -1843,6 +1845,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@next/swc-linux-x64-gnu", [\
+        ["npm:11.1.4", {\
+          "packageLocation": "./.yarn/unplugged/@next-swc-linux-x64-gnu-npm-11.1.4-717e2e677d/node_modules/@next/swc-linux-x64-gnu/",\
+          "packageDependencies": [\
+            ["@next/swc-linux-x64-gnu", "npm:11.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:13.0.4", {\
           "packageLocation": "./.yarn/unplugged/@next-swc-linux-x64-gnu-npm-13.0.4-62697d6f12/node_modules/@next/swc-linux-x64-gnu/",\
           "packageDependencies": [\
@@ -1852,6 +1861,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@next/swc-linux-x64-musl", [\
+        ["npm:11.1.3-canary.104", {\
+          "packageLocation": "./.yarn/unplugged/@next-swc-linux-x64-musl-npm-11.1.3-canary.104-ce0a90f59c/node_modules/@next/swc-linux-x64-musl/",\
+          "packageDependencies": [\
+            ["@next/swc-linux-x64-musl", "npm:11.1.3-canary.104"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:13.0.4", {\
           "packageLocation": "./.yarn/unplugged/@next-swc-linux-x64-musl-npm-13.0.4-7b53086dda/node_modules/@next/swc-linux-x64-musl/",\
           "packageDependencies": [\
@@ -13333,6 +13349,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.0"],\
             ["@emotion/react", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.5"],\
             ["@emotion/styled", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:11.10.5"],\
+            ["@next/swc-linux-x64-gnu", "npm:11.1.4"],\
+            ["@next/swc-linux-x64-musl", "npm:11.1.3-canary.104"],\
             ["@testing-library/dom", "npm:8.19.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:12.1.5"],\
