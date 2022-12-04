@@ -21,7 +21,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const isVisㄹibleFooter = useRecoilValue(isVisibleFooterState)
+  const isVisibleFooter = useRecoilValue(isVisibleFooterState)
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
 
   const router = useRouter()
