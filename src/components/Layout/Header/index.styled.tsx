@@ -34,7 +34,7 @@ const Menu = styled.div<MenuProps>`
   padding-bottom: 2px;
   color: rgba(255, 255, 255, 0.7);
 
-  ${(props:any) =>
+  ${(props: any) =>
     props.selected
       ? css`
           font-weight: 400;

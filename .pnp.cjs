@@ -44,7 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:12.1.0"],\
             ["eslint-config-prettier", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:8.5.0"],\
             ["firebase-tools", "npm:11.16.1"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:8.0.2"],\
             ["jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.5.1"],\
             ["jest-dom", "npm:4.0.0"],\
             ["next", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:13.0.4"],\
@@ -7728,10 +7728,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["husky", [\
-        ["npm:7.0.4", {\
-          "packageLocation": "./.yarn/cache/husky-npm-7.0.4-917ba035c6-c6ec4af63d.zip/node_modules/husky/",\
+        ["npm:8.0.2", {\
+          "packageLocation": "./.yarn/cache/husky-npm-8.0.2-46c70b41ed-e101656fcb.zip/node_modules/husky/",\
           "packageDependencies": [\
-            ["husky", "npm:7.0.4"]\
+            ["husky", "npm:8.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13482,7 +13482,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:12.1.0"],\
             ["eslint-config-prettier", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:8.5.0"],\
             ["firebase-tools", "npm:11.16.1"],\
-            ["husky", "npm:7.0.4"],\
+            ["husky", "npm:8.0.2"],\
             ["jest", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:27.5.1"],\
             ["jest-dom", "npm:4.0.0"],\
             ["next", "virtual:70f84c00609a6b29e72feee3635dede03db454fdc9aaa2661a39eb1ce4176f357bdad82394d89d046090bccf81b419da9ac80c00a8f3c68ff00d173add79087f#npm:13.0.4"],\
