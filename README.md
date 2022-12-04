@@ -8,14 +8,14 @@ Check out our roadmap [here](https://quasar-season-ed5.notion.site/73c06797618a4
 
 ## Tech and libraries
 
-- React (frontend library/framework)
-- Next.js (react framework)
-- Recoil (state management)
-- Typescript (language)
-- Emotion (css library)
-- Storybook (component develop tool)
-- Prettier (code formatter)
-- Eslint, Husky (code linter)
+- React
+- Next.js
+- Recoil
+- Typescript
+- Emotion
+- Storybook
+- Prettier
+- Eslint, Husky
 
 ## Contributors
 
