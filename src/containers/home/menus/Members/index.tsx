@@ -10,6 +10,7 @@ export const members = [
   ['/images/members/1.png', '/images/members/1-hover.png'],
   ['/images/members/2.png', '/images/members/2-hover.png'],
   ['/images/members/3.png', '/images/members/3-hover.png'],
+  ['/images/members/lsg.png', '/images/members/lsg-hover.png'],
   ['/images/members/4.png', '/images/members/4-hover.png'],
   ['/images/members/5.png', '/images/members/5-hover.png'],
   ['/images/members/6.png', '/images/members/6-hover.png'],

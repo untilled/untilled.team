@@ -13,10 +13,10 @@ export const members: members = [
     images: ['/images/members/1.png', '/images/members/1-hover.png'],
   },
   {
-    name: '',
+    name: 'Lee Su Gyeom',
     role: 1,
-    desc: '',
-    images: [],
+    desc: 'ios developer',
+    images: ['/images/members/lsg.png', '/images/members/lsg-hover.png'],
   },
   {
     name: '',
