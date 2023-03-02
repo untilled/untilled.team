@@ -1,16 +1,17 @@
 import * as Styled from './index.styled'
 import React from 'react'
-import Member from 'components/Member'
+import Avatar from 'components/Avatar'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
+import { members } from 'constants/members'
 
 //지금은 멤버가 없어서 임시로 넣어둠
-export const members = [
+export const memberImages = [
+  ...members.map((member) => member.images),
+  // temp data
   ['/images/members/0.png', '/images/members/0-hover.png'],
-  ['/images/members/1.png', '/images/members/1-hover.png'],
   ['/images/members/2.png', '/images/members/2-hover.png'],
   ['/images/members/3.png', '/images/members/3-hover.png'],
-  ['/images/members/lsg.png', '/images/members/lsg-hover.png'],
   ['/images/members/4.png', '/images/members/4-hover.png'],
   ['/images/members/5.png', '/images/members/5-hover.png'],
   ['/images/members/6.png', '/images/members/6-hover.png'],
@@ -19,7 +20,7 @@ export const members = [
   ['/images/members/9.png', '/images/members/9-hover.png'],
   ['/images/members/10.png', '/images/members/10.png'],
   ['/images/members/11.png', '/images/members/11-hover.png'],
-]
+].filter((member) => member.length !== 0)
 
 const Members: React.FC = () => {
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
@@ -32,27 +33,27 @@ const Members: React.FC = () => {
       </Styled.Title>
       <Styled.MemberListWrapper>
         <Styled.MemberList>
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
           ))}
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
-          ))}
-        </Styled.MemberList>
-        <Styled.MemberList>
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
-          ))}
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
           ))}
         </Styled.MemberList>
         <Styled.MemberList>
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
           ))}
-          {members.map((member, idx) => (
-            <Member key={idx} data={member} size={isMobile ? 115 : 150} />
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
+          ))}
+        </Styled.MemberList>
+        <Styled.MemberList>
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
+          ))}
+          {memberImages.map((member, idx) => (
+            <Avatar key={idx} data={member} size={isMobile ? 115 : 150} />
           ))}
         </Styled.MemberList>
       </Styled.MemberListWrapper>

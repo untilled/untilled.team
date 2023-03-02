@@ -1,8 +1,8 @@
 type members = {
-  images: string[]
   name: string
   desc: string
   role: number
+  images: string[]
 }[]
 
 export const members: members = [
@@ -10,13 +10,19 @@ export const members: members = [
     name: 'Lee Sang Min',
     role: 1,
     desc: 'frontend developer',
-    images: ['/images/members/1.png', '/images/members/1-hover.png'],
+    images: [
+      '/images/members/lee-sang-min/face.png',
+      '/images/members/lee-sang-min/face-hover.png',
+    ],
   },
   {
     name: 'Lee Su Gyeom',
     role: 1,
     desc: 'ios developer',
-    images: ['/images/members/lsg.png', '/images/members/lsg-hover.png'],
+    images: [
+      '/images/members/lee-su-gyeom/face.png',
+      '/images/members/lee-su-gyeom/face-hover.png',
+    ],
   },
   {
     name: '',

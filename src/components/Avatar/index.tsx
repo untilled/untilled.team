@@ -1,12 +1,12 @@
 import React from 'react'
 import * as Styled from './index.styled'
-interface MemberProps {
+interface AvatarProps {
   size?: number
   data: string[]
 }
 
-const Member: React.FC<MemberProps> = (props) => {
+const Avatar: React.FC<AvatarProps> = (props) => {
   return <Styled.Wrapper {...props} />
 }
 
-export default Member
+export default Avatar

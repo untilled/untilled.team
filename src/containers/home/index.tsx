@@ -8,12 +8,11 @@ import { pageState } from 'atoms'
 import * as Menus from './menus'
 import Footer from 'components/Footer'
 import Toolbar from 'components/Toolbar'
-import PreloadImg from 'components/PreloadImg'
 import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import { polyfill } from 'smoothscroll-polyfill'
-import { members } from './menus/Members'
+import { memberImages } from './menus/Members'
 
 const pages = [
   {
@@ -81,7 +80,7 @@ const Home: React.FC<HomeProps> = () => {
   //   []
   // )
 
-  const preloadMembersData = members.reduce(
+  const preloadMembersData = memberImages.reduce(
     (prevVal: string[], currVal): string[] => {
       return [...prevVal, ...currVal]
     },
@@ -156,7 +155,6 @@ const Home: React.FC<HomeProps> = () => {
           <page.component key={idx} />
         ))}
       </FullPage>
-      <PreloadImg data={preloadMembersData} />
     </Styled.Wrapper>
   )
 }

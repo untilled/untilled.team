@@ -1,6 +1,6 @@
 import * as Styled from './index.styled'
 import React, { useRef } from 'react'
-import Member from 'components/Member'
+import Avatar from 'components/Avatar'
 import { BsFillMouseFill } from 'react-icons/bs'
 import { members } from 'constants/members'
 import useMediaQuery from 'hooks/useMediaQuery'
@@ -58,7 +58,7 @@ const About: React.FC = () => {
         </Styled.CardWrapper>
         <Styled.CommentWrapper className="container">
           <Styled.CommentProfile>
-            <Member data={members[0].images} />
+            <Avatar data={members[0].images} />
             <Styled.StyledTag>Developer</Styled.StyledTag>
           </Styled.CommentProfile>
           <Styled.CommentContent>
