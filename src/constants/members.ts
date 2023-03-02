@@ -25,10 +25,13 @@ export const members: members = [
     ],
   },
   {
-    name: '',
+    name: 'Moon Young Chae',
     role: 1,
-    desc: '',
-    images: [],
+    desc: 'backend developer',
+    images: [
+      '/images/members/moon-young-chae/face.png',
+      '/images/members/moon-young-chae/face-hover.png',
+    ],
   },
   {
     name: '',
