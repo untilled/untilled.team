@@ -12,8 +12,6 @@ const Wrapper = styled.div<WrapperProps>`
   position: relative;
   width: 100%;
   height: 100%;
-  /* background-color: #212529; */
-  /* border-radius: 50%; */
   flex-shrink: 0;
   display: flex;
   justify-content: center;
