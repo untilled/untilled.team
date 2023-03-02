@@ -8,7 +8,6 @@ import Layout from 'components/Layout'
 import PreloadImage from 'hooks/PreloadImage'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
   return (
     <RecoilRoot>
       <Head>

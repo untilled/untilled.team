@@ -72,8 +72,6 @@ const Home: React.FC<HomeProps> = () => {
     setPage(page - 1)
   }
 
-
-
   useEffect(() => {
     if (window) {
       polyfill()
