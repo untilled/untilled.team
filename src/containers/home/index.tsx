@@ -12,7 +12,6 @@ import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import { polyfill } from 'smoothscroll-polyfill'
-import { memberImages } from './menus/Members'
 
 const pages = [
   {
@@ -73,19 +72,7 @@ const Home: React.FC<HomeProps> = () => {
     setPage(page - 1)
   }
 
-  // const preloadMembersData = members.reduce(
-  //   (prevVal: string[], currVal): string[] => {
-  //     return [...prevVal, ...currVal.images]
-  //   },
-  //   []
-  // )
 
-  const preloadMembersData = memberImages.reduce(
-    (prevVal: string[], currVal): string[] => {
-      return [...prevVal, ...currVal]
-    },
-    []
-  )
 
   useEffect(() => {
     if (window) {

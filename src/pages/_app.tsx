@@ -5,8 +5,10 @@ import { Global } from '@emotion/react'
 
 import { globalStyles } from 'styles/globals'
 import Layout from 'components/Layout'
+import PreloadImage from 'hooks/PreloadImage'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  
   return (
     <RecoilRoot>
       <Head>
@@ -14,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Global styles={globalStyles} />
+      <PreloadImage />
       <Layout>
         <Component {...pageProps} />
       </Layout>
