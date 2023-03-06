@@ -25,6 +25,15 @@ export const members: members = [
     ],
   },
   {
+    name: 'Moon Young Chae',
+    role: 1,
+    desc: 'backend developer',
+    images: [
+      '/images/members/moon-young-chae/face.png',
+      '/images/members/moon-young-chae/face-hover.png',
+    ],
+  },
+  {
     name: 'Yoon Eun Sik',
     role: 1,
     desc: 'frontend developer',
@@ -32,12 +41,6 @@ export const members: members = [
       '/images/members/yoon-eun-sik/face.png',
       '/images/members/yoon-eun-sik/face-hover.png',
     ],
-  },
-  {
-    name: '',
-    role: 1,
-    desc: '',
-    images: [],
   },
   {
     name: '',
