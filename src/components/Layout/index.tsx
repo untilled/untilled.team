@@ -7,8 +7,7 @@ import { BsFillMoonFill } from 'react-icons/bs'
 
 import * as Styled from './index.styled'
 import Cursor from 'components/Cursor'
-import Footer from 'components/Footer'
-import { isVisibleFooterState, pageState } from 'atoms'
+import { isVisibleFooterState } from 'atoms'
 import MobileHeader from './MobileHeader'
 import Toolbar from 'components/Toolbar'
 import useMouseHover from 'hooks/useMouseHover'
@@ -26,13 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const router = useRouter()
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const page = useRecoilValue(pageState)
   const hoverHandlers = useMouseHover()
-  const isHome = page !== null
-
-  //페이지를 사용하지 않으면서 footer 가 안보이거나, page를 사용하는 페이지 이면서 footer 페이지가 아니거나
-  const visible =
-    (page === null && !isVisibleFooter) || (page !== null && page !== 6)
 
   //페이지가 변경될 경우 스크롤 이벤트 발생
   useEffect(() => {
@@ -43,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Styled.Wrapper ref={wrapperRef} isScrollHidden={isHome && !isMobile}>
+      <Styled.Wrapper ref={wrapperRef}>
         {isMobile === false && <Header />}
         {isMobile === true && <MobileHeader />}
         <TransitionGroup>
@@ -54,13 +47,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Transition>
         </TransitionGroup>
         <Toolbar direction="left">
-          <Styled.ShareBox visible={visible}>
+          <Styled.ShareBox visible={!isVisibleFooter}>
             <Styled.ShareBtn {...hoverHandlers}>
               <BsFillMoonFill />
             </Styled.ShareBtn>
           </Styled.ShareBox>
         </Toolbar>
-        {/* {router.route !== '/' && <Footer />} */}
       </Styled.Wrapper>
       {isMobile === false && <Cursor />}
     </>

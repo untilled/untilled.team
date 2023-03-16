@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
 const Wrapper = styled.div`
+  margin-top: 1px;
   height: fit-content;
   background-color: #212529;
   display: flex;

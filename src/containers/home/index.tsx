@@ -1,9 +1,6 @@
 import * as Styled from './index.styled'
-import React, { useEffect } from 'react'
-import FullPage from './components/FullPage'
+import React, { useEffect, useRef, useState } from 'react'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
-import { useRecoilState } from 'recoil'
-import { pageState } from 'atoms'
 
 import * as Menus from './menus'
 import Footer from 'components/Footer'
@@ -11,7 +8,7 @@ import Toolbar from 'components/Toolbar'
 import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
-import { polyfill } from 'smoothscroll-polyfill'
+import { Pageify, PageifyRef } from 'libs/react-pageify'
 
 const pages = [
   {
@@ -47,47 +44,17 @@ const pages = [
 interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
-  const [page, setPage] = useRecoilState(pageState)
+  const pageifyRef = useRef<PageifyRef>(null)
+  const [page, setPage] = useState(0)
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
   const hoverHandlers = useMouseHover()
-
-  useEffect(() => {
-    setPage(0)
-    return () => {
-      setPage(null)
-    }
-  }, [setPage])
-
-  useEffect(() => {
-    if (isMobile) setPage(null)
-    else setPage(0)
-  }, [isMobile, setPage])
-
-  const handleNext = () => {
-    if (page === null || page === pages.length - 1) return
-    setPage(page + 1)
-  }
-  const handlePrev = () => {
-    if (page === null || page === 0) return
-    setPage(page - 1)
-  }
-
-  useEffect(() => {
-    if (window) {
-      polyfill()
-    }
-  }, [])
 
   return (
     <Styled.Wrapper>
       {/* message toolbar */}
       <Toolbar direction="left">
         <Styled.ShareMessage
-          href={
-            page === 0
-              ? 'https://github.com/untilled/untilled'
-              : 'https://github.com/untilled/untilled'
-          }
+          href={'https://github.com/untilled/untilled'}
           target="_blank"
           visible={page === 0 || page === 4 || page === 5}
           {...hoverHandlers}
@@ -98,17 +65,16 @@ const Home: React.FC<HomeProps> = () => {
             'We are recruiting members! 🥰'}
         </Styled.ShareMessage>
       </Toolbar>
+      <input type="text" disabled />
       {/* menu toolbar */}
       <Toolbar direction="right" align="start">
         <Styled.PageMenu accented={page === 4}>
-          <Styled.MenuHeader>
-            {page !== null ? pages[page].name : ''}
-          </Styled.MenuHeader>
+          <Styled.MenuHeader>{page ? pages[page].name : ''}</Styled.MenuHeader>
           {pages.map((menu, idx) => (
             <Styled.Menu
               selected={page === idx}
               key={idx}
-              onClick={() => setPage(idx)}
+              onClick={() => pageifyRef.current?.movePage(idx)}
             >
               <div>{menu.name}</div>
             </Styled.Menu>
@@ -120,7 +86,7 @@ const Home: React.FC<HomeProps> = () => {
         <Styled.ArrowList visible={page !== null && page !== 6}>
           <Styled.Arrow
             activated={page !== 0}
-            onClick={handlePrev}
+            onClick={pageifyRef.current?.moveNextPage}
             {...hoverHandlers}
           >
             <MdKeyboardArrowUp />
@@ -128,18 +94,18 @@ const Home: React.FC<HomeProps> = () => {
           {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
           <Styled.Arrow
             activated={true}
-            onClick={handleNext}
+            onClick={pageifyRef.current?.movePrevPage}
             {...hoverHandlers}
           >
             <MdKeyboardArrowDown />
           </Styled.Arrow>
         </Styled.ArrowList>
       </Toolbar>
-      <FullPage page={page} onNext={handleNext} onPrev={handlePrev}>
+      <Pageify ref={pageifyRef} disabled={!!isMobile} onChange={setPage}>
         {pages.map((page, idx) => (
           <page.component key={idx} />
         ))}
-      </FullPage>
+      </Pageify>
     </Styled.Wrapper>
   )
 }

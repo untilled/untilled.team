@@ -2,13 +2,10 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { mobile } from 'styles/media'
 
-type Wrapper = {
-  isScrollHidden: boolean
-}
 type ShareBox = {
   visible: boolean
 }
-export const Wrapper = styled.div<Wrapper>`
+export const Wrapper = styled.div`
   overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
@@ -17,7 +14,6 @@ export const Wrapper = styled.div<Wrapper>`
   display: grid;
   grid-template-rows: 1fr auto;
 
-  ${(props) => props.isScrollHidden && css``}
   ${mobile} {
     display: block;
   }

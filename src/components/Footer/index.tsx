@@ -13,7 +13,7 @@ import React, { useCallback, useRef } from 'react'
 import { menus } from 'constants/menus'
 
 const Footer: React.FC = () => {
-  const [isVisible, setIsVisible] = useRecoilState(isVisibleFooterState)
+  const [_, setIsVisible] = useRecoilState(isVisibleFooterState)
   const observer = useRef<IntersectionObserver>()
 
   const elementRef = useCallback(
