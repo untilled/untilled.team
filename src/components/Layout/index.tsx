@@ -14,6 +14,7 @@ import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import Header from './Header'
+import { Cursorify } from 'libs/react-cursorify'
 
 interface LayoutProps {
   children: any
@@ -54,7 +55,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Styled.ShareBox>
         </Toolbar>
       </Styled.Wrapper>
-      {isMobile === false && <Cursor />}
+      {/* {isMobile === false && <Cursor />} */}
+      {/* test */}
+      {isMobile === false && <Cursorify />}
     </>
   )
 }
