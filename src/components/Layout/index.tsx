@@ -6,7 +6,6 @@ import { Transition, TransitionGroup } from 'react-transition-group'
 import { BsFillMoonFill } from 'react-icons/bs'
 
 import * as Styled from './index.styled'
-import Cursor from 'components/Cursor'
 import { isVisibleFooterState } from 'atoms'
 import MobileHeader from './MobileHeader'
 import Toolbar from 'components/Toolbar'
@@ -55,8 +54,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Styled.ShareBox>
         </Toolbar>
       </Styled.Wrapper>
-      {/* {isMobile === false && <Cursor />} */}
-      {/* test */}
       {isMobile === false && <Cursorify delay={2} />}
     </>
   )
