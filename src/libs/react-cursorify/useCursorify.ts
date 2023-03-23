@@ -1,30 +1,54 @@
-import React, { useEffect, useRef } from 'react'
-import { useRecoilState } from 'recoil'
+import React, { useEffect, useState } from 'react'
+import { cursorSelectors, initialCursorState } from './useCursorify.constant'
+import { getCursorStateKey } from './useCursorify.module'
 
-type CursorifyOptions = {
-  delay?: number
-}
+type CursorifyOptions = {}
 
 const useCursorify = (options: CursorifyOptions = {}) => {
-  const { delay = 4 } = options
+  const [cursorState, setCursorState] = useState(initialCursorState)
+  const [currentRoute, setCurrentRoute] = useState('')
+  const handleMouseenter = (e: Event) => {
+    if (!(e.target instanceof HTMLElement)) return
+    const cursorStateKey = getCursorStateKey(e.target)
 
-  // TODO: hover 여부 스타일 및 button, a tag를 통해 확인
-  const handleMouseOver = (e: MouseEvent) => {
-    const cursor = e.target.style.cursor
-    console.log(cursor)
+    if (!cursorStateKey) return
+    setCursorState((prevCursorState) => ({
+      ...prevCursorState,
+      [cursorStateKey]: true,
+    }))
+  }
+
+  const handleMouseleave = (e: Event) => {
+    if (!(e.target instanceof HTMLElement)) return
+    const cursorStateKey = getCursorStateKey(e.target)
+
+    if (!cursorStateKey) return
+    setCursorState((prevCursorState) => ({
+      ...prevCursorState,
+      [cursorStateKey]: false,
+    }))
   }
 
   useEffect(() => {
-    window.addEventListener('mouseover', handleMouseOver)
-
+    document.querySelectorAll(cursorSelectors).forEach((node) => {
+      node.addEventListener('mouseenter', handleMouseenter)
+      node.addEventListener('mouseleave', handleMouseleave)
+    })
     return () => {
-      window.removeEventListener('mouseover', handleMouseOver)
+      document.querySelectorAll(cursorSelectors).forEach((element) => {
+        element.removeEventListener('mouseenter', handleMouseenter)
+        element.removeEventListener('mouseleave', handleMouseleave)
+      })
     }
-  }, [window])
+  }, [currentRoute])
 
-  // https://developer.mozilla.org/ko/docs/Web/CSS/cursor
+  if (window) {
+    if (currentRoute !== window.location.pathname) {
+      setCurrentRoute(window.location.pathname)
+    }
+  }
   return {
-    isHover: true,
+    ...cursorState,
   }
 }
 

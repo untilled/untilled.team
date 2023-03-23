@@ -58,7 +58,9 @@ const Members: React.FC = () => {
         </Styled.MemberList>
       </Styled.MemberListWrapper>
       <Styled.BtnBox>
-        <Styled.MoreButton href="members">더보기</Styled.MoreButton>
+        <Styled.MoreButton className="cursorify-pointer" href="members">
+          더보기
+        </Styled.MoreButton>
       </Styled.BtnBox>
     </Styled.Wrapper>
   )

@@ -54,6 +54,7 @@ const Home: React.FC<HomeProps> = () => {
       {/* message toolbar */}
       <Toolbar direction="left">
         <Styled.ShareMessage
+          className="cursorify-pointer"
           href={'https://github.com/untilled/untilled'}
           target="_blank"
           visible={page === 0 || page === 4 || page === 5}
@@ -72,6 +73,7 @@ const Home: React.FC<HomeProps> = () => {
           <Styled.MenuHeader>{page ? pages[page].name : ''}</Styled.MenuHeader>
           {pages.map((menu, idx) => (
             <Styled.Menu
+              className="cursorify-pointer"
               selected={page === idx}
               key={idx}
               onClick={() => pageifyRef.current?.movePage(idx)}
@@ -85,16 +87,18 @@ const Home: React.FC<HomeProps> = () => {
       <Toolbar direction="right">
         <Styled.ArrowList visible={page !== null && page !== 6}>
           <Styled.Arrow
+            className="cursorify-pointer"
             activated={page !== 0}
-            onClick={pageifyRef.current?.moveNextPage}
+            onClick={pageifyRef.current?.movePrevPage}
             {...hoverHandlers}
           >
             <MdKeyboardArrowUp />
           </Styled.Arrow>
           {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
           <Styled.Arrow
+            className="cursorify-pointer"
             activated={true}
-            onClick={pageifyRef.current?.movePrevPage}
+            onClick={pageifyRef.current?.moveNextPage}
             {...hoverHandlers}
           >
             <MdKeyboardArrowDown />

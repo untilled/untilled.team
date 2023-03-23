@@ -13,19 +13,19 @@ const Archivement: React.FC = () => {
       </Styled.Title>
 
       <Styled.CardWrapper className="container">
-        <Styled.Card>
+        <Styled.Card className="cursorify-pointer">
           <Styled.CardTop>
             <Styled.CardTitle>시작한지</Styled.CardTitle>
             <Styled.CardSubTitle>0 일째</Styled.CardSubTitle>
           </Styled.CardTop>
         </Styled.Card>
-        <Styled.Card>
+        <Styled.Card className="cursorify-pointer">
           <Styled.CardTop>
             <Styled.CardTitle>운영중인 서비스</Styled.CardTitle>
             <Styled.CardSubTitle>0 개</Styled.CardSubTitle>
           </Styled.CardTop>
         </Styled.Card>
-        <Styled.Card>
+        <Styled.Card className="cursorify-pointer">
           <Styled.CardTop>
             <Styled.CardTitle>참여중인 멤버</Styled.CardTitle>
             <Styled.CardSubTitle>0 명</Styled.CardSubTitle>
@@ -34,7 +34,7 @@ const Archivement: React.FC = () => {
       </Styled.CardWrapper>
       <Styled.CardWrapper className="container">
         <Link href="/projects">
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             <Styled.CardTop>
               <Styled.CardTitle>Web Development 🌏</Styled.CardTitle>
               <Styled.CardContent>
@@ -47,7 +47,7 @@ const Archivement: React.FC = () => {
           </Styled.Card>
         </Link>
         <Link href="/projects">
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             <Styled.CardTop>
               <Styled.CardTitle>Mobile Development 📱</Styled.CardTitle>
               <Styled.CardContent>
@@ -64,7 +64,7 @@ const Archivement: React.FC = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             <Styled.CardTop>
               <Styled.CardTitle>Develop Activity 📝</Styled.CardTitle>
               <Styled.CardContent>

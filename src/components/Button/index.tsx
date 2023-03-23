@@ -33,7 +33,7 @@ const Button: React.FC<TButtonProps> = ({
   return (
     <StyledWrapper
       color={color}
-      className={className}
+      className={`cursorify-pointer ${className}`}
       onClick={handleClick}
       {...hoverHandlers}
     >

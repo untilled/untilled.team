@@ -17,6 +17,7 @@ const Header: React.FC = () => {
           {menus.map((menu, idx) => (
             <Link key={idx} href={menu.href}>
               <Styled.Menu
+                className="cursorify-pointer"
                 selected={menu.href === router.asPath}
                 {...hoverHandlers}
               >

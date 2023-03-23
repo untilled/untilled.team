@@ -57,7 +57,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </Styled.Wrapper>
       {/* {isMobile === false && <Cursor />} */}
       {/* test */}
-      {isMobile === false && <Cursorify />}
+      {isMobile === false && <Cursorify delay={2} />}
     </>
   )
 }

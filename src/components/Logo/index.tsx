@@ -17,7 +17,11 @@ const Logo: React.FC<LogoProps> = ({
   const hoverHandlers = useMouseHover()
 
   return (
-    <StyledWrapper color={color} {...hoverHandlers}>
+    <StyledWrapper
+      className="cursorify-pointer"
+      color={color}
+      {...hoverHandlers}
+    >
       <Link href="/">
         <div>Untilled.</div>
       </Link>
@@ -30,7 +34,6 @@ const StyledWrapper = styled.div`
   padding: 2px 5px;
   font-weight: 900;
   font-size: 1.6rem;
-  cursor: pointer;
   font-style: italic;
   div {
     color: ${({ color }: { color: any }) => color};

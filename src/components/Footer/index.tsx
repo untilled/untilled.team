@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
         <Styled.Top>
           <Styled.TopLeft>
             <Logo color="white" />
-            <Styled.Menus>
+            <Styled.Menus className="cursorify-pointer">
               {menus.map((menu, idx) => (
                 <Link key={idx} href={menu.href}>
                   <div>{menu.name}</div>
@@ -48,6 +48,7 @@ const Footer: React.FC = () => {
             <a
               href="https://github.com/morethanmin"
               target="_blank"
+              className="cursorify-pointer"
               rel="noreferrer"
             >
               <AiFillGithub />
@@ -55,6 +56,7 @@ const Footer: React.FC = () => {
             <a
               href="https://www.instagram.com/more_dev_min"
               target="_blank"
+              className="cursorify-pointer"
               rel="noreferrer"
             >
               <AiOutlineInstagram />
@@ -62,11 +64,12 @@ const Footer: React.FC = () => {
             <a
               href="https://www.linkedin.com/in/morethanmin"
               target="_blank"
+              className="cursorify-pointer"
               rel="noreferrer"
             >
               <AiFillLinkedin />
             </a>
-            <div>
+            <div className="cursorify-pointer">
               <AiFillFacebook />
             </div>
           </Styled.TopRight>
@@ -78,6 +81,7 @@ const Footer: React.FC = () => {
             Powerd by{' '}
             <span>
               <a
+                className="cursorify-pointer"
                 href="https://github.com/morethanmin"
                 target="_blank"
                 rel="noreferrer"

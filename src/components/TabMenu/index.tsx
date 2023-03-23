@@ -18,6 +18,7 @@ const TabMenu: React.FC<TabMenuProps> = ({
     <Styled.Wrapper>
       {menus.map((menu) => (
         <Styled.Menu
+          className="cursorify-pointer"
           key={menu.id}
           selected={menu.id === selectedMenu}
           onClick={() => handleClick(menu.id)}

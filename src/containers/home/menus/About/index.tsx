@@ -20,7 +20,7 @@ const About: React.FC = () => {
       <Styled.ContentWrapper>
         <Styled.CardWrapper className="container">
           {/* service */}
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             <Styled.CardHeader>Service</Styled.CardHeader>
             <Styled.CardTitle>
               발전적인 서비스를 <br /> 만들고 운영해요. 👽
@@ -31,7 +31,7 @@ const About: React.FC = () => {
             </Styled.CardContent>
             <BsFillMouseFill />
           </Styled.Card>
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             {/* Team */}
             <Styled.CardHeader>Team</Styled.CardHeader>
             <Styled.CardTitle>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
             </Styled.CardContent>
             <BsFillMouseFill />
           </Styled.Card>
-          <Styled.Card>
+          <Styled.Card className="cursorify-pointer">
             {/* Global */}
             <Styled.CardHeader>Global</Styled.CardHeader>
             <Styled.CardTitle>
