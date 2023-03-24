@@ -30,6 +30,7 @@ const useCursorify = (options: CursorifyOptions = {}) => {
   }
 
   useEffect(() => {
+    setCursorState(initialCursorState)
     document.querySelectorAll(cursorSelectors).forEach((node) => {
       node.addEventListener('mouseenter', handleMouseenter)
       node.addEventListener('mouseleave', handleMouseleave)
