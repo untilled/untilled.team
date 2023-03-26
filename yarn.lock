@@ -6925,10 +6925,10 @@ re2@^1.17.7:
     nan "^2.17.0"
     node-gyp "^9.3.0"
 
-react-cursorify@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-cursorify/-/react-cursorify-1.0.2.tgz#359a01b1c524c93a3ae98d2b43a5996e02750c5b"
-  integrity sha512-Et4ohaHWRouAL74iMVkLjgJ5cRth4dByskuk9dRe0EMhvuMBtgjo+C6Qw3HMGdpxCrVEQdP2qWh3ZDEAu5FkQA==
+react-cursorify@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-cursorify/-/react-cursorify-1.0.8.tgz#095307746331df384445d1036ec0f4ddcda6135c"
+  integrity sha512-OdacMOPV7PeUHQluBmgd9jjRNJMfYVWp+sNClhDvXt0NoyTkdDsR+kPY1iXXn2UXnPAG11VxbekWoHfSYyMDxw==
   dependencies:
     "@emotion/react" "^11.10.6"
     "@emotion/styled" "^11.10.6"

@@ -13,7 +13,7 @@ import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import Header from './Header'
-import { Cursorify } from 'react-cursorify'
+import { Cursorify, DefaultCursor } from 'react-cursorify'
 interface LayoutProps {
   children: any
 }
@@ -53,7 +53,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Styled.ShareBox>
         </Toolbar>
       </Styled.Wrapper>
-      {isMobile === false && <Cursorify delay={2} />}
+
+      {isMobile === false && <Cursorify delay={2} cursor={DefaultCursor} />}
     </>
   )
 }
