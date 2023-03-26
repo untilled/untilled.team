@@ -13,8 +13,7 @@ import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 import Header from './Header'
-import { Cursorify } from 'libs/react-cursorify'
-
+import { Cursorify } from 'react-cursorify'
 interface LayoutProps {
   children: any
 }
