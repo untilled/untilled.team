@@ -6,7 +6,7 @@ import WordSlider from 'components/WordSlider'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { breakpoints } from 'styles/media'
 
-const words = ['Worlds', 'Products', 'Designers', 'Developers']
+const words = ['World', 'Products', 'Designers', 'Developers']
 const videos = ['/videos/intro0.mp4']
 
 const circleTexts = 'scroll down scroll down scroll down '
