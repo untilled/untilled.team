@@ -22,7 +22,7 @@ const Introduce: React.FC = () => {
       <div></div>
       <Styled.Middle className=" container">
         <Styled.Subtitle>
-          <span>UNTILLED ARE A OPEN-SOURCE DEVELOP TEAM</span>
+          <span>UNTILLED IS A SIDE PROJECT DEVELOPMENT TEAM</span>
         </Styled.Subtitle>
         <Styled.TitleWrapper>
           <div>We are developing</div>
