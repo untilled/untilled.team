@@ -1,10 +1,10 @@
-import * as Styled from './index.styled'
-import React, { useRef } from 'react'
 import Avatar from 'components/Avatar'
-import { BsFillMouseFill } from 'react-icons/bs'
 import { members } from 'constants/members'
 import useMediaQuery from 'hooks/useMediaQuery'
+import React from 'react'
+import { BsFillMouseFill } from 'react-icons/bs'
 import { breakpoints } from 'styles/media'
+import * as Styled from './index.styled'
 
 const About: React.FC = () => {
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
@@ -20,7 +20,7 @@ const About: React.FC = () => {
       <Styled.ContentWrapper>
         <Styled.CardWrapper className="container">
           {/* service */}
-          <Styled.Card className="cursorify-pointer">
+          <Styled.Card>
             <Styled.CardHeader>Service</Styled.CardHeader>
             <Styled.CardTitle>
               발전적인 서비스를 <br /> 만들고 운영해요. 👽
@@ -31,7 +31,7 @@ const About: React.FC = () => {
             </Styled.CardContent>
             <BsFillMouseFill />
           </Styled.Card>
-          <Styled.Card className="cursorify-pointer">
+          <Styled.Card>
             {/* Team */}
             <Styled.CardHeader>Team</Styled.CardHeader>
             <Styled.CardTitle>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
             </Styled.CardContent>
             <BsFillMouseFill />
           </Styled.Card>
-          <Styled.Card className="cursorify-pointer">
+          <Styled.Card>
             {/* Global */}
             <Styled.CardHeader>Global</Styled.CardHeader>
             <Styled.CardTitle>

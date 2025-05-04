@@ -1,14 +1,13 @@
-import * as Styled from './index.styled'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+import * as Styled from './index.styled'
 
-import * as Menus from './menus'
 import Footer from 'components/Footer'
 import Toolbar from 'components/Toolbar'
-import useMouseHover from 'hooks/useMouseHover'
 import useMediaQuery from 'hooks/useMediaQuery'
-import { breakpoints } from 'styles/media'
 import { Pageify, PageifyRef } from 'libs/react-pageify'
+import { breakpoints } from 'styles/media'
+import * as Menus from './menus'
 
 const pages = [
   {
@@ -20,8 +19,8 @@ const pages = [
     component: Menus.About,
   },
   {
-    name: 'Archivement',
-    component: Menus.Archivement,
+    name: 'Achievement',
+    component: Menus.Achievement,
   },
   {
     name: 'Projects',
@@ -47,18 +46,20 @@ const Home: React.FC<HomeProps> = () => {
   const pageifyRef = useRef<PageifyRef>(null)
   const [page, setPage] = useState(0)
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
-  const hoverHandlers = useMouseHover()
 
   return (
     <Styled.Wrapper>
-      {/* message toolbar */}
+      <Pageify ref={pageifyRef} disabled={!!isMobile} onChange={setPage}>
+        {pages.map((page, idx) => (
+          <page.component key={idx} />
+        ))}
+      </Pageify>
       <Toolbar direction="left">
         <Styled.ShareMessage
-          className="cursorify-pointer"
+          style={{ cursor: 'pointer' }}
           href={'https://github.com/untilled/untilled'}
           target="_blank"
           visible={page === 0 || page === 4 || page === 5}
-          {...hoverHandlers}
         >
           {(page === 0 || page === 1) &&
             'Please visit and star this repository! 😎'}
@@ -66,14 +67,12 @@ const Home: React.FC<HomeProps> = () => {
             'We are recruiting members! 🥰'}
         </Styled.ShareMessage>
       </Toolbar>
-      <input type="text" disabled />
-      {/* menu toolbar */}
       <Toolbar direction="right" align="start">
         <Styled.PageMenu accented={page === 4}>
           <Styled.MenuHeader>{page ? pages[page].name : ''}</Styled.MenuHeader>
           {pages.map((menu, idx) => (
             <Styled.Menu
-              className="cursorify-pointer"
+              style={{ cursor: 'pointer' }}
               selected={page === idx}
               key={idx}
               onClick={() => pageifyRef.current?.movePage(idx)}
@@ -83,33 +82,24 @@ const Home: React.FC<HomeProps> = () => {
           ))}
         </Styled.PageMenu>
       </Toolbar>
-      {/* arrow toolbar */}
       <Toolbar direction="right">
         <Styled.ArrowList visible={page !== null && page !== 6}>
           <Styled.Arrow
-            className="cursorify-pointer"
+            style={{ cursor: 'pointer' }}
             activated={page !== 0}
             onClick={pageifyRef.current?.movePrevPage}
-            {...hoverHandlers}
           >
             <MdKeyboardArrowUp />
           </Styled.Arrow>
-          {/* <Arrow activated={page !== pages.length - 1} onClick={handleNext}> */}
           <Styled.Arrow
-            className="cursorify-pointer"
+            style={{ cursor: 'pointer' }}
             activated={true}
             onClick={pageifyRef.current?.moveNextPage}
-            {...hoverHandlers}
           >
             <MdKeyboardArrowDown />
           </Styled.Arrow>
         </Styled.ArrowList>
       </Toolbar>
-      <Pageify ref={pageifyRef} disabled={!!isMobile} onChange={setPage}>
-        {pages.map((page, idx) => (
-          <page.component key={idx} />
-        ))}
-      </Pageify>
     </Styled.Wrapper>
   )
 }

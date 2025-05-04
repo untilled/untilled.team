@@ -1,27 +1,16 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import Link from 'next/link'
+import React from 'react'
 import { mobile } from 'styles/media'
-import useMouseHover from 'hooks/useMouseHover'
 
 interface LogoProps {
   color?: string
   size?: string
 }
 
-const Logo: React.FC<LogoProps> = ({
-  color = 'white',
-  size = 'normal',
-  ...props
-}) => {
-  const hoverHandlers = useMouseHover()
-
+const Logo: React.FC<LogoProps> = ({ color = 'white' }) => {
   return (
-    <StyledWrapper
-      className="cursorify-pointer"
-      color={color}
-      {...hoverHandlers}
-    >
+    <StyledWrapper style={{ cursor: 'pointer' }} color={color}>
       <Link href="/">
         <div>Untilled.</div>
       </Link>

@@ -1,9 +1,9 @@
-import * as Styled from './index.styled'
-import React from 'react'
 import Avatar from 'components/Avatar'
-import useMediaQuery from 'hooks/useMediaQuery'
-import { breakpoints } from 'styles/media'
 import { members } from 'constants/members'
+import useMediaQuery from 'hooks/useMediaQuery'
+import React from 'react'
+import { breakpoints } from 'styles/media'
+import * as Styled from './index.styled'
 
 //지금은 멤버가 없어서 임시로 넣어둠
 export const memberImages = [
@@ -58,9 +58,7 @@ const Members: React.FC = () => {
         </Styled.MemberList>
       </Styled.MemberListWrapper>
       <Styled.BtnBox>
-        <Styled.MoreButton className="cursorify-pointer" href="members">
-          더보기
-        </Styled.MoreButton>
+        <Styled.MoreButton href="members">더보기</Styled.MoreButton>
       </Styled.BtnBox>
     </Styled.Wrapper>
   )

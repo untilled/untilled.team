@@ -4,7 +4,7 @@ import * as Styled from './index.styled'
 
 //모바일인 경우 슬라이드로 전환되도록 수정
 //멤버수, 프로젝트수, 시작한지
-const Archivement: React.FC = () => {
+const Achievement: React.FC = () => {
   return (
     <Styled.Wrapper>
       <Styled.Title>
@@ -13,28 +13,28 @@ const Archivement: React.FC = () => {
       </Styled.Title>
 
       <Styled.CardWrapper className="container">
-        <Styled.Card className="cursorify-pointer">
+        <Styled.Card>
           <Styled.CardTop>
             <Styled.CardTitle>시작한지</Styled.CardTitle>
             <Styled.CardSubTitle>0 일째</Styled.CardSubTitle>
           </Styled.CardTop>
         </Styled.Card>
-        <Styled.Card className="cursorify-pointer">
+        <Styled.Card>
           <Styled.CardTop>
             <Styled.CardTitle>운영중인 서비스</Styled.CardTitle>
-            <Styled.CardSubTitle>0 개</Styled.CardSubTitle>
+            <Styled.CardSubTitle>1 개</Styled.CardSubTitle>
           </Styled.CardTop>
         </Styled.Card>
-        <Styled.Card className="cursorify-pointer">
+        <Styled.Card>
           <Styled.CardTop>
             <Styled.CardTitle>참여중인 멤버</Styled.CardTitle>
-            <Styled.CardSubTitle>0 명</Styled.CardSubTitle>
+            <Styled.CardSubTitle>2 명</Styled.CardSubTitle>
           </Styled.CardTop>
         </Styled.Card>
       </Styled.CardWrapper>
       <Styled.CardWrapper className="container">
         <Link href="/projects">
-          <Styled.Card className="cursorify-pointer">
+          <Styled.Card style={{ cursor: 'pointer' }}>
             <Styled.CardTop>
               <Styled.CardTitle>Web Development 🌏</Styled.CardTitle>
               <Styled.CardContent>
@@ -47,7 +47,7 @@ const Archivement: React.FC = () => {
           </Styled.Card>
         </Link>
         <Link href="/projects">
-          <Styled.Card className="cursorify-pointer">
+          <Styled.Card style={{ cursor: 'pointer' }}>
             <Styled.CardTop>
               <Styled.CardTitle>Mobile Development 📱</Styled.CardTitle>
               <Styled.CardContent>
@@ -59,12 +59,8 @@ const Archivement: React.FC = () => {
             </Styled.CardBottom>
           </Styled.Card>
         </Link>
-        <a
-          href="https://morethan-log.vercel.app/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Styled.Card className="cursorify-pointer">
+        <a href="https://until.blog/@untilled" target="_blank" rel="noreferrer">
+          <Styled.Card style={{ cursor: 'pointer' }}>
             <Styled.CardTop>
               <Styled.CardTitle>Develop Activity 📝</Styled.CardTitle>
               <Styled.CardContent>
@@ -82,4 +78,4 @@ const Archivement: React.FC = () => {
   )
 }
 
-export default Archivement
+export default Achievement

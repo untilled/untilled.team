@@ -1,6 +1,5 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import useMouseHover from 'hooks/useMouseHover'
 import { useRouter } from 'next/router'
 import React, { MouseEventHandler } from 'react'
 
@@ -20,7 +19,6 @@ const Button: React.FC<TButtonProps> = ({
   onClick,
 }) => {
   const router = useRouter()
-  const hoverHandlers = useMouseHover()
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     if (href) {
@@ -33,9 +31,9 @@ const Button: React.FC<TButtonProps> = ({
   return (
     <StyledWrapper
       color={color}
-      className={`cursorify-pointer ${className}`}
+      style={{ cursor: 'pointer' }}
+      className={className}
       onClick={handleClick}
-      {...hoverHandlers}
     >
       {children}
     </StyledWrapper>

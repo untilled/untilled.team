@@ -1,33 +1,34 @@
-import * as Styled from './index.styled'
+import { menus } from 'constants/menus'
 import Link from 'next/link'
+import React, { useCallback, useRef } from 'react'
 import {
   AiFillFacebook,
   AiFillGithub,
   AiFillLinkedin,
   AiOutlineInstagram,
 } from 'react-icons/ai'
+import { useStore } from 'stores'
 import Logo from '../Logo'
-import { isVisibleFooterState } from 'atoms'
-import { useRecoilState } from 'recoil'
-import React, { useCallback, useRef } from 'react'
-import { menus } from 'constants/menus'
+import * as Styled from './index.styled'
 
 const Footer: React.FC = () => {
-  const [_, setIsVisible] = useRecoilState(isVisibleFooterState)
-  const observer = useRef<IntersectionObserver>()
+  const setIsVisibleFooterState = useStore(
+    (store) => store.setIsVisibleFooterState
+  )
+  const observer = useRef<IntersectionObserver>(null)
 
   const elementRef = useCallback(
     (node: any) => {
       // if (isFullyLoaded) return
       if (observer.current) observer.current.disconnect()
       observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) setIsVisible(true)
-        else setIsVisible(false)
+        if (entries[0].isIntersecting) setIsVisibleFooterState(true)
+        else setIsVisibleFooterState(false)
       })
 
       if (node) observer.current.observe(node)
     },
-    [setIsVisible]
+    [setIsVisibleFooterState]
   )
 
   return (
@@ -36,7 +37,7 @@ const Footer: React.FC = () => {
         <Styled.Top>
           <Styled.TopLeft>
             <Logo color="white" />
-            <Styled.Menus className="cursorify-pointer">
+            <Styled.Menus style={{ cursor: 'pointer' }}>
               {menus.map((menu, idx) => (
                 <Link key={idx} href={menu.href}>
                   <div>{menu.name}</div>
@@ -48,7 +49,7 @@ const Footer: React.FC = () => {
             <a
               href="https://github.com/morethanmin"
               target="_blank"
-              className="cursorify-pointer"
+              style={{ cursor: 'pointer' }}
               rel="noreferrer"
             >
               <AiFillGithub />
@@ -56,7 +57,7 @@ const Footer: React.FC = () => {
             <a
               href="https://www.instagram.com/more_dev_min"
               target="_blank"
-              className="cursorify-pointer"
+              style={{ cursor: 'pointer' }}
               rel="noreferrer"
             >
               <AiOutlineInstagram />
@@ -64,12 +65,12 @@ const Footer: React.FC = () => {
             <a
               href="https://www.linkedin.com/in/morethanmin"
               target="_blank"
-              className="cursorify-pointer"
+              style={{ cursor: 'pointer' }}
               rel="noreferrer"
             >
               <AiFillLinkedin />
             </a>
-            <div className="cursorify-pointer">
+            <div style={{ cursor: 'pointer' }}>
               <AiFillFacebook />
             </div>
           </Styled.TopRight>
@@ -81,7 +82,7 @@ const Footer: React.FC = () => {
             Powerd by{' '}
             <span>
               <a
-                className="cursorify-pointer"
+                style={{ cursor: 'pointer' }}
                 href="https://github.com/morethanmin"
                 target="_blank"
                 rel="noreferrer"

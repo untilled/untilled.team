@@ -6,7 +6,7 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = (props) => {
-  return <Styled.Wrapper className="cursorify-pointer" {...props} />
+  return <Styled.Wrapper style={{ cursor: 'pointer' }} {...props} />
 }
 
 export default Avatar

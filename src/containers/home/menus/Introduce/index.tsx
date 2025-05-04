@@ -1,18 +1,14 @@
-import * as Styled from './index.styled'
-import TextCircle from 'containers/home/components/TextCircle'
-import React from 'react'
-import BackgroundVideos from '../../components/BackgroundVideos'
 import WordSlider from 'components/WordSlider'
+import TextCircle from 'containers/home/components/TextCircle'
 import useMediaQuery from 'hooks/useMediaQuery'
+import React from 'react'
 import { breakpoints } from 'styles/media'
+import BackgroundVideos from '../../components/BackgroundVideos'
+import * as Styled from './index.styled'
 
-const words = ['World', 'Designers', 'Developers']
+const words = ['Developers', 'Designers', 'Products', 'World']
 const videos = ['/videos/intro0.mp4']
 
-const circleTexts = 'scroll down scroll down scroll down '
-const degree = Number(360 / circleTexts.length)
-
-//133 72
 const Introduce: React.FC = () => {
   const isMobile = useMediaQuery(`(max-width: ${breakpoints[0]}px)`)
 
@@ -22,7 +18,7 @@ const Introduce: React.FC = () => {
       <div></div>
       <Styled.Middle className=" container">
         <Styled.Subtitle>
-          <span>UNTILLED IS A SIDE PROJECT DEVELOPMENT TEAM</span>
+          <span>UNTILLED IS A SERVICE DEVELOPMENT AGENCY</span>
         </Styled.Subtitle>
         <Styled.TitleWrapper>
           <div>We are developing</div>

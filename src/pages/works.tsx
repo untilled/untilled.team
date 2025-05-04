@@ -1,11 +1,11 @@
 import { AnimatedPage } from 'components/AnimatedPage'
-import Home from 'containers/home'
-import type { NextPage } from 'next'
+import Works from 'containers/projects'
+import { NextPage } from 'next'
 
 const Page: NextPage = () => {
   return (
     <AnimatedPage>
-      <Home />
+      <Works />
     </AnimatedPage>
   )
 }

@@ -1,9 +1,13 @@
+import { AnimatedPage } from 'components/AnimatedPage'
 import Members from 'containers/members'
 import { NextPage } from 'next'
-import React from 'react'
 
-const MembersPage: NextPage = () => {
-  return <Members />
+const Page: NextPage = () => {
+  return (
+    <AnimatedPage>
+      <Members />
+    </AnimatedPage>
+  )
 }
 
-export default MembersPage
+export default Page

@@ -4,8 +4,8 @@ export const menus = [
     href: '/',
   },
   {
-    name: 'Projects',
-    href: '/projects',
+    name: 'Works',
+    href: '/works',
   },
   {
     name: 'Members',
@@ -13,6 +13,6 @@ export const menus = [
   },
   {
     name: 'Contact',
-    href: 'https://open.kakao.com/o/sv92htLe',
+    href: 'mailto:untilled.dev@gmail.com',
   },
 ]

@@ -1,9 +1,9 @@
-import * as Styled from './index.styled'
-import React, { useState } from 'react'
-import TabMenu from 'components/TabMenu'
-import { members } from 'constants/members'
 import Avatar from 'components/Avatar'
 import Footer from 'components/Footer'
+import TabMenu from 'components/TabMenu'
+import { members } from 'constants/members'
+import React, { useState } from 'react'
+import * as Styled from './index.styled'
 
 interface MembersProps {}
 
@@ -14,11 +14,11 @@ const menus = [
   },
   {
     id: 1,
-    name: 'Developer',
+    name: 'Frontend',
   },
   {
     id: 2,
-    name: 'Designer',
+    name: 'Backend',
   },
 ]
 

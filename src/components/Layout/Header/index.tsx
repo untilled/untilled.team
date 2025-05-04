@@ -1,12 +1,10 @@
-import * as Styled from './index.styled'
+import Logo from 'components/Logo'
+import { menus } from 'constants/menus'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Logo from 'components/Logo'
-import useMouseHover from 'hooks/useMouseHover'
-import { menus } from 'constants/menus'
+import * as Styled from './index.styled'
 
 const Header: React.FC = () => {
-  const hoverHandlers = useMouseHover()
   const router = useRouter()
 
   return (
@@ -17,9 +15,8 @@ const Header: React.FC = () => {
           {menus.map((menu, idx) => (
             <Link key={idx} href={menu.href}>
               <Styled.Menu
-                className="cursorify-pointer"
+                style={{ cursor: 'pointer' }}
                 selected={menu.href === router.asPath}
-                {...hoverHandlers}
               >
                 {menu.name}
               </Styled.Menu>

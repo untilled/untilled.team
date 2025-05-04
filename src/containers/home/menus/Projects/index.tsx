@@ -1,5 +1,5 @@
-import * as Styled from './index.styled'
 import React from 'react'
+import * as Styled from './index.styled'
 
 const Projects: React.FC = () => {
   return (
@@ -10,9 +10,7 @@ const Projects: React.FC = () => {
       </Styled.Title>
       <Styled.List>아직 프로젝트가 없어요!</Styled.List>
       <Styled.BtnBox>
-        <Styled.MoreButton className="cursorify-pointer" href="/projects">
-          더 보기
-        </Styled.MoreButton>
+        <Styled.MoreButton href="/projects">더 보기</Styled.MoreButton>
       </Styled.BtnBox>
     </Styled.Wrapper>
   )

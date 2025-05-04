@@ -1,7 +1,7 @@
-import * as Styled from './index.styled'
-import React from 'react'
-import Gradient from 'components/Gradient'
 import Button from 'components/Button'
+import Gradient from 'components/Gradient'
+import React from 'react'
+import * as Styled from './index.styled'
 
 const Contact: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
           <h1>언틸드와 함께 프로젝트를 진행해 보세요</h1>
         </Styled.Title>
         <Styled.ContentBottom>
-          <Button color="white" href="https://open.kakao.com/o/sv92htLe">
+          <Button color="white" href="mailto:untilled.dev@gmail.com">
             Contact
           </Button>
           <Button color="gray_2">Share</Button>

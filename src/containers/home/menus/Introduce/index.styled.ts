@@ -48,6 +48,8 @@ const Subtitle = styled.div`
   width: 100%;
   font-weight: 200;
   font-size: 0.9rem;
+  text-transform: uppercase;
+
   & > span {
     padding: 3px 0;
     border-bottom: 1px solid white;
@@ -94,13 +96,13 @@ const CircleInner = styled.div`
 `
 
 export {
-  Wrapper,
-  Middle,
-  TitleWrapper,
-  Title,
-  Subtitle,
   Bottom,
-  Span,
-  TextCircleCss,
   CircleInner,
+  Middle,
+  Span,
+  Subtitle,
+  TextCircleCss,
+  Title,
+  TitleWrapper,
+  Wrapper,
 }
