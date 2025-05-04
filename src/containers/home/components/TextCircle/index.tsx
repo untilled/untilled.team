@@ -1,13 +1,11 @@
-import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import React, { useEffect, useRef } from 'react'
+import React, { PropsWithChildren, useEffect, useRef } from 'react'
 
-interface TextCircleProps {
+type TextCircleProps = PropsWithChildren<{
   data: string
-  children?: JSX.Element | JSX.Element[] | string
   size?: number
   style?: any
-}
+}>
 
 const TextCircle: React.FC<TextCircleProps> = ({
   data,
@@ -32,7 +30,10 @@ const TextCircle: React.FC<TextCircleProps> = ({
       <Cricle size={size}>
         {Array.from(data).map((el, idx) => (
           <span
-            ref={(el: HTMLSpanElement) => (circleTextRef.current[idx] = el)}
+            ref={(el: HTMLSpanElement | null) => {
+              if (el === null) return
+              circleTextRef.current[idx] = el
+            }}
             className="circleText"
             key={idx}
           >

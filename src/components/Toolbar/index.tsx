@@ -1,13 +1,11 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import React, { ReactChildren, useEffect, useRef } from 'react'
-import { mobile } from 'styles/media'
+import React, { PropsWithChildren, useEffect, useRef } from 'react'
 
-interface ToolbarProps {
+type ToolbarProps = PropsWithChildren<{
   direction: 'left' | 'right'
   align?: 'start' | 'end'
-  children: JSX.Element | JSX.Element[]
-}
+}>
 
 const Toolbar: React.FC<ToolbarProps> = ({
   direction,

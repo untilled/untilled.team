@@ -6,9 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "generate": "next build && next export",
-    "lint": "next lint",
-    "prettier": "prettier --write ."
+    "deploy": "npm run build && firebase deploy",
+    "lint": "next lint"
   },
   "dependencies": {
     "@cursorify/react": "0.0.43",
